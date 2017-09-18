@@ -1,0 +1,14 @@
+.. _index-support-ug:
+
+=======
+Support
+=======
+
+This section provides support information for the |product name|
+product.
+
+.. toctree::
+   :maxdepth: 1
+
+   troubleshooting.rst
+   spheres-support.rst
