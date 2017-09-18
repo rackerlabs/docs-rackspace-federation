@@ -1,0 +1,8 @@
+{
+  "contentIDBase": "https://github.com/rackerlabs/docs-rackspace-federation/1.0/",
+  "githubUrl": "https://github.com/rackerlabs/docs-rackspace-federation/",
+  "githubBranch": "master",
+  "meta": {
+    "preferGithubIssues": true
+  }
+}
