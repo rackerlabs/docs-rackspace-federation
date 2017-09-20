@@ -13,9 +13,12 @@ The following table describes the top features of |service|:
 
    * - Feature
      - Description
-   * - No new credentials
+   * - SAML 2.0 compatible
+     - Compatible with third party identity federation systems that 
+       adhere to the SAML 2.0 standard
+   * - Use existing identity systems & credentials
      - Enables customers to connect to Rackspace with their own company
        credentials instead of requiring new credentials.
-   * - Third-party integration
-     - |service| provides integration with many third-party providers, and this
-       guides includes configuration examples.
+   * - Attribute Mapping policy language
+     - A rich, YAML-based, policy language that allows you to dynamically configure
+       the roles and permissions users will receive when they log in. 

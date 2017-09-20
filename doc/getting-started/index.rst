@@ -4,12 +4,13 @@
 Getting started
 ===============
 
-This section provides information about getting started with the |product name|
-product.
+This section provides information about getting started with |product name|.
 
 .. toctree::
    :maxdepth: 1
 
-   configuring.rst
+   terminology.rst
+   add-idp-cp.rst
+   add-idp-api.rst
+   config-am-policy.rst
    accessing.rst
-   navigating.rst

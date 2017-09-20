@@ -1,7 +1,7 @@
-.. _use-case-aws-ug:
+.. _okta-setup-ug:
 
 ================
-Use case for AWS
+Configuring Okta
 ================
 
 Describe the use case. Link to any tasks required to complete the use case.

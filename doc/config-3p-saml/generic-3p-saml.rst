@@ -1,7 +1,7 @@
-.. _task-ug:
+.. generic-3p-saml-ug:
 
 =============
-Task template
+Other SAML Providers
 =============
 
 This will be for any initial steps common to all third-party providers.

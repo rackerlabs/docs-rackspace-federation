@@ -10,8 +10,7 @@ the |product name| product.
 .. toctree::
    :maxdepth: 2
 
-   system-requirements.rst
-   architecture.rst
-   compatibility.rst
    features.rst
+   compatibility.rst
+   architecture.rst
    components.rst

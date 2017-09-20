@@ -1,7 +1,7 @@
-.. _use-case-azure-ug:
+.. _secureauth-attribmapping-ug:
 
 ==================
-Use case for Azure
+Attribute Mapping for SecureAuth
 ==================
 
 Describe the use case. Link to any tasks required to complete the use case.

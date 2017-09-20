@@ -21,7 +21,7 @@ Benefits to using |product name| include:
 
 - Customers can control their account security policies using existing systems
 - Less need to manually create new users in the Rackspace portal
-- Attribute Mapping allows dynamic privileges assignments based on user attributes provided during the login process
+- Attribute Mapping (LINK TO AM GUIDE NOT REFERENCE) allows dynamic privileges assignments based on user attributes provided during the login process
 
 
 

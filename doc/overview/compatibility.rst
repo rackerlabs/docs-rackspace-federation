@@ -4,8 +4,15 @@
 Compatibility
 =============
 
-Provide information about the compatibility or integration of the product or
-service with other Rackspace products or services or third-party products or
-services.
+|product name| is designed to be compatible with any SAML 2.0 based identity
+federation product/service. 
 
-Here we should provide a list of the providers for which we have solutions.
+Some popular providers that have been tested for integration include:
+
+- Microsoft Active Directory Federation Services 
+- Okta 
+- Google Cloud Platform 
+- SecureAuth
+
+(**Cat link to the setup for these here? What about linking to the product pages additionally?**)
+

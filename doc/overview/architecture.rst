@@ -1,11 +1,9 @@
 .. _architecture-ug:
 
 ======================
-Reference architecture
+Architecture
 ======================
 
-Describe the reference architecture of your product in sufficent
-detail to support the goal of this user guide. Provide graphics if
-they would help the reader understand concepts and relationships.
+**NEED TO CREATE A BASIC DIAGRAM OR TWO OF SAML/FEDERATION HERE. OR SHOULD WE USE COMPONENTS?**
 
 

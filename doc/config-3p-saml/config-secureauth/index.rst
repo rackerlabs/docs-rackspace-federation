@@ -1,7 +1,7 @@
-.. _index-use-cases-ug:
+.. _index-config-secureauth-ug:
 
 ==========
-Uses cases
+SecureAuth
 ==========
 
 Describe the high-level use cases (scenarios, goals) that user can accomplish
@@ -15,6 +15,5 @@ This section describes use cases for the |product name| product.
 .. toctree::
    :maxdepth: 1
 
-   use-case-aws.rst
-   use-case-azure.rst
-   use-case-google.rst
+   secureauth-setup.rst
+   secureauth-attribmapping.rst
