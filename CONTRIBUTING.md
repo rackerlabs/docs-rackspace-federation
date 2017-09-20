@@ -24,20 +24,20 @@ architecture:
 
 Content | File
 --- | ---
-|Index page for the main content structure| [index.rst](https://github.rackspace.com:rackerlabs//blob/master/doc/index.rst)
-|Common front information|[common/common-front.rst](https://github.rackspace.com:rackerlabs/docs-rackspace-federation/blob/master/doc/common/common-front.rst)
-|Overview index|[overview/index.rst](https://github.rackspace.com:rackerlabs/docs-rackspace-federation/blob/master/doc/overview/index.rst)
-|Installing index|[installing/index.rst](https://github.rackspace.com:rackerlabs/docs-rackspace-federation/blob/master/docs/installing/index.rst)
-|Getting started index|[getting-started/index.rst](https://github.rackspace.com:rackerlabs/docs-rackspace-federation/blob/master/doc/getting-started/index.rst)
-|Using index|[using/index.rst](https://github.rackspace.com:rackerlabs/docs-rackspace-federation/tree/master/doc/using/index.rst)
-|Administering index|[administering/index.rst](https://github.rackspace.com:rackerlabs/docs-rackspace-federation/blob/master/doc/administering/index.rst)
-|Support index|[support/index.rst](https://github.rackspace.com:rackerlabs/docs-rackspace-federation/blob/master/doc/support/index.rst)
-|API|[api.rst](/https://github.rackspace.com:rackerlabs/docs-rackspace-federation/blob/master/doc/api.rst)
-|Common back information|[common/common-back.rst](https://github.rackspace.com:rackerlabs/docs-rackspace-federation/blob/master/doc/common/common-back.rst)
-|Sphinx documentation configuration file| [conf.py](https://github.rackspace.com:rackerlabs/docs-rackspace-federation/blob/master/doc/conf.py)
+|Index page for the main content structure| [index.rst](https://github.com/rackerlabs/docs-rackspace-federation/blob/master/doc/index.rst)
+|Common front information|[common/common-front.rst](https://github.com/rackerlabs/docs-rackspace-federation/blob/master/doc/common/common-front.rst)
+|Overview index|[overview/index.rst](https://github.com/rackerlabs/docs-rackspace-federation/blob/master/doc/overview/index.rst)
+|Installing index|[installing/index.rst](https://github.com/rackerlabs/docs-rackspace-federation/blob/master/docs/installing/index.rst)
+|Getting started index|[getting-started/index.rst](https://github.com/rackerlabs/docs-rackspace-federation/blob/master/doc/getting-started/index.rst)
+|Using index|[using/index.rst](https://github.com/rackerlabs/docs-rackspace-federation/tree/master/doc/using/index.rst)
+|Administering index|[administering/index.rst](https://github.com/rackerlabs/docs-rackspace-federation/blob/master/doc/administering/index.rst)
+|Support index|[support/index.rst](https://github.com/rackerlabs/docs-rackspace-federation/blob/master/doc/support/index.rst)
+|API|[api.rst](/https://github.com/rackerlabs/docs-rackspace-federation/blob/master/doc/api.rst)
+|Common back information|[common/common-back.rst](https://github.com/rackerlabs/docs-rackspace-federation/blob/master/doc/common/common-back.rst)
+|Sphinx documentation configuration file| [conf.py](https://github.com/rackerlabs/docs-rackspace-federation/blob/master/doc/conf.py)
 |Linux and OS X build script|Makefile|
 |Windows build script|make.bat|
-|Install requirements for building locally|[requirements.txt](https://github.rackspace.com:rackerlabs/docs-common/blob/master/requirements.txt)
+|Install requirements for building locally|[requirements.txt](https://github.com/rackerlabs/docs-common/blob/master/requirements.txt)
 
 ## Updating and adding content
 
