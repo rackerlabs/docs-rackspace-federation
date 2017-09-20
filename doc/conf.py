@@ -86,7 +86,7 @@ linkcheck_ignore = ['https://pages.github.rackspace.com*',
 linkcheck_anchors = False
 
 # General information about the project.
-project = 'Rackspace Federation'
+project = 'Rackspace Identity Federation'
 copyright = '2017'
 author = 'Rackspace'
 
