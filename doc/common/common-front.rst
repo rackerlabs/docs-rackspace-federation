@@ -24,7 +24,6 @@ Benefits to using |product name| include:
 - Attribute Mapping allows dynamic privileges assignments based on user attributes provided during the login process
 
 
-Possible disadvantages to using |product name| include: ...
 
 
 
