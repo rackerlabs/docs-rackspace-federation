@@ -166,11 +166,11 @@ extlinks = {
 
 rst_epilog = """
 
-.. |service| replace:: Rackspace Federation
+.. |service| replace:: Rackspace Identity Federation
 .. |apiservice| replace:: Rackspace Federation API
 .. |no changes| replace:: None for this release
 .. |contract version| replace:: v1.0
-.. |product name| replace:: Federation
+.. |product name| replace:: Rackspace Identity Federation
 """
 
 # Software release.version currently deployed in production.
