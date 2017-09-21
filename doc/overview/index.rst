@@ -1,7 +1,7 @@
 .. _index-overview-ug:
 
 ================
-Product overview
+Overview
 ================
 
 This section describes the features, architecture, and components of
@@ -13,4 +13,3 @@ the |product name| product.
    features.rst
    compatibility.rst
    architecture.rst
-   components.rst
