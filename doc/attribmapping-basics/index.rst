@@ -14,7 +14,7 @@ An |amp| is required for every |idp| you create.
 
 Attribute Mapping Policies are composed of one or more **rules**. These **rules** 
 assign **local** values (attached to the user once they log in to Rackspace), 
-based on **remote** values (in the SAML exchange from your third party provider). 
+based on explicit or **remote** values (in the SAML exchange from your third party provider). 
 
 Common use cases for an |amp| include:
 
@@ -39,7 +39,7 @@ An example |amp| may look like:
                       expire: {D}
           version: "RAX-1"
 
-To customize your |amp| review the sections below for **required** and **product specific**
+To customize your |amp|, review the sections below for **required** and **product specific**
 guidance. 
 
 .. toctree::
