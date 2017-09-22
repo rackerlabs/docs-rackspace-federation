@@ -1,8 +1,8 @@
 .. _adfs-attribmapping-ug:
 
-==================
+==========================
 Attribute Mapping for ADFS
-==================
+==========================
 
 Describe the use case. Link to any tasks required to complete the use case.
 You can use the task template to create a use case process. Each step in the
