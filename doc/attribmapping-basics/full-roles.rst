@@ -4,9 +4,9 @@
 Rackspace Cloud Roles Reference
 ===============================
 
-This list provides a full reference for the roles that can be assigned to users
-during login using Attribute Mapping. Refer to the product and role for the 
-capabilities you want to provide. 
+This list provides a full reference for the roles that can be assigned to 
+users during login using Attribute Mapping. Refer to the product and role 
+for the capabilities you want to provide. 
 
 
 
