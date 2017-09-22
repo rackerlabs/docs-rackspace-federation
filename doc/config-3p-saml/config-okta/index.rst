@@ -1,8 +1,8 @@
 .. _index-config-okta-ug:
 
-==========
+====
 Okta
-==========
+====
 
 Describe the high-level use cases (scenarios, goals) that user can accomplish
 by using the product. The use cases should match/reflect the items listed in
