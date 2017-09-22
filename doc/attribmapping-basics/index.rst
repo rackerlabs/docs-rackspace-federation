@@ -24,20 +24,6 @@ Common use cases for an |amp| include:
   in the standard SAML attribute location
 - Setting the expiration time that will require users to re-authenticate
 
-An example |amp| may look like: 
-
-  .. code::
-    
-      mapping:
-          rules:
-              local:
-                  user:
-                      domain: 662666264
-                      name: {D}
-                      email: {D}
-                      roles: {D}
-                      expire: {D}
-          version: "RAX-1"
 
 To customize your |amp|, review the sections below for **required** and **product specific**
 guidance. 

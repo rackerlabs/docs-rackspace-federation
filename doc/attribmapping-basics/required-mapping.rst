@@ -55,9 +55,9 @@ values for mapping the required fields.
                   user:
                       domain: 636462353
                       name: {D}  #  Username will be set from common "name" value in your SAML   
-                      email: "{1}"  # References the second element of the "remote" rule, i.e. "emailaddress"
+                      email: "{2}"  # References the second element of the "remote" rule, i.e. "emailaddress"
                       roles: "nova:observer, lbaas:admin"
-                      expire: {2}  #  References the first element of the "remote" rule, i.e. NotOnOrAfter
+                      expire: {1}  #  References the first element of the "remote" rule, i.e. NotOnOrAfter
              remote:                    
                   - path: "/saml2p:Response/saml2:Assertion/saml2:Conditions/@NotOnOrAfter[1]"
                           # This value is specified as a path in the SAML XML
