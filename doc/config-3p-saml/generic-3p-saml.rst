@@ -1,8 +1,8 @@
 .. generic-3p-saml-ug:
 
-=============
+====================
 Other SAML Providers
-=============
+====================
 
 This will be for any initial steps common to all third-party providers.
 
