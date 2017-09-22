@@ -24,5 +24,5 @@ started, using the service, working with add-on components, and getting help.
    config-3p-saml/index.rst
    administering/index.rst
    support/index.rst
-   api-reference/index,rst
+   api-reference/index.rst
    common/common-end.rst
