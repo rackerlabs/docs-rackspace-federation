@@ -10,12 +10,12 @@ in this section to help you troubleshoot.
 ** call in help from QE (Gabe) and Astra team here **
 
 Problems Creating an Identity Provider
-~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 **Problem: Some error conditions here!**
 
 Problems Logging In
-~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~
 
 **Problem: Email address not found during login**
 
@@ -36,7 +36,7 @@ to your company identity login page, you encounter issues.
 
 
 Problems with Roles/Access
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 **Problem: Unable to access portals/products/services**
 
