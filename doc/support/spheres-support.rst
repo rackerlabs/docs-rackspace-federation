@@ -1,8 +1,8 @@
 .. _spheres-support-ug:
 
-==================
+===============
 Getting Support
-==================
+===============
 
 Rackspace offers 24x7x365 support for |product name|. 
 
