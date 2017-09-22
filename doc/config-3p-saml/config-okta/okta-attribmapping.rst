@@ -1,8 +1,8 @@
-.. _use-case-google-ug:
+.. _okta-attribmapping-ug:
 
-===================
-Use case for Google
-===================
+==========================
+Attribute Mapping for Okta
+==========================
 
 Describe the use case. Link to any tasks required to complete the use case.
 You can use the task template to create a use case process. Each step in the

@@ -1,8 +1,8 @@
-.. _use-case-azure-ug:
+.. _adfs-attribmapping-ug:
 
-==================
-Use case for Azure
-==================
+==========================
+Attribute Mapping for ADFS
+==========================
 
 Describe the use case. Link to any tasks required to complete the use case.
 You can use the task template to create a use case process. Each step in the

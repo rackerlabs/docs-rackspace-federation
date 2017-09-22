@@ -6,6 +6,8 @@ Administering
 
 .. Define |product name| in conf.py
 
+**WIP MAY DROP**
+
 Include any information relevant to the administrator, such as
 permissions, upgrading, monitoring, and notifications. Also include
 any tasks that the administrator would complete; put end-user tasks

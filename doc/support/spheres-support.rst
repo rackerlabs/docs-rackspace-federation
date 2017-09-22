@@ -1,11 +1,14 @@
 .. _spheres-support-ug:
 
-==================
-Spheres of support
-==================
+===============
+Getting Support
+===============
 
-Rackspace offers 24x7x365 support for |product name|. You can reach the Support
-team by phone and live chat. You can also create a Support ticket and
-administer your product through the user interface.
+Rackspace offers 24x7x365 support for |product name|. 
 
-Is there anyone else we should add?
+Customers using |product name| should file a Support ticket for support. 
+
+If using phone support or live chat, please have available a non-federated
+username on your account, for purposes of identity verification. 
+
+

@@ -86,7 +86,7 @@ linkcheck_ignore = ['https://pages.github.rackspace.com*',
 linkcheck_anchors = False
 
 # General information about the project.
-project = 'Rackspace Federation'
+project = 'Rackspace Identity Federation'
 copyright = '2017'
 author = 'Rackspace'
 
@@ -166,11 +166,16 @@ extlinks = {
 
 rst_epilog = """
 
-.. |service| replace:: Rackspace Federation
+.. |service| replace:: Rackspace Identity Federation
 .. |apiservice| replace:: Rackspace Federation API
 .. |no changes| replace:: None for this release
 .. |contract version| replace:: v1.0
-.. |product name| replace:: Federation
+.. |product name| replace:: Identity Federation
+.. |idp| replace:: Identity Provider
+.. |ss| replace:: (*screenshot?*)
+.. |amp| replace:: Attribute Mapping Policy
+
+
 """
 
 # Software release.version currently deployed in production.

@@ -5,7 +5,7 @@ Support
 =======
 
 This section provides support information for the |product name|
-product.
+feature.
 
 .. toctree::
    :maxdepth: 1
