@@ -1,8 +1,8 @@
 .. required-mapping-ug:
 
-=============
+===================
 Required Attributes
-=============
+===================
 
 .. Define |product name| in conf.py
 
@@ -20,8 +20,9 @@ Your |amp| is **required** to contain:
      - Format
      - Example Value
    * - **domain** 
-     - The Identity/Account domain that the |idp| is authorized to log users into. The domain
-       is listed on the Identity Provider details page for your |idp|. 
+     - The Identity/Account domain that the |idp| is authorized to log users 
+       into. The domain is listed on the Identity Provider details page for 
+       your |idp|. 
      - Alphanumeric string
      - MUST be set to your Identity domain.
    * - **name**
@@ -33,11 +34,13 @@ Your |amp| is **required** to contain:
      - RFC valid email address
      - INSERT THE SAML STANDARD EMAIL FIELD PATH HERE
    * - **roles**
-     - The product RBAC (role based access control) roles you want the user to be assigned.
+     - The product RBAC (role based access control) roles you want the user 
+       to be assigned.
      - Alphanumeric string, comma delimited
      - "nova:observer, lbaas:admin"
    * - **expires**
-     - The timeout before users must reauthenticate with your identity system. 
+     - The timeout before users must reauthenticate with your identity 
+       system. 
      - SOME VALID FORMAT HERE
      - INSERT SAML STANDARD NOTONORAFTERHERE
 
@@ -66,8 +69,8 @@ values for mapping the required fields.
           version: "RAX-1"
 
 
-For information on adding additional rules, or using XPath to interact with your SAML and |amp|,
-see LINK TO REFERENCE HERE. OR MORE EXAMPLES?
+For information on adding additional rules, or using XPath to interact 
+with your SAML and |amp|, see LINK TO REFERENCE HERE. OR MORE EXAMPLES?
 
 
 
