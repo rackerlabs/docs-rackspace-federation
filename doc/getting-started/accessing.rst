@@ -1,13 +1,13 @@
 .. _accessing-gs-ug:
 
-=========
+==========
 Logging In
-=========
+==========
 
 Once your |idp| has been created, you can test your setup by
 visiting `login.rackspace.com <https://login.rackspace.com/>`_ and
-clicking the link titled **Use your company information** NEED TO CHECK BEFORE LAUNCH
-to log in.
+clicking the link titled **Use your company information** NEED TO CHECK 
+BEFORE LAUNCH to log in.
 
 The following steps should occur:
 
