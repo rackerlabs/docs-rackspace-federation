@@ -1,8 +1,8 @@
 .. _add-idp-api-gs-ug:
 
-===========
-Adding an Identity Provider via API
-===========
+========================================
+Adding an Identity Provider by using API
+========================================
 
 
 It is recommended to use the Control Panel to add Identity Providers 
@@ -16,5 +16,7 @@ section of the `Rackspace Identity API Reference <https://developer.rackspace.co
 Some important things to consider when creating an |idp| via the API:
 
 - The |idp| must first be created using a metadata XML file
-- After the |idp| is created, you can then update the **Description** and **Name** values.
-- The **Name** value is the equivalent of the **Login Domain** referenced in :ref:`add-idp-cp-gs-ug`.    
+- After the |idp| is created, you can then update the **Description** 
+  and **Name** values.
+- The **Name** value is the equivalent of the **Login Domain** referenced 
+  in :ref:`add-idp-cp-gs-ug`.    
