@@ -14,5 +14,6 @@ Some popular providers that have been tested for integration include:
 - Google Cloud Platform 
 - SecureAuth
 
-(**Cat link to the setup for these here? What about linking to the product pages additionally?**)
+(**Cat link to the setup for these here? What about linking to the product 
+pages additionally?**)
 
