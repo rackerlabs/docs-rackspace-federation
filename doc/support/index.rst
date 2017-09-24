@@ -11,4 +11,4 @@ feature.
    :maxdepth: 1
 
    troubleshooting.rst
-   spheres-support.rst
+   getting-support.rst

@@ -4,9 +4,9 @@
 Configuring Third Party SAML Providers
 ======================================
 
-This section provides information about configuring third-party SAML 
-providers with |product name|, including the setup considerations and information 
-about Attribute Mapping. 
+This section provides information about configuring third-party SAML
+providers with |product name|, including the setup considerations and
+information about Attribute Mapping.
 
 
 .. toctree::
@@ -16,5 +16,4 @@ about Attribute Mapping.
    config-okta/index.rst
    config-secureauth/index.rst
    generic-3p-saml.rst
-   
 
