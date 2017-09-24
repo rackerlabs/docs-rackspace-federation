@@ -5,30 +5,29 @@ Adding an Identity Provider in the Control Panel
 ================================================
 
 To add an |idp|, log in to your Rackspace control panel by browsing to
-https://login.rackspace.com. 
+https://login.rackspace.com.
 
 Click on your username in the upper right area of the navigation bar, and
-select **User Management** from the dropdown menu. 
+select **User Management** from the dropdown menu.
 
 *Alternate approach START*
 
-To add an |idp|, browse to the 
+To add an |idp|, browse to the
 `Account Management <https://account.rackspace.com/>`_ page
 in the Rackspace Control Panel.
 
 *Alternate approach END*
 
-
 |ss|
 
-Click the **Add Identity Provider** button. 
+Click the **Add Identity Provider** button.
 
 |ss|
 
 Basic Information
 ~~~~~~~~~~~~~~~~~
 
-Each |idp| should have a unique **Description** and **Login Domain**. 
+Each |idp| should have a unique **Description** and **Login Domain**.
 
 .. list-table::
    :widths: 30 70
@@ -60,5 +59,5 @@ retrieving your metadata XML file.
 |ss|
 
 When your XML file is attached, click the **Create Identity Provider** button
-to complete the process. 
+to complete the process.
 

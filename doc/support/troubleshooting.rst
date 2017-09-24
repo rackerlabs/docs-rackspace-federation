@@ -41,15 +41,12 @@ Problems with Roles/Access
 **Problem: Unable to access portals/products/services**
 
 After successfully logging in, you are unable to access the
-products or services you expect. 
+products or services you expect.
 
 To resolve this problem:
 
 1. Review your |amp|
 2. Next??
-
-
-
 
 
 
@@ -59,17 +56,13 @@ EXAMPLE TABLE FOR LATER
    :widths: 30 50 30
    :header-rows: 1
 
-   * - Problem  
+   * - Problem
      - Description
      - Suggestions
    * - Unable to access portals/products/services
      - After successfully logging in, you are unable to access
        the expected products or services.
      - Review your Attribute Mapping Policy
-
-
-
-
 
 
 
