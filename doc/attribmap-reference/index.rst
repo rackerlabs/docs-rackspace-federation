@@ -1,7 +1,7 @@
 .. _api-reference:
 
 =============
-API reference
+Attribue Mapping Policy Reference
 =============
 
 Learn about the available |apiservice| resources and operations, and
