@@ -26,7 +26,7 @@ Common use cases for an |amp| include:
 - Setting the expiration time that will require users to re-authenticate
 
 To customize your |amp|, review the sections below for **required** and
-**product specific** guidance.
+**product specific** guidance. You can also consult the complete TODO LINK TO ATTRIBUTE MAPPING REFERENCE HERE for more detailed functionality and examples.
 
 .. toctree::
    :maxdepth: 1

@@ -6,8 +6,6 @@ Document history and additional information
 
 Document history for |product name|.
 
-This file is common to all guides (from one to many) that you write
-for your product.
 
  .. list-table:: **Document history**
    :widths: 25 75
@@ -15,8 +13,8 @@ for your product.
 
    * - Revision date
      - Release
-   * - 2017-01-03
-     - |product name| vN release
+   * - 2017-10-06
+     - |product name| v1.0 release
 
 
 
@@ -30,8 +28,7 @@ websites, as appropriate.
 
 Use the following resources to learn more about |product name|:
 
-- reference
-- reference
+- `Rackspace Identity API Reference <https://developer.rackspace.com/docs/cloud-identity/v2/>`_
 
 
 

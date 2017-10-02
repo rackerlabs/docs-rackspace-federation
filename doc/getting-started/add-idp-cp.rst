@@ -8,14 +8,13 @@ To add an |idp|, log in to your Rackspace control panel by browsing to
 https://login.rackspace.com.
 
 1. Click on your username in the upper right area of the navigation bar, and
-   select **User Management** from the dropdown menu.   Alternately, browse
-   directly to to the `Account Management <https://account.rackspace.com/>`_ page
-   in the Rackspace Control Panel.
+   select **User Management** from the dropdown menu. Alternately, browse
+   directly to to the `Account Management <https://account.rackspace.com/>`_ page in the Rackspace Control Panel.
 
-2. Choose the Identity Providers tab at the top of the page.
+2. Choose the **Identity Federation** tab at the top of the page.
 
 
-3. Click the **Add Identity Provider** button.
+3. Click the **Add Identity Provider** tab.
 
 Basic Information
 ~~~~~~~~~~~~~~~~~
@@ -37,8 +36,8 @@ Each |idp| should have a unique **Description** and **Login Domain**.
        their email domain will be used to identify which |idp| they should
        be redirected to to complete logging in.
 
-SAML Metadata
-~~~~~~~~~~~~~~
+Uploading SAML Metadata
+~~~~~~~~~~~~~~~~~~~~~~~
 
 Next, you will need to upload an XML file containing required metadata to
 complete the setup of your |idp|. Most identity systems have a method for

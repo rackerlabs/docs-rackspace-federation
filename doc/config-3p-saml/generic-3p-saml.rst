@@ -44,5 +44,5 @@ You will need to set up an |amp| to ensure that the SAML attributes your
 identity provider sends during the SAML login process are mapped to the
 required/desired values for Rackspace.
 
-An overview of the required values and example mappings can be found at
-:ref:`required-mapping-ug`.
+An overview of Attribute Mapping and example mapping policies can be found at
+:ref:`attribmapping-basics-ug`.
