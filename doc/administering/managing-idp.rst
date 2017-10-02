@@ -6,8 +6,8 @@ Managing Identity Providers
 
 .. note::
 
-    It is recommended to use the Control Panel to mange Identity Providers, but advanced users may choose to use the
-    Rackspace Identity API instead.
+    It is recommended to use the Control Panel to mange Identity Providers, but
+    advanced users may choose to use the Rackspace Identity API instead.
 
     To use the API to create and manage your Identity Providers, see the
     `Identity Providers <https://developer.rackspace.com/docs/cloud-identity/v2/api-reference/identity-provider-operations/>`_
@@ -17,7 +17,11 @@ Managing Identity Providers
 Basic Tasks
 ~~~~~~~~~~~
 
-Manage your Identity Providers via the Rackspace Control Panel at `https://accounts.rackspace.com/users <https://accounts.rackspace.com/users>`_. You can take actions to manage your |idp| through either the list of |idp|\s on the **Identity Federation** page, or through the **Actions** menu on the details page for any |idp|.
+Manage your Identity Providers via the Rackspace Control Panel at
+`https://accounts.rackspace.com/users <https://accounts.rackspace.com/users>`_.
+You can take actions to manage your |idp| through either the list of |idp|\s on
+the **Identity Federation** page, or through the **Actions** menu on the
+details page for any |idp|.
 
 .. list-table::
    :widths: 30 70
@@ -47,5 +51,6 @@ from your metadata:
 - the security certificate
 - issuer value
 
-Updating your metadata will not change the **Login Domain** or **Description** you have provided.
+Updating your metadata will not change the **Login Domain** or **Description**
+you have provided.
 
