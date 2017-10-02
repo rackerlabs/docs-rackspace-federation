@@ -34,5 +34,6 @@ To customize your |amp|, review the sections below for **required** and
    required-mapping.rst
    rscloud-mapping.rst
    faws-mapping.rst
-   mgcp-mapping.rst
    full-roles.rst
+..   mgcp-mapping.rst
+
