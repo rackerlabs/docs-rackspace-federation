@@ -12,4 +12,4 @@ the |product name| product.
 
    features.rst
    compatibility.rst
-   architecture.rst
+..   architecture.rst

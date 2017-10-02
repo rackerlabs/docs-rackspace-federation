@@ -1,16 +1,16 @@
-.. _api-reference:
+.. _attribmap-reference:
 
-=============
-Attribue Mapping Policy Reference
-=============
+========================================
+Attribute Mapping Policy Reference Guide
+========================================
 
-Learn about the available |apiservice| resources and operations, and
-see request and response examples. You can use the |apiservice| operations
-to interact directly with the service.
+The |amp| Reference Guide provides detailed functionality and examples for
+the |amp| language. Use the Reference Guide to construct policies that
+use features like conditional matching, substitutions, and other scenarios.
 
+TODO: EITHER EMBED OR LINK TO JORGE'S DOC HERE
 
 .. toctree::
    :maxdepth: 2
 
    basic-operations
-
