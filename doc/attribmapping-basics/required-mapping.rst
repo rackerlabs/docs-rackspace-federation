@@ -1,8 +1,8 @@
-.. required-mapping-ug:
+.. _required-mapping-ug:
 
-===================
-Required Attributes
-===================
+============================================
+Required SAML Attributes and Mapping Example
+============================================
 
 .. Define |product name| in conf.py
 
@@ -70,6 +70,3 @@ values for mapping the required fields.
 
 For information on adding additional rules, or using XPath to interact
 with your SAML and |amp|, see LINK TO REFERENCE HERE. OR MORE EXAMPLES?
-
-
-
