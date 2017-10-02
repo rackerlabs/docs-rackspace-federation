@@ -16,6 +16,7 @@ serve to show the default.
 import os
 import re
 import sphinx
+import chios
 
 try:
     import sphinx_rtd_theme
@@ -27,10 +28,10 @@ try:
 except:
     spelling = None
     
-try:
-    from chios import bolditalic
-except:
-    bolditalic = None
+#try:
+#    from chios import bolditalic
+#except:
+#    bolditalic = None
 
 # If extensions (or modules to document with autodoc) are in another directory,
 # add these directories to sys.path here. If the directory is relative to the
@@ -48,15 +49,11 @@ except:
 extensions = [
     'sphinx.ext.ifconfig',
     'sphinx.ext.todo',
-    'sphinx.ext.extlinks'
+    'sphinx.ext.extlinks',
+    'chios.bolditalic',
+    'chios.remotecode',
+    'chios.remoteinclude'
 ]
-
-if bolditalic is not None:
-    extensions.extend([
-        'chios.bolditalic',
-        'chios.remotecode',
-        'chios.remoteinclude'
-    ])
 
 if spelling is not None:
     extensions.append('sphinxcontrib.spelling')
