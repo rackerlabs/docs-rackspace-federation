@@ -30,7 +30,7 @@ except:
 try:
     from chios import bolditalic
 except:
-    chios = None
+    bolditalic = None
 
 # If extensions (or modules to document with autodoc) are in another directory,
 # add these directories to sys.path here. If the directory is relative to the
@@ -51,7 +51,7 @@ extensions = [
     'sphinx.ext.extlinks'
 ]
 
-if chios is not None:
+if bolditalic is not None:
     extensions.extend([
         'chios.bolditalic',
         'chios.remotecode',
