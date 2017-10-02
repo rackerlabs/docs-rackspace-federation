@@ -16,7 +16,6 @@ serve to show the default.
 import os
 import re
 import sphinx
-import chios
 
 try:
     import sphinx_rtd_theme
