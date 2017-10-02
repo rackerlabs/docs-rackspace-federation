@@ -1,21 +1,23 @@
 .. _faws-mapping-ug:
 
-===================================
-Assigning Fanatical AWS Permissions
-===================================
+===============================================
+Assigning Fanatical Support for AWS Permissions
+===============================================
 
-After configuring your |idp|, and any basic Attribute Mapping that needs to occur, you will need to complete additional steps to assign permissions for accounts managed by Fanatical Support for AWS.
+After configuring your |idp|, and any basic Attribute Mapping that needs
+to occur, you will need to complete additional steps to assign permissions for accounts managed by Fanatical Support for AWS.
 
 Update Attribute Mapping Policy
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-First, you will need to ensure that you have added a rule section to your |amp| that indicates that any ``groups`` provided in your SAML response will be applied to your AWS account permissions.
+First, you will need to ensure that you have added a rule section to your |amp|that indicates that any ``groups`` provided in your SAML response will be
+applied to your AWS account permissions.
 
 This example shows a basic policy with the required rule included:
 
 .. code-block:: yaml
-   :emphasize-lines: 12-15
    :linenos:
+   :emphasize-lines: 12-15
 
     ---
     mapping:
@@ -33,7 +35,7 @@ This example shows a basic policy with the required rule included:
                 multiValue: true
                 value: "{Ats(http://schemas.xmlsoap.org/claims/Group)}"
 
-The highlighted lines indicate that any value with the SAML schema attribute ``http://schemas.xmlsoap.org/claims/Group`` will be assigned to the ``faws\groups`` local value. If you use a different SAML attribute to provide a ``groups`` value, or similar, substitute that attribute instead.
+The highlighted lines indicate that any value associated with the SAML schema attribute ``http://schemas.xmlsoap.org/claims/Group`` will be assigned to the ``faws/groups`` local value. If you use a different SAML attribute to provide a ``groups`` value, or similar, substitute that attribute instead.
 
 Contact Fanatical AWS Support
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

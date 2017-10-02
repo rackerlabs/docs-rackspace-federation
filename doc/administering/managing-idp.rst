@@ -40,7 +40,9 @@ Manage your Identity Providers via the Rackspace Control Panel at `https://accou
 Updating Metadata and Certificates
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-To update key details about your |idp|, use the  **Update Metadata** button in the Control Panel. The following will be extracted and updated from your metadata:
+To update key details about your |idp|, use the  **Update Metadata**
+button in the Control Panel. The following will be extracted and updated
+from your metadata:
 
 - the security certificate
 - issuer value

@@ -15,6 +15,12 @@ for the capabilities you want to provide.
    * - Product
      - Description
      - Role name
+   * - **Global RBAC roles** (applies to all products)
+     - Administrator (full control) for any Cloud product
+     - admin
+   * -
+     - Observer (read-only) for any Cloud product
+     - observer
    * - Autoscale
      - Administrator (full control)
      - autoscale:admin
@@ -82,14 +88,8 @@ for the capabilities you want to provide.
      - Observer (read-only)
      - object-store:observer
    * - Cloud Identity
-     - Administrator (full control)
-     - admin
-   * -
      - Allows management of users
      - identity:user-manage
-   * -
-     - Observer (read-only)
-     - observer
    * - Cloud Images
      - Administrator (full control)
      - cloudimages:admin
