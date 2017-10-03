@@ -40,9 +40,6 @@ SAML assertions.
    * - Assertion Consumer Service
        ("Single Sign On URL")
      - https://login.rackspace.com/federate/acs
-   * - Single Logout Service
-     - https://login.rackspace.com/federate/sls
-
 
 
 

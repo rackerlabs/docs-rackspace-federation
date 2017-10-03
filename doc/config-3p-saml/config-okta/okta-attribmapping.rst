@@ -27,10 +27,12 @@ name like ``groups`` and select a regex filter with the value ``*rackspace*``.
 TODO: Gabe to REVISE this
 
 
-An example |amp| that should work with Okta defaults is below.
+An example |amp| that demonstrates working with Okta defaults is below.
 
 Notes:
 
+- The ``groups`` specified in the example should be changed to match your
+  configured Okta groups.
 - Remember to update *at a minimum* the ``domain`` value to your Identity
   Domain from the |idp| details page.
 - Validate that any values being mapped to ``email`` and ``expire`` are
@@ -48,9 +50,12 @@ Notes:
         local:
             user:
             domain: "DOMAIN HERE"
+            # Update to your Identity Domain from the Identity Provider details page
             email: "{Pt(/saml2p:Response/saml2:Assertion/saml2:Subject/saml2:NameID)}"
             expire: PT12H
+            # You may wish to update the expire value to a SAML provided value.
             name: "{D}"
+            # This value will match to the SAML attribute "name" by default.
             roles:
                 - "{0}"
         remote:
@@ -61,6 +66,7 @@ Notes:
                     if (mapping:get-attributes('groups')='rax-medium-access-mycloud') then ('nova:admin', 'ticketing:admin') else (),
                     if (mapping:get-attributes('groups')='rax-observer-mycloud') then 'billing:admin' else ()
                 )
+            # The groups specified here are examples. You should substitute your own groups
     version: RAX-1
 
 
