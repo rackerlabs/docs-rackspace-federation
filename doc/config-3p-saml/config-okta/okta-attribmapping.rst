@@ -17,5 +17,35 @@ name like ``groups`` and select a regex filter with the value ``*rackspace*``.
 
 .. image:: create_app_5.png
 
-TODO: Gabe to insert Attrib map policy example here WITH GROUPS
+TODO: Gabe to REVISE this
+
+
+An example |amp| that should work with Okta defaults is below. Remember to
+update *at a minimum* the ``domain`` value to your Identity Domain from the
+|idp| details page.
+
+.. code-block:: yaml
+
+    ---
+    mapping:
+    rules:
+        -
+        local:
+            user:
+            domain: "DOMAIN HERE"
+            email: "{Pt(/saml2p:Response/saml2:Assertion/saml2:Subject/saml2:NameID)}"
+            expire: PT12H
+            name: "{D}"
+            roles:
+                - "{0}"
+        remote:
+            -
+            multiValue: true
+            path: |
+                (
+                    if (mapping:get-attributes('groups')='rax-medium-access-mycloud') then ('nova:admin', 'ticketing:admin') else (),
+                    if (mapping:get-attributes('groups')='rax-observer-mycloud') then 'billing:admin' else ()
+                )
+    version: RAX-1
+
 
