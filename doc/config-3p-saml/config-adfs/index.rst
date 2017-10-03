@@ -4,13 +4,11 @@
 Active Directory Federation Services
 ====================================
 
-Describe the high-level use cases (scenarios, goals) that user can accomplish
-by using the product. The use cases should match/reflect the items listed in
-the Features section. Use cases are generally large processes made up of
-multiple tasks. Create as many use cases as necessary by using the use case
-template. You can organize use cases by using categories.
+This guide will provide common steps for setting up Active Directory Federation
+Services as a SAML provider for |service|. While the defaults may work for many
+situations, please consult the Active Directory Federation Services
+documentation for any implementation specific details.
 
-This section describes use cases for the |product name| product.
 
 .. toctree::
    :maxdepth: 1
