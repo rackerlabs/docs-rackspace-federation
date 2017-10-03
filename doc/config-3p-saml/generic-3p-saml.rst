@@ -4,30 +4,45 @@
 Other SAML Providers
 ====================
 
-This will be for any initial steps common to all third-party providers.
+|service| is designed to be compatible with any SAML 2.0 based identity
+provider. The information below provides basic settings needed to
+configure a third party SAML provider.
 
-Prerequisites
-~~~~~~~~~~~~~
-
-Provide any prerequisites required to complete this task.
-
-To access |product name|
+SAML Configuration Items
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-1. First thing you do.
+SAML providers will require one or more of the following links or URLS to
+configure how to connect to Rackspace and redirect during login sessions.
 
-   Result of step 1.
+The default values are listed below, but can also be retrieved programmatically
+from the Rackspace service provider metadata file at:
+`https://login.rackspace.com/federate/sp.xml
+<https:login.rackspace.com/federate/sp.xml>`_
 
-#. Second thing you do.
+The metadata file will also always contain the latest certificate for signing
+SAML assertions.
 
-   Result of step 2.
+.. list-table::
+   :widths: 30 70
+   :header-rows: 1
 
-Result of completing the task.
+   * - Attribute
+     - Value
+   * - EntityID ("Audience")
+     - https://login.rackspace.com
+   * - Assertion Consumer Service
+       ("Single Sign On URL")
+     - https://login.rackspace.com/federate/acs
+   * - Single Logout Service
+     - https://login.rackspace.com/federate/sls
 
-Next steps
-~~~~~~~~~~
 
-Provide links to any tasks that must or can be completed after this task.
+SAML Attribute Mapping
+~~~~~~~~~~~~~~~~~~~~~~
 
-For an example of a topic that uses this template, see
-:ref:`task-example-ug`.
+You will need to set up an |amp| to ensure that the SAML attributes your
+identity provider sends during the SAML login process are mapped to the
+required/desired values for Rackspace.
+
+An overview of Attribute Mapping and example mapping policies can be found at
+:ref:`attribmapping-basics-ug`.

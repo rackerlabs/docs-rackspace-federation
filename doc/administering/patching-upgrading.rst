@@ -14,4 +14,5 @@ provide as much detail and as many topics as necessary.
 
 For an example of a topic that uses this template, and that describes
 Rackspace responsibilty for upgrading and patching, see
-:ref:`monitoring-example-ug`.
+
+.. COMMENT ref monitoring-example-ug.
