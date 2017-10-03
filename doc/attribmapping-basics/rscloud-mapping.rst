@@ -13,10 +13,8 @@ assigned in the |amp|.
 
 A basic example of an |amp| is below:
 
-.. code-block:: yaml
-   :linenos:
+.. code:: yaml
 
-   ----
    mapping:
    version: RAX-1
    rules:
@@ -41,9 +39,8 @@ However, for more complex scenarios, especially where access to Rackspace Cloud
 products is governed by roles or groups defined in your corporate identity
 system, the |amp| language provides more flexible control.
 
-.. code-block:: yaml
+.. code:: yaml
 
-    ---
     mapping:
     version: RAX-1
     rules:

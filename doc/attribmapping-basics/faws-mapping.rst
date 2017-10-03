@@ -12,16 +12,13 @@ Update Attribute Mapping Policy
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 First, you will need to ensure that you have added a rule section to your
-|amp|that indicates that any ``groups`` provided in your SAML response will be
+|amp| that indicates that any ``groups`` provided in your SAML response will be
 applied to your AWS account permissions.
 
 This example shows a basic policy with the required rule included:
 
-.. code-block:: yaml
-   :linenos:
-   :emphasize-lines: 12-15
+.. code:: yaml
 
-    ---
     mapping:
     version: RAX-1
     rules:

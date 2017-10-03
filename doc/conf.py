@@ -116,6 +116,8 @@ rst_epilog = """
 .. |api-service| replace:: Rackspace Identity Federation API
 .. |contract version| replace:: 1.0
 .. |product name| replace:: Rackspace Identity Federation
+.. |idp| replace:: Identity Provider
+.. |amp| replace:: attribute mapping policy
 """
 
 # sphinxcontrib-versioning options
