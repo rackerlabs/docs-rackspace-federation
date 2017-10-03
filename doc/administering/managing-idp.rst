@@ -11,7 +11,8 @@ Managing Identity Providers
 
     To use the API to create and manage your Identity Providers, see the
     `Identity Providers <https://developer.rackspace.com/docs/cloud-identity/v2/api-reference/identity-provider-operations/>`_
-    section of the `Rackspace Identity API Reference <https://developer.rackspace.com/docs/cloud-identity/v2/api-reference/>`_.
+    section of the `Rackspace Identity API Reference
+    <https://developer.rackspace.com/docs/cloud-identity/v2/api-reference/>`_.
 
 
 Basic Tasks
@@ -19,9 +20,9 @@ Basic Tasks
 
 Manage your Identity Providers via the Rackspace Control Panel at
 `https://accounts.rackspace.com/users <https://accounts.rackspace.com/users>`_.
-You can take actions to manage your |idp| through either the list of |idp|\s on
-the **Identity Federation** page, or through the **Actions** menu on the
-details page for any |idp|.
+You can take actions to manage your |idp| through either the list of
+Identity Providers on the **Identity Federation** page, or through
+the **Actions** menu on the details page for any |idp|.
 
 .. list-table::
    :widths: 30 70
