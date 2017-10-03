@@ -20,8 +20,8 @@ started, using the service, working with add-on components, and getting help.
    common/common-front.rst
    overview/index.rst
    getting-started/index.rst
-   attribmapping-basics/index.rst
    config-3p-saml/index.rst
+   attribmapping-basics/index.rst
    administering/index.rst
    attribmap-reference/index.rst
    support/index.rst
