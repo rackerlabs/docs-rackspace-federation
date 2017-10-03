@@ -4,7 +4,6 @@
 Required SAML Attributes and Mapping Example
 ============================================
 
-.. Define |product name| in conf.py
 
 Required Values
 ~~~~~~~~~~~~~~~

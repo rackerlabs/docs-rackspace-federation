@@ -14,7 +14,7 @@ https://login.rackspace.com.
 2. Choose the **Identity Federation** tab at the top of the page.
 
 
-3. Click the **Add Identity Provider** tab.
+3. Click the **Add Identity Provider** button.
 
 Basic Information
 ~~~~~~~~~~~~~~~~~
