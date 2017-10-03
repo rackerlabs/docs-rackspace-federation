@@ -14,5 +14,5 @@ Some popular providers that have been tested for integration include:
 - Google Cloud Platform
 - SecureAuth
 
-(**Cat link to the setup for these here? What about linking to the product
-pages additionally?**)
+For specific guidelines for setting up some popular third party providers,
+see :ref:`index-configuring-3p-saml-ug`.

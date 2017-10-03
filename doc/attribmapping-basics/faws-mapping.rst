@@ -28,16 +28,17 @@ This example shows a basic policy with the required rule included:
             email: "{At(urn:oid:1.2.840.113549.1.9.1.1)}"
             expire: "{Pt(/saml2p:Response/saml2:Assertion/saml2:Conditions/@NotOnOrAfter[1])}"
             name: "{D}"
-            roles: "nova:admin"
+            roles:
+                - "nova:admin"
         faws:
             groups:
                 multiValue: true
                 value: "{Ats(http://schemas.xmlsoap.org/claims/Group)}"
 
-The highlighted lines indicate that any value associated with the SAML schema
-attribute ``http://schemas.xmlsoap.org/claims/Group`` will be assigned to the
-``faws/groups`` local value. If you use a different SAML attribute to provide a
-``groups`` value, or similar, substitute that attribute instead.
+The lines below ``faws`` indicate that any value associated with the SAML
+schema attribute ``http://schemas.xmlsoap.org/claims/Group`` will be assigned
+to the ``faws/groups`` local value. If you use a different SAML attribute to
+provide a ``groups`` value, or similar, substitute that attribute instead.
 
 Contact Fanatical AWS Support
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
