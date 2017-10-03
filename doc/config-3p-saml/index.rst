@@ -14,6 +14,7 @@ information about Attribute Mapping.
 
    config-adfs/index.rst
    config-okta/index.rst
-   config-secureauth/index.rst
    generic-3p-saml.rst
+..   config-secureauth/index.rst
+
 

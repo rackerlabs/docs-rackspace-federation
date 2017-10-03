@@ -4,14 +4,14 @@
 Configuring Okta
 ================
 
-These are the steps to setup a SAML integration to do federation with
-Rackspace.
+These are the steps to setup a SAML integration with Okta to work with
+|service|.
 
 
 1. Configure a new application integration and select 'SAML 2.0'
 
 
-(insert first screenshot here)
+.. image:: create_app_1.png
 
 
 Instructions on setting up SAML applications in Okta can be found here:
