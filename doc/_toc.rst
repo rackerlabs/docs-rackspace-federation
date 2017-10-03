@@ -4,5 +4,5 @@
    :includehidden:
    :maxdepth: 99
 
-   |product name| v# <self>
+   Rackspace Identity Federation v1 <self>
    index.rst
