@@ -4,17 +4,12 @@
 Configuring Okta
 ================
 
-Describe the use case. Link to any tasks required to complete the use case.
-You can use the task template to create a use case process. Each step in the
-use case process can link to a specific task topic. For example:
+These are the steps to setup a SAML integration to do federation with rackspace.
 
-1. :ref:`Task 1<task-xxx-ug>`
+1. Configure a new application integration and select 'SAML 2.0'
 
-   Result of task 1.
+(insert first screenshot here)
 
-#. :ref:`Task 2<task-xxx-ug>`.
+Instructions on setting up SAML applications in Okta can be found here: https://developer.okta.com/standards/SAML/setting_up_a_saml_application_in_okta
 
-   Result of task 2.
-
-   For an example of a topic that uses this template, see
-   :ref:`use-case-example`.
+2. Fill in the SAML information from Rackspaces metadata which is available here: https://login.rackspace.com/federate/sp.xml
