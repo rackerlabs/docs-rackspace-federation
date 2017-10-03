@@ -23,6 +23,6 @@ started, using the service, working with add-on components, and getting help.
    attribmapping-basics/index.rst
    config-3p-saml/index.rst
    administering/index.rst
+   attribmap-reference/index.rst
    support/index.rst
-   api-reference/index.rst
    common/common-end.rst

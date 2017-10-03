@@ -15,4 +15,6 @@ If monitoring is provided for the product, document its use here.
 
 
 For an example of a topic that describes how monitoring is
-implemented for a product, see :ref:`monitoring-example-ug`.
+implemented for a product, see
+
+.. COMMWNT ref monitoring-example-ug.
