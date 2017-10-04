@@ -22,7 +22,7 @@ name like ``groups`` and select a regex filter with the value
 |
 
 The following is an example Rackspace YAML ``.yml`` attribute mapping policy
-you can use when you configure your identity provider with Rackspace. This
+that you can use when you configure your identity provider with Rackspace. This
 example assumes you have a group named ``rackspace-billing`` with users you
 want to access Rackspace billing services using the ``billing:admin`` Rackspace
 role.
