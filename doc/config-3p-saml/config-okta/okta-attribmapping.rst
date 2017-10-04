@@ -21,10 +21,11 @@ name like ``groups`` and select a regex filter with the value
 
 |
 
-The following is an example Rackspace .yml attribute mapping policy you can use
-when you configure your identity provider with Rackspace. This assumes you have
-a group named "rackspace-billing" with users you want to access rackspace
-billing services using the 'billing:admin' rackspace role.
+The following is an example Rackspace YAML ``.yml`` attribute mapping policy
+that you can use when you configure your identity provider with Rackspace. This
+example assumes you have a group named ``rackspace-billing`` with users you
+want to access Rackspace billing services using the ``billing:admin`` Rackspace
+role.
 
 Notes:
 
@@ -78,5 +79,4 @@ Be sure to validate and modify the following items in your own policy |amp|:
 - The ``expire`` value/path
 - The ``email`` value/path
 
-More information on attribute mapping policies can be found here: <insert link
-to general docs for attribute mapping>
+|ampref|
