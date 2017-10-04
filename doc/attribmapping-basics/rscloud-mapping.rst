@@ -24,7 +24,9 @@ A basic example of an |amp| is below:
                email: "{At(http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress)}"
                expire: "PT12H"
                name: "{D}"
-               roles: "admin", "ticketing:admin"
+               roles:
+                    - "admin"
+                    - "ticketing:admin"
 
 In this example, we explicity assign the ``admin`` and ``ticketing:admin``
 roles to any users logging in using this |idp| and |amp|. (Refer to the
@@ -67,4 +69,4 @@ values to the local ``role`` value based on any matching scenarios. (The
 ``{0}`` indicator under ``roles`` means that the resultant value(s) of the
 first ``remote`` rule will be *subsituted* in its place.)
 
-For a complete guide to the |amp| language, see the TODO LINK TO JORGE GUIDE.
+|ampref|

@@ -4,10 +4,10 @@
 Getting Support
 ===============
 
-Rackspace offers 24x7x365 support, by phone, ticket, and chat; support options
-may be limited or defined by your service level.
+Rackspace generally offers 24x7x365 support, by phone, ticket, and chat;
+support options may be limited or defined by your service level.
 
-Customers using |product name| who have acccess to Support ticketing should
+Customers using |service| who have acccess to Support ticketing should
 file a Support ticket for support.
 
 If using phone support or live chat, please have available the primary

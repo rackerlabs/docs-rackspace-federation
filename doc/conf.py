@@ -117,7 +117,10 @@ rst_epilog = """
 .. |contract version| replace:: 1.0
 .. |product name| replace:: Rackspace Identity Federation
 .. |idp| replace:: Identity Provider
-.. |amp| replace:: attribute mapping policy
+.. |amp| replace:: Attribute Mapping Policy
+.. |ampref| replace:: For more examples and a complete guide to the
+                      Attribute Mapping Policy language, see the
+                      :ref:`attribmap-reference`.
 """
 
 # sphinxcontrib-versioning options

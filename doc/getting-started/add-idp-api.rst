@@ -4,9 +4,11 @@
 Adding an Identity Provider by using API
 ========================================
 
-It is recommended to use the Control Panel to add Identity Providers
-(see :ref:`add-idp-cp-gs-ug`), but advanced users may choose to use the
-Rackspace Identity API instead.
+.. note::
+
+    It is recommended to use the Control Panel to add Identity Providers
+    (see :ref:`add-idp-cp-gs-ug`), but advanced users may choose to use the
+    Rackspace Identity API instead.
 
 To use the API to create and manage your Identity Providers, see the
 `Identity Providers <https://developer.rackspace.com/docs/cloud-identity/v2/api-reference/identity-provider-operations/>`_

@@ -55,3 +55,13 @@ from your metadata:
 Updating your metadata will not change the **Login Domain** or **Description**
 you have provided.
 
+Updating the |amp|
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+To update the |amp| for your |idp|, upload a new YAML file using the **Update
+Policy File** link in the |idp| details page.
+
+The file must be valid YAML, and the file extension should be ``.yml`` or
+``.yaml``. To validate your YAML, you can use one of several YAML validation
+libraries or websites.
+
