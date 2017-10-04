@@ -72,7 +72,8 @@ Notes:
 
 Be sure to validate and modify the following items in your own policy |amp|:
 
-- The Okta groups users belong to that you want to map to specific Rackspace permissions.
+- The Okta groups users belong to that you want to map to specific Rackspace
+  permissions.
 - The ``expire`` value/path
 - The ``email`` value/path
 
