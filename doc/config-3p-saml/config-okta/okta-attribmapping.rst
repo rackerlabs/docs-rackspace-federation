@@ -40,7 +40,7 @@ Notes:
   assertion.
 
 
-.. code:: yaml
+.. code-block:: yaml
     ---
     mapping:
       rules:
