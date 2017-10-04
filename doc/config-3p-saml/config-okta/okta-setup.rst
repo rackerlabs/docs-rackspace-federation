@@ -38,7 +38,7 @@ SAML assertions.
 
 
 Instructions on setting up SAML applications in Okta can be found here:
-`https://developer.okta.com/standards/SAML/setting_up_a_saml_application_in_okta<https://developer.okta.com/standards/SAML/setting_up_a_saml_application_in_okta>`_
+https://developer.okta.com/standards/SAML/setting_up_a_saml_application_in_okta
 
 
 3. Download your Okta |idp| metadata by going to the new SAML applications
