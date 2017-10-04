@@ -11,13 +11,32 @@ For example, if you want to include all groups a user belongs to that have the w
 
 .. <insert screenshot 5> is this needed?
 
-1. ref to task 1 sample
 
-   Result of task 1.
+The following is an example .yml policy you can use when you configure your attribute mapping policy with rackspace. This assumes you have a group named "rackspace-billing" with users you want to access rackspace billing services using the 'billing:admin' rackspace role.
 
-2. ref to task 2 sample
-
-   Result of task 2.
-
-   For an example of a topic that uses this template, see
-
+.. code:: yaml
+    ---
+    mapping:
+      rules:
+        -
+          local:
+            faws:
+              groups:
+                multiValue: true
+                value:
+                  - "{Ats(groups)}"
+            user:
+              domain: "your_account_number_goes_here"
+              email: "{Pt(/saml2p:Response/saml2:Assertion/saml2:Subject/saml2:NameID)}"
+              expire: PT4H # this would configure a maximum session duration of 4 hours
+              name: "{D}"
+              roles:
+                - "{0}"
+          remote:
+            -
+              multiValue: true
+              path: |
+                  (
+                    if (mapping:get-attributes('groups')='rackspace-billing') then    'billing:admin' else ()
+                  )
+      version: RAX-1
