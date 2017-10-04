@@ -24,10 +24,8 @@ name like ``groups`` and select a regex filter with the value ``*rackspace*``.
 
 .. image:: create_app_5.png
 
-TODO: Gabe to REVISE this
 
-
-An example |amp| that demonstrates working with Okta defaults is below.
+The following is an example .yml policy you can use when you configure your attribute mapping policy with rackspace. This assumes you have a group named "rackspace-billing" with users you want to access rackspace billing services using the 'billing:admin' rackspace role.
 
 Notes:
 
@@ -41,32 +39,34 @@ Notes:
   in the |amp| language to point to the ``NameID`` attribute in the SAML
   assertion.
 
-.. code-block:: yaml
 
+.. code:: yaml
     ---
     mapping:
-    rules:
+      rules:
         -
-        local:
+          local:
+            faws:
+              groups:
+                multiValue: true
+                value:
+                  - "{Ats(groups)}"
             user:
-            domain: "DOMAIN HERE"
-            # Update to your Identity Domain from the Identity Provider details page
-            email: "{Pt(/saml2p:Response/saml2:Assertion/saml2:Subject/saml2:NameID)}"
-            expire: PT12H
-            # You may wish to update the expire value to a SAML provided value.
-            name: "{D}"
-            # This value will match to the SAML attribute "name" by default.
-            roles:
+              domain: "your_domain_id_goes_here"
+               # Update to your Identity Domain from the Identity Provider details page
+              email: "{Pt(/saml2p:Response/saml2:Assertion/saml2:Subject/saml2:NameID)}"
+              expire: PT4H
+              # this would configure a maximum session duration of 4 hours, you may wish to update the expire value to a SAML provided value
+              name: "{D}"
+              # This value will match to the SAML attribute "name" by default.
+              roles:
                 - "{0}"
-        remote:
+          remote:
             -
-            multiValue: true
-            path: |
-                (
-                    if (mapping:get-attributes('groups')='rax-medium-access-mycloud') then ('nova:admin', 'ticketing:admin') else (),
-                    if (mapping:get-attributes('groups')='rax-observer-mycloud') then 'billing:admin' else ()
-                )
-            # The groups specified here are examples. You should substitute your own groups
-    version: RAX-1
-
-
+              multiValue: true
+              path: |
+                  (
+                    if (mapping:get-attributes('groups')='rackspace-billing') then    'billing:admin' else ()
+                  )
+                  # The groups specified here are examples. You should substitute your own groups
+      version: RAX-1
