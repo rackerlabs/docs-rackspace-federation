@@ -19,8 +19,7 @@ name like ``groups`` and select a regex filter with the value
 
 .. image:: create_app_5.png
 
-
-
+|
 
 The following is an example Rackspace .yml attribute mapping policy you can use
 when you configure your identity provider with Rackspace. This assumes you have
@@ -69,7 +68,7 @@ Notes:
                  (
                    if (mapping:get-attributes'groups')='rackspace-billing')then    'billing:admin' else ()
                  )
-                 # The groups specified here are examples. You should substitute your own groups
+             # The groups specified here are examples. You should substitute your own groups
      version: RAX-1
 
 Be sure to validate and modify the following items in your own policy |amp|:
