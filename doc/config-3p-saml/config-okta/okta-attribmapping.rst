@@ -14,7 +14,7 @@ name like ``groups`` and select a regex filter with the value ``.*rackspace.*``.
 .. image:: create_app_5.png
 
 
-The following is an example Rackspace .yml attribute mapping policy policy you can use when you configure your Identity Provider with Rackspace. This assumes you have a group named "rackspace-billing" with users you want to access rackspace billing services using the 'billing:admin' rackspace role.
+The following is an example Rackspace .yml attribute mapping policy you can use when you configure your identity provider with Rackspace. This assumes you have a group named "rackspace-billing" with users you want to access rackspace billing services using the 'billing:admin' rackspace role.
 
 Notes:
 
@@ -43,10 +43,10 @@ Notes:
                  - "{Ats(groups)}"
            user:
              domain: "your_domain_id_goes_here"
-              # Update to your Identity Domainfrom the Identity Provider detailspage
+              # Update to your Identity Domain from the Identity Provider details page
              email: "{Pt(/saml2p:Response/saml2:Asertion/saml2:Subject/saml2:NameID)}"
              expire: PT4H
-             # this would configure a maximumsession duration of 4 hours, you maywish to update the expire value to aSAML provided value
+             # This would configure a maximum session duration of 4 hours, you may wish to update the expire value to a SAML provided value
              name: "{D}"
              # This value will match to the SAMLattribute "name" by default.
              roles:
@@ -58,7 +58,7 @@ Notes:
                  (
                    if (mapping:get-attributes'groups')='rackspace-billing')then    'billing:admin' else ()
                  )
-                 # The groups specified here areexamples. You should substituteyour own groups
+                 # The groups specified here are examples. You should substitute your own groups
      version: RAX-1
 
 Be sure to validate and modify the following items in your own policy |amp|:
@@ -67,4 +67,4 @@ Be sure to validate and modify the following items in your own policy |amp|:
 - The ``expire`` value/path
 - The ``email`` value/path
 
-More informaiton on attribute mapping policies can be found here: <insert general docs for attribute mapping here>
+More informaiton on attribute mapping policies can be found here: <insert link to general docs for attribute mapping here>
