@@ -20,6 +20,8 @@ name like ``groups`` and select a regex filter with the value
 .. image:: create_app_5.png
 
 
+
+
 The following is an example Rackspace .yml attribute mapping policy you can use
 when you configure your identity provider with Rackspace. This assumes you have
 a group named "rackspace-billing" with users you want to access rackspace
