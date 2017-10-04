@@ -52,7 +52,8 @@ Notes:
                 value:
                   - "{Ats(groups)}"
             user:
-              domain: "your_account_number_goes_here"
+              domain: "your_domain_id_goes_here"
+               # Update to your Identity Domain from the Identity Provider details page
               email: "{Pt(/saml2p:Response/saml2:Assertion/saml2:Subject/saml2:NameID)}"
               expire: PT4H 
               # this would configure a maximum session duration of 4 hours, you may wish to update the expire value to a SAML provided value
