@@ -13,11 +13,6 @@ These are the steps to setup a SAML integration with Okta to work with
 
 .. image:: create_app_1.png
 
-Instructions on setting up SAML applications in Okta can be found here:
-https://developer.okta.com/standards/SAML/setting_up_a_saml_application_in_okta
-
-
-
 
 
 2. Fill in the requested SAML information with Rackspace information.
@@ -42,6 +37,9 @@ SAML assertions.
      - https://login.rackspace.com/federate/acs
 
 
+Instructions on setting up SAML applications in Okta can be found here:
+`https://developer.okta.com/standards/SAML/setting_up_a_saml_application_in_okta<https://developer.okta.com/standards/SAML/setting_up_a_saml_application_in_okta>`_
+
 
 3. Download your Okta |idp| metadata by going to the new SAML applications
 settings and going to the "Sign On" section. Click the "Identity Provider
@@ -49,4 +47,3 @@ metadata" link to download the XML file that you will use to configure your
 |idp| with Rackspace.
 
 .. image:: idp_metadata.png
-
