@@ -41,32 +41,33 @@ Notes:
 
 
 .. code-block:: yaml
-    ---
-    mapping:
-      rules:
-        -
-          local:
-            faws:
-              groups:
-                multiValue: true
-                value:
-                  - "{Ats(groups)}"
-            user:
-              domain: "your_domain_id_goes_here"
-               # Update to your Identity Domain from the Identity Provider details page
-              email: "{Pt(/saml2p:Response/saml2:Assertion/saml2:Subject/saml2:NameID)}"
-              expire: PT4H
-              # this would configure a maximum session duration of 4 hours, you may wish to update the expire value to a SAML provided value
-              name: "{D}"
-              # This value will match to the SAML attribute "name" by default.
-              roles:
-                - "{0}"
-          remote:
-            -
-              multiValue: true
-              path: |
-                  (
-                    if (mapping:get-attributes('groups')='rackspace-billing') then    'billing:admin' else ()
-                  )
-                  # The groups specified here are examples. You should substitute your own groups
-      version: RAX-1
+
+   ---
+   mapping:
+     rules:
+       -
+         local:
+           faws:
+             groups:
+               multiValue: true
+               value:
+                 - "{Ats(groups)}"
+           user:
+             domain: "your_domain_id_goes_here"
+              # Update to your Identity Domainfrom the Identity Provider detailspage
+             email: "{Pt(/saml2p:Response/saml2:Asertion/saml2:Subject/saml2:NameID)}"
+             expire: PT4H
+             # this would configure a maximumsession duration of 4 hours, you maywish to update the expire value to aSAML provided value
+             name: "{D}"
+             # This value will match to the SAMLattribute "name" by default.
+             roles:
+               - "{0}"
+         remote:
+           -
+             multiValue: true
+             path: |
+                 (
+                   if (mapping:get-attributes'groups')='rackspace-billing')then    'billing:admin' else ()
+                 )
+                 # The groups specified here areexamples. You should substituteyour own groups
+     version: RAX-1
