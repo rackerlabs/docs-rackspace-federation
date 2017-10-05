@@ -32,4 +32,4 @@ products and services. For more information on Attribute Mapping
 see :ref:`attribmapping-basics-ug`, or :ref:`index-configuring-3p-saml-ug`
 for examples for specific third party providers.
 
-|amp|
+|ampref|

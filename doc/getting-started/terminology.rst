@@ -1,4 +1,4 @@
-.. terminology-gs-ug:
+.. _terminology-gs-ug:
 
 ===========
 Terminology
