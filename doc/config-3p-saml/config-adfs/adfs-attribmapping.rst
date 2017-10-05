@@ -11,7 +11,7 @@ belongs that will be mapped into a Rackspace role or permission.
 
 The following steps demonstrate attribute mapping for ADFS:
 
-1. Go to the Claim rules for the Rackspace Relying Party Trust that you 
+1. Go to the Claim rules for the Rackspace Relying Party Trust that you
 setup.
 
 .. image: ADFS_Step4_edited.png
