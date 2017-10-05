@@ -37,12 +37,12 @@ SAML assertions.
      - https://login.rackspace.com/federate/acs
 
 
-Instructions on setting up SAML applications in Okta can be found here:
+Instructions for setting up SAML applications in Okta can be found here:
 https://developer.okta.com/standards/SAML/setting_up_a_saml_application_in_okta
 
 
 3. Download your Okta |idp| metadata by going to the new SAML applications
-settings and going to the "Sign On" section. Click the "Identity Provider
+settings and then going to the "Sign On" section. Click the "Identity Provider
 metadata" link to download the XML file that you will use to configure your
 |idp| with Rackspace.
 
