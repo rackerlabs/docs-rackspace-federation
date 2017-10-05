@@ -30,6 +30,6 @@ The default |amp| **must** be customized to specific values
 before your users log in or are able to use Rackspace
 products and services. For more information on Attribute Mapping
 see :ref:`attribmapping-basics-ug`, or :ref:`index-configuring-3p-saml-ug`
-for examples for specific 3rd party providers.
+for examples for specific third party providers.
 
 |amp|
