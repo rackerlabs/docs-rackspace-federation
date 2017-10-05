@@ -5,13 +5,13 @@ Logging In
 ==========
 
 Once your |idp| has been created, you can test your setup by
-visiting `login.rackspace.com <https://login.rackspace.com/>`_ and
+visiting `login.rackspace.com <https://login.rackspace.com/>`_, and
 clicking the link titled **Use your organization's credentials to log in**,
 or bookmark `https://login.rackspace.com/federate <https://login.rackspace.com/federate>`_.
 
-The following steps should occur:
+Perform the following steps:
 
-1. Enter your email address and click **Next**.
+1. Enter your email address, and click **Next**.
 #. You should be redirected to your third party SAML provider login page.
 #. After submitting your credentials, you should be successfully logged in and
    redirected back to the Rackspace Control Panel.
