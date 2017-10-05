@@ -26,6 +26,8 @@ Attribute and an outgoing claim type of "Group".
 
 .. image:: claims_groups_7.png
 
+|
+
 To learn more about how to customize how you include
 Active Directory group membership in your SAML attributes, see
 `https://msdn.microsoft.com/en-us/library/ff359101.aspx
@@ -46,7 +48,7 @@ Notes:
 - Validate that any values being mapped to ``email`` and ``expire`` are
   properly specified for your specific SAML attributes or assertions. For
   example, in policy below, ``email`` is being set using the
-  ``path``/``"{Pt}`` syntax in the |amp| language to point to the ``NameID``
+  ``path``/``"{Pt}"`` syntax in the |amp| language to point to the ``NameID``
   attribute in the SAML assertion.
 
 
