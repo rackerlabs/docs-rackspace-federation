@@ -4,14 +4,15 @@
 Attribute Mapping for ADFS
 ==========================
 
-If you want both the groups that a user belongs to appear in the SAML
-attributes and the assertions to be sent to Rackspace (so they can be
-mapped into permissions, you should include any groups to which a user
-belongs that will be mapped into a Rackspace role or permission.
+The normal method for mapping ADFS users to Rackspace roles/permissions is to
+use ADFS Groups. This guide will give an example of setting up your |amp| to
+send both the ADFS Groups to which users belong, and user information as SAML
+assertions for proper mapping.
+
 
 The following steps demonstrate attribute mapping for ADFS:
 
-1. Go to the Claim rules for the Rackspace Relying Party Trust that you 
+1. Go to the Claim rules for the Rackspace Relying Party Trust that you
 setup.
 
 .. image: ADFS_Step4_edited.png
@@ -26,7 +27,7 @@ Attribute and an outgoing claim type of "Group".
 .. image:: claims_groups_7.png
 
 To learn more about how to customize how you include
-active directory group membership in your SAML attributes, see
+Active Directory group membership in your SAML attributes, see
 `https://msdn.microsoft.com/en-us/library/ff359101.aspx
 <https://msdn.microsoft.com/en-us/library/ff359101.aspx>`_
 
@@ -70,6 +71,7 @@ Notes:
              # This value will match to the SAML attribute "name" by default.
              roles:
                - "{0}"
+               # This substitution states to take the value of the return from the first element of the remote role
          remote:
            -
              multiValue: true
