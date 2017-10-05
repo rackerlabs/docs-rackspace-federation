@@ -12,24 +12,26 @@ These are the steps to setup an ADFS relying party trust with Rackspace.
 
 |
 
-2. You can import the rackspace metadata by using the url
+2. You can import the Rackspace metadata by using the url
 `https://login.rackspace.com/federate/sp.xml
 <https:login.rackspace.com/federate/sp.xml>`_ or by downloading the
-``sp.xml`` metadata file locally and then uploading it in ADFS.
+`https://login.rackspace.com/federate/sp.xml
+<https:login.rackspace.com/federate/sp.xml>`_ metadata file locally and then
+uploading it in ADFS.
 
 .. image:: ADFS_step_2.png
 
 |
 
-3. Once you have created the rackspace relying party trust, edit the claim
+3. Once you have created the Rackspace relying party trust, edit the claim
 rules for that trust.
 
 .. image:: ADFS_Step4_edited.png
 
 |
 
-4. Create a claim rule for email, and use the User-Principle-Name as an outgoing
-claim type.
+4. Create a claim rule for email, and use the User-Principle-Name as an
+outgoing claim type.
 
 .. image:: email.png
 

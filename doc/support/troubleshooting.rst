@@ -15,17 +15,18 @@ Ensure that:
 
 - Your metadata XML file was downloaded correctly and was not corrupted in
   any way.
-- Your Login Domain is unique. For example, `mycompany.com` can't be used 
-  for more than one |idp|, even if the domains are in different Rackspace 
+- Your Login Domain is unique. For example, `mycompany.com` can't be used
+  for more than one |idp|, even if the domains are in different Rackspace
   accounts.
 
 
 Problems Logging In
 ~~~~~~~~~~~~~~~~~~~
 
-After entering your email address into `login.rackspace.com/federate <https://login.rackspace.com/federate>`_, 
-you aren't successfully redirected to your identity system login or you 
-aren't redirected back to Rackspace after a successful credential entry.
+After entering your email address into `login.rackspace.com/federate
+<https://login.rackspace.com/federate>`_, you aren't successfully redirected to
+your identity system login or you aren't redirected back to Rackspace after a
+successful credential entry.
 
 Consider the following:
 
@@ -48,7 +49,7 @@ services you expect.
 
 Consider the following:
 
-- Review your |amp| to ensure you are assigning values to the `roles` 
+- Review your |amp| to ensure you are assigning values to the `roles`
   parameter. Look at examples in :ref:`index-configuring-3p-saml-ug`, and
   :ref:`attribmapping-basics-ug`. |ampref|
 - If using Fanatical Support for AWS, review the Fanatical Support for AWS
