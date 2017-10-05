@@ -30,8 +30,8 @@ rules for that trust.
 
 |
 
-4. Create a claim rule for email, and use the User-Principle-Name as an
-outgoing claim type.
+4. Create an "Issuance Transform Rules" claim rule for email, and use the
+User-Principle-Name as an outgoing claim type.
 
 .. image:: email.png
 
