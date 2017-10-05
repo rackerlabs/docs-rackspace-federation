@@ -6,12 +6,12 @@ Attribute Mapping for ADFS
 
 If you want the groups a user belongs to appear in the SAML attributes and
 assertions sent to Rackspace so they can be mapped into permissions, you will
-need to include any groups a user belongs to that need to
-Rackspace permissions.
+need to include any groups a user belongs to that will be mapped into a
+Rackspace role or permission.
 
 1. Go to the Claim rules for the Rackspace Relying Party Trust you setup.
 
-:: image: ADFS_Step4_edited.png
+.. image: ADFS_Step4_edited.png
 
 |
 
