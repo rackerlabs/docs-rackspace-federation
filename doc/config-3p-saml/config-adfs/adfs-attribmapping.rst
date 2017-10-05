@@ -4,12 +4,15 @@
 Attribute Mapping for ADFS
 ==========================
 
-If you want the groups a user belongs to appear in the SAML attributes and
-assertions sent to Rackspace so they can be mapped into permissions, you will
-need to include any groups a user belongs to that will be mapped into a
-Rackspace role or permission.
+If you want both the groups that a user belongs to appear in the SAML
+attributes and the assertions to be sent to Rackspace (so they can be
+mapped into permissions, you should include any groups to which a user
+belongs that will be mapped into a Rackspace role or permission.
 
-1. Go to the Claim rules for the Rackspace Relying Party Trust you setup.
+The following steps demonstrate attribute mapping for ADFS:
+
+1. Go to the Claim rules for the Rackspace Relying Party Trust that you 
+setup.
 
 .. image: ADFS_Step4_edited.png
 
@@ -22,16 +25,16 @@ Attribute and an outgoing claim type of "Group".
 
 .. image:: claims_groups_7.png
 
-You can read more about claims here should you want to customize how you include
-active directory group membership in your SAML attributes further
+To learn more about how to customize how you include
+active directory group membership in your SAML attributes, see
 `https://msdn.microsoft.com/en-us/library/ff359101.aspx
 <https://msdn.microsoft.com/en-us/library/ff359101.aspx>`_
 
-The following is an example Rackspace YAML ``.yml`` attribute mapping policy
+The following example shows a Rackspace YAML ``.yml`` attribute mapping policy
 that you can use when you configure your identity provider with Rackspace. This
-example assumes you have a group named ``rackspace-billing`` with users you
-want to access Rackspace billing services using the ``billing:admin`` Rackspace
-role.
+example assumes you have a group named ``rackspace-billing`` with users that
+you want to access Rackspace billing services using the ``billing:admin``
+Rackspace role.
 
 Notes:
 
@@ -40,10 +43,10 @@ Notes:
 - Remember to update *at a minimum* the ``domain`` value to your Identity
   Domain from the |idp| details page.
 - Validate that any values being mapped to ``email`` and ``expire`` are
-  properly specified for your specific SAML attributes/assertions. For example,
-  in policy below, ``email`` is being set using the ``path``/``"{Pt}`` syntax
-  in the |amp| language to point to the ``NameID`` attribute in the SAML
-  assertion.
+  properly specified for your specific SAML attributes or assertions. For
+  example, in policy below, ``email`` is being set using the
+  ``path``/``"{Pt}`` syntax in the |amp| language to point to the ``NameID``
+  attribute in the SAML assertion.
 
 
 .. code-block:: yaml
