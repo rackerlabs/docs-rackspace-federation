@@ -4,28 +4,27 @@
 Attribute Mapping for Okta
 ==========================
 
-If you want the groups a user belongs to appear in the SAML attributes and
-assertions sent to Rackspace so they can be mapped into permissions, you may
-need to customize the group attribute statements Okta uses to include group
-membership. You can do this while configuring the SAML application in the
-**Group Attribute Statements** or edit an existing
-application by going to your Admin panel and modifying the
-**Group Attribute Statements**.
+If you want the groups that a user belongs to appear in the SAML attributes and
+the assertions to be sent to Rackspace so that they can be mapped into permissions,
+you might need to customize the group attribute statements Okta uses to include group
+membership. You can do this at the same time that you configure the SAML application
+in the **Group Attribute Statements** or edit an existingapplication by going to your
+Admin panel and modifying the **Group Attribute Statements**.
 
-For example, if you want to include all groups a user belongs to which have the
+For example, if you want to include all groups that a user belongs to with the
 word ``rackspace`` in your SAML assertions, add a field with an appropriate
-name like ``groups`` and select a regex filter with the value
+name such as ``groups`` and then select a regex filter with the value
 ``.*rackspace.*``.
 
 .. image:: create_app_5.png
 
 |
 
-The following is an example Rackspace YAML ``.yml`` attribute mapping policy
+The following example shows a Rackspace YAML ``.yml`` attribute mapping policy
 that you can use when you configure your identity provider with Rackspace. This
-example assumes you have a group named ``rackspace-billing`` with users you
-want to access Rackspace billing services using the ``billing:admin`` Rackspace
-role.
+example assumes that you have a group named ``rackspace-billing`` with users you
+want to access Rackspace billing services by using the ``billing:admin``
+Rackspace role.
 
 Notes:
 
@@ -74,7 +73,7 @@ Notes:
 
 Be sure to validate and modify the following items in your own policy |amp|:
 
-- The Okta groups users belong to that you want to map to specific Rackspace
+- The Okta groups that users belong to and which you want to map to specific Rackspace
   permissions.
 - The ``expire`` value/path
 - The ``email`` value/path
