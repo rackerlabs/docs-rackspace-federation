@@ -4,24 +4,29 @@
 Configuring ADFS
 ================
 
-Describe the use case. Link to any tasks required to complete the use case.
-You can use the task template to create a use case process. Each step in the
-use case process can link to a specific task topic. For example:
+These are the steps to setup an ADFS relying party trust with Rackspace.
 
-.. COMMENT ref Task 1<task1-adfssu-ug>
-.. COMMENT ref Task 2<task2-adfssu-ug>
+1. Click on the 'Add Relying Party Trust' in your ADFS Management Console.
 
-1. ref to task 1 sample
+.. image:: adfs_1_add_trust.png
 
-   Result of task 1.
+2. You can import the rackspace metadata via the url
+`https://login.rackspace.com/federate/sp.xml
+<https:login.rackspace.com/federate/sp.xml>`_ or by downloading the
+``sp.xml`` metadata file locally and uploading it in ADFS.
 
-#. ref to task 2 sample
+.. image:: ADFS_step_2.png
 
-   Result of task 2.
+3. Once you have created the rackspace relying party trust, edit the claim
+rules for that trust.
 
-   For an example of a topic that uses this template, see
+.. image:: ADFS_Step4_edited.png
 
-.. COMMENT   ref use-case-example.
+4. Create a claim rule for email and use the User-Principle-Name as an outgoing
+claim type.
 
-Testing Another Header
-~~~~~~~~~~~~~~~~~~~~~~
+.. image:: email.png
+
+5. Create outgoing claim of type Name ID.
+
+.. image:: name_id.png
