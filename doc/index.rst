@@ -17,6 +17,7 @@ started, using the service, working with add-on components, and getting help.
 .. toctree::
    :maxdepth: 1
 
+   Rackspace Federation <self>
    common/common-front.rst
    overview/index.rst
    gettingstarted/index.rst
