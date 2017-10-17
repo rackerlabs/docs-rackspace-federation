@@ -1,25 +1,26 @@
 .. _add-idp-cp-gs-ug:
 
-================================================
-Adding an Identity Provider in the Control Panel
-================================================
+=============================================
+Add an Identity Provider in the Control Panel
+=============================================
 
-To add an |idp|, log in to your Rackspace control panel by browsing to
+To add an |idp|, log in to the Rackspace Control Panel by browsing to
 https://login.rackspace.com.
 
-1. Click on your username in the upper right area of the navigation bar, and
+1. Click your username in the upper right area of the navigation bar, and
    select **User Management** from the dropdown menu. Alternately, browse
-   directly to to the `Account Management <https://account.rackspace.com/>`_ page in the Rackspace Control Panel.
+   directly to the `Account Management <https://account.rackspace.com/>`_ page
+   in the Rackspace Control Panel.
 
 2. Choose the **Identity Federation** tab at the top of the page.
 
-
 3. Click the **Add Identity Provider** button.
 
-Basic Information
+Basic information
 ~~~~~~~~~~~~~~~~~
 
-Each |idp| should have a unique **Description** and **Login Domain**.
+Each |idp| should have a unique **Description** and **Login Domain**.  The
+following table provides descriptions of these items:
 
 .. list-table::
    :widths: 30 70
@@ -28,26 +29,25 @@ Each |idp| should have a unique **Description** and **Login Domain**.
    * - Item
      - Description
    * - Description
-     - Provide a description for your |idp|. This is the description will
-       show in lists and other areas in the Control Panel.
+     - Provide a description for your |idp|. This description is displayed in
+       lists and in other areas in the Control Panel.
    * - Login Domain
-     - Provide a valid email domain, such as *mycompany.com*. Users will
-       provide their email address during the federated login process, and
-       their email domain will be used to identify which |idp| they should
-       be redirected to to complete logging in.
+     - Provide a valid email domain, such as *mycompany.com*. Users provide
+       their email address during the federated login process, and their email
+       domain is used to identify the |idp| to which they are redirected to
+       complete logging in.
 
-Uploading SAML Metadata
+Uploading SAML metadata
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-Next, you will need to upload an XML file containing required metadata to
+Next, you need to upload an XML file containing the required metadata to
 complete the setup of your |idp|. Most identity systems have a method for
-generating this metadata file automatically, or after some basic configuration
-has been completed.
+generating the metadata file either automatically or after some basic
+configuration has been completed.
 
-See the section :ref:`index-configuring-3p-saml-ug` for general
-and provider specific guidance on configuring your identity system and
-retrieving your metadata XML file.
+For general and provider-specific guidance on configuring your identity system
+and retrieving your metadata XML file, see the section
+:ref:`index-configuring-3p-saml-ug`.
 
-
-When your XML file is attached, click the **Create Identity Provider** button
-to complete the process.
+After your XML file is attached, click **Create Identity Provider** to complete
+the process.
