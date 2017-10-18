@@ -40,7 +40,7 @@ services by using the ``billing:admin`` Rackspace role.
 
 Notes:
 
-- You should change the ``groups`` specified in the example match your
+- You should change the ``groups`` specified in the example to match your
   configured outgoing claim type for the active directory groups.
 - At a minimum, remember to update the example's ``domain`` value to your
   Identity Domain, which is found on the |idp| details page.

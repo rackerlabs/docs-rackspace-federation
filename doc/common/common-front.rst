@@ -13,7 +13,7 @@ protocol.
 
 |product name| is supported for users of Rackspace Cloud and Fanatical
 Support for AWS. Although the feature will be enhanced to include all customers
-in the future, dedicated Hosting accounts are not currently supported.
+in the future, Dedicated Hosting accounts are not currently supported.
 
 
 Using |product name| provides the following benefits:
