@@ -1,24 +1,26 @@
 .. _getting-support-ug:
 
 ===============
-Getting Support
+Getting support
 ===============
 
-Rackspace generally offers 24x7x365 support, by phone, ticket, and chat;
-support options may be limited or defined by your service level.
+Rackspace generally offers 24x7x365 support, by phone, ticket, and chat.
+Support options might be limited or defined by your service level.
 
-Customers using |service| who have acccess to Support ticketing should
-file a Support ticket for support.
+Customers using |service| who have access to support ticketing should
+file a support ticket for support.
 
-If using phone support or live chat, please have available the primary
+If you are using phone support or live chat, have available the primary
 username, or a non-federated username on your account, for purposes of identity
 verification.
 
-Have the following information available when contacting Support:
+Have the following information available when contacting support:
 
 - Account number for which you set up the |idp|
-- The third party SAML provider being used
-- The Login Domain you set up for your |idp|
-- Browser(s) accessing the Control Panel and Login portals
-- Any |amp| changes or versions you have created
-- Any error messages encountered during |idp| setup or logging in
+- The third-party SAML provider that you are using
+- The Login Domain that you set up for your |idp|
+- Browser or browsers that you use to access the Control Panel and Login
+  portals
+- Any |amp| changes or versions that you have created
+- Any error messages that you encountered during |idp| set up or when logging
+  in
