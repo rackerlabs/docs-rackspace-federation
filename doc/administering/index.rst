@@ -1,12 +1,11 @@
 .. _index-administering-ug:
 
-=============
-Administering
-=============
+============================
+Administering |product name|
+============================
 
 
-This section provides information about administering the |product name|
-feature.
+This section provides information about administering |product name|.
 
 .. toctree::
    :maxdepth: 1

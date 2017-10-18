@@ -1,26 +1,25 @@
 .. generic-3p-saml-ug:
 
 ====================
-Other SAML Providers
+Other SAML providers
 ====================
 
-|service| is designed to be compatible with any SAML 2.0 based identity
-provider. The information below provides basic settings needed to
-configure a third party SAML provider.
+|service| is designed to be compatible with any SAML 2.0-based identity
+provider. The following information provides basic settings that are needed to
+configure a third-party SAML provider.
 
-SAML Configuration Items
+SAML configuration items
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-SAML providers will require one or more of the following links or URLS to
-configure how to connect to Rackspace and redirect during login sessions.
+SAML providers require one or more of the following links or URLS to
+configure the connection to Rackspace and to redirect during login sessions.
 
-The default values are listed below, but can also be retrieved programmatically
-from the Rackspace service provider metadata file at:
-`https://login.rackspace.com/federate/sp.xml
-<https:login.rackspace.com/federate/sp.xml>`_
+The metadata file contains the latest certificate for signing SAML assertions.
 
-The metadata file will also always contain the latest certificate for signing
-SAML assertions.
+The default values can be retrieved programmatically from the Rackspace service
+provider metadata file at `https://login.rackspace.com/federate/sp.xml
+<https:login.rackspace.com/federate/sp.xml>`_ and are shown in the following
+list:
 
 .. list-table::
    :widths: 30 70
@@ -37,12 +36,12 @@ SAML assertions.
      - https://login.rackspace.com/federate/sls
 
 
-SAML Attribute Mapping
+SAML attribute mapping
 ~~~~~~~~~~~~~~~~~~~~~~
 
-You will need to set up an |amp| to ensure that the SAML attributes your
+You need to set up an |amp| to ensure that the SAML attributes that your
 identity provider sends during the SAML login process are mapped to the
-required/desired values for Rackspace.
+required or desired values for Rackspace.
 
-An overview of Attribute Mapping and example mapping policies can be found at
+You can find an overview of Attribute Mapping and example mapping policies at
 :ref:`attribmapping-basics-ug`.

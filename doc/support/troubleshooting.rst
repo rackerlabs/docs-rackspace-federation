@@ -8,65 +8,68 @@ If you encounter issues when working with |service|, use the information
 in this section to help you troubleshoot.
 
 
-Problems Creating an Identity Provider
+Problems creating an Identity Provider
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Ensure that:
+Check the following items:
 
-- Your metadata XML file was downloaded correctly and was not corrupted in
-  any way.
-- Your Login Domain is unique. For example, `mycompany.com` can't be used
+- Was your metadata XML file downloaded correctly and not corrupted in
+  any way?
+- Is your Login Domain unique? For example, `mycompany.com` can't be used
   for more than one |idp|, even if the domains are in different Rackspace
   accounts.
 
 
-Problems Logging In
+Problems logging in
 ~~~~~~~~~~~~~~~~~~~
 
 After entering your email address into `login.rackspace.com/federate
-<https://login.rackspace.com/federate>`_, you aren't successfully redirected to
-your identity system login or you aren't redirected back to Rackspace after a
-successful credential entry.
+<https://login.rackspace.com/federate>`_, were you not redirected to your
+identity system login or were you not redirected back to Rackspace after a
+successful credential entry?
 
-Consider the following:
+If not, consider the following:
 
 - Check the Login Domain for your |idp| to ensure that you have set the
   correct one and that it is a valid email address domain. (For example,
   ``mycompany.com``, not ``user@mycompany.com``).
 - Try updating your |idp| metadata by re-downloading the metadata file from
-  your third party SAML provider and updating it in the |idp| details
+  your third-party SAML provider and updating it in the |idp| details
   page.
-- Verify the Rackspace federation details you entered into your third party
-  SAML provider. Examples can be found in the document in
+- Verify the Rackspace federation details that you entered into your
+  third-party SAML provider. For examples, see
   :ref:`index-configuring-3p-saml-ug`.
 
 
-Problems with Roles/Access
-~~~~~~~~~~~~~~~~~~~~~~~~~~
+Problems with roles or access
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-After successfully logging in, you are unable to access the products or
-services you expect.
+After successfully logging in, were you able to access the products or
+services that you expected to find?
 
-Consider the following:
+Consider the following items:
 
 - Review your |amp| to ensure you are assigning values to the `roles`
   parameter. Look at examples in :ref:`index-configuring-3p-saml-ug`, and
   :ref:`attribmapping-basics-ug`. |ampref|
-- If using Fanatical Support for AWS, review the Fanatical Support for AWS
-  section in :ref:`faws-mapping-ug`. If that looks correct, contact your
-  Fanatical Support for AWS account/support team for further guidance.
+- If you are using Fanatical Support for AWS, review the **Fanatical Support
+  for AWS** section in :ref:`faws-mapping-ug`. If things look correct, contact
+  your **Fanatical Support for AWS** account manager or support team for
+  further guidance.
 
 
-Other Issues or Questions
+Other issues or questions
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Contact Rackspace Support as covered in :ref:`getting-support-ug`.
 
-Have the following information available when contacting Support:
+Have the following information available when contacting support:
 
 - Account number for which you set up the |idp|
-- The third party SAML provider being used
-- The Login Domain you set up for your |idp|
-- Browser(s) accessing the Control Panel and Login portals
-- Any |amp| changes or versions you have created
-- Any error messages encountered during |idp| setup or logging in
+- The third-party SAML provider being used
+- The Login Domain that you set up for your |idp|
+- Browser or browsers that you use to access the Control Panel and Login
+  portals
+- Any |amp| changes or versions that you have created
+- Any error messages that you encountered during |idp| set up or when logging
+  in

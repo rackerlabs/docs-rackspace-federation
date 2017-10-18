@@ -5,7 +5,7 @@ Overview
 ========
 
 This section describes the features, architecture, and components of
-the |product name| product.
+|product name|.
 
 .. toctree::
    :maxdepth: 2

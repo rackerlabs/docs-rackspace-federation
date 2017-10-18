@@ -1,12 +1,12 @@
 .. _index-configuring-3p-saml-ug:
 
-======================================
-Configuring Third Party SAML Providers
-======================================
+====================================
+Configure third-Party SAML providers
+====================================
 
 This section provides information about configuring third-party SAML
 providers with |service|, including the setup considerations and
-information about Attribute Mapping.
+information about attribute mapping.
 
 
 .. toctree::

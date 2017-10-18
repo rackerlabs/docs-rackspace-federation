@@ -4,10 +4,10 @@
 Active Directory Federation Services
 ====================================
 
-This guide will provide common steps for setting up Active Directory Federation
-Services as a SAML provider for |service|. While the defaults may work for many
-situations, please consult the Active Directory Federation Services
-documentation for any implementation specific details.
+This guide provides common steps for setting up Active Directory Federation
+Services (ADFS) as a SAML provider for |service|. While the defaults might work
+in many situations, please consult the ADFS documentation for any
+implementation-specific details.
 
 
 .. toctree::

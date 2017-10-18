@@ -7,15 +7,16 @@
 *Last updated:* |today|
 
 |service| enables customers to configure their corporate security and identity
-systems to let their employees use their regular company credentials to
+systems to allow their employees to use their regular company credentials to
 authenticate to Rackspace accounts.
 
-This user guide provides information related to |product name|, such as getting
-started, using the service, working with add-on components, and getting help.
+This user guide provides information related to |product name|, including
+getting started, using the service, working with add-on components, and getting
+help.
 
 
 .. toctree::
-   :maxdepth: 1
+   :maxdepth: 3
 
    common/common-front.rst
    overview/index.rst
