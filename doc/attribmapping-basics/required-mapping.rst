@@ -1,16 +1,15 @@
 .. _required-mapping-ug:
 
-============================================
-Required SAML Attributes and Mapping Example
-============================================
+Required SAML attributes and mapping example
+--------------------------------------------
 
 
-Required Values
+Required values
 ~~~~~~~~~~~~~~~
 
-Your |amp| is **required** to contain:
+Your |amp| must contain:
 
-- a minimum of one **local** rule
+- a minimum of one local rule
 - static or dynamically populated values for the following fields:
 
 .. list-table::
@@ -20,25 +19,25 @@ Your |amp| is **required** to contain:
    * - Field
      - Description
      - Format
-     - Common Values
+     - Common values
    * - **domain**
-     - The Identity/Account Domain that the |idp| is authorized to log users
+     - The Identity or Account Domain that the |idp| is authorized to log users
        into.
      - Alphanumeric string
-     - **MUST** be set to your Identity Domain. The
+     - MUST be set to your Identity Domain. The
        domain is listed on the Identity Provider details page for your
        |idp|.
    * - **name**
      - The username of your user as provided by your identity system.
      - Alphanumeric string
-     - | SAML Attributes:
+     - | SAML attributes:
        |
        |  **NameID** (persistent type preferred)
        |  **urn:oid:1.3.6.1.4.1.5923.1.1.1.6**
        |  **http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name**
    * - **email**
      - The email address of your user as provided by your identity system.
-     - RFC valid email address
+     - RFC-valid email address
      - | SAML Attributes:
        |
        |  **email**
@@ -46,9 +45,9 @@ Your |amp| is **required** to contain:
        |  **urn:oid:1.2.840.113549.1.9.1.1**
        |  **0.9.2342.19200300100.1.3"**
    * - **roles**
-     - The product RBAC (role based access control) roles you want the user
-       to be assigned. (Supported for Rackspace Cloud products only at this
-       time.)
+     - The product RBAC (role-based access control) roles that you want
+       assigned to the user. (Supported for Rackspace Cloud products only at
+       this time.)
      - YAML array of alphanumeric strings
      - | **Example:**
        |
@@ -68,15 +67,15 @@ Your |amp| is **required** to contain:
        |   **SessionNotOnOrAfter**
        |   **NotOnOrAfter**
 
-Setting Values with Attribute Mapping
+Setting values with Attribute Mapping
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-There are a number of ways to set values either explicitly or by using
-|amp| language features such as *substitions* or XPath.
+You can set values either explicitly or by using |amp| language features such
+as substitions or XPath.
 
-The example syntax below uses in-line substitutions in the **local** rule to
-concisely retrieve values and simplify our policy. There are multiple
-additional ways to accomplish the same (or more complex) scenarios.  |ampref|
+The following example syntax uses in-line substitutions in the local rule to
+concisely retrieve values and simplify the policy. There are additional ways to
+accomplish the same (or more complex) scenarios.  |ampref|
 
 .. list-table::
    :header-rows: 1
@@ -85,17 +84,17 @@ additional ways to accomplish the same (or more complex) scenarios.  |ampref|
      - Description
      - Example
    * - Default
-     - Retrieves the value by looking for common locations/labels for the
+     - Retrieves the value by looking for common locations or labels for the
        field. Note that at this time, only an attribute with the same name as
-       the field will be matched: i.e. ``name: "{D}"`` will match the attribute
-       with the name ``name``.
+       the field will be matched: for example, ``name: "{D}"`` will match the
+       attribute with the name ``name``.
      - ``name: "{D}"``
    * - Explicit
      - Directly input the values into the |amp| fields. This is most useful for
-       values that will not change for any federated user logging in, as they
-       will be applied to **all** federated users for this |idp|.
+       values that do not change for any federated user logging in, because
+       they are applied to **all** federated users for this |idp|.
      - ``expire: "PT12H"``
-   * - Attribute Matching
+   * - Attribute matching
      - Uses XPath to match a SAML attribute in your SAML assertion by name,
        returning one or more values.
      - | Single value return (``At``): ``email: "{At(urn:oid:1.2.840.113549.1.9.1.1)}"``
@@ -104,9 +103,9 @@ additional ways to accomplish the same (or more complex) scenarios.  |ampref|
        |   ``groups:``
        |          ``multiValue: true``
        |               ``value: "{Ats(http://schemas.xmlsoap.org/claims/Group)}"``
-   * - Path Matching
+   * - Path matching
      - Uses XPath to match the path to a value in your SAML assertion using the
-       XML hierarchy/schema.
+       XML hierarchy or schema.
      - | ``"{Pt(/saml2p:Response/saml2:Assertion/saml2:Conditions/@NotOnOrAfter[1])}"``
        |
        | Retrieves the value of ``NotOnOrAfter``
@@ -114,13 +113,13 @@ additional ways to accomplish the same (or more complex) scenarios.  |ampref|
 
 
 
-Example Policy with Required Attributes
+Example policy with required attributes
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-This is an example |amp| using explicit and SAML-provided values for mapping
+The following |amp| example uses explicit and SAML-provided values for mapping
 the required fields. Note that this is a basic example, and more customization
-may be required in some cases. For considerations for specific third party SAML
-providers, see :ref:`index-configuring-3p-saml-ug`.
+might be required in some cases. For considerations for specific-third party
+SAML providers, see :ref:`index-configuring-3p-saml-ug`.
 
 |ampref|
 

@@ -1,12 +1,11 @@
 .. _full-roles-ug:
 
-===============================
-Rackspace Cloud Roles Reference
-===============================
+Rackspace Cloud roles reference
+-------------------------------
 
-This list provides a full reference for the roles that can be assigned to
-users during login using Attribute Mapping. Refer to the product and role
-for the capabilities you want to provide.
+The following table provides a full reference for the roles that can be
+assigned to users during login using Attribute Mapping. Refer to the product
+and role for the capabilities that you want to provide.
 
 .. list-table::
    :widths: 30 50 30
@@ -15,7 +14,7 @@ for the capabilities you want to provide.
    * - Product
      - Description
      - Role name
-   * - **Global RBAC roles** (applies to all products)
+   * - Global RBAC roles (applies to all products)
      - Administrator (full control) for any Cloud product
      - admin
    * -

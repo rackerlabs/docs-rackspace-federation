@@ -1,43 +1,41 @@
 .. _okta-attribmapping-ug:
 
-==========================
 Attribute Mapping for Okta
-==========================
+--------------------------
 
-If you want the groups a user belongs to appear in the SAML attributes and
-assertions sent to Rackspace so they can be mapped into permissions, you may
-need to customize the group attribute statements Okta uses to include group
+If you want the user's groups to appear in the SAML attributes and assertions
+sent to Rackspace (so that they can be mapped into permissions), you might need
+to customize the group attribute statements that Okta uses to include group
 membership. You can do this while configuring the SAML application in the
-**Group Attribute Statements** or edit an existing
-application by going to your Admin panel and modifying the
-**Group Attribute Statements**.
+**Group Attribute Statements** or while editing an existing application by
+going to the Admin panel and modifying the **Group Attribute Statements**.
 
-For example, if you want to include all groups a user belongs to which have the
+For example, if you want to include all the user's groups that have the
 word ``rackspace`` in your SAML assertions, add a field with an appropriate
-name like ``groups`` and select a regex filter with the value
+name like ``groups``, and select a regex filter with the value
 ``.*rackspace.*``.
 
-.. image:: create_app_5.png
+.. image:: ../../_images/Config-okta/create_app_5.png
 
 |
 
-The following is an example Rackspace YAML ``.yml`` attribute mapping policy
-that you can use when you configure your identity provider with Rackspace. This
-example assumes you have a group named ``rackspace-billing`` with users you
-want to access Rackspace billing services using the ``billing:admin`` Rackspace
-role.
+The following example shows a Rackspace YAML (``.yml``) attribute mapping
+policy that you can use when you configure your identity provider with
+Rackspace. This example assumes that you have a group named
+``rackspace-billing`` with users that you want to access Rackspace billing
+services by using the ``billing:admin`` Rackspace role.
 
 Notes:
 
-- The ``groups`` specified in the example should be changed to match your
+- You should change the ``groups`` specified in the example to match your
   configured Okta groups.
-- Remember to update *at a minimum* the ``domain`` value to your Identity
-  Domain from the |idp| details page.
-- Validate that any values being mapped to ``email`` and ``expire`` are
-  properly specified for your specific SAML attributes/assertions. For example,
-  in policy below, ``email`` is being set using the ``path``/``"{Pt}`` syntax
-  in the |amp| language to point to the ``NameID`` attribute in the SAML
-  assertion.
+- At a minimum, remember to update the example's ``domain`` value to your
+  Identity Domain, which is found on the |idp| details page.
+- Validate that any values that are mapped to ``email`` and ``expire`` are
+  properly specified for your specific SAML attributes or assertions. For
+  example, in the following example policy, ``email`` is set by using the
+  *path* (``"{Pt}"``) syntax in the |amp| language to point to the ``NameID``
+  attribute in the SAML assertion.
 
 
 .. code-block:: yaml
@@ -74,8 +72,8 @@ Notes:
 
 Be sure to validate and modify the following items in your own policy |amp|:
 
-- The Okta groups users belong to that you want to map to specific Rackspace
-  permissions.
+- The Okta groups users that users belong to and to which you want to map
+  specific Rackspace permissions.
 - The ``expire`` value/path
 - The ``email`` value/path
 

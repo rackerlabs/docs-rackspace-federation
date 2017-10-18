@@ -1,17 +1,17 @@
 .. _rscloud-mapping-ug:
 
-=====================================
-Assigning Rackspace Cloud Permissions
-=====================================
+Assigning Rackspace Cloud permissions
+-------------------------------------
 
-Basic Example
+This section provides examples of assigning Rackspace Cloud permissions.
+
+Basic example
 ~~~~~~~~~~~~~
 
 All Rackspace Cloud permissions for federated users are granted through roles
 assigned in the |amp|.
 
-
-A basic example of an |amp| is below:
+A basic example of an |amp| follows:
 
 .. code:: yaml
 
@@ -28,18 +28,20 @@ A basic example of an |amp| is below:
                     - "admin"
                     - "ticketing:admin"
 
-In this example, we explicity assign the ``admin`` and ``ticketing:admin``
-roles to any users logging in using this |idp| and |amp|. (Refer to the
+In this example, the ``admin`` and ``ticketing:admin`` roles are explicitly
+assigned to any users logging in using this |idp| and |amp|. (Refer to the
 :ref:`full-roles-ug` for a full list of Rackspace Cloud product roles.)
 
 For basic Identity Federation setups, this may be sufficient.
 
-Permissions by Groups Example
+Permissions by groups example
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-However, for more complex scenarios, especially where access to Rackspace Cloud
+For more complex scenarios, especially where access to Rackspace Cloud
 products is governed by roles or groups defined in your corporate identity
 system, the |amp| language provides more flexible control.
+
+A complex example of an |amp| follows:
 
 .. code:: yaml
 
@@ -63,10 +65,10 @@ system, the |amp| language provides more flexible control.
             )
             multiValue: true
 
-In this example, we use the *substitution* and *piping* features of the |amp|\,
-in conjunction with XPath, to observe the SAML ``groups`` value and assign
+This example uses the substitution and piping features of the |amp|, in
+conjunction with XPath, to observe the SAML ``groups`` value and to assign
 values to the local ``role`` value based on any matching scenarios. (The
-``{0}`` indicator under ``roles`` means that the resultant value(s) of the
-first ``remote`` rule will be *subsituted* in its place.)
+``{0}`` indicator under ``roles`` causes the resultant value(s) of the
+first ``remote`` rule to be substituted in its place.)
 
 |ampref|
