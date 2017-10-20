@@ -4,7 +4,7 @@
 Okta
 ====
 
-This guide provides common steps for setting up `https://Okta <https://www.okta.com/>`_
+This guide provides common steps for setting up `Okta <https://www.okta.com/>`_
 as a SAML provider for |service|. While the defaults might work in many
 situations, consult the Okta documentation for any implementation-specific
 details.
