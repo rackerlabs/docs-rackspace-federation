@@ -1,7 +1,7 @@
 .. _index-configuring-3p-saml-ug:
 
 ====================================
-Configure third-Party SAML providers
+Configure Third-Party SAML providers
 ====================================
 
 This section provides information about configuring third-party SAML
