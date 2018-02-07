@@ -18,7 +18,7 @@ The metadata file contains the latest certificate for signing SAML assertions.
 
 The default values can be retrieved programmatically from the Rackspace service
 provider metadata file at `https://login.rackspace.com/federate/sp.xml
-<https:login.rackspace.com/federate/sp.xml>`_ and are shown in the following
+<https://login.rackspace.com/federate/sp.xml>`_ and are shown in the following
 list:
 
 .. list-table::
