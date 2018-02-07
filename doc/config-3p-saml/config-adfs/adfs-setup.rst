@@ -13,9 +13,9 @@ Use the following steps to set up an ADFS-relying party trust with Rackspace.
 
 2. Import the Rackspace metadata by using
 `https://login.rackspace.com/federate/sp.xml
-<https:login.rackspace.com/federate/sp.xml>`_ or by downloading the
+<https://login.rackspace.com/federate/sp.xml>`_ or by downloading the
 `https://login.rackspace.com/federate/sp.xml
-<https:login.rackspace.com/federate/sp.xml>`_ metadata file locally and then
+<https://login.rackspace.com/federate/sp.xml>`_ metadata file locally and then
 uploading it in ADFS.
 
 .. image:: ../../_images/Config-ADFS/ADFS_step_2.png
