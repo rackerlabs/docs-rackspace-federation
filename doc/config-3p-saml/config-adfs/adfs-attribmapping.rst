@@ -53,16 +53,15 @@ Notes:
 
 .. code-block:: yaml
 
-   ---
-   mapping:
+    mapping:
+     version: RAX-1
      rules:
-       -
-         local:
-           faws:
-             groups:
-               multiValue: true
-               value: "{Ats(http://schemas.xmlsoap.org/claims/Group)}"
-           user:
+       - local:
+          faws:
+            groups:
+                multiValue: true
+                value: "{Ats(http://schemas.xmlsoap.org/claims/Group)}"
+          user:
              domain: "your_domain_id_goes_here"
              # Update to your Identity Domain from the Identity Provider details page
              email: "{Pt(/saml2p:Response/saml2:Assertion/saml2:Subject/saml2:NameID)}"
@@ -71,17 +70,16 @@ Notes:
              name: "{D}"
              # This value will match to the SAML attribute "name" by default.
              roles:
-               - "{0}"
-               # This substitution states to take the value of the return from the first element of the remote role
+              - "{0}"
+              # This substitution states to take the value of the return from the first element of the remote role
          remote:
-           -
-             multiValue: true
+           - multiValue: true
              path: |
                  (
                    if (mapping:get-attributes('http://schemas.xmlsoap.org/claims/Group')='rackspace-billing')then    'billing:admin' else ()
                  )
              # The groups specified here are examples. You should substitute your own groups
-     version: RAX-1
+
 
 Be sure to validate and modify the following items in your own |amp|:
 
