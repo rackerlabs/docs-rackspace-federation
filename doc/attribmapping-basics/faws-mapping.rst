@@ -19,20 +19,20 @@ The following example shows a basic policy with the required rule included:
 .. code:: yaml
 
     mapping:
-    version: RAX-1
-    rules:
-    - local:
+     version: RAX-1
+     rules:
+     - local:
         user:
-            domain: '99199991999'
-            email: "{At(urn:oid:1.2.840.113549.1.9.1.1)}"
-            expire: "{Pt(/saml2p:Response/saml2:Assertion/saml2:Conditions/@NotOnOrAfter[1])}"
-            name: "{D}"
-            roles:
-                - "nova:admin"
+           domain: '99199991999'
+           email: "{At(urn:oid:1.2.840.113549.1.9.1.1)}"
+           expire: "{Pt(/saml2p:Response/saml2:Assertion/saml2:Conditions/@NotOnOrAfter[1])}"
+           name: "{D}"
+           roles:
+            - "nova:admin"
         faws:
-            groups:
-                multiValue: true
-                value: "{Ats(http://schemas.xmlsoap.org/claims/Group)}"
+           groups:
+               multiValue: true
+               value: "{Ats(http://schemas.xmlsoap.org/claims/Group)}"
 
 The lines below ``faws`` indicate that any value associated with the SAML
 schema attribute ``http://schemas.xmlsoap.org/claims/Group`` will be assigned
