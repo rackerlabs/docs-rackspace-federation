@@ -131,9 +131,9 @@ SAML providers, see :ref:`index-configuring-3p-saml-ug`.
           rules:
               local:
                   user:
-                      domain: 636462353
+                      domain: "636462353"
                       # Domain must be set to your Identity Domain
-                      name: {D}
+                      name: "{D}"
                       #  Username will be set from element named "name" value in your SAML
                       email: "{At(http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress)}"
                       #  Locates the attribute with the above URL as the claim type/name
