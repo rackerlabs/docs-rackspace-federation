@@ -40,11 +40,10 @@ Notes:
 
 .. code-block:: yaml
 
-   ---
-   mapping:
+    mapping:
+     version: RAX-1
      rules:
-       -
-         local:
+       - local:
            faws:
              groups:
                multiValue: true
@@ -61,14 +60,13 @@ Notes:
              roles:
                - "{0}"
          remote:
-           -
-             multiValue: true
+           - multiValue: true
              path: |
                  (
                    if (mapping:get-attributes'groups')='rackspace-billing')then    'billing:admin' else ()
                  )
              # The groups specified here are examples. You should substitute your own groups
-     version: RAX-1
+
 
 Be sure to validate and modify the following items in your own policy |amp|:
 
