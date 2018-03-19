@@ -125,22 +125,22 @@ SAML providers, see :ref:`index-configuring-3p-saml-ug`.
 
    .. code-block:: yaml
 
-      mapping:
-      version: "RAX-1"
-          # Comments are allowed in YAML
-          rules:
-              local:
-                  user:
-                      domain: "636462353"
-                      # Domain must be set to your Identity Domain
-                      name: "{D}"
-                      #  Username will be set from element named "name" value in your SAML
-                      email: "{At(http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress)}"
-                      #  Locates the attribute with the above URL as the claim type/name
-                      roles:
-                          - "nova:observer"
-                          - "lbaas:admin"
-                      #  Assigns the roles explicitly listed above
-                      expire: "{Pt(/saml2p:Response/saml2:Assertion/saml2:Conditions/@NotOnOrAfter[1])}"
-                      #  Retrieves the NotOnOrAfter value by using the SAML path and XPath
+    mapping:
+     version: "RAX-1"
+      # Comments are allowed in YAML
+     rules:
+     - local:
+        user:
+           domain: "636462353"
+           # Domain must be set to your Identity Domain
+           name: "{D}"
+           #  Username will be set from element named "name" value in your SAML
+           email: "{At(http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress)}"
+           #  Locates the attribute with the above URL as the claim type/name
+           roles:
+           - "nova:observer"
+           - "lbaas:admin"
+           #  Assigns the roles explicitly listed above
+           expire: "{Pt(/saml2p:Response/saml2:Assertion/saml2:Conditions/@NotOnOrAfter[1])}"
+           #  Retrieves the NotOnOrAfter value by using the SAML path and XPath 
 
