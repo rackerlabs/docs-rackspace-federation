@@ -23,7 +23,7 @@ The following example shows a basic policy with the required rule included:
           local:
             user:
               domain: "{D}"
-              email: "{Pt(/saml2p:Response/saml2:Assertion/saml2:Subject/saml2:NameID)    }"
+              email: "{Pt(/saml2p:Response/saml2:Assertion/saml2:Subject/saml2:NameID)}"
               expire: "{D}"
               name: "{D}"
             faws:
