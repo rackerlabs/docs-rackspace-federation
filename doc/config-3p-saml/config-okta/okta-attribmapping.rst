@@ -63,7 +63,7 @@ Notes:
            - multiValue: true
              path: |
                  (
-                   if (mapping:get-attributes'groups')='rackspace-billing')then    'billing:admin' else ()
+                   if (mapping:get-attributes('groups')='rackspace-billing')then    'billing:admin' else ()
                  )
              # The groups specified here are examples. You should substitute your own groups
 
