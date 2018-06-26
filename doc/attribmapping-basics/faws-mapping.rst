@@ -16,7 +16,8 @@ applied to your AWS account permissions.
 
 The following example shows a basic policy with the required rule included:
 
-.. code:: yaml
+.. code-block:: yaml
+
     mapping:
       rules:
         -
