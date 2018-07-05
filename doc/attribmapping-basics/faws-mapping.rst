@@ -1,6 +1,6 @@
 .. _faws-mapping-ug:
 
-Assigning Fanatical Support for AWS permissions
+Fanatical AWS Support
 -----------------------------------------------
 
 Federation support for Fanatical AWS is currently unavailable but is being
