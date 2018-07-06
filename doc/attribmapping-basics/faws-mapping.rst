@@ -3,7 +3,7 @@
 Fanatical Support for AWS
 -----------------------------------------------
 
-Federation for Fanatical Support for AWS is currently unavailable but is being
-worked on. Instructions for setting up federation will be available here once
-it's available to all customers.
+Federation for Fanatical Support for AWS is currently unavailable but is under
+development. Instructions for setting up Federation will be available after it
+is released to all customers.
 
