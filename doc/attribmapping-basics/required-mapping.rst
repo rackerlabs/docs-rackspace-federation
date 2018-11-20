@@ -46,8 +46,7 @@ Your |amp| must contain:
        |  **0.9.2342.19200300100.1.3"**
    * - **roles**
      - The product RBAC (role-based access control) roles that you want
-       assigned to the user. (Supported for Rackspace Cloud products only at
-       this time.)
+       assigned to the user.
      - YAML array of alphanumeric strings
      - | **Example:**
        |
@@ -142,5 +141,4 @@ SAML providers, see :ref:`index-configuring-3p-saml-ug`.
            - "lbaas:admin"
            #  Assigns the roles explicitly listed above
            expire: "{Pt(/saml2p:Response/saml2:Assertion/saml2:Conditions/@NotOnOrAfter[1])}"
-           #  Retrieves the NotOnOrAfter value by using the SAML path and XPath 
-
+           #  Retrieves the NotOnOrAfter value by using the SAML path and XPath

@@ -4,7 +4,7 @@
 Attribute mapping basics
 ========================
 
-Attribute Mapping policies are YAML-formatted files that provide a means
+Attribute Mapping policies are YAML-formatted files that are used
 to map SAML attributes to Rackspace-required fields, such as roles and account
 permissions.
 
@@ -15,15 +15,15 @@ assign local values, which are attached to the user once they log in to
 Rackspace, based on explicit or remote values in the SAML exchange from your
 third-party provider.
 
-Following are some common use cases for an |amp|:
+An |amp| has the following common use cases:
 
 - Assigning roles to a user based on a SAML attribute (such as *groups*
   provided by Active Directory Federation Services)
 - Identifying Rackspace-required values like *email address* when it is not
   stored in the standard SAML attribute location
-- Setting the expiration time that will require users to re-authenticate
+- Setting the expiration time after which users are required to re-authenticate
 
-To customize your |amp|, review the sections below for required and
+To customize your |amp|, review the following sections for required and
 product-specific guidance. |ampref|
 
 .. toctree::
@@ -35,3 +35,9 @@ product-specific guidance. |ampref|
    full-roles.rst
 ..   mgcp-mapping.rst
 
+For detailed information about Rackspace roles for dedicated accounts, use the following steps to access the MyRackspace Customer Portal Permissions Guide:
+
+1. Log in to the `MyRackspace Portal <https://login.rackspace.com>`_.
+2. In the subnavigation bar, select **Account > Permissions**.
+3. On the Permissions page, click **Permissions Guide** in the top-right
+corner.

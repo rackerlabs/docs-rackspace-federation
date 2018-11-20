@@ -18,8 +18,9 @@ set up.
 
 |
 
-2. Add a new rule **Select Token-Groups - Unqualified Names** for the LDAP
-attribute with an outgoing claim type of **Group**.
+2. Add a new rule for the **LDAP Attribute** named
+**Token-Groups - Unqualified Names** with an **Outgoing Claim Type** of
+**Group**.
 
 |
 
