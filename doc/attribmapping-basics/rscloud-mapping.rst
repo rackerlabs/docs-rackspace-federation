@@ -11,7 +11,8 @@ Basic example
 All Rackspace permissions for federated users are granted through roles
 that are assigned in the |amp|.
 
-The following code shows a basic example of an |amp| for Rackspace Cloud:
+The following code shows a basic example of an |amp| for
+Rackspace Cloud:
 
 .. code:: yaml
 
