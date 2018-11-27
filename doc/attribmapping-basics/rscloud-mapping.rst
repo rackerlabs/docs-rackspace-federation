@@ -9,7 +9,7 @@ Basic example
 ~~~~~~~~~~~~~
 
 All Rackspace permissions for federated users are granted through roles
-that are assigned in the |amp|.
+that you assign in the |amp|.
 
 The following code shows a basic example of an |amp| for
 Rackspace Cloud:
@@ -30,7 +30,9 @@ Rackspace Cloud:
             - "ticketing:admin"
 
 In this example, the ``admin`` and ``ticketing:admin`` roles are explicitly
-assigned to any users logging in using this |idp| and |amp|.
+assigned to any users who log in by using this |idp| and |amp|.
+
+For basic Identity Federation setups, this basic setup may be sufficient.
 
 For a full list of Rackspace Cloud product roles, see :ref:`full-roles-ug`.
 
@@ -40,10 +42,8 @@ Guide:
 
  1. Log in to the `MyRackspace Portal <https://login.rackspace.com>`_.
  2. In the subnavigation bar, select **Account > Permissions**.
- 3. On the Permissions page, click **Permissions Guide** in the top-right
+ 3. On the **Permissions** page, click **Permissions Guide** in the top-right
  corner.
-
-For basic Identity Federation setups, this may be sufficient.
 
 Permissions by groups
 ~~~~~~~~~~~~~~~~~~~~~
@@ -55,7 +55,7 @@ system, the |amp| language provides more flexible control.
 Permissions by groups example - Cloud
 -------------------------------------
 
-The following shows provides a complex example of an |amp| for Rackspace Cloud:
+The following code shows a complex example of an |amp| for Rackspace Cloud:
 
 .. code:: yaml
 
@@ -90,7 +90,7 @@ first ``remote`` rule to be substituted in its place.)
 Permissions by groups example - Dedicated Hosting
 -------------------------------------------------
 
-The following shows provides a complex example of an |amp| for Dedicated
+The following code shows a complex example of an |amp| for Dedicated
 Hosting:
 
 .. code:: yaml
