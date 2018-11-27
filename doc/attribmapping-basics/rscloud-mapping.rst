@@ -1,17 +1,17 @@
 .. _rscloud-mapping-ug:
 
-Assigning Rackspace Cloud permissions
--------------------------------------
+Assigning Rackspace permissions
+-------------------------------
 
-This section provides examples of assigning Rackspace Cloud permissions.
+This section provides examples of assigning Rackspace permissions.
 
 Basic example
 ~~~~~~~~~~~~~
 
-All Rackspace Cloud permissions for federated users are granted through roles
-assigned in the |amp|.
+All Rackspace permissions for federated users are granted through roles
+that are assigned in the |amp|.
 
-A basic example of an |amp| follows:
+The following code shows a basic example of an |amp| for Rackspace Cloud:
 
 .. code:: yaml
 
@@ -29,19 +29,32 @@ A basic example of an |amp| follows:
             - "ticketing:admin"
 
 In this example, the ``admin`` and ``ticketing:admin`` roles are explicitly
-assigned to any users logging in using this |idp| and |amp|. (Refer to the
-:ref:`full-roles-ug` for a full list of Rackspace Cloud product roles.)
+assigned to any users logging in using this |idp| and |amp|.
+
+For a full list of Rackspace Cloud product roles, see :ref:`full-roles-ug`.
+
+For detailed information about Rackspace roles for Dedicated Hosting accounts,
+use the following steps to access the MyRackspace Customer Portal Permissions
+Guide:
+
+ 1. Log in to the `MyRackspace Portal <https://login.rackspace.com>`_.
+ 2. In the subnavigation bar, select **Account > Permissions**.
+ 3. On the Permissions page, click **Permissions Guide** in the top-right
+ corner.
 
 For basic Identity Federation setups, this may be sufficient.
 
-Permissions by groups example
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Permissions by groups
+~~~~~~~~~~~~~~~~~~~~~
 
-For more complex scenarios, especially where access to Rackspace Cloud
+For more complex scenarios, especially where access to Rackspace
 products is governed by roles or groups defined in your corporate identity
 system, the |amp| language provides more flexible control.
 
-A complex example of an |amp| follows:
+Permissions by groups example - Cloud
+-------------------------------------
+
+The following shows provides a complex example of an |amp| for Rackspace Cloud:
 
 .. code:: yaml
 
@@ -72,3 +85,34 @@ values to the local ``role`` value based on any matching scenarios. (The
 first ``remote`` rule to be substituted in its place.)
 
 |ampref|
+
+Permissions by groups example - Dedicated Hosting
+-------------------------------------------------
+
+The following shows provides a complex example of an |amp| for Dedicated
+Hosting:
+
+.. code:: yaml
+
+    mapping:
+    rules:
+    -
+      local:
+        user:
+          domain: "{D}"
+          email: "{Pt(/saml2p:Response/saml2:Assertion/saml2:Subject/saml2:NameID)}"
+          expire: PT12H
+          firstName: "{D}"
+          groups: "{0}"
+          lastName: "{D}"
+          name: "{D}"
+      remote:
+        -
+          multiValue: true
+          path: |
+              (
+                if (mapping:get-attributes('groups')='admin_group') then ('user-group-admin') else (),
+                if (mapping:get-attributes('groups')='user_group') then ('user-group-user') else (),
+                if (mapping:get-attributes('groups')='low_group') then ('user-group-low') else ()
+              )
+    version: RAX-1

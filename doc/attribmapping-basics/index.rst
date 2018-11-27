@@ -34,10 +34,3 @@ product-specific guidance. |ampref|
    faws-mapping.rst
    full-roles.rst
 ..   mgcp-mapping.rst
-
-For detailed information about Rackspace roles for dedicated accounts, use the following steps to access the MyRackspace Customer Portal Permissions Guide:
-
-1. Log in to the `MyRackspace Portal <https://login.rackspace.com>`_.
-2. In the subnavigation bar, select **Account > Permissions**.
-3. On the Permissions page, click **Permissions Guide** in the top-right
-corner.
