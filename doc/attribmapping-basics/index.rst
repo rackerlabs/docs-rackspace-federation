@@ -5,8 +5,8 @@ Attribute Mapping basics
 ========================
 
 Attribute Mapping Policies are YAML-formatted files that are used
-to map SAML attributes to Rackspace-required fields, such as roles and account
-permissions.
+to map SAML attributes to Rackspace-required fields, such as
+roles and account permissions.
 
 An |amp| is required for every |idp| that you create.
 
