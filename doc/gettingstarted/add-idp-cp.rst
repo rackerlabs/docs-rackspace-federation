@@ -30,10 +30,10 @@ following table provides descriptions of these parameters:
    * - Item
      - Description
    * - Description
-     - Provide a description for your |idp|. This description appears in
+     - Provides a description for your |idp|. This description appears in
        lists and in other areas in the Control Panel.
    * - Email Domains
-     - Provide a valid email domain, such as *mycompany.com*. Users provide
+     - Provides a valid email domain, such as *mycompany.com*. Users provide
        their email address during the federated login process, and their email
        domain is used to identify the |idp| to which they are redirected to
        complete the login process.

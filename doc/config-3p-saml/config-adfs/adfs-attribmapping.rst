@@ -42,11 +42,11 @@ services by using the ``billing:admin`` Rackspace role.
 More information
 ~~~~~~~~~~~~~~~~
 
-When you mapping ADFS users to Rackspace roles or permissions, ensure that you
+When you map ADFS users to Rackspace roles or permissions, ensure that you
 perform the following tasks:
 
 - Change the ``groups`` specified in the example to match your
-  configured outgoing claim type for the ADFS Groups.
+  configured outgoing claim type for the ADFS groups.
 - At a minimum, remember to update the example's ``domain`` value to your
   Identity Domain, which is found on the **Details** page for the |idp|.
 - Validate that any values that are mapped to ``email`` and ``expire`` are
@@ -71,7 +71,7 @@ perform the following tasks:
              # Update to your Identity Domain from the Identity Provider details page
              email: "{Pt(/saml2p:Response/saml2:Assertion/saml2:Subject/saml2:NameID)}"
              expire: PT4H
-             # This would configure a maximum session duration of 4 hours, you may wish to set this to a SAML provided value
+             # This would configure a maximum session duration of 4 hours, you might want to set this to a SAML-provided value
              name: "{D}"
              # This value matches to the SAML attribute "name" by default.
              roles:
@@ -88,9 +88,9 @@ perform the following tasks:
 
 - Ensure that you validate and modify the following items in your own |amp|:
 
-  - The ADFS Groups that users belong to and to which you want to
+  - The ADFS groups that users belong to and to which you want to
     map specific Rackspace permissions
-  - The ``expire`` value/path
-  - The ``email`` value/path
+  - The ``expire`` value or path
+  - The ``email`` value or path
 
 |ampref|

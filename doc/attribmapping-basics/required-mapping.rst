@@ -70,7 +70,7 @@ Setting values with Attribute Mapping
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 You can set values either explicitly or by using |amp| language features such
-as substitutions or XPath.
+as inline substitutions or XPath.
 
 The following example syntax uses in-line substitutions in the local rule to
 concisely retrieve values and simplify the policy. There are additional ways to
@@ -135,7 +135,7 @@ SAML providers, see :ref:`index-configuring-3p-saml-ug`.
            name: "{D}"
            #  Username is set from the element named "name" value in your SAML
            email: "{At(http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress)}"
-           #  Locates the attribute with the above URL as the claim type/name
+           #  Locates the attribute with the above URL as the claim type or name
            roles:
            - "nova:observer"
            - "lbaas:admin"
