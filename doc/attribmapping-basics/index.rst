@@ -1,7 +1,7 @@
 .. _attribmapping-basics-ug:
 
 ========================
-Attribute mapping basics
+Attribute Mapping basics
 ========================
 
 Attribute Mapping Policies are YAML-formatted files that are used
