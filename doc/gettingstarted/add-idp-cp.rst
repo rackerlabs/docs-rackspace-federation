@@ -43,8 +43,7 @@ Upload SAML metadata
 
 Next, you need to upload an XML file that contains the required metadata to
 complete the setup of your |idp|. Most identity systems have a method for
-generating the metadata file either automatically, or after
-you have completed some basic configuration.
+generating the metadata file either automatically, or after you've completed some basic configuration.
 
 For general and provider-specific guidance about configuring your identity
 system and retrieving your metadata XML file, see the section
