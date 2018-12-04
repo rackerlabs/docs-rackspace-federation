@@ -6,8 +6,8 @@
 
 *Last updated:* |today|
 
-|service| enables customers to configure their corporate security and identity
-systems to allow their employees to use their regular company credentials to
+|service| enables you to configure your corporate security and identity
+systems to enable your employees to use their regular company credentials to
 authenticate to Rackspace accounts.
 
 This user guide provides information related to |product name|, including

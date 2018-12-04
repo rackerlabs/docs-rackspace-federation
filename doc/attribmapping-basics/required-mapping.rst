@@ -22,10 +22,10 @@ Your |amp| must contain:
      - Common values
    * - **domain**
      - The Identity or Account Domain that the |idp| is authorized to log users
-       into.
+       in to.
      - Alphanumeric string
-     - MUST be set to your Identity Domain. The
-       domain is listed on the Identity Provider details page for your
+     - Must be set to your Identity Domain. The
+       domain appears on the **Details** page for your
        |idp|.
    * - **name**
      - The username of your user as provided by your identity system.
@@ -46,8 +46,7 @@ Your |amp| must contain:
        |  **0.9.2342.19200300100.1.3"**
    * - **roles**
      - The product RBAC (role-based access control) roles that you want
-       assigned to the user. (Supported for Rackspace Cloud products only at
-       this time.)
+       to assign to the user.
      - YAML array of alphanumeric strings
      - | **Example:**
        |
@@ -55,14 +54,14 @@ Your |amp| must contain:
        |     ``- "nova:admin"``
        |     ``- "lbaas:observer"``
    * - **expires**
-     - The timeout before users must reauthenticate with your identity
-       system.
+     - The amount of time after which users must reauthenticate with your
+       identity system.
      - ISO format time values
      - | **Example:** ``"PT12H`` (12 hours)
        |
        | *or*
        |
-       | SAML Attributes
+       | SAML attributes
        |
        |   **SessionNotOnOrAfter**
        |   **NotOnOrAfter**
@@ -71,7 +70,7 @@ Setting values with Attribute Mapping
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 You can set values either explicitly or by using |amp| language features such
-as substitions or XPath.
+as inline substitutions or XPath.
 
 The following example syntax uses in-line substitutions in the local rule to
 concisely retrieve values and simplify the policy. There are additional ways to
@@ -86,7 +85,7 @@ accomplish the same (or more complex) scenarios.  |ampref|
    * - Default
      - Retrieves the value by looking for common locations or labels for the
        field. Note that at this time, only an attribute with the same name as
-       the field will be matched: for example, ``name: "{D}"`` will match the
+       the field is matched. For example, ``name: "{D}"`` matches the
        attribute with the name ``name``.
      - ``name: "{D}"``
    * - Explicit
@@ -104,8 +103,8 @@ accomplish the same (or more complex) scenarios.  |ampref|
        |          ``multiValue: true``
        |               ``value: "{Ats(http://schemas.xmlsoap.org/claims/Group)}"``
    * - Path matching
-     - Uses XPath to match the path to a value in your SAML assertion using the
-       XML hierarchy or schema.
+     - Uses XPath to match the path to a value in your SAML assertion by using
+       the XML hierarchy or schema.
      - | ``"{Pt(/saml2p:Response/saml2:Assertion/saml2:Conditions/@NotOnOrAfter[1])}"``
        |
        | Retrieves the value of ``NotOnOrAfter``
@@ -118,7 +117,7 @@ Example policy with required attributes
 
 The following |amp| example uses explicit and SAML-provided values for mapping
 the required fields. Note that this is a basic example, and more customization
-might be required in some cases. For considerations for specific-third party
+might be required in some cases. For considerations for specific third-party
 SAML providers, see :ref:`index-configuring-3p-saml-ug`.
 
 |ampref|
@@ -134,13 +133,12 @@ SAML providers, see :ref:`index-configuring-3p-saml-ug`.
            domain: "636462353"
            # Domain must be set to your Identity Domain
            name: "{D}"
-           #  Username will be set from element named "name" value in your SAML
+           #  Username is set from the element named "name" value in your SAML
            email: "{At(http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress)}"
-           #  Locates the attribute with the above URL as the claim type/name
+           #  Locates the attribute with the above URL as the claim type or name
            roles:
            - "nova:observer"
            - "lbaas:admin"
            #  Assigns the roles explicitly listed above
            expire: "{Pt(/saml2p:Response/saml2:Assertion/saml2:Conditions/@NotOnOrAfter[1])}"
-           #  Retrieves the NotOnOrAfter value by using the SAML path and XPath 
-
+           #  Retrieves the NotOnOrAfter value by using the SAML path and XPath

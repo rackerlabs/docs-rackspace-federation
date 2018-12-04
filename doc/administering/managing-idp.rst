@@ -64,4 +64,3 @@ To update the |amp| for your |idp|, upload a new YAML file by using the
 The file must be valid YAML, and the file extension should be ``.yml`` or
 ``.yaml``. To validate your YAML, you can use any YAML validation library or
 website.
-
