@@ -99,18 +99,6 @@ for the capabilities you want to provide.
    * -
      - Observer (read-only)
      - cloudimages:observer
-   * - Cloud Keep
-     - Administrator (full control)
-     - keep:admin
-   * -
-     - Audit role for OpenStack key management service
-     - keep:audit
-   * -
-     - Creator (non-destructive actions)
-     - keep:creator
-   * -
-     - Observer (read-only)
-     - keep:observer
    * - Cloud Load Balancers
      - Administrator (full control)
      - lbaas:admin
