@@ -7,6 +7,7 @@ The following table provides a full reference for the roles that can be
 assigned to users during login using Attribute Mapping. Refer to the product
 and role for the capabilities that you want to provide.
 
+
 .. list-table::
    :widths: 30 50 30
    :header-rows: 1
@@ -98,18 +99,6 @@ and role for the capabilities that you want to provide.
    * -
      - Observer (read-only)
      - cloudimages:observer
-   * - Cloud Keep
-     - Administrator (full control)
-     - keep:admin
-   * -
-     - Audit role for OpenStack key management service
-     - keep:audit
-   * -
-     - Creator (non-destructive actions)
-     - keep:creator
-   * -
-     - Observer (read-only)
-     - keep:observer
    * - Cloud Load Balancers
      - Administrator (full control)
      - lbaas:admin
