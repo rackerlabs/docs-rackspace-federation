@@ -8,6 +8,7 @@ This list provides a full reference for the roles that can be assigned to
 users during login using Attribute Mapping. Refer to the product and role
 for the capabilities you want to provide.
 
+
 .. list-table::
    :widths: 30 50 30
    :header-rows: 1
