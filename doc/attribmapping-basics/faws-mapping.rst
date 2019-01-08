@@ -51,7 +51,7 @@ It will be much more common to assign roles conditionally based on a user's grou
 AWS Console and API Permissions
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-These permissions control access to the Amazon Web Services APIs and to features within the AWS Web Console. The following mapping policy assigns all users the "ViewOnly" IAM policy for all AWS accounts. It also assigns the "Administrator" IAM policy to a single AWS account.
+These permissions control access to the Amazon Web Services APIs and to features within the AWS Web Console. The following mapping policy assigns all users the "ViewOnlyAccess" IAM policy for all AWS accounts. It also assigns the "AdministratorAccess" IAM policy to all users for a single AWS account.
 
 .. code:: yaml
 
@@ -72,9 +72,9 @@ These permissions control access to the Amazon Web Services APIs and to features
 
 As with Fanatical Support for AWS permissions, it is much more common to assign roles conditionally based on a user's group membership. The following mapping policy assigns the following permissions:
 
-* Users in the ``mycompany.global.admin`` group are assigned the ``Administrator`` IAM policy on all AWS accounts
-* Users in the ``mycompany.global.observer`` group are assigned the ``ViewOnly`` IAM policy on all AWS accounts.
-* Users in the ``mycompany.12345678012.admin`` group are assigned the ``Administrator`` IAM policy to a single AWS account, 123456789012.
+* Users in the ``mycompany.global.admin`` group are assigned the ``AdministratorAccess`` IAM policy on all AWS accounts
+* Users in the ``mycompany.global.observer`` group are assigned the ``ViewOnlyAccess`` IAM policy on all AWS accounts.
+* Users in the ``mycompany.12345678012.admin`` group are assigned the ``AdministratorAccess`` IAM policy to a single AWS account, 123456789012.
 
 .. code:: yaml
 
@@ -133,7 +133,7 @@ This permissions controls whether or not a user can create new AWS accounts thro
 Complete Mapping Policy Example
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The following example combines both Fanatical Support for AWS permissions and Fanatical Support for AWS permissions into a single mapping policy.
+The following example combines both Fanatical Support for AWS permissions and AWS Console and API permissions into a single mapping policy.
 
 .. code:: yaml
 
