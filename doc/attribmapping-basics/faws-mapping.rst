@@ -13,9 +13,9 @@ These permissions control access to features within Rackspace's Fanatical Suppor
 
 .. code:: yaml
 
-    mapping:
-     version: RAX-1
-     rules:
+  mapping:
+    version: RAX-1
+    rules:
       - local:
           user:
             domain: "{D}"
@@ -29,9 +29,9 @@ It will be much more common to assign roles conditionally based on a user's grou
 
 .. code:: yaml
 
-    mapping:
-     version: RAX-1
-     rules:
+  mapping:
+    version: RAX-1
+    rules:
       - local:
           user:
             domain: "{D}"
@@ -48,7 +48,6 @@ It will be much more common to assign roles conditionally based on a user's grou
               )
             multiValue: true
 
-
 AWS Console and API Permissions
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -56,9 +55,9 @@ These permissions control access to the Amazon Web Services APIs and to features
 
 .. code:: yaml
 
-    mapping:
-     version: RAX-1
-     rules:
+  mapping:
+    version: RAX-1
+    rules:
       - local:
           user:
             domain: "{D}"
@@ -79,9 +78,9 @@ As with Fanatical Support for AWS permissions, it is much more common to assign 
 
 .. code:: yaml
 
-    mapping:
-     version: RAX-1
-     rules:
+  mapping:
+    version: RAX-1
+    rules:
       - local:
           user:
             domain: "{D}"
@@ -106,6 +105,31 @@ As with Fanatical Support for AWS permissions, it is much more common to assign 
               )
             multiValue: true
 
+AWS Account Creator Permissions
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+This permissions controls whether or not a user can create new AWS accounts through the Fanatical Support for AWS Control Panel. The following mapping policy grants users in the ``mycompany.global.admin`` group permission to create new AWS accounts:
+
+.. code:: yaml
+
+  mapping:
+    version: RAX-1
+    rules:
+      - local:
+          user:
+            domain: "{D}"
+            email: "{Pt(/saml2p:Response/saml2:Assertion/saml2:Subject/saml2:NameID)}"
+            expire: "PT12H"
+            name: "{D}"
+          aws:
+            creator: "{0}"
+        remote:
+          - path: |
+              (
+                if (mapping:get-attributes('http://schemas.xmlsoap.org/claims/Group')='mycompany.global.admin') then ('true') else ('false')
+              )
+            multiValue: false
+
 Complete Mapping Policy Example
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -113,9 +137,11 @@ The following example combines both Fanatical Support for AWS permissions and Fa
 
 .. code:: yaml
 
-    mapping:
-     version: RAX-1
-     rules:
+  ---
+  mapping:
+    version: RAX-1
+    rules:
+      # Map groups to user roles
       - local:
           user:
             domain: "{D}"
@@ -124,24 +150,41 @@ The following example combines both Fanatical Support for AWS permissions and Fa
             name: "{D}"
             roles:
               - "{0}"
-          aws:
-            iamPolicies:*:
-              - "{1}"
-            iamPolicies:123456789012:
-              - "{2}"
         remote:
           - path: |
               (
                 if (mapping:get-attributes('http://schemas.xmlsoap.org/claims/Group')='mycompany.global.admin') then ('admin') else (),
-                if (mapping :get-attributes('http://schemas.xmlsoap.org/claims/Group')='mycompany.global.observer') then ('observer') else ()
+                if (mapping:get-attributes('http://schemas.xmlsoap.org/claims/Group')='mycompany.global.observer') then ('observer') else ()
               )
             multiValue: true
+      # Map groups to AWS account creator permissions
+      - local:
+          aws:
+            creator: "{0}"
+        remote:
+          - path: |
+              (
+                if (mapping:get-attributes('http://schemas.xmlsoap.org/claims/Group')='mycompany.global.admin') then ('true') else ('false')
+              )
+            multiValue: false
+      # Map groups to IAM policies for all AWS accounts
+      - local:
+          aws:
+            iamPolicies:*:
+              - "{0}"
+        remote:
           - path: |
               (
                 if (mapping:get-attributes('http://schemas.xmlsoap.org/claims/Group')='mycompany.global.admin') then ('arn:aws:iam::aws:policy/AdministratorAccess')
                 if (mapping:get-attributes('http://schemas.xmlsoap.org/claims/Group')='mycompany.global.observer') then ('arn:aws:iam::aws:policy/job-function/ViewOnlyAccess') else ()
               )
             multiValue: true
+      # Map groups to IAM policies for AWS account 123456789012
+      - local:
+          aws:
+            iamPolicies:123456789012:
+              - "{0}"
+        remote:
           - path: |
               (
                 if (mapping:get-attributes('http://schemas.xmlsoap.org/claims/Group')='mycompany.123456789012.admin') then ('arn:aws:iam::aws:policy/AdministratorAccess') else ()
