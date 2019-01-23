@@ -48,6 +48,8 @@ It is much more common to assign roles conditionally based on a user's group mem
               )
             multiValue: true
 
+For more information about Fanatical Support for AWS permissions, visit the `User Management and Permissions <https://manage.rackspace.com/aws/docs/product-guide/access_and_permissions/user_management_and_permissions.html>`_ section of the Fanatical Support for AWS product guide.
+
 AWS Console and API Permissions
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
