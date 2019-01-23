@@ -107,6 +107,8 @@ As with Fanatical Support for AWS permissions, it is much more common to assign 
               )
             multiValue: true
 
+Many customers create their own `customer managed policies <https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_managed-vs-inline.html#customer-managed-policies>`_ that are the same across many AWS accounts. In order to easily assign this policy, policy ARNs can omit the account ID section of the ARN. For example, there might be a policy named ``MyCompany.Audit`` that exists on every AWS account. To assign this policy, simply use ``arn:aws:iam:::policy/MyCompany.Audit`` in your mapping policy.
+
 AWS Account Creator Permissions
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
