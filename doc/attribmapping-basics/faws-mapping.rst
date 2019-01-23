@@ -72,7 +72,7 @@ These permissions control access to the Amazon Web Services APIs and to features
             iamPolicies:123456789012:
               - "arn:aws:iam::aws:policy/AdministratorAccess"
 
-As with Fanatical Support for AWS permissions, it is much more common to assign roles conditionally based on a user's group membership. The mapping policy below assigns permissions as follows:
+As with Fanatical Support for AWS permissions, it is much more common to assign IAM policies conditionally based on a user's group membership. The mapping policy below assigns permissions as follows:
 
 * Users in the ``mycompany.global.admin`` group are assigned the ``AdministratorAccess`` IAM policy on all AWS accounts.
 * Users in the ``mycompany.global.observer`` group are assigned the ``ViewOnlyAccess`` IAM policy on all AWS accounts.
