@@ -194,3 +194,4 @@ The following example combines both Fanatical Support for AWS permissions and AW
                 if (mapping:get-attributes('http://schemas.xmlsoap.org/claims/Group')='mycompany.123456789012.admin') then ('arn:aws:iam::aws:policy/AdministratorAccess') else ()
               )
             multiValue: true
+
