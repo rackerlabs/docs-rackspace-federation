@@ -14,7 +14,6 @@ This user guide provides information related to |product name|, including
 getting started, using the service, working with add-on components, and getting
 help.
 
-
 .. toctree::
    :maxdepth: 3
 
