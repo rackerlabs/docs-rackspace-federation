@@ -87,7 +87,7 @@ and role for the capabilities that you want to provide.
    * -
      - Observer (read-only)
      - object-store:observer
-   * - Cloud Identity
+   * - Identity
      - Allows management of users
      - identity:user-manage
    * - Cloud Images
