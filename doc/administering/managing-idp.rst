@@ -6,12 +6,12 @@ Managing Identity Providers
 .. note::
 
     Rackspace recommends that you use the Control Panel to mange Identity
-    Providers, but advanced users might choose to use the Rackspace Identity
+    Providers, but advanced users might choose to use the Identity
     API instead.
 
     To use the API to create and manage your Identity Providers, see the
     `Identity Providers <https://developer.rackspace.com/docs/cloud-identity/v2/api-reference/identity-provider-operations/>`_
-    section of the `Rackspace Identity API Reference
+    section of the `Identity API Reference
     <https://developer.rackspace.com/docs/cloud-identity/v2/api-reference/>`_.
 
 
