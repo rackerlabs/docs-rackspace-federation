@@ -48,7 +48,7 @@ It's much more common to assign roles conditionally based on a user's group memb
               )
             multiValue: true
 
-``admin`` and ``observer`` can also be scoped to specific aws accounts. In this policy, members of the ``mycompany.scoped.admin`` group are granted the FAWS ``admin`` role on AWS account ``12345678012``, and members of ``mycompany.scoped.observer`` are granted ``observer`` on the same account:
+``admin`` and ``observer`` can also be scoped to specific AWS accounts. In this policy, members of the ``mycompany.scoped.admin`` group are granted the FAWS ``admin`` role on multiple AWS accounts, and members of ``mycompany.scoped.observer`` are granted ``observer`` on the single account ``12345678012`` :
 
 .. code:: yaml
 
@@ -66,7 +66,11 @@ It's much more common to assign roles conditionally based on a user's group memb
         remote:
           - path: |
               (
-                if (mapping:get-attributes('http://schemas.xmlsoap.org/claims/Group')='mycompany.scoped.admin') then ('admin/faws:12345678012') else (),
+                if (mapping:get-attributes('http://schemas.xmlsoap.org/claims/Group')='mycompany.scoped.admin') then (
+                  'admin/faws:12345678012',
+                  'admin/faws:987654321098',
+                  'admin/faws:112233445566'
+                ) else (),
                 if (mapping:get-attributes('http://schemas.xmlsoap.org/claims/Group')='mycompany.scoped.observer') then ('observer/faws:12345678012') else ()
               )
             multiValue: true
