@@ -18,7 +18,6 @@ Document history for |product name|.
 
 
 
-
 Additional resources
 ~~~~~~~~~~~~~~~~~~~~
 
