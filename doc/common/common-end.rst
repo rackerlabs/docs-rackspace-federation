@@ -52,8 +52,9 @@ Rackspace, the furnishing of this document does not give you any
 license to patents, trademarks, copyrights, or other intellectual
 property.
 
-Rackspace®, **Fanatical Support**\®, Fanatical Experience™, and other
-Rackspace marks are either registered service marks or service marks of
+Rackspace®, **Fanatical Support**\®, Fanatical Experience™,
+Fanatical Experience™, and other Rackspace marks
+are either registered service marks or service marks of
 Rackspace US, Inc. in the United States and other countries.
 
 Third-party trademarks and trade names appearing in this document are
