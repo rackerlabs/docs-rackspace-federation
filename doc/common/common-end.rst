@@ -18,7 +18,6 @@ Document history for |product name|.
 
 
 
-
 Additional resources
 ~~~~~~~~~~~~~~~~~~~~
 
@@ -53,9 +52,10 @@ Rackspace, the furnishing of this document does not give you any
 license to patents, trademarks, copyrights, or other intellectual
 property.
 
-Rackspace, Rackspace logo, and Fanatical Support®, are registered
-trademarks or trademarks of Rackspace US, Inc. in the United States
-and/or other countries.
+Rackspace®, **Fanatical Support**\®, Fanatical Experience™,
+Fanatical Experience™, and other Rackspace marks
+are either registered service marks or service marks of
+Rackspace US, Inc. in the United States and other countries.
 
 Third-party trademarks and trade names appearing in this document are
 the property of their respective owners. Such third-party trademarks
