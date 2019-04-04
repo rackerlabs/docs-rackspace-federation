@@ -23,7 +23,7 @@ Additional resources
 
 Use the following resources to learn more about |product name|:
 
-- `Rackspace Identity API Reference <https://developer.rackspace.com/docs/cloud-identity/v2/>`_
+- `Identity API Reference <https://developer.rackspace.com/docs/cloud-identity/v2/>`_
 
 
 
