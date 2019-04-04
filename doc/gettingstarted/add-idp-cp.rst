@@ -6,7 +6,7 @@ Add an Identity Provider in the Control Panel
 
 Use the following steps to add an |idp|:
 
-1. Log in to the `Rackspace Portal <https://login.rackspace.com>`_.
+1. Log in to the `Rackspace Customer Portal <https://login.rackspace.com>`_.
 
 2. In the upper right area of the navigation bar, select
    **Account > User Management** from the drop-down menu. Alternately, browse
