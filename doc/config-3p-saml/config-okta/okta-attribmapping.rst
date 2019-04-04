@@ -40,11 +40,10 @@ Notes:
 
 .. code-block:: yaml
 
-   ---
-   mapping:
+    mapping:
+     version: RAX-1
      rules:
-       -
-         local:
+       - local:
            faws:
              groups:
                multiValue: true
@@ -53,7 +52,7 @@ Notes:
            user:
              domain: "your_domain_id_goes_here"
              # Update to your Identity Domain from the Identity Provider details page
-             email: "{Pt(/saml2p:Response/saml2:Asertion/saml2:Subject/saml2:NameID)}"
+             email: "{Pt(/saml2p:Response/saml2:Assertion/saml2:Subject/saml2:NameID)}"
              expire: PT4H
              # This would configure a maximum session duration of 4 hours, you may wish to set this to a SAML provided value
              name: "{D}"
@@ -61,14 +60,13 @@ Notes:
              roles:
                - "{0}"
          remote:
-           -
-             multiValue: true
+           - multiValue: true
              path: |
                  (
-                   if (mapping:get-attributes'groups')='rackspace-billing')then    'billing:admin' else ()
+                   if (mapping:get-attributes('groups')='rackspace-billing')then    'billing:admin' else ()
                  )
              # The groups specified here are examples. You should substitute your own groups
-     version: RAX-1
+
 
 Be sure to validate and modify the following items in your own policy |amp|:
 
