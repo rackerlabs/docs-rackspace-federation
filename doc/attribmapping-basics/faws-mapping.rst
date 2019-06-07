@@ -48,6 +48,33 @@ It's much more common to assign roles conditionally based on a user's group memb
               )
             multiValue: true
 
+``admin`` and ``observer`` can also be scoped to specific AWS accounts. In this policy, members of the ``mycompany.scoped.admin`` group are granted the FAWS ``admin`` role on multiple AWS accounts, and members of ``mycompany.scoped.observer`` are granted ``observer`` on the single account ``12345678012`` :
+
+.. code:: yaml
+
+  mapping:
+    version: RAX-1
+    rules:
+      - local:
+          user:
+            domain: "{D}"
+            email: "{Pt(/saml2p:Response/saml2:Assertion/saml2:Subject/saml2:NameID)}"
+            expire: "PT12H"
+            name: "{D}"
+            roles:
+              - "{0}"
+        remote:
+          - path: |
+              (
+                if (mapping:get-attributes('http://schemas.xmlsoap.org/claims/Group')='mycompany.scoped.admin') then (
+                  'admin/faws:12345678012',
+                  'admin/faws:987654321098',
+                  'admin/faws:112233445566'
+                ) else (),
+                if (mapping:get-attributes('http://schemas.xmlsoap.org/claims/Group')='mycompany.scoped.observer') then ('observer/faws:12345678012') else ()
+              )
+            multiValue: true
+
 For more information about Fanatical Support for AWS permissions, visit the `User Management and Permissions <https://manage.rackspace.com/aws/docs/product-guide/access_and_permissions/user_management_and_permissions.html>`_ section of the Fanatical Support for AWS product guide.
 
 AWS Console and API Permissions
