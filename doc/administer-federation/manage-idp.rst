@@ -1,6 +1,6 @@
-.. _managing-idp-ug:
+.. _manage-idp-ug:
 
-Managing Identity Providers
+Manage Identity Providers
 ---------------------------
 
 .. note::
@@ -42,8 +42,8 @@ the **Actions** menu on the details page for any |idp|.
        and any currently logged in users will be logged out at the next
        opportunity.
 
-Updating metadata and certificates
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Update metadata and certificates
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 To update key details about your |idp|, click **Update Metadata** in the
 Control Panel. The following items are extracted and updated from your
@@ -55,8 +55,8 @@ metadata:
 Updating your metadata does not change the **Login Domain** or **Description**
 that you have provided.
 
-Updating the |amp|
-~~~~~~~~~~~~~~~~~~
+Update the |amp|
+~~~~~~~~~~~~~~~~
 
 To update the |amp| for your |idp|, upload a new YAML file by using the
 **Update Policy File** link in the |idp| details page.

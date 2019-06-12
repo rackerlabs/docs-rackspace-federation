@@ -1,24 +1,27 @@
 .. _common-front-ug:
 
 ====================
-About |product name|
+|product name| Guide
 ====================
 
-|service| enables you to link your corporate identity
+The |service| enables you to link your corporate identity
 system to Rackspace to let your employees use their regular company
-credentials to authenticate to Rackspace accounts. Authentication occurs
+credentials to authenticate to Rackspace accounts. You configure authentication
 by using the industry standard
 `Security Assertion Markup Language (SAML) 2.0 <http://docs.oasis-open.org/security/saml/Post2.0/sstc-saml-tech-overview-2.0.html>`_
 protocol.
 
-|product name| is supported for users of Rackspace Cloud, Fanatical
-Support for AWS, and Dedicated Hosting.
+This guide provides instruction on configuring Rackspace and third-party SAML
+providers, configuring attribute mapping, and managing Identity providers.
 
-Using |product name| provides the following benefits:
+To use the |product name|  service and the information provided here, you
+should have at least one of the following Rackspace accounts:
 
-- You can control your account security policies by using existing
-  systems.
-- There's less need to manually create new users in the MyRackspace portal.
-- :ref:`Attribute Mapping <attribmapping-basics-ug>` enables dynamic
-  privileges assignments based on user attributes that are provided during the
-  login process.
+- Rackspace Cloud
+- Fanatical support for AWS
+- Dedicated Hosting
+
+You should also be familiar with the following technologies:
+
+- SAML 2.0
+- YAML

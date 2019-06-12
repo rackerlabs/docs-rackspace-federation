@@ -1,8 +1,8 @@
 .. _index-support-ug:
 
-=======
-Support
-=======
+===========
+Get support
+===========
 
 This section provides support information for |product name|.
 

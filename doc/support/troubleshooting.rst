@@ -8,6 +8,32 @@ If you encounter issues when working with |service|, use the information
 in this section to help you troubleshoot.
 
 
+Need to save a SAML response in the Chrome browser
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Sometimes your support technician might ask you to send them the SAML response
+so that they can do additional troubleshooting for you.
+
+Perform the following actions to save a SAML response in Chrome:
+
+1. If you don't already have the SAML Chrome Panel, go to
+   `Chrome Webstore - SAML Chrome Panel
+   <https://chrome.google.com/webstore/detail/saml-chrome-panel/paijfdbeoenhembfhkhllainmocckace>`_
+   and click **Add to Chrome** to get and install the plug in.
+
+2. In Chrome, press **F12** to start the Developer Console.
+
+3. Select the **Network** tab and click **Preserve Log** to add a check mark.
+
+4. Select the SAML tab.
+
+5. Reproduce the issue.
+
+6. Look for any unique SAML posts in the **SAML Response** section. Select that
+   row, and then copy the XML-formatted SAML response.
+
+7. Paste the response to send to the support technician.
+
 Problems creating an Identity Provider
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 

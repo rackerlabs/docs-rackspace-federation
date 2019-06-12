@@ -21,8 +21,7 @@ help.
    overview/index.rst
    gettingstarted/index.rst
    config-3p-saml/index.rst
-   attribmapping-basics/index.rst
-   administering/index.rst
-   attribmap-reference/index.rst
+   config-attribute-mapping/index.rst
+   administer-federation/index.rst
    support/index.rst
    common/common-end.rst
