@@ -1,11 +1,11 @@
-.. _terminology-gs-ug:
+.. _concepts-gs-ug:
 
-===========
-Terminology
-===========
+========
+Concepts
+========
 
-Before setting up |product name|, understanding some basic terminology
-can helpful. The following table provides descriptions for some of the terms
+Before setting up |product name|, it might help to understand some basic
+terminology. The following table provides descriptions for some of the terms
 that are associated with |product name|:
 
 .. list-table::
@@ -34,3 +34,6 @@ that are associated with |product name|:
      - A federated user is a user who logs in to Rackspace using Identity
        Federation. Federated users use the credentials provided and managed by
        their own identity system.
+
+
+

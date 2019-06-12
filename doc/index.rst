@@ -22,6 +22,6 @@ help.
    gettingstarted/index.rst
    config-3p-saml/index.rst
    config-attribute-mapping/index.rst
-   administer-federation/index.rst
+   manage-idps/index.rst
    support/index.rst
    common/common-end.rst
