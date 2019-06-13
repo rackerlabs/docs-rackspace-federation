@@ -1,8 +1,8 @@
 .. _config-am-policy-gs-ug:
 
-===========================
-Configure attribute mapping
-===========================
+======================================
+Configure the Attribute Mapping Policy
+======================================
 
 The |amp| is a YAML-formatted policy for managing the mapping of SAML
 attributes to Rackspace required roles and permissions.
@@ -29,7 +29,7 @@ shown in the following example.
 
 The default |amp| **must** be customized to specific values before your users
 log in or are able to use Rackspace products and services. For more information
-on attribute mapping, see :ref:`config-attribute-mapping-ug`. To see examples for
+on Attribute Mapping, see :ref:`config-attribute-mapping-ug`. To see examples for
 specific third-party providers, see :ref:`index-configuring-3p-saml-ug`.
 
 |ampref|

@@ -1,24 +1,8 @@
 .. _add-idp-cp-gs-ug:
 
-=============================================
-Add an Identity Provider in the Control Panel
-=============================================
-
-Use the following steps to add an |idp|:
-
-1. Log in to the `Rackspace Customer Portal <https://login.rackspace.com>`_.
-
-2. In the upper right area of the navigation bar, select
-   **Account > User Management** from the drop-down menu. Alternately, browse
-   directly to the `User Management <https://account.rackspace.com/users>`_
-   page in the Rackspace Account Management Control Panel.
-
-3. In the subnavigation bar, select **Identity Federation**.
-
-4. Click **Add Identity Provider**.
-
-Basic information
-~~~~~~~~~~~~~~~~~
+===================================================
+Add an Identity Provider by using the Control Panel
+===================================================
 
 Each |idp| should have a unique **Description** and **Email Domain**. The
 following table provides descriptions of these parameters:
@@ -38,3 +22,18 @@ following table provides descriptions of these parameters:
        domain is used to identify the |idp| to which they are redirected to
        complete the login process.
 
+Add an |idp|
+------------
+
+Use the following steps to add an |idp|:
+
+1. Log in to the `Rackspace Customer Portal <https://login.rackspace.com>`_.
+
+2. In the upper right area of the navigation bar, select
+   **Account > User Management** from the drop-down menu. Alternately, browse
+   directly to the `User Management <https://account.rackspace.com/users>`_
+   page in the Rackspace Account Management Control Panel.
+
+3. In the subnavigation bar, select **Identity Federation**.
+
+4. Click **Add Identity Provider**.
