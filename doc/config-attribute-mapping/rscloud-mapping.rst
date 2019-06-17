@@ -43,7 +43,7 @@ Guide:
  1. Log in to the `MyRackspace Portal <https://login.rackspace.com>`_.
  2. In the subnavigation bar, select **Account > Permissions**.
  3. On the **Permissions** page, click **Permissions Guide** in the top-right
- corner.
+    corner.
 
 Permissions by groups
 ~~~~~~~~~~~~~~~~~~~~~
