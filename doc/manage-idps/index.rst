@@ -1,4 +1,4 @@
-.. _manage-idp-ug:
+.. _index-manage-idp:
 
 =========================
 Manage Identity Providers
