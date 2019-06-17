@@ -77,7 +77,7 @@ Consider the following items:
 
 - Review your |amp| to ensure you are assigning values to the `roles`
   parameter. Look at examples in :ref:`index-configuring-3p-saml-ug`, and
-  :ref:`attribmapping-basics-ug`. |ampref|
+  :ref:`config-attribute-mapping-ug`.
 - If you are using Fanatical Support for AWS, review the **Fanatical Support
   for AWS** section in :ref:`faws-mapping-ug`. If things look correct, contact
   your **Fanatical Support for AWS** account manager or support team for
