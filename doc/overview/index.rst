@@ -14,7 +14,7 @@ Using |product name| provides the following benefits:
 - You can control your account security policies by using existing
   systems.
 - There's less need to manually create new users in the MyRackspace portal.
-- :ref:`Attribute Mapping <attribmapping-basics-ug>` enables dynamic
+- :ref:`Attribute Mapping <config-am-policy-gs-ug>` enables dynamic
   privileges assignments based on user attributes that are provided during the
   login process.
 

@@ -44,4 +44,4 @@ identity provider sends during the SAML login process are mapped to the
 required or desired values for Rackspace.
 
 You can find an overview of Attribute Mapping and example mapping policies at
-:ref:`attribmapping-basics-ug`.
+:ref:`config-am-policy-gs-ug`.
