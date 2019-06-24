@@ -30,4 +30,5 @@ This section describes the features and components of
 
    features.rst
    compatibility.rst
+..   architecture.rst
 
