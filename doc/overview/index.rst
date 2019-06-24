@@ -29,4 +29,4 @@ This section describes the features and components of |product name|.
 
    features.rst
    compatibility.rst
-..   dedicated.rst
+   dedicated.rst
