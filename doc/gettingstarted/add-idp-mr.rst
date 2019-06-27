@@ -1,7 +1,7 @@
-.. _add-idp-cp-gs-ug:
+.. _add-idp-mr-gs-ug:
 
 ===================================================
-Add an Identity Provider by using the Control Panel
+Add an Identity Provider by using the MyRack Portal
 ===================================================
 
 Each |idp| should have a unique **Description** and **Email Domain**. The
@@ -25,9 +25,9 @@ following table provides descriptions of these parameters:
 Add an |idp|
 ------------
 
-Cloud customers, use the following steps to add an |idp|:
+Dedicated customers, use the following steps to add an |idp|:
 
-1. Log in to the `Rackspace Customer Portal <https://login.rackspace.com>`_.
+1. Log in to the `Rackspace MyRack Portal <https://login.rackspace.com>`_.
 
 2. In the upper right area of the navigation bar, select
    **Account > User Management** from the drop-down menu. Alternately, browse

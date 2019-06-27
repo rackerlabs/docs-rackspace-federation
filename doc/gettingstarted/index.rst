@@ -8,7 +8,8 @@ This section provides information about getting started with |product name|.
 
 Following are the basic steps for using Federation:
 
-1. :ref:`Add an Identity Provider in the Control Panel<add-idp-cp-gs-ug>` or
+1. :ref:`Add an Identity Provider in the Control Panel<add-idp-cp-gs-ug>`,
+   :ref:`Add an Identity Provider in the MyRack Portal<add-idp-mr-gs-ug>`, or
    :ref:`Add an Identity Provider by using the API<add-idp-api-gs-ug>` by
    providing basic information about the |idp|.
 2. :ref:`Configure the Attribute Mapping Policy<config-am-policy-gs-ug>` and

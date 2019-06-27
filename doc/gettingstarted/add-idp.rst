@@ -12,8 +12,12 @@ credentials, you need to update your Rackspace account with some information.
 
 Click one of the following links to learn how to add an |idp|:
 
-- Add an |idp| by using the :ref:`Rackspace Control Panel<add-idp-cp-gs-ug>`.
-- Add an |idp| by using the :ref:`Identity API<add-idp-api-gs-ug>`.
+- Cloud customers, add an |idp| by using the
+  :ref:`Rackspace Control Panel<add-idp-cp-gs-ug>`.
+- Dedicated customers, add an |idp| by using the
+  :ref:`MyRack portal <add-idp-mr-gs-ug>`.
+- All customers, add an |idp| by using the
+  :ref:`Identity API<add-idp-api-gs-ug>`.
 
 
 Create and upload the SAML configuration file
