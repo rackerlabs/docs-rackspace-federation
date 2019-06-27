@@ -87,6 +87,8 @@ first ``remote`` rule to be substituted in its place.)
 
 |ampref|
 
+.. _rscloud-mapping-dedicated-example-ug:
+
 Permissions by groups example - Dedicated Hosting
 -------------------------------------------------
 
