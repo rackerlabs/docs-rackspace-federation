@@ -11,3 +11,4 @@ it up for cloud environment in the following ways:
   :ref:`Add Identity Provider by using the MyRack Portal <add-idp-mr-gs-ug>`
 - For an example of attribute mapping for dedicated hosting, see the
   :ref:`Dedicated Hosting example <rscloud-mapping-dedicated-example-ug>`
+
