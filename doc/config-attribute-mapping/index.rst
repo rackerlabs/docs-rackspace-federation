@@ -1,8 +1,8 @@
-.. _attribmapping-basics-ug:
+.. _config-attribute-mapping-ug:
 
-========================
-Attribute Mapping basics
-========================
+===========================
+Configure Attribute Mapping
+===========================
 
 Attribute Mapping Policies are YAML-formatted files that are used
 to map SAML attributes to Rackspace-required fields, such as
@@ -17,11 +17,19 @@ third-party provider.
 
 An |amp| has the following common use cases:
 
-- Assigning roles to a user based on a SAML attribute (such as *groups*
+- Assign roles to a user based on a SAML attribute (such as *groups*
   provided by Active Directory Federation Services (ADFS))
-- Identifying Rackspace-required values like *email address* when they are not
+- Identify Rackspace-required values like *email address* when they are not
   stored in the standard SAML attribute location
-- Setting the expiration time after which users are required to reauthenticate
+- Set the expiration time after which users are required to re-authenticate
+
+The deep-dive |amp| reference guide provides detailed functionality and
+examples for the |amp| language. Use the reference guide to construct policies
+that use features like conditional matching, substitutions, and other
+scenarios.
+
+The |amp| reference can be found at
+`<https://rackerlabs.github.io/attributeMapping/docs-1.3.0/>`_.
 
 To customize your |amp|, review the following sections for required and
 product-specific guidance. |ampref|

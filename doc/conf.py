@@ -26,7 +26,7 @@ try:
     from sphinxcontrib import spelling
 except:
     spelling = None
-    
+
 try:
     from chios import bolditalic
 except ImportError:
@@ -120,7 +120,7 @@ rst_epilog = """
 .. |amp| replace:: Attribute Mapping Policy
 .. |ampref| replace:: For more examples and a complete guide to the
                       Attribute Mapping Policy language, see the
-                      :ref:`attribmap-reference`.
+                      :ref:`config-attribute-mapping-ug`.
 """
 
 # sphinxcontrib-versioning options

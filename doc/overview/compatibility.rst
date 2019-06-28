@@ -6,7 +6,7 @@ Compatibility
 |product name| is designed to be compatible with any SAML 2.0-based identity
 federation product or service.
 
-The following popular providers have been tested for integration:
+Rackspace has tested the following popular providers for integration:
 
 - Microsoft Active Directory Federation Services
 - Okta
