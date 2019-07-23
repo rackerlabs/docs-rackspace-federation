@@ -59,31 +59,31 @@ perform the following tasks:
 .. code-block:: yaml
 
     mapping:
-     version: RAX-1
-     rules:
-       - local:
-          faws:
-            groups:
+      rules:
+        - local:
+            faws:
+              groups:
                 multiValue: true
                 value: "{Ats(http://schemas.xmlsoap.org/claims/Group)}"
-          user:
-             domain: "your_domain_id_goes_here"
-             # Update to your Identity Domain from the Identity Provider details page
-             email: "{Pt(/saml2p:Response/saml2:Assertion/saml2:Subject/saml2:NameID)}"
-             expire: PT4H
-             # This would configure a maximum session duration of 4 hours, you might want to set this to a SAML-provided value
-             name: "{D}"
-             # This value matches to the SAML attribute "name" by default.
-             roles:
-              - "{0}"
+            user:
+              domain: "your_domain_id_goes_here"
+              # Update to your Identity Domain from the Identity Provider details page
+              email: "{Pt(/saml2p:Response/saml2:Assertion/saml2:Subject/saml2:NameID)}"
+              expire: PT4H
+              # This would configure a maximum session duration of 4 hours, you might want to set this to a SAML-provided value
+              name: "{D}"
+              # This value matches to the SAML attribute "name" by default.
+              roles:
+                - "{0}"
               # This substitution states to take the value of the return from the first element of the remote role.
-         remote:
-           - multiValue: true
-             path: |
-                 (
-                   if (mapping:get-attributes('http://schemas.xmlsoap.org/claims/Group')='rackspace-billing')then    'billing:admin' else ()
-                 )
-             # The groups specified here are examples. You should substitute your own groups.
+          remote:
+            - multiValue: true
+              path: |
+                  (
+                    if (mapping:get-attributes('http://schemas.xmlsoap.org/claims/Group')='rackspace-billing')then    'billing:admin' else ()
+                  )
+              # The groups specified here are examples. You should substitute your own groups.
+      version: RAX-1
 
 
 - Ensure that you validate and modify the following items in your own |amp|:
