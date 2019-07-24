@@ -13,18 +13,18 @@ shown in the following example.
 
 **Default Attribute Mapping Policy**
 
-   .. code-block:: yaml
+.. code-block:: yaml
 
-      mapping:
-          rules:
-              local:
-                  user:
-                      domain: {D}
-                      name: {D}
-                      email: {D}
-                      roles: {D}
-                      expire: {D}
-          version: "RAX-1"
+    mapping:
+      rules:
+        - local:
+            user:
+              domain: "{D}"
+              name: "{D}"
+              email: "{D}"
+              roles: "{D}"
+              expire: "{D}"
+      version: "RAX-1"
 
 
 The default |amp| **must** be customized to specific values before your users
