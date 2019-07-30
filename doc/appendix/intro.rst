@@ -139,22 +139,24 @@ The following attribute mapping policy implements the rules described
 in the previous section. The rest of this document provides a guide
 for writing such polices.
 
-```
-mapping:
-  version: RAX-1
-  description: |-
-    The following is an attribute mapping for Widgets.com.
-  rules:
-  - local:
+.. code-block:: yaml
+   :linenos:
+
+   mapping:
+     version: RAX-1
+     description: |-
+       The following is an attribute mapping for Widgets.com.
+     rules:
+     - local:
       user:
         domain: "{D}"
         name: "{D}"
         email: "{At(mail)}"
         roles: "{0}"
         expire: "{D}"
-    remote:
-      - multiValue: true
-        path: |-
+      remote:
+        - multiValue: true
+          path: |-
              (:
                 The following describes the rules for assigning roles to
                 users.
@@ -185,5 +187,5 @@ mapping:
                 :)
                 if ($group = 'linux_user') then 'nova:observer' else
                 ()
-```
+
 

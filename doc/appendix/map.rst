@@ -15,9 +15,11 @@ The SAML assertion
 When an |idp| successfully authenticates a user it
 presents Rackspace Identity with a SAML assertion, much like the following:
 
-```
-<?xml version="1.0" encoding="UTF-8"?>
-<saml2p:Response xmlns:saml2p="urn:oasis:names:tc:SAML:2.0:protocol"
+.. code::
+   :linenos:
+
+   <?xml version="1.0" encoding="UTF-8"?>
+   <saml2p:Response xmlns:saml2p="urn:oasis:names:tc:SAML:2.0:protocol"
                  xmlns:xs="http://www.w3.org/2001/XMLSchema"
                  xmlns:ds="http://www.w3.org/2000/09/xmldsig#"
                  xmlns:saml2="urn:oasis:names:tc:SAML:2.0:assertion"
@@ -25,8 +27,8 @@ presents Rackspace Identity with a SAML assertion, much like the following:
                  ID="_7fcd6173-e6e0-45a4-a2fd-74a4ef85bf30"
                  IssueInstant="2017-11-15T16:19:06.310Z"
                  Version="2.0">
-  <saml2:Issuer>http://test.rackspace.com</saml2:Issuer>
-  <ds:Signature>
+     <saml2:Issuer>http://test.rackspace.com</saml2:Issuer>
+     <ds:Signature>
       <ds:SignedInfo>
          <ds:CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/>
          <ds:SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha256"/>
@@ -45,11 +47,11 @@ presents Rackspace Identity with a SAML assertion, much like the following:
             <ds:X509Certificate>MIIC6jCCAdKgAwIBAgIQE+gZKcmH841I4gYjUiHCSDANBgkqhkiG9w0BAQsFADAxMS8wLQYDVQQDEyZBREZTIFNpZ25pbmcgLSBhZGZzLmNvbnRvc293aWRnZXRzLmNvbTAeFw0xNjA2MTYwMDUyNTZaFw0xNzA2MTYwMDUyNTZaMDExLzAtBgNVBAMTJkFERlMgU2lnbmluZyAtIGFkZnMuY29udG9zb3dpZGdldHMuY29tMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAna30lllMTaivaXPCjrW7VcRI6BsPs0iVxV559I9UONENSldX9pYTPlqLzxTP1RAVzfbGNoSvNelXrc0cb6jslgi+0Ya0jxrj1CsxQDgLtZeZchwWUYnJgsvk/HHfXiQBrWPLaZbImPNVvzG1zlYoQyQHTe1Nvr1m5Lv9foruSnw4My2LP4M27ZLPGL7rLaqpBg0E9sMX0iIrucNNN6AdyyPsR8oAUtV//QB49pCk+/rb3UtSDyGrdFFD+sJBDiAXYjTGzzYxYnMjckBZQfPKMWRntGwe7lM1KkX7mtUr9pNSvX1mQS/PHxhIcvO7aWKc15FJKzFmtdAEM2mvZjnCtwIDAQABMA0GCSqGSIb3DQEBCwUAA4IBAQBj5cSPBQGyICJZHsMXA2KddWxSUqtYSBDPWYVsW9gJSMYiJBjdEnR1aGpw5K6iYei7KCACH717VQNfEF64qnBCbOvWc7FmZ3V0n4plfyZYuexbbZqp7RTi+J1q2xPsdb8MB7138YhXCc3Uf1p0oEuw+hKZ5rt4srcfgxuEauKXhnaI/UAOWOgDslzTuku+ogPsHBkc7wfH2CS9UqA3JUVJksR42yMg/Y47DUTp0Ma02RoVIfjFh+y3lX01O7B3ccCCdiKaSxcnLQ8n/ypn7LBhUUWDWZVIBj1flioohFMc5gU2Jl2Ueki72yxOwKVehqYgBHLPZBCUQUJDnUsbJJgb</ds:X509Certificate>
          </ds:X509Data>
       </ds:KeyInfo>
-  </ds:Signature>
-  <saml2p:Status>
+     </ds:Signature>
+     <saml2p:Status>
       <saml2p:StatusCode Value="urn:oasis:names:tc:SAML:2.0:status:Success"/>
-  </saml2p:Status>
-  <saml2:Assertion ID="_406fb7fe-a519-4919-a42c-f67794a670a5"
+     </saml2p:Status>
+     <saml2:Assertion ID="_406fb7fe-a519-4919-a42c-f67794a670a5"
                     IssueInstant="2017-11-15T16:19:06.310Z"
                     Version="2.0">
       <saml2:Issuer>http://my.rackspace.com</saml2:Issuer>
@@ -107,9 +109,9 @@ presents Rackspace Identity with a SAML assertion, much like the following:
             <saml2:AttributeValue xsi:type="xs:string">Doe</saml2:AttributeValue>
          </saml2:Attribute>
       </saml2:AttributeStatement>
-  </saml2:Assertion>
-</saml2p:Response>
-```
+     </saml2:Assertion>
+   </saml2p:Response>
+
 
 The assertion describes a view of the user that has successfully
 logged in. It contains within it all of the information deemed by the
