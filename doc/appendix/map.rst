@@ -308,7 +308,7 @@ Assertion.
 You can turn this table into an attribute mapping policy, as shown in the
 following example:
 
-.. highlight:: yaml
+.. code-block:: yaml
    :linenothreshold: 5
    :linenos:
 
@@ -408,8 +408,7 @@ simply a short hand for this URI.  The following example replaces the
 element is the same as the previous example, the two mapping policies
 produce the exact same result.
 
-.. highlight:: yaml
-   :linenothreshold: 5
+.. code-block:: yaml
    :linenos:
 
    mapping:
@@ -447,7 +446,7 @@ off chance that the operation might return multiple values in a SAML assertion.
 Given this new substitution, you can rewrite the mapping policy as
 follows:
 
-.. highlight:: yaml
+.. code-block:: yaml
    :linenothreshold: 5
    :linenos:
 
@@ -479,7 +478,7 @@ a string and returns the attribute values associated with that name.
 
 Thus, you could rewrite the mapping policy using this function as follows:
 
-.. highlight:: yaml
+.. code-block:: yaml
    :linenothreshold: 5
    :linenos:
 
@@ -512,7 +511,7 @@ substitution returns all values for a specific attribute name, and the
 
 Given these substitutions we can rewrite the policy as follows:
 
-.. highlight:: yaml
+.. code-block:: yaml
    :linenothreshold: 5
    :linenos:
 
@@ -555,7 +554,7 @@ assertion in this example has all of the values in the default places!
 So it's possible, in this case, to write a mapping policy that looks
 like this:
 
-.. highlight:: yaml
+.. code-block:: yaml
    :linenothreshold: 5
    :linenos:
 

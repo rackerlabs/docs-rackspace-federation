@@ -139,7 +139,7 @@ The following attribute mapping policy implements the rules described
 in the previous section. The rest of this document provides a guide
 for writing such polices.
 
-.. highlight:: yaml
+.. code-block:: yaml
    :linenos:
 
    mapping:
