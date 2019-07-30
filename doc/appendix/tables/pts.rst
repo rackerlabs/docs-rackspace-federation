@@ -1,9 +1,9 @@
 
 
-.. table:: XPath Substitutions
+.. table:: XPath substitutions
 
    +------------------------------------------+---------+
-   | XPath Substitution                       | Valid?  |
+   | XPath substitution                       | Valid?  |
    +==========================================+=========+
    | ``{Pts(//saml2:AttributeValue[1])}``     | valid   |
    +------------------------------------------+---------+

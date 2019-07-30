@@ -1,5 +1,5 @@
 
-.. table:: Default Namespace Prefix Mapping
+.. table:: Default namespace prefix mapping
 
    +-----------+---------------------------------------------------------+
    | Prefix    | Namespace URI                                           |

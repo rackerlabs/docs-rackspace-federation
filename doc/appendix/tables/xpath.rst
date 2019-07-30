@@ -2,7 +2,7 @@
 .. table:: Attributes mapped to XPaths
 
    +-----------+----------------------------------------------------------------------------------------------------------------------+
-   | Attribute | SAML Assertion Location (XPath)                                                                                      |
+   | Attribute | SAML Assertion location (XPath)                                                                                      |
    +===========+======================================================================================================================+
    | domain    | /saml2p:Response/saml2:Assertion/saml2:AttributeStatement/saml2:Attribute[@Name='domain']/saml2:AttributeValue[1]    |
    +-----------+----------------------------------------------------------------------------------------------------------------------+
