@@ -1,3 +1,5 @@
+.. _appendix-config-attribute-mapping:
+
 ============================================
 Appendix: Attribute Mapping Policy Reference
 ============================================

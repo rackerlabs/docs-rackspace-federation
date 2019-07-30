@@ -2,7 +2,7 @@
 Attribute Mapping Examples
 ==========================
 
-The examples in this sectin provide insight into more complex attribute
+The examples in this section provide insight into more complex attribute
 mapping scenarios.
 
 Working with defaults
