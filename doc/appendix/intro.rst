@@ -140,52 +140,51 @@ in the previous section. The rest of this document provides a guide
 for writing such polices.
 
 .. code-block:: yaml
-   :linenos:
 
-   mapping:
-     version: RAX-1
-     description: |-
-       The following is an attribute mapping for Widgets.com.
-     rules:
-     - local:
-      user:
-        domain: "{D}"
-        name: "{D}"
-        email: "{At(mail)}"
-        roles: "{0}"
-        expire: "{D}"
-      remote:
-        - multiValue: true
-          path: |-
-             (:
-                The following describes the rules for assigning roles to
-                users.
-             :)
-              for $group in mapping:get-attributes('groups') return
-                  (:
-                    If a user is a manager they get ticketing:admin,
-                    If they are not a contractor then they also get billing:observer
-                    Managers become admin based on the project that they are working
-                    on
-                  :)
-                if ($group = 'managers') then
-                     (
-                      'ticketing:admin',
-                      if (not(mapping:get-attributes('groups')='contractors')) then 'billing:observer' else
-                      (),
-                      for $project in mapping:get-attributes('manager_projects') return
-                      (
-                         if ($project = 'widgets_ui')       then 'admin/777654' else
-                         if ($project = 'widgets_mobile')   then 'admin/887655' else
-                         if ($project = 'widgets_platform') then 'admin/779956' else
-                         ()
-                      )
-                     ) else
-                (:
-                   If a user is a member of the linux_user group they get the
-                   nova:observer role.
-                :)
-                if ($group = 'linux_user') then 'nova:observer' else
-                ()
+   1   mapping:
+   2     version: RAX-1
+   3     description: |-
+   4       The following is an attribute mapping for Widgets.com.
+   5     rules:
+   6     - local:
+   7      user:
+   8        domain: "{D}"
+   9        name: "{D}"
+   10       email: "{At(mail)}"
+   11       roles: "{0}"
+   12       expire: "{D}"
+   13    remote:
+   14       - multiValue: true
+   15         path: |-
+   16            (:
+   17               The following describes the rules for assigning roles to
+   18               users.
+   19            :)
+   20             for $group in mapping:get-attributes('groups') return
+   21                 (:
+   22                   If a user is a manager they get ticketing:admin,
+   23                   If they are not a contractor then they also get billing:observer
+   24                   Managers become admin based on the project that they are working
+   25                   on
+   26                 :)
+   27               if ($group = 'managers') then
+   28                    (
+   29                     'ticketing:admin',
+   30                     if (not(mapping:get-attributes('groups')='contractors')) then 'billing:observer' else
+   31                     (),
+   32                     for $project in mapping:get-attributes('manager_projects') return
+   33                     (
+   34                        if ($project = 'widgets_ui')       then 'admin/777654' else
+   35                        if ($project = 'widgets_mobile')   then 'admin/887655' else
+   36                        if ($project = 'widgets_platform') then 'admin/779956' else
+   37                        ()
+   38                     )
+   39                    ) else
+   40               (:
+   41                  If a user is a member of the linux_user group they get the
+   42                  nova:observer role.
+   43               :)
+   44               if ($group = 'linux_user') then 'nova:observer' else
+   45               ()
 
 

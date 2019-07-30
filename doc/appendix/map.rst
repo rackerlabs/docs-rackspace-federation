@@ -16,102 +16,100 @@ When an |idp| successfully authenticates a user it
 presents Rackspace Identity with a SAML assertion, much like the following:
 
 .. code-block:: XML
-   :linenos:
-   :emphasize-lines: 2,34,58,64,70
 
-   <?xml version="1.0" encoding="UTF-8"?>
-   <saml2p:Response xmlns:saml2p="urn:oasis:names:tc:SAML:2.0:protocol"
-                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
-                 xmlns:ds="http://www.w3.org/2000/09/xmldsig#"
-                 xmlns:saml2="urn:oasis:names:tc:SAML:2.0:assertion"
-                 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-                 ID="_7fcd6173-e6e0-45a4-a2fd-74a4ef85bf30"
-                 IssueInstant="2017-11-15T16:19:06.310Z"
-                 Version="2.0">
-     <saml2:Issuer>http://test.rackspace.com</saml2:Issuer>
-     <ds:Signature>
-      <ds:SignedInfo>
-         <ds:CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/>
-         <ds:SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha256"/>
-         <ds:Reference URI="#_1105c5b8-28d4-45e5-a6e4-bc4179f5a111">
-            <ds:Transforms>
-               <ds:Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/>
-               <ds:Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/>
-            </ds:Transforms>
-            <ds:DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"/>
-            <ds:DigestValue>JaeeD+wkw297KPF+BKpdacRtaPmQKFD+DqXQ3JE3Aus=</ds:DigestValue>
-         </ds:Reference>
-      </ds:SignedInfo>
-      <ds:SignatureValue>kDBwO3xYaxITVS7ZZIy9AGOlk16Y5E0BlqU12QlRpWGfiwjtgok4p5q3YQS+N/Pxh84JUIjd7i+n0to/2yJyaCfoSA2SIUUf448lTtHNzVmjiC4WiUmUTRGaxUpsdcYUkjFAVAS40yGDBLXMYn/JYS4cbRV52/RTJ5smCCpqBMjgzhVaeAqJif/gXGjvMLl4RFN8JGvHZGzpjCb14UdKhVqfP0ZumLo4cLIWd3Ch49zRBQBgchbFqEJbTdPPLTJ4SMIEYm5RwX4PtQ2Ce94u8IGXkIhYf32H43l+955a35XGh37hcZMLZEzjk4FBMqSScupKqDej1c0m34MkeRGMlQ==</ds:SignatureValue>
-      <ds:KeyInfo>
-         <ds:X509Data>
-            <ds:X509Certificate>MIIC6jCCAdKgAwIBAgIQE+gZKcmH841I4gYjUiHCSDANBgkqhkiG9w0BAQsFADAxMS8wLQYDVQQDEyZBREZTIFNpZ25pbmcgLSBhZGZzLmNvbnRvc293aWRnZXRzLmNvbTAeFw0xNjA2MTYwMDUyNTZaFw0xNzA2MTYwMDUyNTZaMDExLzAtBgNVBAMTJkFERlMgU2lnbmluZyAtIGFkZnMuY29udG9zb3dpZGdldHMuY29tMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAna30lllMTaivaXPCjrW7VcRI6BsPs0iVxV559I9UONENSldX9pYTPlqLzxTP1RAVzfbGNoSvNelXrc0cb6jslgi+0Ya0jxrj1CsxQDgLtZeZchwWUYnJgsvk/HHfXiQBrWPLaZbImPNVvzG1zlYoQyQHTe1Nvr1m5Lv9foruSnw4My2LP4M27ZLPGL7rLaqpBg0E9sMX0iIrucNNN6AdyyPsR8oAUtV//QB49pCk+/rb3UtSDyGrdFFD+sJBDiAXYjTGzzYxYnMjckBZQfPKMWRntGwe7lM1KkX7mtUr9pNSvX1mQS/PHxhIcvO7aWKc15FJKzFmtdAEM2mvZjnCtwIDAQABMA0GCSqGSIb3DQEBCwUAA4IBAQBj5cSPBQGyICJZHsMXA2KddWxSUqtYSBDPWYVsW9gJSMYiJBjdEnR1aGpw5K6iYei7KCACH717VQNfEF64qnBCbOvWc7FmZ3V0n4plfyZYuexbbZqp7RTi+J1q2xPsdb8MB7138YhXCc3Uf1p0oEuw+hKZ5rt4srcfgxuEauKXhnaI/UAOWOgDslzTuku+ogPsHBkc7wfH2CS9UqA3JUVJksR42yMg/Y47DUTp0Ma02RoVIfjFh+y3lX01O7B3ccCCdiKaSxcnLQ8n/ypn7LBhUUWDWZVIBj1flioohFMc5gU2Jl2Ueki72yxOwKVehqYgBHLPZBCUQUJDnUsbJJgb</ds:X509Certificate>
-         </ds:X509Data>
-      </ds:KeyInfo>
-     </ds:Signature>
-     <saml2p:Status>
-      <saml2p:StatusCode Value="urn:oasis:names:tc:SAML:2.0:status:Success"/>
-     </saml2p:Status>
-     <saml2:Assertion ID="_406fb7fe-a519-4919-a42c-f67794a670a5"
-                    IssueInstant="2017-11-15T16:19:06.310Z"
-                    Version="2.0">
-      <saml2:Issuer>http://my.rackspace.com</saml2:Issuer>
-      <ds:Signature>
-         <ds:SignedInfo>
-            <ds:CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/>
-            <ds:SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha256"/>
-            <ds:Reference URI="#_a8a6920c-d4eb-467f-85df-6fa2767ae63d">
-               <ds:Transforms>
-                  <ds:Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/>
-                  <ds:Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/>
-               </ds:Transforms>
-               <ds:DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"/>
-               <ds:DigestValue>uQmSKQT03SRunafqzpb6v159a+jMVvTqmBCFYn17e7s=</ds:DigestValue>
-            </ds:Reference>
-         </ds:SignedInfo>
-         <ds:SignatureValue>cYKqfE92hWqaPylJIcl89U9TKNzJXcFIPO0fvohg70zLB4JWnYlIKOz7S9XFUvS24mN47XS1T8DeR0IGITBMhqA/GCM624SOW0QjIRhQ9gh6/ONlyuAxGbVDo5tYb82sICFa9sMWI2Vr5ZH2LeTqyvsBRnlWBkZIw4hS2PBDHbhcnILUGX9uUDRcOrONAEMimnB7cNmZxSwQgdPfupyS39oedrUAiORa7GMII8GglWoj6Jy8SX0fQKXfsXD+wC5XFw76WAKJjSCuEkrXfxMQia/2H1tE24zNgZd6Y+uQ2Nh8YlUvO+DaMoj7mTKZUBqlxQt6It4kGH0+hfqvWx1MHQ==</ds:SignatureValue>
-         <ds:KeyInfo>
-            <ds:X509Data>
-               <ds:X509Certificate>MIIC6jCCAdKgAwIBAgIQE+gZKcmH841I4gYjUiHCSDANBgkqhkiG9w0BAQsFADAxMS8wLQYDVQQDEyZBREZTIFNpZ25pbmcgLSBhZGZzLmNvbnRvc293aWRnZXRzLmNvbTAeFw0xNjA2MTYwMDUyNTZaFw0xNzA2MTYwMDUyNTZaMDExLzAtBgNVBAMTJkFERlMgU2lnbmluZyAtIGFkZnMuY29udG9zb3dpZGdldHMuY29tMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAna30lllMTaivaXPCjrW7VcRI6BsPs0iVxV559I9UONENSldX9pYTPlqLzxTP1RAVzfbGNoSvNelXrc0cb6jslgi+0Ya0jxrj1CsxQDgLtZeZchwWUYnJgsvk/HHfXiQBrWPLaZbImPNVvzG1zlYoQyQHTe1Nvr1m5Lv9foruSnw4My2LP4M27ZLPGL7rLaqpBg0E9sMX0iIrucNNN6AdyyPsR8oAUtV//QB49pCk+/rb3UtSDyGrdFFD+sJBDiAXYjTGzzYxYnMjckBZQfPKMWRntGwe7lM1KkX7mtUr9pNSvX1mQS/PHxhIcvO7aWKc15FJKzFmtdAEM2mvZjnCtwIDAQABMA0GCSqGSIb3DQEBCwUAA4IBAQBj5cSPBQGyICJZHsMXA2KddWxSUqtYSBDPWYVsW9gJSMYiJBjdEnR1aGpw5K6iYei7KCACH717VQNfEF64qnBCbOvWc7FmZ3V0n4plfyZYuexbbZqp7RTi+J1q2xPsdb8MB7138YhXCc3Uf1p0oEuw+hKZ5rt4srcfgxuEauKXhnaI/UAOWOgDslzTuku+ogPsHBkc7wfH2CS9UqA3JUVJksR42yMg/Y47DUTp0Ma02RoVIfjFh+y3lX01O7B3ccCCdiKaSxcnLQ8n/ypn7LBhUUWDWZVIBj1flioohFMc5gU2Jl2Ueki72yxOwKVehqYgBHLPZBCUQUJDnUsbJJgb</ds:X509Certificate>
-            </ds:X509Data>
-         </ds:KeyInfo>
-      </ds:Signature>
-      <saml2:Subject>
-         <saml2:NameID Format="urn:oasis:names:tc:SAML:1.1:nameid-format:unspecified">john.doe</saml2:NameID>
-         <saml2:SubjectConfirmation Method="urn:oasis:names:tc:SAML:2.0:cm:bearer">
-            <saml2:SubjectConfirmationData NotOnOrAfter="2017-11-17T16:19:06.298Z"/>
-         </saml2:SubjectConfirmation>
-      </saml2:Subject>
-      <saml2:AuthnStatement AuthnInstant="2017-11-15T16:19:04.055Z">
-         <saml2:AuthnContext>
-            <saml2:AuthnContextClassRef>urn:oasis:names:tc:SAML:2.0:ac:classes:PasswordProtectedTransport
-            </saml2:AuthnContextClassRef>
-         </saml2:AuthnContext>
-      </saml2:AuthnStatement>
-      <saml2:AttributeStatement>
-         <saml2:Attribute Name="roles">
-            <saml2:AttributeValue xsi:type="xs:string">nova:admin</saml2:AttributeValue>
-         </saml2:Attribute>
-         <saml2:Attribute Name="domain">
-            <saml2:AttributeValue xsi:type="xs:string">323676</saml2:AttributeValue>
-         </saml2:Attribute>
-         <saml2:Attribute Name="email">
-            <saml2:AttributeValue xsi:type="xs:string">john.doe@rackspace.com</saml2:AttributeValue>
-         </saml2:Attribute>
-         <saml2:Attribute Name="groups">
-            <saml2:AttributeValue xsi:type="xs:string">group1</saml2:AttributeValue>
-            <saml2:AttributeValue xsi:type="xs:string">group2</saml2:AttributeValue>
-            <saml2:AttributeValue xsi:type="xs:string">group3</saml2:AttributeValue>
-         </saml2:Attribute>
-         <saml2:Attribute Name="FirstName">
-            <saml2:AttributeValue xsi:type="xs:string">John</saml2:AttributeValue>
-         </saml2:Attribute>
-         <saml2:Attribute Name="LastName">
-            <saml2:AttributeValue xsi:type="xs:string">Doe</saml2:AttributeValue>
-         </saml2:Attribute>
-      </saml2:AttributeStatement>
-     </saml2:Assertion>
-   </saml2p:Response>
+   1   <?xml version="1.0" encoding="UTF-8"?>
+   2   <saml2p:Response xmlns:saml2p="urn:oasis:names:tc:SAML:2.0:protocol"
+   3                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+   4                 xmlns:ds="http://www.w3.org/2000/09/xmldsig#"
+   5                 xmlns:saml2="urn:oasis:names:tc:SAML:2.0:assertion"
+   6                 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   7                 ID="_7fcd6173-e6e0-45a4-a2fd-74a4ef85bf30"
+   8                 IssueInstant="2017-11-15T16:19:06.310Z"
+   9                 Version="2.0">
+   10    <saml2:Issuer>http://test.rackspace.com</saml2:Issuer>
+   11    <ds:Signature>
+   12     <ds:SignedInfo>
+   13        <ds:CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/>
+   14        <ds:SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha256"/>
+   15        <ds:Reference URI="#_1105c5b8-28d4-45e5-a6e4-bc4179f5a111">
+   16           <ds:Transforms>
+   17              <ds:Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/>
+   18              <ds:Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/>
+   19           </ds:Transforms>
+   20           <ds:DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"/>
+   21           <ds:DigestValue>JaeeD+wkw297KPF+BKpdacRtaPmQKFD+DqXQ3JE3Aus=</ds:DigestValue>
+   22        </ds:Reference>
+   23     </ds:SignedInfo>
+   24     <ds:SignatureValue>kDBwO3xYaxITVS7ZZIy9AGOlk16Y5E0BlqU12QlRpWGfiwjtgok4p5q3YQS+N/Pxh84JUIjd7i+n0to/2yJyaCfoSA2SIUUf448lTtHNzVmjiC4WiUmUTRGaxUpsdcYUkjFAVAS40yGDBLXMYn/JYS4cbRV52/RTJ5smCCpqBMjgzhVaeAqJif/gXGjvMLl4RFN8JGvHZGzpjCb14UdKhVqfP0ZumLo4cLIWd3Ch49zRBQBgchbFqEJbTdPPLTJ4SMIEYm5RwX4PtQ2Ce94u8IGXkIhYf32H43l+955a35XGh37hcZMLZEzjk4FBMqSScupKqDej1c0m34MkeRGMlQ==</ds:SignatureValue>
+   25     <ds:KeyInfo>
+   26        <ds:X509Data>
+   27           <ds:X509Certificate>MIIC6jCCAdKgAwIBAgIQE+gZKcmH841I4gYjUiHCSDANBgkqhkiG9w0BAQsFADAxMS8wLQYDVQQDEyZBREZTIFNpZ25pbmcgLSBhZGZzLmNvbnRvc293aWRnZXRzLmNvbTAeFw0xNjA2MTYwMDUyNTZaFw0xNzA2MTYwMDUyNTZaMDExLzAtBgNVBAMTJkFERlMgU2lnbmluZyAtIGFkZnMuY29udG9zb3dpZGdldHMuY29tMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAna30lllMTaivaXPCjrW7VcRI6BsPs0iVxV559I9UONENSldX9pYTPlqLzxTP1RAVzfbGNoSvNelXrc0cb6jslgi+0Ya0jxrj1CsxQDgLtZeZchwWUYnJgsvk/HHfXiQBrWPLaZbImPNVvzG1zlYoQyQHTe1Nvr1m5Lv9foruSnw4My2LP4M27ZLPGL7rLaqpBg0E9sMX0iIrucNNN6AdyyPsR8oAUtV//QB49pCk+/rb3UtSDyGrdFFD+sJBDiAXYjTGzzYxYnMjckBZQfPKMWRntGwe7lM1KkX7mtUr9pNSvX1mQS/PHxhIcvO7aWKc15FJKzFmtdAEM2mvZjnCtwIDAQABMA0GCSqGSIb3DQEBCwUAA4IBAQBj5cSPBQGyICJZHsMXA2KddWxSUqtYSBDPWYVsW9gJSMYiJBjdEnR1aGpw5K6iYei7KCACH717VQNfEF64qnBCbOvWc7FmZ3V0n4plfyZYuexbbZqp7RTi+J1q2xPsdb8MB7138YhXCc3Uf1p0oEuw+hKZ5rt4srcfgxuEauKXhnaI/UAOWOgDslzTuku+ogPsHBkc7wfH2CS9UqA3JUVJksR42yMg/Y47DUTp0Ma02RoVIfjFh+y3lX01O7B3ccCCdiKaSxcnLQ8n/ypn7LBhUUWDWZVIBj1flioohFMc5gU2Jl2Ueki72yxOwKVehqYgBHLPZBCUQUJDnUsbJJgb</ds:X509Certificate>
+   28        </ds:X509Data>
+   29     </ds:KeyInfo>
+   30    </ds:Signature>
+   31    <saml2p:Status>
+   32     <saml2p:StatusCode Value="urn:oasis:names:tc:SAML:2.0:status:Success"/>
+   33    </saml2p:Status>
+   34    <saml2:Assertion ID="_406fb7fe-a519-4919-a42c-f67794a670a5"
+   35                   IssueInstant="2017-11-15T16:19:06.310Z"
+   36                   Version="2.0">
+   37     <saml2:Issuer>http://my.rackspace.com</saml2:Issuer>
+   38     <ds:Signature>
+   39        <ds:SignedInfo>
+   40           <ds:CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/>
+   41           <ds:SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha256"/>
+   42           <ds:Reference URI="#_a8a6920c-d4eb-467f-85df-6fa2767ae63d">
+   43              <ds:Transforms>
+   44                 <ds:Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/>
+   45                 <ds:Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/>
+   46              </ds:Transforms>
+   47              <ds:DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"/>
+   48              <ds:DigestValue>uQmSKQT03SRunafqzpb6v159a+jMVvTqmBCFYn17e7s=</ds:DigestValue>
+   49           </ds:Reference>
+   50        </ds:SignedInfo>
+   51        <ds:SignatureValue>cYKqfE92hWqaPylJIcl89U9TKNzJXcFIPO0fvohg70zLB4JWnYlIKOz7S9XFUvS24mN47XS1T8DeR0IGITBMhqA/GCM624SOW0QjIRhQ9gh6/ONlyuAxGbVDo5tYb82sICFa9sMWI2Vr5ZH2LeTqyvsBRnlWBkZIw4hS2PBDHbhcnILUGX9uUDRcOrONAEMimnB7cNmZxSwQgdPfupyS39oedrUAiORa7GMII8GglWoj6Jy8SX0fQKXfsXD+wC5XFw76WAKJjSCuEkrXfxMQia/2H1tE24zNgZd6Y+uQ2Nh8YlUvO+DaMoj7mTKZUBqlxQt6It4kGH0+hfqvWx1MHQ==</ds:SignatureValue>
+   52        <ds:KeyInfo>
+   53           <ds:X509Data>
+   54              <ds:X509Certificate>MIIC6jCCAdKgAwIBAgIQE+gZKcmH841I4gYjUiHCSDANBgkqhkiG9w0BAQsFADAxMS8wLQYDVQQDEyZBREZTIFNpZ25pbmcgLSBhZGZzLmNvbnRvc293aWRnZXRzLmNvbTAeFw0xNjA2MTYwMDUyNTZaFw0xNzA2MTYwMDUyNTZaMDExLzAtBgNVBAMTJkFERlMgU2lnbmluZyAtIGFkZnMuY29udG9zb3dpZGdldHMuY29tMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAna30lllMTaivaXPCjrW7VcRI6BsPs0iVxV559I9UONENSldX9pYTPlqLzxTP1RAVzfbGNoSvNelXrc0cb6jslgi+0Ya0jxrj1CsxQDgLtZeZchwWUYnJgsvk/HHfXiQBrWPLaZbImPNVvzG1zlYoQyQHTe1Nvr1m5Lv9foruSnw4My2LP4M27ZLPGL7rLaqpBg0E9sMX0iIrucNNN6AdyyPsR8oAUtV//QB49pCk+/rb3UtSDyGrdFFD+sJBDiAXYjTGzzYxYnMjckBZQfPKMWRntGwe7lM1KkX7mtUr9pNSvX1mQS/PHxhIcvO7aWKc15FJKzFmtdAEM2mvZjnCtwIDAQABMA0GCSqGSIb3DQEBCwUAA4IBAQBj5cSPBQGyICJZHsMXA2KddWxSUqtYSBDPWYVsW9gJSMYiJBjdEnR1aGpw5K6iYei7KCACH717VQNfEF64qnBCbOvWc7FmZ3V0n4plfyZYuexbbZqp7RTi+J1q2xPsdb8MB7138YhXCc3Uf1p0oEuw+hKZ5rt4srcfgxuEauKXhnaI/UAOWOgDslzTuku+ogPsHBkc7wfH2CS9UqA3JUVJksR42yMg/Y47DUTp0Ma02RoVIfjFh+y3lX01O7B3ccCCdiKaSxcnLQ8n/ypn7LBhUUWDWZVIBj1flioohFMc5gU2Jl2Ueki72yxOwKVehqYgBHLPZBCUQUJDnUsbJJgb</ds:X509Certificate>
+   55           </ds:X509Data>
+   56        </ds:KeyInfo>
+   57     </ds:Signature>
+   58     <saml2:Subject>
+   59        <saml2:NameID Format="urn:oasis:names:tc:SAML:1.1:nameid-format:unspecified">john.doe</saml2:NameID>
+   60        <saml2:SubjectConfirmation Method="urn:oasis:names:tc:SAML:2.0:cm:bearer">
+   61           <saml2:SubjectConfirmationData NotOnOrAfter="2017-11-17T16:19:06.298Z"/>
+   62        </saml2:SubjectConfirmation>
+   63     </saml2:Subject>
+   64     <saml2:AuthnStatement AuthnInstant="2017-11-15T16:19:04.055Z">
+   65        <saml2:AuthnContext>
+   66           <saml2:AuthnContextClassRef>urn:oasis:names:tc:SAML:2.0:ac:classes:PasswordProtectedTransport
+   67           </saml2:AuthnContextClassRef>
+   68        </saml2:AuthnContext>
+   69     </saml2:AuthnStatement>
+   70     <saml2:AttributeStatement>
+   71        <saml2:Attribute Name="roles">
+   72           <saml2:AttributeValue xsi:type="xs:string">nova:admin</saml2:AttributeValue>
+   73        </saml2:Attribute>
+   74        <saml2:Attribute Name="domain">
+   75           <saml2:AttributeValue xsi:type="xs:string">323676</saml2:AttributeValue>
+   76        </saml2:Attribute>
+   77        <saml2:Attribute Name="email">
+   78           <saml2:AttributeValue xsi:type="xs:string">john.doe@rackspace.com</saml2:AttributeValue>
+   79        </saml2:Attribute>
+   80        <saml2:Attribute Name="groups">
+   81           <saml2:AttributeValue xsi:type="xs:string">group1</saml2:AttributeValue>
+   82           <saml2:AttributeValue xsi:type="xs:string">group2</saml2:AttributeValue>
+   83           <saml2:AttributeValue xsi:type="xs:string">group3</saml2:AttributeValue>
+   84        </saml2:Attribute>
+   85        <saml2:Attribute Name="FirstName">
+   86           <saml2:AttributeValue xsi:type="xs:string">John</saml2:AttributeValue>
+   87        </saml2:Attribute>
+   88        <saml2:Attribute Name="LastName">
+   89           <saml2:AttributeValue xsi:type="xs:string">Doe</saml2:AttributeValue>
+   90        </saml2:Attribute>
+   91      </saml2:AttributeStatement>
+   92    </saml2:Assertion>
+   93  </saml2p:Response>
 
 The assertion describes a view of the user that has successfully
 logged in. It contains within it all of the information deemed by the
@@ -309,21 +307,19 @@ You can turn this table into an attribute mapping policy, as shown in the
 following example:
 
 .. code-block:: yaml
-   :linenothreshold: 5
-   :linenos:
 
-   mapping:
-     version: RAX-1
-     description: |-
-       Simple policy where we select required attributes via an XPath.
-     rules:
-     - local:
-         user:
-           domain: "{Pts(/saml2p:Response/saml2:Assertion/saml2:AttributeStatement/saml2:Attribute[@Name='domain']/saml2:AttributeValue[1])}"
-           name:   "{Pts(/saml2p:Response/saml2:Assertion/saml2:Subject/saml2:NameID)}"
-           email:  "{Pts(/saml2p:Response/saml2:Assertion/saml2:AttributeStatement/saml2:Attribute[@Name='email']/saml2:AttributeValue[1])}"
-           roles:  "{Pts(/saml2p:Response/saml2:Assertion/saml2:AttributeStatement/saml2:Attribute[@Name='roles']/saml2:AttributeValue)}"
-           expire: "{Pts(/saml2p:Response/saml2:Assertion/saml2:Subject/saml2:SubjectConfirmation/saml2:SubjectConfirmationData/@NotOnOrAfter)}"
+   1  mapping:
+   2    version: RAX-1
+   3    description: |-
+   4      Simple policy where we select required attributes via an XPath.
+   5    rules:
+   6    - local:
+   7        user:
+   8          domain: "{Pts(/saml2p:Response/saml2:Assertion/saml2:AttributeStatement/saml2:Attribute[@Name='domain']/saml2:AttributeValue[1])}"
+   9          name:   "{Pts(/saml2p:Response/saml2:Assertion/saml2:Subject/saml2:NameID)}"
+   10         email:  "{Pts(/saml2p:Response/saml2:Assertion/saml2:AttributeStatement/saml2:Attribute[@Name='email']/saml2:AttributeValue[1])}"
+   11         roles:  "{Pts(/saml2p:Response/saml2:Assertion/saml2:AttributeStatement/saml2:Attribute[@Name='roles']/saml2:AttributeValue)}"
+   12         expire: "{Pts(/saml2p:Response/saml2:Assertion/saml2:Subject/saml2:SubjectConfirmation/saml2:SubjectConfirmationData/@NotOnOrAfter)}"
 
 The following section walks through the preceding policy in detail and
 examines how the code uses XPath to extract the attribute values.
@@ -411,20 +407,20 @@ produce the exact same result.
 .. code-block:: yaml
    :linenos:
 
-   mapping:
-     version: RAX-1
-     description: |-
-       Simple policy where we select required attributes via an XPath.
-     namespaces:
-       foo: urn:oasis:names:tc:SAML:2.0:protocol
-     rules:
-     - local:
-         user:
-           domain: "{Pts(/foo:Response/saml2:Assertion/saml2:AttributeStatement/saml2:Attribute[@Name='domain']/saml2:AttributeValue[1])}"
-           name:   "{Pts(/foo:Response/saml2:Assertion/saml2:Subject/saml2:NameID)}"
-           email:  "{Pts(/foo:Response/saml2:Assertion/saml2:AttributeStatement/saml2:Attribute[@Name='email']/saml2:AttributeValue[1])}"
-           roles:  "{Pts(/foo:Response/saml2:Assertion/saml2:AttributeStatement/saml2:Attribute[@Name='roles']/saml2:AttributeValue)}"
-           expire: "{Pts(/foo:Response/saml2:Assertion/saml2:Subject/saml2:SubjectConfirmation/saml2:SubjectConfirmationData/@NotOnOrAfter)}"
+   1  mapping:
+   2    version: RAX-1
+   3    description: |-
+   4      Simple policy where we select required attributes via an XPath.
+   5    namespaces:
+   6      foo: urn:oasis:names:tc:SAML:2.0:protocol
+   7    rules:
+   8    - local:
+   9        user:
+   10         domain: "{Pts(/foo:Response/saml2:Assertion/saml2:AttributeStatement/saml2:Attribute[@Name='domain']/saml2:AttributeValue[1])}"
+   11         name:   "{Pts(/foo:Response/saml2:Assertion/saml2:Subject/saml2:NameID)}"
+   12         email:  "{Pts(/foo:Response/saml2:Assertion/saml2:AttributeStatement/saml2:Attribute[@Name='email']/saml2:AttributeValue[1])}"
+   13         roles:  "{Pts(/foo:Response/saml2:Assertion/saml2:AttributeStatement/saml2:Attribute[@Name='roles']/saml2:AttributeValue)}"
+   14         expire: "{Pts(/foo:Response/saml2:Assertion/saml2:Subject/saml2:SubjectConfirmation/saml2:SubjectConfirmationData/@NotOnOrAfter)}"
 
 Using the {Pt()} substitution
 -----------------------------
@@ -447,23 +443,21 @@ Given this new substitution, you can rewrite the mapping policy as
 follows:
 
 .. code-block:: yaml
-   :linenothreshold: 5
-   :linenos:
 
-   mapping:
-     version: RAX-1
-     description: |-
-       Simple policy where we select required attributes via an XPath.
-       We use {Pt()} instead of {Pts()} in single value attributes to
-       avoid having to select the first attribute value in XPath.
-     rules:
-     - local:
-         user:
-           domain: "{Pt(/saml2p:Response/saml2:Assertion/saml2:AttributeStatement/saml2:Attribute[@Name='domain']/saml2:AttributeValue)}"
-           name:   "{Pt(/saml2p:Response/saml2:Assertion/saml2:Subject/saml2:NameID)}"
-           email:  "{Pt(/saml2p:Response/saml2:Assertion/saml2:AttributeStatement/saml2:Attribute[@Name='email']/saml2:AttributeValue)}"
-           roles:  "{Pts(/saml2p:Response/saml2:Assertion/saml2:AttributeStatement/saml2:Attribute[@Name='roles']/saml2:AttributeValue)}"
-           expire: "{Pt(/saml2p:Response/saml2:Assertion/saml2:Subject/saml2:SubjectConfirmation/saml2:SubjectConfirmationData/@NotOnOrAfter)}"
+   1  mapping:
+   2    version: RAX-1
+   3    description: |-
+   4      Simple policy where we select required attributes via an XPath.
+   5      We use {Pt()} instead of {Pts()} in single value attributes to
+   6      avoid having to select the first attribute value in XPath.
+   7    rules:
+   8    - local:
+   9        user:
+   10         domain: "{Pt(/saml2p:Response/saml2:Assertion/saml2:AttributeStatement/saml2:Attribute[@Name='domain']/saml2:AttributeValue)}"
+   11         name:   "{Pt(/saml2p:Response/saml2:Assertion/saml2:Subject/saml2:NameID)}"
+   12         email:  "{Pt(/saml2p:Response/saml2:Assertion/saml2:AttributeStatement/saml2:Attribute[@Name='email']/saml2:AttributeValue)}"
+   13         roles:  "{Pts(/saml2p:Response/saml2:Assertion/saml2:AttributeStatement/saml2:Attribute[@Name='roles']/saml2:AttributeValue)}"
+   14         expire: "{Pt(/saml2p:Response/saml2:Assertion/saml2:Subject/saml2:SubjectConfirmation/saml2:SubjectConfirmationData/@NotOnOrAfter)}"
 
 
 Using the mapping:get-attributes call
@@ -479,23 +473,21 @@ a string and returns the attribute values associated with that name.
 Thus, you could rewrite the mapping policy using this function as follows:
 
 .. code-block:: yaml
-   :linenothreshold: 5
-   :linenos:
 
-   mapping:
-     version: RAX-1
-     description: |-
-       Simple policy where we select required attributes via an
-       XPath. Here we use the mapping:get-attributes call to return
-       attribute values.
-     rules:
-     - local:
-        user:
-           domain: "{Pt(mapping:get-attributes('domain'))}"
-           name:   "{Pt(/saml2p:Response/saml2:Assertion/saml2:Subject/saml2:NameID)}"
-           email:  "{Pt(mapping:get-attributes('email'))}"
-           roles:  "{Pts(mapping:get-attributes('roles'))}"
-           expire: "{Pt(/saml2p:Response/saml2:Assertion/saml2:Subject/saml2:SubjectConfirmation/saml2:SubjectConfirmationData/@NotOnOrAfter)}"
+   1  mapping:
+   2    version: RAX-1
+   3    description: |-
+   4      Simple policy where we select required attributes via an
+   5      XPath. Here we use the mapping:get-attributes call to return
+   6      attribute values.
+   7    rules:
+   8    - local:
+   9       user:
+   10         domain: "{Pt(mapping:get-attributes('domain'))}"
+   11         name:   "{Pt(/saml2p:Response/saml2:Assertion/saml2:Subject/saml2:NameID)}"
+   12         email:  "{Pt(mapping:get-attributes('email'))}"
+   13         roles:  "{Pts(mapping:get-attributes('roles'))}"
+   14         expire: "{Pt(/saml2p:Response/saml2:Assertion/saml2:Subject/saml2:SubjectConfirmation/saml2:SubjectConfirmationData/@NotOnOrAfter)}"
 
 Using the {Ats()} and {At()} substitutions
 ------------------------------------------
@@ -512,23 +504,21 @@ substitution returns all values for a specific attribute name, and the
 Given these substitutions we can rewrite the policy as follows:
 
 .. code-block:: yaml
-   :linenothreshold: 5
-   :linenos:
 
-   mapping:
-     version: RAX-1
-     description: |-
-       Simple policy where we select required attributes. We use At
-       instead of Pts as a simple means of accessing an name SAML
-       attribute.
-     rules:
-     - local:
-         user:
-           domain: "{At(domain)}"
-           name:   "{Pt(/saml2p:Response/saml2:Assertion/saml2:Subject/saml2:NameID)}"
-           email:  "{At(email)}"
-           roles:  "{Ats(roles)}"
-           expire: "{Pt(/saml2p:Response/saml2:Assertion/saml2:Subject/saml2:SubjectConfirmation/saml2:SubjectConfirmationData/@NotOnOrAfter)}"
+   1  mapping:
+   2    version: RAX-1
+   3    description: |-
+   4      Simple policy where we select required attributes. We use At
+   5      instead of Pts as a simple means of accessing an name SAML
+   6      attribute.
+   7    rules:
+   8    - local:
+   9        user:
+   10         domain: "{At(domain)}"
+   11         name:   "{Pt(/saml2p:Response/saml2:Assertion/saml2:Subject/saml2:NameID)}"
+   12         email:  "{At(email)}"
+   13         roles:  "{Ats(roles)}"
+   14         expire: "{Pt(/saml2p:Response/saml2:Assertion/saml2:Subject/saml2:SubjectConfirmation/saml2:SubjectConfirmationData/@NotOnOrAfter)}"
 
 Notice that in this case the name of the attribute is not in single
 quotes. We are no longer directly using XPath with attribute
@@ -555,22 +545,20 @@ So it's possible, in this case, to write a mapping policy that looks
 like this:
 
 .. code-block:: yaml
-   :linenothreshold: 5
-   :linenos:
 
-    mapping:
-     version: RAX-1
-     description: |-
-       The default policy.  All attributes are in the expected location
-       in the SAML assertion.
-     rules:
-     - local:
-         user:
-           domain: "{D}"
-           name:   "{D}"
-           email:  "{D}"
-           roles:  "{D}"
-           expire: "{D}"
+   1   mapping:
+   2    version: RAX-1
+   3    description: |-
+   4      The default policy.  All attributes are in the expected location
+   5      in the SAML assertion.
+   6    rules:
+   7    - local:
+   8        user:
+   9          domain: "{D}"
+   10         name:   "{D}"
+   11         email:  "{D}"
+   12         roles:  "{D}"
+   13         expire: "{D}"
 
 Next Steps
 ==========
