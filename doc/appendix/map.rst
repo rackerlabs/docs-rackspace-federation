@@ -15,7 +15,7 @@ The SAML assertion
 When an |idp| successfully authenticates a user it
 presents Rackspace Identity with a SAML assertion, much like the following:
 
-.. code::
+.. code-block:: XML
    :linenos:
 
    <?xml version="1.0" encoding="UTF-8"?>
@@ -118,7 +118,7 @@ logged in. It contains within it all of the information deemed by the
 |idp| to be relevant to the Service Provider, which is Rackspace.
 
 .. note:: For help configuring Third Party identity providers (such as Active
-   Directory Federation Services, Okta, and others) please refer to the
-   `Rackspace Identity Federation User Guide`_.
+   Directory Federation Services, Okta, and others) please refer to
+   :ref:`Configure Third-Party SAML providers<index-configuring-3p-saml-ug>`.
 
 
