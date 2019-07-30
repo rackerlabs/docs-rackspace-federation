@@ -141,15 +141,15 @@ for writing such polices.
 
 .. code-block:: yaml
 
-   1   mapping:
-   2     version: RAX-1
-   3     description: |-
-   4       The following is an attribute mapping for Widgets.com.
-   5     rules:
-   6     - local:
-   7      user:
-   8        domain: "{D}"
-   9        name: "{D}"
+    1  mapping:
+    2    version: RAX-1
+    3    description: |-
+    4      The following is an attribute mapping for Widgets.com.
+    5    rules:
+    6    - local:
+    7     user:
+    8       domain: "{D}"
+    9       name: "{D}"
    10       email: "{At(mail)}"
    11       roles: "{0}"
    12       expire: "{D}"

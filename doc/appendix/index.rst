@@ -70,5 +70,5 @@ version: |version|
 
    intro
    map
-
+   examples
 

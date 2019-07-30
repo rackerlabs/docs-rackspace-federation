@@ -17,15 +17,15 @@ presents Rackspace Identity with a SAML assertion, much like the following:
 
 .. code-block:: XML
 
-   1   <?xml version="1.0" encoding="UTF-8"?>
-   2   <saml2p:Response xmlns:saml2p="urn:oasis:names:tc:SAML:2.0:protocol"
-   3                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
-   4                 xmlns:ds="http://www.w3.org/2000/09/xmldsig#"
-   5                 xmlns:saml2="urn:oasis:names:tc:SAML:2.0:assertion"
-   6                 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-   7                 ID="_7fcd6173-e6e0-45a4-a2fd-74a4ef85bf30"
-   8                 IssueInstant="2017-11-15T16:19:06.310Z"
-   9                 Version="2.0">
+    1  <?xml version="1.0" encoding="UTF-8"?>
+    2  <saml2p:Response xmlns:saml2p="urn:oasis:names:tc:SAML:2.0:protocol"
+    3                xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    4                xmlns:ds="http://www.w3.org/2000/09/xmldsig#"
+    5                xmlns:saml2="urn:oasis:names:tc:SAML:2.0:assertion"
+    6                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    7                ID="_7fcd6173-e6e0-45a4-a2fd-74a4ef85bf30"
+    8                IssueInstant="2017-11-15T16:19:06.310Z"
+    9                Version="2.0">
    10    <saml2:Issuer>http://test.rackspace.com</saml2:Issuer>
    11    <ds:Signature>
    12     <ds:SignedInfo>
@@ -308,15 +308,15 @@ following example:
 
 .. code-block:: yaml
 
-   1  mapping:
-   2    version: RAX-1
-   3    description: |-
-   4      Simple policy where we select required attributes via an XPath.
-   5    rules:
-   6    - local:
-   7        user:
-   8          domain: "{Pts(/saml2p:Response/saml2:Assertion/saml2:AttributeStatement/saml2:Attribute[@Name='domain']/saml2:AttributeValue[1])}"
-   9          name:   "{Pts(/saml2p:Response/saml2:Assertion/saml2:Subject/saml2:NameID)}"
+    1 mapping:
+    2   version: RAX-1
+    3   description: |-
+    4     Simple policy where we select required attributes via an XPath.
+    5   rules:
+    6   - local:
+    7       user:
+    8         domain: "{Pts(/saml2p:Response/saml2:Assertion/saml2:AttributeStatement/saml2:Attribute[@Name='domain']/saml2:AttributeValue[1])}"
+    9         name:   "{Pts(/saml2p:Response/saml2:Assertion/saml2:Subject/saml2:NameID)}"
    10         email:  "{Pts(/saml2p:Response/saml2:Assertion/saml2:AttributeStatement/saml2:Attribute[@Name='email']/saml2:AttributeValue[1])}"
    11         roles:  "{Pts(/saml2p:Response/saml2:Assertion/saml2:AttributeStatement/saml2:Attribute[@Name='roles']/saml2:AttributeValue)}"
    12         expire: "{Pts(/saml2p:Response/saml2:Assertion/saml2:Subject/saml2:SubjectConfirmation/saml2:SubjectConfirmationData/@NotOnOrAfter)}"
@@ -333,24 +333,24 @@ You can think of it as a simple script that executes every
 time a SAML Assertion is presented to Rackspace Identity. This
 section breaks the preceding mapping policy into its relevant parts.
 
-- **mapping (2)**: The mapping policy is always contained in a single
+- **mapping (1)**: The mapping policy is always contained in a single
   top-level ``mapping`` object.
 
-- **version (3)**: The ``version`` key identifies the version of the mapping
+- **version (2)**: The ``version`` key identifies the version of the mapping
   policy language.  This required attribute should always have the
     value of ``RAX-1``. The mapping policy language described here is
     based on the `Mapping Combinations`_ language by the OpenStack
     Keystone and the version name is used to differentiate a Rackspace
     Identity mapping policy from a Keystone mapping policy.
 
-- **description (4)**: The ``description`` key provides a human readable
+- **description (3)**: The ``description`` key provides a human readable
   description of the mapping policy. This description is optional.
 
-- **rules (6)**: A mapping policy is made up of a collection of rules. These
+- **rules (5)**: A mapping policy is made up of a collection of rules. These
   rules are encapsulated by the ``rules`` array.  A policy must contain at
   least one rule.
 
-- **rule (7 - 13)**: These lines contain a rule that drives the policy. A
+- **rule (6 - 12)**: These lines contain a rule that drives the policy. A
   rule may contain  a ``local`` and a ``remote`` section.  Both ``local``
   and ``remote`` sections are optional (in this case, we don't need a
   ``remote``), but there should be at least one rule with a ``local`` section.
@@ -361,7 +361,7 @@ section breaks the preceding mapping policy into its relevant parts.
   (the local user).  The remote section contains statements about the
   user as its presented by the |idp| (the remote user).
 
-  Lines 8 - 13 describe what the local user should look like. In other
+  Lines 7 - 12 describe what the local user should look like. In other
   words, they describe the attributes of the local user. Here, you
   specify each of the required identity attributes and describe how
   they can be obtained from an XPath.
@@ -405,17 +405,16 @@ element is the same as the previous example, the two mapping policies
 produce the exact same result.
 
 .. code-block:: yaml
-   :linenos:
 
-   1  mapping:
-   2    version: RAX-1
-   3    description: |-
-   4      Simple policy where we select required attributes via an XPath.
-   5    namespaces:
-   6      foo: urn:oasis:names:tc:SAML:2.0:protocol
-   7    rules:
-   8    - local:
-   9        user:
+    1 mapping:
+    2   version: RAX-1
+    3   description: |-
+    4     Simple policy where we select required attributes via an XPath.
+    5   namespaces:
+    6     foo: urn:oasis:names:tc:SAML:2.0:protocol
+    7   rules:
+    8   - local:
+    9       user:
    10         domain: "{Pts(/foo:Response/saml2:Assertion/saml2:AttributeStatement/saml2:Attribute[@Name='domain']/saml2:AttributeValue[1])}"
    11         name:   "{Pts(/foo:Response/saml2:Assertion/saml2:Subject/saml2:NameID)}"
    12         email:  "{Pts(/foo:Response/saml2:Assertion/saml2:AttributeStatement/saml2:Attribute[@Name='email']/saml2:AttributeValue[1])}"
@@ -444,15 +443,15 @@ follows:
 
 .. code-block:: yaml
 
-   1  mapping:
-   2    version: RAX-1
-   3    description: |-
-   4      Simple policy where we select required attributes via an XPath.
-   5      We use {Pt()} instead of {Pts()} in single value attributes to
-   6      avoid having to select the first attribute value in XPath.
-   7    rules:
-   8    - local:
-   9        user:
+    1 mapping:
+    2   version: RAX-1
+    3   description: |-
+    4     Simple policy where we select required attributes via an XPath.
+    5     We use {Pt()} instead of {Pts()} in single value attributes to
+    6     avoid having to select the first attribute value in XPath.
+    7   rules:
+    8   - local:
+    9       user:
    10         domain: "{Pt(/saml2p:Response/saml2:Assertion/saml2:AttributeStatement/saml2:Attribute[@Name='domain']/saml2:AttributeValue)}"
    11         name:   "{Pt(/saml2p:Response/saml2:Assertion/saml2:Subject/saml2:NameID)}"
    12         email:  "{Pt(/saml2p:Response/saml2:Assertion/saml2:AttributeStatement/saml2:Attribute[@Name='email']/saml2:AttributeValue)}"
@@ -474,15 +473,15 @@ Thus, you could rewrite the mapping policy using this function as follows:
 
 .. code-block:: yaml
 
-   1  mapping:
-   2    version: RAX-1
-   3    description: |-
-   4      Simple policy where we select required attributes via an
-   5      XPath. Here we use the mapping:get-attributes call to return
-   6      attribute values.
-   7    rules:
-   8    - local:
-   9       user:
+    1 mapping:
+    2   version: RAX-1
+    3   description: |-
+    4      Simple policy where we select required attributes via an
+    5      XPath. Here we use the mapping:get-attributes call to return
+    6      attribute values.
+    7   rules:
+    8   - local:
+    9      user:
    10         domain: "{Pt(mapping:get-attributes('domain'))}"
    11         name:   "{Pt(/saml2p:Response/saml2:Assertion/saml2:Subject/saml2:NameID)}"
    12         email:  "{Pt(mapping:get-attributes('email'))}"
@@ -505,15 +504,15 @@ Given these substitutions we can rewrite the policy as follows:
 
 .. code-block:: yaml
 
-   1  mapping:
-   2    version: RAX-1
-   3    description: |-
-   4      Simple policy where we select required attributes. We use At
-   5      instead of Pts as a simple means of accessing an name SAML
-   6      attribute.
-   7    rules:
-   8    - local:
-   9        user:
+    1 mapping:
+    2   version: RAX-1
+    3   description: |-
+    4     Simple policy where we select required attributes. We use At
+    5     instead of Pts as a simple means of accessing an name SAML
+    6     attribute.
+    7   rules:
+    8   - local:
+    9       user:
    10         domain: "{At(domain)}"
    11         name:   "{Pt(/saml2p:Response/saml2:Assertion/saml2:Subject/saml2:NameID)}"
    12         email:  "{At(email)}"
@@ -546,15 +545,15 @@ like this:
 
 .. code-block:: yaml
 
-   1   mapping:
-   2    version: RAX-1
-   3    description: |-
-   4      The default policy.  All attributes are in the expected location
-   5      in the SAML assertion.
-   6    rules:
-   7    - local:
-   8        user:
-   9          domain: "{D}"
+    1  mapping:
+    2   version: RAX-1
+    3   description: |-
+    4     The default policy.  All attributes are in the expected location
+    5     in the SAML assertion.
+    6   rules:
+    7   - local:
+    8       user:
+    9         domain: "{D}"
    10         name:   "{D}"
    11         email:  "{D}"
    12         roles:  "{D}"
