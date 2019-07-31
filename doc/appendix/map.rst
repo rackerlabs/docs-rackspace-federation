@@ -585,4 +585,3 @@ writing polices in cases where things don't align so perfectly.
 
 .. [#j2] The first index in XPath is 1 not 0.  This logical and makes
    sense unless you're a software developer.
-
