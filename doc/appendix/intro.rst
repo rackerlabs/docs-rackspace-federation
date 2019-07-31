@@ -8,10 +8,6 @@ without having to make significant configuration changes to your |idp|. An
 information produced by your identity system so that it may seamlessly
 inter-operate with Rackspace.
 
-This appendix describes the attribute mapping policy language in
-detail. Use it for assistance in the writing your mapping policies and as a
-reference for the features of the policy language.
-
 Technology background
 =====================
 
