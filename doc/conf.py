@@ -120,7 +120,7 @@ rst_epilog = """
 .. |amp| replace:: Attribute Mapping Policy
 .. |ampref| replace:: For more examples and a complete guide to the
                       Attribute Mapping Policy language, see the
-                      :ref:`config-attribute-mapping-ug`.
+                      :ref:`appendix-config-attribute-mapping`.
 """
 
 # sphinxcontrib-versioning options

@@ -24,4 +24,5 @@ help.
    config-3p-saml/index.rst
    manage-idps/index.rst
    support/index.rst
+   appendix/index.rst
    common/common-end.rst
