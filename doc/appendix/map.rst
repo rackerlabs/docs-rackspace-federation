@@ -570,7 +570,7 @@ writing polices in cases where things don't align so perfectly.
 
 .. References:
 
-.. _rackspace identity federation user guide: http://developer.rackspace.com/docs/rackspace-federation
+.. _rackspace identity federation user guide: https://developer.rackspace.com/docs/rackspace-federation
 
 .. _list of allowed roles: https://developer.rackspace.com/docs/rackspace-federation/attribmapping-basics/full-roles/
 

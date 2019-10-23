@@ -12,5 +12,5 @@
    +-----------+---------------------------------------------------------+
    | xsi       | http://www.w3.org/2001/XMLSchema-instance               |
    +-----------+---------------------------------------------------------+
-   | mapping   | http://docs.rackspace.com/identity/api/ext/MappingRules |
+   | mapping   |https://docs.rackspace.com/identity/api/ext/MappingRules |
    +-----------+---------------------------------------------------------+
