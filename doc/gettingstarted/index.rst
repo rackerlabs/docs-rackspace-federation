@@ -39,3 +39,14 @@ The following are the basic steps for using Rackspace Federation:
 3. :ref:`Configure the Attribute Mapping Policy<config-am-policy-gs-ug>` and
    upload that file to complete the |idp| creation.
 4. :ref:`Log in<accessing-gs-ug>` and test your configuration.
+
+
+Review the following sections for more information:
+
+.. toctree::
+   :maxdepth: 2
+
+   concepts.rst
+   add-idp.rst
+   config-am-policy.rst
+   accessing.rst
