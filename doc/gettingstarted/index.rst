@@ -17,7 +17,7 @@ are prepared to successfully configure |product name|:
 - You have administrator access to your Rackspace Customer Portal.
 - Any necessary permissions at your company.
 
-Overview of steps
+Summary of steps
 -----------------
 
 The following are the basic steps for using Rackspace Federation:
@@ -44,7 +44,7 @@ The following are the basic steps for using Rackspace Federation:
 Review the following sections for more information:
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 0
 
    concepts.rst
    add-idp.rst
