@@ -24,13 +24,18 @@ The following are the basic steps for using Rackspace Federation:
 
 1. Add Rackspace Federation to your |idp|. Use the instructions listed
    for your company's |idp|:
+
    - :ref:`Add an Identity Provider in the Control Panel<add-idp-cp-gs-ug>`
 
 2. Add an |idp| by using one of the following methods:
+
    - :ref:`Add an Identity Provider in the Control Panel<add-idp-cp-gs-ug>`
+
    - :ref:`Add an Identity Provider in the MyRack Portal<add-idp-mr-gs-ug>`
+
    - :ref:`Add an Identity Provider by using the API<add-idp-api-gs-ug>` by
      providing basic information about the |idp|.
+     
 3. :ref:`Configure the Attribute Mapping Policy<config-am-policy-gs-ug>` and
    upload that file to complete the |idp| creation.
 4. :ref:`Log in<accessing-gs-ug>` and test your configuration.
