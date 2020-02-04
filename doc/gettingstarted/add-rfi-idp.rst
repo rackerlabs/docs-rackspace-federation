@@ -1,7 +1,7 @@
 .. _add-rfi-idp-gs-ug:
 
 ====================================================
-Add Rackspace Federation at your Identity Provider
+Add Rackspace Federation to your Identity Provider
 ====================================================
 
 This section provides information about adding  Rackspace Federation to your
@@ -25,4 +25,4 @@ following list of instructions:
 
 - :ref:`Configure Okta<okta-setup-ug>`
 
-- :ref:`Configure Active Directory Federated Services<gadfs-setup-ug>`
+- :ref:`Configure Active Directory Federated Services<adfs-setup-ug>`
