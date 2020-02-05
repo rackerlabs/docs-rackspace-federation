@@ -1,18 +1,34 @@
 .. _okta-setup-ug:
 
+Prerequisites
+-------------
+
+- Administrator access to your organization's Okta account.
+- :ref:`Rackspace Federation configuration details<generic-3p-saml-ug>`.
+- These instructions are using the **Classic UI** setting in Okta.
+
 Configure Okta
 --------------
+Follow these steps to set up a Security Assertion Markup Language (SAML)
+integration with Okta to work with |service|:
 
-Follow these steps to set up a SAML integration with Okta to work with
-|service|:
 
+1. Log in to your organization's Okta account using your organization's sign-in
+   page.
 
-1. Configure a new application integration and select **SAML 2.0**.
+2. Click **Applications**, located on the top ribbon.
+
+3. On the next screen, click the **Add Application** button.
+
+4. Next, click the **Create New Application** button.
+
+5. From within the **Configure a New Application Integration** popup window,
+   select **SAML 2.0** from the listed options.
 
 .. image:: ../../_images/Config-okta/create_app_1.png
 
-
-2. Fill in the requested SAML information with Rackspace details.
+6. Fill in the requested SAML information with the :ref:`Rackspace Federation
+   configuration details<generic-3p-saml-ug>`.
 
 The metadata file contains the latest certificate for signing SAML assertions.
 

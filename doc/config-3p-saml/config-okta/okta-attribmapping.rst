@@ -3,12 +3,13 @@
 Attribute Mapping for Okta
 --------------------------
 
-If you want the user's groups to appear in the SAML attributes and assertions
-sent to Rackspace (so that they can be mapped into permissions), you might need
-to customize the group attribute statements that Okta uses to include group
-membership. You can do this while configuring the SAML application in the
-**Group Attribute Statements** or while editing an existing application by
-going to the Admin panel and modifying the **Group Attribute Statements**.
+If you want the user's groups to appear in the Security Assertion Markup
+Language (SAML) attributes and assertions sent to Rackspace (so that they can
+be mapped into permissions), you might need to customize the group attribute
+statements that Okta uses to include group membership. You can do this while
+configuring the SAML application in the **Group Attribute Statements** or while
+editing an existing application by going to the Admin panel and modifying the
+**Group Attribute Statements**.
 
 For example, if you want to include all the user's groups that have the
 word ``rackspace`` in your SAML assertions, add a field with an appropriate
