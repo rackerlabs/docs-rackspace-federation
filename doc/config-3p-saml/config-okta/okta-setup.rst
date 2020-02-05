@@ -48,7 +48,7 @@ The default values are shown in the following list:
        ("Single Sign On URL")
      - https://login.rackspace.com/federate/acs
    * - Application username
-     - Email(recommended)
+     - Email (recommended)
 
 8. On the same screen, proceed to the section labeled **Attribute Statements**
    and enter the following values:
@@ -59,10 +59,8 @@ The default values are shown in the following list:
 
    * - Name
      - Name format
-     - Value
    * - email
      - Unspecified
-     - user.email
 
 9. In the same section click the **Add Another** button and enter the following
    values:
