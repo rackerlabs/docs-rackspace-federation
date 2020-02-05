@@ -54,8 +54,8 @@ The default values are shown in the following list:
    and enter the following values:
 
 .. list-table::
-  :widths: 30 70
-  :header-rows: 1
+   :widths: 30 70
+   :header-rows: 1
 
   * - Name
     - Name format
@@ -68,8 +68,8 @@ The default values are shown in the following list:
    values:
 
 .. list-table::
-  :widths: 30 70
-  :header-rows: 1
+   :widths: 30 70
+   :header-rows: 1
 
   * - Name
     - Name format
