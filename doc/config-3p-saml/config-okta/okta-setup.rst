@@ -23,11 +23,15 @@ integration with Okta to work with |service|:
 4. Next, click the **Create New Application** button.
 
 5. From within the **Configure a New Application Integration** popup window,
-   select **SAML 2.0** from the listed options.
+   select **Web** from the Platform options and **SAML 2.0** from the
+   Sign on method options.
 
 .. image:: ../../_images/Config-okta/create_app_1.png
 
-6. Fill in the requested SAML information with the :ref:`Rackspace Federation
+6. On the **General Settings** page, fill in the **App name** with whatever you
+   want users to see when they use the application and then click **Next**.
+
+7. Fill in the requested SAML information with the :ref:`Rackspace Federation
    configuration details<generic-3p-saml-ug>`.
 
 The metadata file contains the latest certificate for signing SAML assertions.
@@ -54,7 +58,7 @@ Instructions on setting up SAML applications in Okta can be found at:
 https://developer.okta.com/standards/SAML/setting_up_a_saml_application_in_okta
 
 
-3. Download your Okta |idp| metadata by going to the new SAML applications
+Download your Okta |idp| metadata by going to the new SAML applications
 settings and going to the **Sign On** section. Click the **Identity Provider
 metadata** link to download the XML file that you will use to configure your
 |idp| with Rackspace.

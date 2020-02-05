@@ -1,4 +1,4 @@
-.. generic-3p-saml-ug:
+.. _generic-3p-saml-ug:
 
 ====================
 Other SAML providers
