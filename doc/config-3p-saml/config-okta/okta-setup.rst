@@ -34,8 +34,6 @@ integration with Okta to work with |service|:
 7. Fill in the requested SAML information with the :ref:`Rackspace Federation
    configuration details<generic-3p-saml-ug>`.
 
-The metadata file contains the latest certificate for signing SAML assertions.
-
 The default values are shown in the following list:
 
 .. list-table::
@@ -51,6 +49,33 @@ The default values are shown in the following list:
      - https://login.rackspace.com/federate/acs
    * - Application username
      - Email(recommended)
+
+8. On the same screen, proceed to the section labeled **Attribute Statements**
+   and enter the following values:
+   .. list-table::
+      :widths: 30 70
+      :header-rows: 1
+
+      * - Name
+        - Name format
+        - Value
+      * - email
+        - Unspecified
+        - user.email
+
+9. In the same section click the **Add Another** button and enter the following
+   values:
+   .. list-table::
+      :widths: 30 70
+      :header-rows: 1
+
+      * - Name
+        - Name format
+        - Value
+      * - expire
+        - Unspecified
+        - PT4H(user is logged out after four hours). See the :ref:`Expire`
+          section for additional details. 
 
 Download your Okta |idp| metadata by going to the new SAML applications
 settings and going to the **Sign On** section. Click the **Identity Provider
