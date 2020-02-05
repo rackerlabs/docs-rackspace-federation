@@ -54,13 +54,15 @@ The default values are shown in the following list:
    and enter the following values:
 
 .. list-table::
-   :widths: 30 70
+   :widths: 30 30 30
    :header-rows: 1
 
    * - Name
      - Name format
+     - Value
    * - email
      - Unspecified
+     - user.email
 
 9. In the same section click the **Add Another** button and enter the following
    values:
