@@ -7,8 +7,8 @@ Prerequisites
 - :ref:`Rackspace Federation configuration details<generic-3p-saml-ug>`.
 - These instructions are using the **Classic UI** setting in Okta.
 
-Configure Okta
---------------
+Configure Rackspace Federation at Okta
+--------------------------------------
 Follow these steps to set up a Security Assertion Markup Language (SAML)
 integration with Okta to work with |service|:
 
@@ -42,11 +42,11 @@ The default values are shown in the following list:
 
    * - Attribute
      - Value
-   * - EntityID ("Audience")
-     - https://login.rackspace.com
    * - Assertion Consumer Service
        ("Single Sign On URL")
      - https://login.rackspace.com/federate/acs
+   * - EntityID ("Audience")
+     - https://login.rackspace.com
    * - Application username
      - Email (recommended)
 
@@ -79,12 +79,31 @@ The default values are shown in the following list:
      - PT4H (user is logged out after four hours). See the :ref:`expiration<Expire>`
        section for additional details.
 
-Download your Okta |idp| metadata by going to the new SAML applications
-settings and going to the **Sign On** section. Click the **Identity Provider
-metadata** link to download the XML file that you will use to configure your
-|idp| with Rackspace.
+10. Click **Next**. The next page can be filled out however you prefer and then
+    click **Finish.
+
+You have successfully added Rackspace Federation to your Okta account.
+
+Before leaving this page, download your Okta |idp| metadata by going to the new
+SAML applications settings and going to the **Sign On** section. Click the
+**Identity Provider metadata** link to download the XML file. This file is
+necessary to configure your |idp| with Rackspace.
 
 .. image:: ../../_images/Config-okta/idp_metadata.png
+
+Next steps
+----------
+
+Once you have added Rackspace Federation as an application at Okta, you should
+proceed to adding Okta as an |idp| at Rackspace by using one of the
+following methods:
+
+   - :ref:`Add an Identity Provider in the Control Panel<add-idp-cp-gs-ug>`
+
+   - :ref:`Add an Identity Provider in the MyRack Portal<add-idp-mr-gs-ug>`
+
+   - :ref:`Add an Identity Provider by using the API<add-idp-api-gs-ug>` by
+     providing basic information about the |idp|.
 
 
 Optional settings
