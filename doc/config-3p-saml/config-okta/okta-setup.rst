@@ -54,7 +54,7 @@ The default values are shown in the following list:
    and enter the following values:
 
 .. list-table::
-   :widths: 30 30 30
+   :widths: 30 30 50
    :header-rows: 1
 
    * - Name
@@ -76,7 +76,7 @@ The default values are shown in the following list:
      - Value
    * - expire
      - Unspecified
-     - PT4H(user is logged out after four hours). See the :ref:`Expire`
+     - PT4H (user is logged out after four hours). See the :ref:`Expire`
        section for additional details.
 
 Download your Okta |idp| metadata by going to the new SAML applications
