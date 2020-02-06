@@ -84,10 +84,19 @@ The default values are shown in the following list:
 
 You have successfully added Rackspace Federation to your Okta account.
 
+.. _okta-metadata:
+
+Okta metadata
+-------------
+
 Before leaving this page, download your Okta |idp| metadata by going to the new
 SAML applications settings and going to the **Sign On** section. Click the
 **Identity Provider metadata** link to download the XML file. This file is
-necessary to configure your |idp| with Rackspace.
+necessary to configure your |idp| with Rackspace. The file should be
+**metadata.xml**.
+
+**Note:** If the file does not download with the .xml extension be sure to
+rename the file with the .xml extension.
 
 .. image:: ../../_images/Config-okta/idp_metadata.png
 

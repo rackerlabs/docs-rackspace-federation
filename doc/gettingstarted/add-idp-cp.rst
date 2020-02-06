@@ -34,6 +34,15 @@ Cloud customers, use the following steps to add an |idp|:
    directly to the `User Management <https://account.rackspace.com/users>`_
    page in the Rackspace Account Management Control Panel.
 
-3. In the subnavigation bar, select **Identity Federation**.
+3. In the sub-navigation bar, select **Identity Federation**.
 
 4. Click **Add Identity Provider**.
+
+5. Provide a short description of the |idp| for organizational purposes.
+
+6. Click **Add Domain** and enter the domain users should authenticate with.
+   Click **Add**.
+
+7. Within the **SAML Metadata** section locate and click the **No file chosen**
+   button. Choose the metadata file you downloaded from your |idp|. The
+   :ref:`Okta metadata file<okta-metadata>` is an example of this file.
