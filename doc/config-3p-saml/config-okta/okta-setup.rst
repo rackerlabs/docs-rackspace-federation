@@ -76,7 +76,7 @@ The default values are shown in the following list:
      - Value
    * - expire
      - Unspecified
-     - PT4H (user is logged out after four hours). See the :ref:`Expire`
+     - PT4H (user is logged out after four hours). See the :ref:`expiration<Expire>`
        section for additional details.
 
 Download your Okta |idp| metadata by going to the new SAML applications

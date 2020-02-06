@@ -233,8 +233,9 @@ example, to grant ``nova:admin`` on account ``12873`` and
 as ``nova:admin/33987`` and ``nova:observer/33987``.
 
 .. _Expire:
+
 Expire
-------
+======
 
 Finally, Rackspace identity needs to understand the amount of time
 that a federated user should be allowed on Rackspace systems before
