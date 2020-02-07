@@ -80,7 +80,7 @@ The default values are shown in the following list:
        section for additional details.
 
 10. Click **Next**. The next page can be filled out however you prefer and then
-    click **Finish.
+    click **Finish**.
 
 You have successfully added Rackspace Federation to your Okta account.
 
@@ -95,8 +95,8 @@ SAML applications settings and going to the **Sign On** section. Click the
 necessary to configure your |idp| with Rackspace. The file should be
 **metadata.xml**.
 
-**Note:** If the file does not download with the .xml extension be sure to
-rename the file with the .xml extension.
+**Note:** If the file does not download with the **.xml** extension be sure to
+rename the file with the **.xml** extension before uploading at Rackspace.
 
 .. image:: ../../_images/Config-okta/idp_metadata.png
 

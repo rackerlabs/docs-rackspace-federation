@@ -46,3 +46,6 @@ Cloud customers, use the following steps to add an |idp|:
 7. Within the **SAML Metadata** section locate and click the **No file chosen**
    button. Choose the metadata file you downloaded from your |idp|. The
    :ref:`Okta metadata file<okta-metadata>` is an example of this file.
+
+After your |idp| metadata is successfully uploaded, you are now ready to begin
+:ref:`mapping policy attributes<config-attribute-mapping-ug>`. 
