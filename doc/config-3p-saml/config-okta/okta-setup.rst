@@ -3,28 +3,32 @@
 Prerequisites
 -------------
 
+You need the following things to set up Okta:
+
 - Administrator access to your organization's Okta account.
-- :ref:`Rackspace Federation configuration details<generic-3p-saml-ug>`.
-- These instructions are using the **Classic UI** setting in Okta.
+- The information at :ref:`Rackspace Federation configuration details<generic-3p-saml-ug>`.
+
 
 Configure Rackspace Federation at Okta
 --------------------------------------
-Follow these steps to set up a Security Assertion Markup Language (SAML)
-integration with Okta to work with |service|:
+
+This section includes instructions that use the **Classic UI** setting in Okta.
+
+Follow these steps to set up SAML integration with Okta to work with |service|:
 
 
-1. Log in to your organization's Okta account using your organization's sign-in
+1. Log in to your organization's Okta account by using your organization's sign-in
    page.
 
-2. Click **Applications**, located on the top ribbon.
+2. Click **Applications** located on the top ribbon.
 
 3. On the next screen, click the **Add Application** button.
 
 4. Next, click the **Create New Application** button.
 
-5. From within the **Configure a New Application Integration** popup window,
-   select **Web** from the Platform options and **SAML 2.0** from the
-   Sign on method options.
+5. From within the **Configure a New Application Integration** pop-up window,
+   select **Web** from the **Platform** options and **SAML 2.0** from the
+   **Sign on method** options.
 
 .. image:: ../../_images/Config-okta/create_app_1.png
 
@@ -64,7 +68,7 @@ The default values are shown in the following list:
      - Unspecified
      - user.email
 
-9. In the same section click the **Add Another** button and enter the following
+9. In the same section, click the **Add Another** button and enter the following
    values:
 
 .. list-table::
@@ -79,7 +83,7 @@ The default values are shown in the following list:
      - PT4H (user is logged out after four hours). See the :ref:`expiration<Expire>`
        section for additional details.
 
-10. Click **Next**. The next page can be filled out however you prefer and then
+10. Click **Next**. You can fill out the next page however you prefer and then
     click **Finish**.
 
 You have successfully added Rackspace Federation to your Okta account.
@@ -95,7 +99,7 @@ SAML applications settings and going to the **Sign On** section. Click the
 necessary to configure your |idp| with Rackspace. The file should be
 **metadata.xml**.
 
-**Note:** If the file does not download with the **.xml** extension be sure to
+**Note:** If the file does not download with the **.xml** extension, be sure to
 rename the file with the **.xml** extension before uploading at Rackspace.
 
 .. image:: ../../_images/Config-okta/idp_metadata.png
@@ -103,13 +107,13 @@ rename the file with the **.xml** extension before uploading at Rackspace.
 Next steps
 ----------
 
-Once you have added Rackspace Federation as an application at Okta, you should
-proceed to adding Okta as an |idp| at Rackspace by using one of the
+After you have added Rackspace Federation as an application at Okta, you should
+add Okta as an |idp| at Rackspace by using one of the
 following methods:
 
-   - :ref:`Add an Identity Provider in the Control Panel<add-idp-cp-gs-ug>`
+   - :ref:`Add an Identity Provider in the Control Panel<add-idp-cp-gs-ug>`.
 
-   - :ref:`Add an Identity Provider in the MyRack Portal<add-idp-mr-gs-ug>`
+   - :ref:`Add an Identity Provider in the MyRack Portal<add-idp-mr-gs-ug>`.
 
    - :ref:`Add an Identity Provider by using the API<add-idp-api-gs-ug>` by
      providing basic information about the |idp|.
@@ -118,8 +122,8 @@ following methods:
 Optional settings
 -----------------
 
-Unless specified in the above instructions, all other Okta settings are
-optional. For further detail on all Okta SAML configuration options reference
+Unless specified in the instructions above, all other Okta settings are
+optional. For further detail on all Okta SAML configuration options, see
 the :ref:`Okta documentation site<
 https://developer.okta.com/standards/SAML/setting_up_a_saml_application_in_okta
 >`.
