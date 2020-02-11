@@ -1,27 +1,29 @@
 .. _add-rfi-idp-gs-ug:
 
 ====================================================
-Add Rackspace Federation to your Identity Provider
+Add Rackspace Federation to your identity provider
 ====================================================
 
-This section provides information about adding  Rackspace Federation to your
-Identity Provider.
+This section provides information about adding Rackspace Federation to your
+identity provider.
 
 Prerequisites
 -------------
-Be sure you have the following before continuing:
 
-- Your |idp| requires that you fill in data that is outlined in the section
-  :ref:`Rackspace Federation SAML configuration metadata<generic-3p-saml-ug>`.
+Ensure that you have done the following items before continuing:
 
-- Administrator access at your |idp|.
+- Fill in data that is outlined in the section
+  :ref:`Rackspace Federation SAML configuration metadata<generic-3p-saml-ug>`,
+  as required by your |idp| requires.
+
+- Have administrator access to your |idp|.
 
 Common |idp| setup instructions
 -------------------------------
 
-We have created instructions for adding Rackspace Federation through the
-interface of commonly used Identity Providers. Select your |idp| from the
-following list of instructions:
+Use the following instructions to add Rackspace Federation through the
+interface of commonly used identity providers. Select the instructions
+for your |idp| from the following list:
 
 - :ref:`Configure Okta<okta-setup-ug>`
 
