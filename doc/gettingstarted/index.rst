@@ -72,7 +72,7 @@ that are associated with |product name|:
    * - Attribute mapping
      - During the login process, the identity provider and Rackspace exchange
        SAML messages containing attributes about the user who is
-       authenticating. An attribute mapping policy interpretes these SAML
+       authenticating. An attribute mapping policy interprets these SAML
        attributes (also called *assertions*) to set Rackspace roles and
        permissions during login.
    * - Provisioned user
