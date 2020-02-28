@@ -22,7 +22,7 @@ Summary of steps
 
 The following are the basic steps for using Rackspace Federation:
 
-1. Add Rackspace Federation to your |idp|. Use the instructions listed
+1. Add Rackspace to your |idp|. Use the instructions listed
    for your company's |idp|:
 
    - :ref:`Add Rackspace Federation at your Identity Provider<add-rfi-idp-gs-ug>`.
