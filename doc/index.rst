@@ -20,8 +20,8 @@ help.
    common/common-front.rst
    overview/index.rst
    gettingstarted/index.rst
-   config-attribute-mapping/index.rst
    config-3p-saml/index.rst
+   config-attribute-mapping/index.rst
    manage-idps/index.rst
    support/index.rst
    appendix/index.rst
