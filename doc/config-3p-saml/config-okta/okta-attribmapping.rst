@@ -44,12 +44,12 @@ value ``.*rackspace.*``.
 
 9. Click **Next** then click **Finish**.
 
-Mapping Rackspace permissions to Okta groups or users
------------------------------------------------------
+Mapping Rackspace permissions to Okta groups
+--------------------------------------------
 
-This section details how to map Okta groups or users to specific Rackspace
-attribute mapping policies. Attribute mapping policies determine the Rackspace
-roles and permissions assigned to Okta groups.
+This section details how to map Okta groups to specific Rackspace attribute
+mapping policies. Attribute mapping policies determine the Rackspace roles and
+permissions assigned to Okta groups.
 
 Update your Rackspace YAML (``.yml``) attribute mapping policy by using the
 following steps:
