@@ -44,10 +44,6 @@ value ``.*rackspace.*``.
 
 9. Click **Next** then click **Finish**.
 
-
-.. image:: ../../_images/Config-okta/create_app_5.png
-
-
 Mapping Rackspace permissions to Okta groups or users
 -----------------------------------------------------
 
