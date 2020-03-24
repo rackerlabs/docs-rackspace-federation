@@ -87,16 +87,17 @@ The default values are shown in the following list:
     to be mapped to Rackspace permissions later. This can be done by performing
     the following steps:
 
-        1. In the section **Group Attribute Statements (Optional)**, enter a
+        i. In the section **Group Attribute Statements (Optional)**, enter a
         name for the group attribute statement in the **Name** field.
-        2. Leave **Name format** set to **Unspecified**.
-        3. Choose a **Filter** option and enter the necessary details. For
+        
+        ii. Leave **Name format** set to **Unspecified**.
+
+        iii. Choose a **Filter** option and enter the necessary details. For
         example, if you want to include all the user's groups that have the
         word ``rackspace`` in your SAML assertions, add a field with an
         appropriate name like ``groups``, and select a regex filter with the
         value ``.*rackspace.*``.
 
-        Note: See <> for information on mapping policies.
 
 11. Click **Next**. You can fill out the next page however you prefer and then
     click **Finish**.
