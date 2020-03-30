@@ -83,7 +83,23 @@ The default values are shown in the following list:
      - PT4H (user is logged out after four hours). See the :ref:`expiration<Expire>`
        section for additional details.
 
-10. Click **Next**. You can fill out the next page however you prefer and then
+10. Optionally, you can choose to add groups created in Okta to map to those
+    to be mapped to Rackspace permissions later. Do this by performing
+    the following steps:
+
+        a. In the section **Group Attribute Statements (Optional)**, enter a
+        name for the group attribute statement in the **Name** field.
+
+        b. Leave **Name format** set to **Unspecified**.
+
+        c. Choose a **Filter** option and enter the necessary details. For
+        example, if you want to include all the user's groups that have the
+        word ``rackspace`` in your SAML assertions, add a field with an
+        appropriate name like ``groups``, and select a regex filter with the
+        value ``.*rackspace.*``.
+
+
+11. Click **Next**. You can fill out the next page however you prefer and then
     click **Finish**.
 
 You have successfully added Rackspace Federation to your Okta account.
@@ -94,7 +110,7 @@ Okta metadata
 -------------
 
 Before leaving this page, download your Okta |idp| metadata by going to the new
-SAML applications settings and going to the **Sign On** section. Click the
+SAML application settings and going to the **Sign On** section. Click the
 **Identity Provider metadata** link to download the XML file. This file is
 necessary to configure your |idp| with Rackspace. The file should be
 **metadata.xml**.
