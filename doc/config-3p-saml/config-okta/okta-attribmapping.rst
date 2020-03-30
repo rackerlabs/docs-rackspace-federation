@@ -9,8 +9,8 @@ your users have access to the applications and permissions that they need.
 Mapping Okta groups to Rackspace
 --------------------------------
 
-Assigning permissions based on groups is an efficient way to ensure permissions
-are properly assigned to multiple users. You can use existing Okta groups or
+Assigning permissions based on groups is an efficient way to ensure you assign
+permissions properly to multiple users. You can use existing Okta groups or
 create Rackspace specific groups at Okta.
 
 To send Okta group information to Rackspace, you can configure
@@ -22,8 +22,8 @@ following steps:
 
 2. Click **Applications** located on the top ribbon.
 
-3. Click the your Rackspace Federation application. If you have not yet set
-this up see instructions in the :ref:`Configure Rackspace Federation at
+3. Click your Rackspace Federation application. If you have not yet set
+this up, see instructions in the :ref:`Configure Rackspace Federation at
 Okta<okta-setup-ug>` section.
 
 4. Click the **General** tab for the application.
@@ -65,9 +65,9 @@ following steps:
 
 4. Edit your Identity provider by clicking the name of the provider.
 
-5. Scroll down to the Attribute Policy Mapping section.
+5. Scroll down to the **Attribute Policy Mapping** section.
 
-6. Download the ``.yml`` file and make any applicable edits. Reference the next
+6. Download the ``.yml`` file and make any applicable edits. See the next
 section for an attribute policy mapping example ``.yml`` configuration.
 
 7. Click the **Update** button and upload the updated ``.yml`` file.
@@ -79,7 +79,7 @@ The following example shows a Rackspace YAML (``.yml``) attribute mapping
 policy that you can use when you configure your identity provider with
 Rackspace. This example assumes that you have a group named
 ``rackspace-billing`` with users that you want to access Rackspace billing
-services by using the ``billing:admin`` Rackspace role. Please see
+services by using the ``billing:admin`` Rackspace role. Ssee
 :ref:`Rackspace Cloud roles<required-mapping-ug>` for a full list of all
 Rackspace roles.
 
@@ -128,7 +128,7 @@ Notes:
                   )
               # Substitute these example groups with your own groups.
 
-Please see :ref:`Required SAML attributes<required-mapping-ug>` for a detailed
+See :ref:`Required SAML attributes<required-mapping-ug>` for a detailed
 breakdown of each section of the YAML configuration.
 
 Be sure to validate and modify the following items in your policy |amp|:
