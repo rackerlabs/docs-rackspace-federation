@@ -87,6 +87,7 @@ Notes:
 
 - Change the ``groups`` specified in the example to match your
   configured Okta groups.
+- Any YAML group name must match your Okta group name exactly.
 - At a minimum, remember to update the example's ``domain`` value to your
   Identity domain on the |idp| details page.
 - Validate that any values that are mapped to ``email`` and ``expire`` are
