@@ -104,9 +104,7 @@ Hosting:
               domain: "{D}"
               email: "{Pt(/saml2p:Response/saml2:Assertion/saml2:Subject/saml2:NameID)}"
               expire: PT12H
-              firstName: "{D}"
               groups: "{0}"
-              lastName: "{D}"
               name: "{D}"
           remote:
             - multiValue: true
