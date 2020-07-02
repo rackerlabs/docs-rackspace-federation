@@ -192,10 +192,9 @@ policy below assigns permissions as follows:
 
 In the above example, a user who is a member of both the
 ``mycompany.global.security`` group and the ``mycompany.123456789012.admin``
-group, would be granted ``AdministratorAccess`` IAM policy for AWS account
-``123456789012``. This is because the full set of permissions granted to the
-user is the union of the permissions granted by each of the ``iamPolicies``
-in the ``aws`` section of the mapping YAML file.
+group, both the ``AdministratorAccess`` IAM policy and the ``SecurityAudit``
+IAM policy would be attached to the user's temporary session for AWS account
+``123456789012``. 
 
 Customer-managed AWS IAM Policies that are the same across AWS accounts
 -----------------------------------------------------------------------
