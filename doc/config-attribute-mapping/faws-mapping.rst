@@ -93,6 +93,40 @@ policy, members of the ``mycompany.scoped.admin`` group are granted the FAWS
               )
             multiValue: true
 
+In the above example, a user who is a member of both the
+``mycompany.scoped.admin`` group and the ``mycompany.scoped.observer`` group,
+would be granted the FAWS ``admin`` role on the single account ``12345678012``.
+
+However, if the mapping order for the admin and observer groups were swapped as
+in the next example, then a user in both of those groups would be granted just
+the ``observer`` role on that single account. This is because the first ``if``
+condition matches, so the second ``if`` condition is not evaluated.
+
+.. code:: yaml
+
+  mapping:
+    version: RAX-1
+    rules:
+      - local:
+          user:
+            domain: "{D}"
+            email: "{Pt(/saml2p:Response/saml2:Assertion/saml2:Subject/saml2:NameID)}"
+            expire: "PT12H"
+            name: "{D}"
+            roles:
+              - "{0}"
+        remote:
+          - path: |
+              (
+                if (mapping:get-attributes('http://schemas.xmlsoap.org/claims/Group')='mycompany.scoped.observer') then ('observer/faws:12345678012') else ()
+                if (mapping:get-attributes('http://schemas.xmlsoap.org/claims/Group')='mycompany.scoped.admin') then (
+                  'admin/faws:12345678012',
+                  'admin/faws:987654321098',
+                  'admin/faws:112233445566'
+                ) else (),
+              )
+            multiValue: true
+
 For more information about Fanatical Support for AWS permissions, visit the
 `User Management and Permissions <https://manage.rackspace.com/aws/docs/product-guide/access_and_permissions/user_management_and_permissions.html>`_
 section of the Fanatical Support for AWS product guide.
@@ -126,12 +160,12 @@ As with Fanatical Support for AWS permissions, it's much more common to assign
 IAM policies conditionally based on a user's group membership. The mapping
 policy below assigns permissions as follows:
 
-* Users in the ``mycompany.global.admin`` group are assigned the
-  ``AdministratorAccess`` IAM policy on all AWS accounts.
+* Users in the ``mycompany.global.security`` group are assigned the
+  ``SecurityAudit`` IAM policy on all AWS accounts.
 * Users in the ``mycompany.global.observer`` group are assigned the
   ``ViewOnlyAccess`` IAM policy on all AWS accounts.
 * Users in the ``mycompany.12345678012.admin`` group are only assigned the
-  ``AdministratorAccess`` IAM policy for AWS account 123456789012.
+  ``AdministratorAccess`` IAM policy for AWS account ``123456789012``.
 
 .. code:: yaml
 
@@ -152,7 +186,7 @@ policy below assigns permissions as follows:
         remote:
           - path: |
               (
-                if (mapping:get-attributes('http://schemas.xmlsoap.org/claims/Group')='mycompany.global.admin') then ('arn:aws:iam::aws:policy/AdministratorAccess') else (),
+                if (mapping:get-attributes('http://schemas.xmlsoap.org/claims/Group')='mycompany.global.security') then ('arn:aws:iam::aws:policy/SecurityAudit') else (),
                 if (mapping:get-attributes('http://schemas.xmlsoap.org/claims/Group')='mycompany.global.observer') then ('arn:aws:iam::aws:policy/job-function/ViewOnlyAccess') else ()
               )
             multiValue: true
@@ -161,6 +195,16 @@ policy below assigns permissions as follows:
                 if (mapping:get-attributes('http://schemas.xmlsoap.org/claims/Group')='mycompany.123456789012.admin') then ('arn:aws:iam::aws:policy/AdministratorAccess') else ()
               )
             multiValue: true
+
+In the above example, a user who is a member of both the
+``mycompany.global.security`` group and the ``mycompany.123456789012.admin``
+group, would be granted ``AdministratorAccess`` IAM policy for AWS account
+``123456789012``. This is because the full set of permissions granted to the
+user is the union of the permissions granted by each of the ``iamPolicies``
+in the ``aws`` section of the mapping YAML file.
+
+Customer-managed AWS IAM Policies that are the same across AWS accounts
+-----------------------------------------------------------------------
 
 Many customers create their own
 `customer managed policies <https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_managed-vs-inline.html#customer-managed-policies>`_
@@ -259,4 +303,3 @@ AWS Console and API permissions into a single mapping policy:
                 if (mapping:get-attributes('http://schemas.xmlsoap.org/claims/Group')='mycompany.123456789012.admin') then ('arn:aws:iam::aws:policy/AdministratorAccess') else ()
               )
             multiValue: true
-
