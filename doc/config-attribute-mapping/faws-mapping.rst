@@ -4,12 +4,6 @@
 Assigning Fanatical Support for AWS Permissions
 ===============================================
 
-**Note:** Identity Federation for Fanatical Support for AWS is available as
-part of a **public beta**. It is available to all customers, but phone support
-is not available for federated users. Federated users need to submit all
-support requests through the
-`Rackspace ticketing portal <https://portal.rackspace.com/tickets>`_.
-
 Fanatical Support for AWS Permissions
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
