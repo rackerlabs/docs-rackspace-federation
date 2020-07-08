@@ -4,12 +4,12 @@
 Assigning Fanatical Support for AWS Permissions
 ===============================================
 
-Fanatical Support for AWS Permissions
+Fanatical support for AWS permissions
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 These permissions control access to features within Rackspace's Fanatical
-Support for Amazon Web Services (FAWS) Control Panel. You can assign the roles 
-of ``observer``, ``admin``, or omit them from the mapping policy. Users with 
+Support for the Amazon Web Services (FAWS) Control Panel. You can assign the roles 
+of ``observer`` or ``admin`` or omit them from the mapping policy. Users with 
 ``observer`` permissions have read-only access to the Control Panel. Users with
  ``admin`` permissions have read and write access to the Control Panel. The 
 following mapping policy assigns the ``admin`` role to all federated users:
@@ -29,10 +29,9 @@ following mapping policy assigns the ``admin`` role to all federated users:
               - "admin"
 
 It's common to assign roles based on a user's group membership. 
-In the following mapping policy example, users who belong to the
-``mycompany.global.admin`` group are granted the ``admin`` role, and users who
-belong to the ``mycompany.global.observer`` group are granted the ``observer``
-role:
+The following mapping policy example grants the ``admin`` role to users who
+belong to the ``mycompany.global.admin`` group, and the ``observer``
+role to users who belong to the ``mycompany.global.observer`` group:
 
 .. code:: yaml
 
@@ -56,10 +55,10 @@ role:
             multiValue: true
 
 You can limit the roles of ``admin`` and ``observer`` to specific Amazon Web 
-Services® (AWS) accounts. In the preceding policy example, members of the 
-``mycompany.scoped.admin`` group are granted the FAWS ``admin`` role on multiple
- AWS accounts, and members of ``mycompany.scoped.observer`` are granted 
- ``observer`` on the single account ``12345678012`` :
+Services® (AWS) accounts. The preceding policy example grants the FAWS ``admin`` role
+to members of the ``mycompany.scoped.admin`` group on multiple
+ AWS accounts, and the  ``observer`` role to members of ``mycompany.scoped.observer``
+ on the single account ``12345678012``:
 
 .. code:: yaml
 
@@ -90,10 +89,10 @@ In the preceding example, members of both the ``mycompany.scoped.admin`` group
 and the ``mycompany.scoped.observer`` group have the ``admin`` role on the 
 single FAWS account ``12345678012``. 
 
-Swapping the ``admin`` and ``observer`` groups in the next example, grants 
+Swapping the ``admin`` and ``observer`` groups in the next example grants 
 only the ``observer`` role on that single account to any
-user in both groups . This is because the first ``if`` condition matches, so the
-policy doesn't evaluate the second ``if`` condition. 
+user in both groups. This assignment occurs because the first ``if`` condition
+matches, so the policy doesn't evaluate the second ``if`` condition. 
 
 .. code:: yaml
 
@@ -123,7 +122,7 @@ policy doesn't evaluate the second ``if`` condition.
 Visit the `User Management and Permissions <https://manage.rackspace.com/aws/docs/product-guide/access_and_permissions/user_management_and_permissions.html>`_
 section of the Fanatical Support for AWS product guide for further details.
 
-AWS Console and API Permissions
+AWS console and API permissions
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 These permissions control access to the Amazon Web Services APIs and to
@@ -194,18 +193,18 @@ groups, have the``AdministratorAccess`` IAM policy. In this case, the
 ``SecurityAudit`` IAM policy attaches to the user's temporary session for the 
 AWS account ``123456789012``. 
 
-Customer-managed AWS IAM Policies that are the same across AWS accounts
+Customer-managed AWS IAM policies that are the same across AWS accounts
 -----------------------------------------------------------------------
 
 Many customers create their own
-`customer managed policies <https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_managed-vs-inline.html#customer-managed-policies>`_
+`customer-managed policies <https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_managed-vs-inline.html#customer-managed-policies>`_
 that are the same across many AWS accounts. Policy ARNs can omit the account ID
 section, which makes it easier to assign these policies. For example, if a
 policy named ``MyCompany.Audit`` exists on every AWS account, you can assign
 this policy by using ``arn:aws:iam:::policy/MyCompany.Audit`` in your mapping
 policy.
 
-AWS Account Creator Permissions
+AWS account creator permissions
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 This permission controls whether a user can create new AWS accounts
@@ -233,7 +232,7 @@ create new AWS accounts:
               )
             multiValue: false
 
-Complete Mapping Policy Example
+Complete mapping policy example
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The following example combines both Fanatical Support for AWS permissions and
