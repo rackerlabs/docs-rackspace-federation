@@ -38,15 +38,15 @@ Cloud customers, use the following steps to add an |idp|:
 
 4. Click **Add Identity Provider**.
 
-5. Provide a short description of the |idp| for organizational purposes.The 
+5. Provide a short description of the |idp| for organizational purposes.The
    The name used here is displayed to users when logging in using federation.
 
-6. Click **Add Domain** and enter the email domain users should authenticate with.
-   Click **Add**.
+6. Click **Add Domain** and enter the email domain users should authenticate
+   with.Click **Add**.
 
 7. Within the **SAML Metadata** section locate and click the **No file chosen**
    button. Choose the metadata file you downloaded from your |idp|. The
    :ref:`Okta metadata file<okta-metadata>` is an example of this file.
 
 After your |idp| metadata is successfully uploaded, you are now ready to begin
-:ref:`mapping policy attributes<config-attribute-mapping-ug>`. 
+:ref:`mapping policy attributes<config-attribute-mapping-ug>`.

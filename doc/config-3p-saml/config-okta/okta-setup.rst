@@ -6,7 +6,8 @@ Prerequisites
 You need the following things to set up Okta:
 
 - Administrator access to your organization's Okta account.
-- The information at :ref:`Rackspace Federation configuration details<generic-3p-saml-ug>`.
+- The information at :ref:`Rackspace Federation configuration
+  details<generic-3p-saml-ug>`.
 
 
 Configure Rackspace Federation at Okta
@@ -17,8 +18,8 @@ This section includes instructions that use the **Classic UI** setting in Okta.
 Follow these steps to set up SAML integration with Okta to work with |service|:
 
 
-1. Log in to your organization's Okta account by using your organization's sign-in
-   page.
+1. Log in to your organization's Okta account by using your organization's
+   sign-in page.
 
 2. Click **Applications** located on the top ribbon.
 
@@ -68,8 +69,8 @@ The default values are shown in the following list:
      - Unspecified
      - user.email
 
-9. In the same section, click the **Add Another** button and enter the following
-   values:
+9. In the same section, click the **Add Another** button and enter the
+   following values:
 
 .. list-table::
    :widths: 30 30 50

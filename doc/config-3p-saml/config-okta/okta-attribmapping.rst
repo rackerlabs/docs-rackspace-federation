@@ -17,8 +17,8 @@ To send Okta group information to Rackspace, you can configure
 the **Group Attribute Statements** in your SAML application by completing the
 following steps:
 
-1. Log in to your organization's Okta account by using your organization's sign-in
-   page.
+1. Log in to your organization's Okta account by using your organization's
+   sign-in page.
 
 2. Click **Applications** located on the top ribbon.
 

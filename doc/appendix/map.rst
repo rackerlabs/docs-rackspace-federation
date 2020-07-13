@@ -10,9 +10,9 @@ by an |idp|.  This section provides the following information:
 
 -  Describes the attributes that need to be extracted from the assertion
    for |service| to work.
-   
--  Walks through the construction of a mapping policy that extracts those attributes
-   from the assertion.
+
+-  Walks through the construction of a mapping policy that extracts those
+   attributes from the assertion.
 
 The SAML assertion
 ==================
@@ -170,8 +170,8 @@ overwrite this behavior.
 Required attributes
 ===================
 
-The following are descriptions of the attributes that Rackspace Identity requires
-to successfully authenticate a user, including line references to the
+The following are descriptions of the attributes that Rackspace Identity
+requires to successfully authenticate a user, including line references to the
 preceding SAML response example.
 
 Domain
@@ -245,21 +245,22 @@ Expire
 
 Finally, Rackspace Identity needs to understand the amount of time
 allowed to a federated user on Rackspace systems before forcing
-the user to reauthenticate.  You can use two different formats 
+the user to reauthenticate.  You can use two different formats
 to provide this attribute.
 
--  You can use an `ISO 8601`_ timestamp, which should include a time zone designator.
+-  You can use an `ISO 8601`_ timestamp, which should include a time zone
+   designator.
    For example, the timestamp ``2017-10-04T16:20:57Z`` signifies that the
    user is forced to reauthenticate after October 4th 2017 at
-   16:20:57 UTC.  
-   
+   16:20:57 UTC.
+
 -  You can use an `ISO 8601`_ duration.
    For example, ``PT1H2M`` signifies that the user is forced to
    reauthenticate one hour and two minutes after successfully logging
    in.
 
 In the preceding SAML assertion example, an expire timestamp is specified
-in the ``NotOnOrAfter`` attribute of the ``SubjectConfirmationData`` on line 61.
+in the ``NotOnOrAfter`` attribute of the ``SubjectConfirmationData`` on line 61
 In SAML, this attribute denotes the time after which the
 SAML assertion is no longer considered valid. While this
 timestamp does not fit semantically with the ``expire`` attribute that
@@ -384,7 +385,7 @@ Something that looks like the following structure contains the XPaths
 in the mapping policy:
 
  ``{Pts()}``
- 
+
 This is an
 XPath substitution. Various types of substitutions are in the
 mapping policy language, each of which is encapsulated by curly braces
