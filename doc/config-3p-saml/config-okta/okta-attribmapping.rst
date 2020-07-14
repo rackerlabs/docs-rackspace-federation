@@ -79,7 +79,7 @@ The following example shows a Rackspace YAML (``.yml``) attribute mapping
 policy that you can use when you configure your identity provider with
 Rackspace. This example assumes that you have a group named
 ``rackspace-billing`` with users that you want to access Rackspace billing
-services by using the ``billing:admin`` Rackspace role. Ssee
+services by using the ``billing:admin`` Rackspace role. See
 :ref:`Rackspace Cloud roles<required-mapping-ug>` for a full list of all
 Rackspace roles.
 
@@ -90,7 +90,7 @@ Notes:
 - Any YAML group name must match your Okta group name exactly.
 - At a minimum, remember to update the example's ``domain`` value to your
   Identity domain on the |idp| details page.
-- Validate that any values that are mapped to ``email`` and ``expire`` are
+- Validate that any values mapped to ``email`` and ``expire`` are
   properly specified for your specific SAML attributes or assertions. For
   example, in the following example policy, ``email`` is set by using the
   *path* (``"{Pt}"``) syntax in the |amp| language to point to the ``NameID``
