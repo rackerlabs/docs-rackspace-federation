@@ -34,7 +34,7 @@ Follow these steps to set up SAML integration with Okta to work with |service|:
 .. image:: ../../_images/Config-okta/create_app_1.png
 
 6. On the **General Settings** page, fill in the **App name** with whatever you
-   want users to see when they use the application and then click **Next**.
+   want users to see when using the application and then click **Next**.
 
 7. Fill in the requested SAML information with the :ref:`Rackspace Federation
    configuration details<generic-3p-saml-ug>`.
@@ -85,7 +85,7 @@ The default values are shown in the following list:
        section for additional details.
 
 10. Optionally, you can choose to add groups created in Okta to map to those
-    to be mapped to Rackspace permissions later. Do this by performing
+    you plan to map to Rackspace permissions later. Do this by performing
     the following steps:
 
         a. In the section **Group Attribute Statements (Optional)**, enter a
