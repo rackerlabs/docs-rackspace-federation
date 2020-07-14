@@ -136,11 +136,11 @@ itself. The actual assertion (``<saml2p:Assertion />``) begins on line 34.
   assertion. This is identified as a URI.
 
 - **Signature (38 - 57)**: The XML signature of the assertion part of the
-  request. The signature verifies that that the issuer indeed produces
+  request. The signature verifies that the issuer indeed produces
   the assertion.
 
 - **Subject (58 - 63)**: The subject identifies the user that the assertion 
-is about.
+  concerns.
 
 - **AuthnStatement (64 - 69)**: The ``AuthnStatement`` has details
   about the authentication of the subject.
@@ -159,8 +159,8 @@ Signing SAML assertions
 Both the SAML response on line 2 and the SAML assertion on line 34 might be
 signed. Rackspace Identity might verify both signatures. However, you should
 note that while signing the SAML response is optional, signing the
-SAML assertion is required. This means that a message that
-has a single signature at the SAML response level is rejected.
+SAML assertion is required. Therefore, the system rejects a message that
+has a single signature at the SAML response level.
 
 A SAML response can have many assertions. In this case, all assertions must be 
 signed, and the same issuer must issue them all. Rackspace Identity
@@ -171,7 +171,7 @@ Required attributes
 ===================
 
 This section describes the attributes that Rackspace Identity
-requires to successfully authenticate a user. The following examples include 
+requires to authenticate a user successfully. The following examples include 
 line references to the preceding `SAML response example<#the-SAML-assertion>`_.
 
 Domain
@@ -179,8 +179,8 @@ Domain
 
 Rackspace Identity keeps information about users, roles, and other
 entitlements in a domain. When a user federates into Rackspace,
-Rackspace Identity places the user in a single identity domain. Each domain
-is accessed by using a unique alphanumeric ID, which Rackspace sets to be the 
+Rackspace Identity places the user in a single identity domain. The user accesses
+each domain by using a unique alphanumeric ID, which Rackspace sets to be the 
 same as the user's account ID. The domain ID is required when a federated user
 requests access. This is important because a customer is allowed to create 
 multiple domains, and Rackspace Identity needs to place the federated user in 
@@ -199,10 +199,9 @@ The **Name** value is the username of the federated user. Rackspace Identity
 assumes that each user has a unique username, and that the same user has the 
 same username from one federated login to the next.
 
-In the preceding `SAML assertion<#the-SAML-assertion>`_, the username is 
-identified by the ``NameID`` in the ``Subject`` section of the assertion on line
- 59. However, an |idp|can return a stable username as an attribute in the 
- ``AttributeStatement`` section.
+In the preceding `SAML assertion<#the-SAML-assertion>`_, the ``NameID`` in the ``Subject``
+section of the assertion on line 59 identifies the username is. However, an |idp|can return
+a stable username as an attribute in the ``AttributeStatement`` section.
 
 Email
 -----
@@ -242,20 +241,20 @@ Expire
 ------
 
 Rackspace Identity must know the amount of time a federated user can remain on
-Rackspace systems before the user should be forced to authenticate again.  You 
+Rackspace systems before the system should be force the user to authenticate again.  You 
 can use either of the following formats to specify this attribute:
 
 -  You can use an `ISO 8601`_ timestamp, which should include a time zone
    designator. For example, the timestamp ``2017-10-04T16:20:57Z`` signifies 
-   that the user is forced to authenticate after October 4th, 2017 at
+   that the user must authenticate after October 4th, 2017, at
    16:20:57 Universal Time Coordinated (UTC).
 
 -  You can use an `ISO 8601`_ duration. For example, ``PT1H2M`` signifies that 
-   the user is forced to authenticate one hour and two minutes after 
+   the user must authenticate one hour and two minutes after 
    logging in.
 
-In the `SAML assertion example<#the-SAML-assertion>`_, an expire timestamp is 
-specified in the ``NotOnOrAfter`` attribute of the ``SubjectConfirmationData`` 
+The `SAML assertion example<#the-SAML-assertion>`_ specifies an expire timestamp 
+in the ``NotOnOrAfter`` attribute of the ``SubjectConfirmationData`` 
 on line 61. In SAML, this attribute denotes the time after which the
 SAML assertion is no longer considered valid. While this
 timestamp doesn't fit semantically with the ``expire`` attribute that
@@ -294,7 +293,7 @@ The following table gives the values at those locations:
 This table represents an attribute mapping. It maps
 data located in the SAML assertion into attributes that
 Rackspace Identity requires to log in a federated user. However, mapping 
-attributes by referring to line numbers is unpractical, inexact, and brittle. 
+attributes by referring to line numbers is impractical, inexact, and brittle. 
 Using XPath is a more stable and practical way of pinpointing the exact location
 of the data that you need. XPath is designed specifically to pinpoint and 
 extract data from XML documents [#j1]_.
@@ -363,9 +362,9 @@ Rackspace Identity.
   perspective of Rackspace Identity. For example, the ``local``
   section has statements about the user within Rackspace Identity, which is a
   local user. The remote section has statements about the
-  user as it's presented by the |idp|, which is a remote user.
+  user, which is a remote user, as the |idp| presents it.
 
-  Lines 7 through 12 describe describe the attributes of the local user. Here, 
+  Lines 7 through 12 describe the attributes of the local user. Here, 
   you specify each of the required identity attributes and describe how
   you can obtain them from an XPath.
 
@@ -378,7 +377,7 @@ in the mapping policy:
  ``{Pts()}``
 
 This is an XPath substitution. Various types of substitutions are in the
-mapping policy language, each of which are in curly braces
+mapping policy language, each of which is in curly braces
 ``{}``. Substitutions are only allowed in the local part of the
 mapping policy. They help set values for local attributes because they
 are always replaced or substituted by other content. For XPath substitution, 
@@ -396,7 +395,7 @@ assertion, replaces the value.
 The XPath substitution refers to elements in
 certain namespaces (``saml2p``, ``saml2``). These namespace prefixes,
 which are common to SAML, are always predefined. The following table
-describes how namespace prefixes are mapped by default:
+describes the default namespace mapping:
 
 .. include:: tables/namespaces.rst
 
@@ -405,7 +404,7 @@ A SAML assertion can refer to elements in extended
 namespaces that aren't listed. You can define additional prefixes by
 adding a ``namespaces`` key to the mapping policy. In XPath, it's the
 namespace URI that uniquely identifies an element. The prefix is
-simply short hand for this URI. The following example replaces the
+simply shorthand for this URI. The following example replaces the
 ``saml2p`` prefix with ``foo``. Because the namespace URI bound to
 element is the same as in the preceding example, the two mapping policies
 produce the exact same result.
@@ -475,7 +474,7 @@ common case, a predefined XPath function exists that is called
 ``mapping:get-attributes``. This function takes the name of a SAML attribute as
 a string and returns the attribute values associated with that name.
 
-By using the ``mapping:get-attributes`` function you could rewrite the mapping 
+By using the ``mapping:get-attributes`` function, you could rewrite the mapping 
 policy like the following example:
 
 .. code-block:: yaml
@@ -538,10 +537,10 @@ There are certain default places where a mapping policy looks for a
 particular identity attribute value. The value at the default
 location always replaces the default substitution (``{D}``). Unlike
 other substitutions, the default substitution is
-interpreted differently depending on where the substitution is
-placed. For example, if the substitution is placed as the value of the
+interpreted differently depending on where you place the substitution.
+For example, if you place the substitution as the value of the
 ``name`` attribute, it replaces itself with the default value for the
-name. If ``{D}`` is placed in the ``email`` attribute, it
+name. If you place ``{D}`` in the ``email`` attribute, it
 is replaced with the default value for email.
 
 What are the default locations in a SAML assertion for the five
