@@ -66,10 +66,10 @@ that are associated with |product name|:
    * - Term
      - Description
    * - Identity provider
-     - An identity provider is a third-party identity system that is
-       integrated with Rackspace.
+     - An identity provider is a third-party identity system that
+       integrates with Rackspace.
    * - SAML
-     - SAML (Security Assertion Markup Language) is the protocol that is used
+     - SAML (Security Assertion Markup Language) is the protocol used
        to communicate between an identity provider and Rackspace.
    * - Attribute mapping
      - During the login process, the identity provider and Rackspace exchange
