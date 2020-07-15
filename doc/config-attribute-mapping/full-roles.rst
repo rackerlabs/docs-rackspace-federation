@@ -16,10 +16,10 @@ and role for the capabilities that you want to provide.
      - Description
      - Role name
    * - Global RBAC roles (applies to all products)
-     - Administrator (full control) for any Cloud product
+     - Grants administrator (full control) for any Cloud products, this does not include access to Billing or Ticketing
      - admin
    * -
-     - Observer (read-only) for any Cloud product
+     - Grants Observer(read-only) access for any Cloud product, this does not include access to Billing or Ticketing
      - observer
    * - Autoscale
      - Administrator (full control)

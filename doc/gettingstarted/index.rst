@@ -25,7 +25,8 @@ The following are the basic steps for using Rackspace Federation:
 1. Add Rackspace to your |idp|. Use the instructions listed
    for your company's |idp|:
 
-   - :ref:`Add Rackspace Federation at your Identity Provider<add-rfi-idp-gs-ug>`.
+   - :ref:`Add Rackspace Federation at your Identity
+     Provider<add-rfi-idp-gs-ug>`.
 
 2. Add an |idp| at Rackspace by using one of the following methods:
 
@@ -53,7 +54,8 @@ Review the following sections for more information:
 Concepts
 --------
 
-Before you set up |product name|, make sure you understand some basic terminology.
+Before you set up |product name|, make sure you understand some basic
+terminology.
 The following table provides descriptions for some of the terms
 that are associated with |product name|:
 
@@ -64,10 +66,10 @@ that are associated with |product name|:
    * - Term
      - Description
    * - Identity provider
-     - An identity provider is a third-party identity system that is
-       integrated with Rackspace.
+     - An identity provider is a third-party identity system that
+       integrates with Rackspace.
    * - SAML
-     - SAML (Security Assertion Markup Language) is the protocol that is used
+     - SAML (Security Assertion Markup Language) is the protocol used
        to communicate between an identity provider and Rackspace.
    * - Attribute mapping
      - During the login process, the identity provider and Rackspace exchange
