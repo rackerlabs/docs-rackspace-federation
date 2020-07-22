@@ -25,7 +25,11 @@ following table provides descriptions of these parameters:
 Add an |idp|
 ------------
 
-Dedicated customers, use the following steps to add an |idp|:
+Dedicated customers, you must contact your Rackspace support team to enable Federation on your account.
+
+*Permission Required:* Account Admin
+
+Use the following steps to add an |idp|:
 
 1. Log in to the `Rackspace MyRack Portal <https://login.rackspace.com>`_.
 
