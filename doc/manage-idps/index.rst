@@ -59,9 +59,8 @@ that you have provided.
 Update the |amp|
 ~~~~~~~~~~~~~~~~
 
-To update the |amp| for your |idp|, upload a new YAML file by using the
+To update the |amp| for your |idp|, upload a new XML file by using the
 **Update Policy File** link in the |idp| details page.
 
-The file must be valid YAML, and the file extension should be ``.yml`` or
-``.yaml``. To validate your YAML, you can use any YAML validation library or
+The file must be valid XML, and the file extensions should be ``.xml``. To validate your XML, you can use any XML validation library or
 website.

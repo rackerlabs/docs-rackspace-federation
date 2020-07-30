@@ -64,18 +64,40 @@ Working with defaults
 
 Default mapping:
 
+.. code-block:: xml
+
+  <?xml version="1.0" encoding="UTF-8" ?>
+  <mapping xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xmlns:xs="http://www.w3.org/2001/XMLSchema"
+          xmlns="http://docs.rackspace.com/identity/api/ext/MappingRules"
+          version="RAX-1">
+    <rules>
+      <rule>
+      <local>
+        <user>
+          <domain value="{D}"/>
+				  <name value="{D}"/>
+          <email value="{D}"/>
+				  <roles value="{D}"/>
+          <expire value="{D}"/>
+        </user>
+      </local>
+      </rule>
+    </rules>
+  </mapping>
+
 .. code-block:: yaml
 
-   1 mapping:
-   2   version: RAX-1
-   3   rules:
-   4   - local:
-   5       user:
-   6         domain: "{D}"
-   7         name:   "{D}"
-   8         email:  "{D}"
-   9         roles:  "{D}"
-  10         expire: "{D}"
+  1 mapping:
+  2   version: RAX-1
+  3   rules:
+  4   - local:
+  5       user:
+  6         domain: "{D}"
+  7         name:   "{D}"
+  8         email:  "{D}"
+  9         roles:  "{D}"
+ 10         expire: "{D}"
 
 
 Resulting attributes:
@@ -95,6 +117,28 @@ Resulting attributes:
 Accessing default from a different field:
 -----------------------------------------
 
+.. code-block:: xml
+
+<?xml version="1.0" encoding="UTF-8" ?>
+<mapping  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xmlns:xs="http://www.w3.org/2001/XMLSchema"
+          xmlns="http://docs.rackspace.com/identity/api/ext/MappingRules"
+          version="RAX-1">
+	<rules>
+    <rule>
+		<local>
+			<user>
+        <domain value="{D}"/>
+				<name value="{D}"/>
+        <email value="{D(name)}@rackspace.com"/>
+			  <roles value="{D}"/>
+        <expire value="{D}"/>
+			</user>
+		</local>
+    </rule>
+	</rules>
+</mapping>
+
 .. code-block:: yaml
 
    1 mapping:
@@ -107,6 +151,7 @@ Accessing default from a different field:
    8         email: "{D(name)}@rackspace.com"
    9         roles: "{D}"
   10         expire: "{D}"
+
 
 Resulting attributes:
 
@@ -125,6 +170,30 @@ Resulting attributes:
 More complex example with multiple substitutions
 ------------------------------------------------
 
+.. code-block:: xml
+
+<?xml version="1.0" encoding="UTF-8" ?>
+<root>
+  <mapping xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xmlns:xs="http://www.w3.org/2001/XMLSchema"
+          xmlns="http://docs.rackspace.com/identity/api/ext/MappingRules"
+          version="RAX-1">
+		<rules>
+     <rule>
+			<local>
+				<user>
+          <domain value="{D}"/>
+				  <name value="{D}"/>
+          <email value="{D(name)} &lt;{D(name)}@{D(domain)}.rackspace.com&gt;"/>
+			    <roles value="{D}"/>
+          <expire value="{D}"/>
+				</user>
+			</local>
+     </rule>
+		</rules>
+	</mapping>
+</root>
+
 .. code-block:: yaml
 
    1 mapping:
@@ -137,6 +206,7 @@ More complex example with multiple substitutions
    8         email: "{D(name)} <{D(name)}@{D(domain)}.rackspace.com>"
    9         roles: "{D}"
   10         expire: "{D}"
+
 
 Resulting Attributes:
 
@@ -154,6 +224,30 @@ Resulting Attributes:
 
 Mixing in non-default attributes
 --------------------------------
+
+.. code-block:: xml
+
+<?xml version="1.0" encoding="UTF-8" ?>
+<root>
+	<mapping xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xmlns:xs="http://www.w3.org/2001/XMLSchema"
+          xmlns="http://docs.rackspace.com/identity/api/ext/MappingRules"
+          version="RAX-1">
+		<rules>
+     <rule>
+			<local>
+				<user>
+					<domain value="{D}"/>
+				  <name value="{D}"/>
+          <email value="{At(FirstName)} {At(LastName)} &lt;{D(name)}@{D(domain)}.rackspace.com&gt;"/>
+			    <roles value="{D}"/>
+          <expire value="{D}"/>
+				</user>
+			</local>
+     </rule>
+		</rules>
+	</mapping>
+</root>
 
 .. code-block:: yaml
 

@@ -47,9 +47,17 @@ Your |amp| must contain:
    * - **roles**
      - The product RBAC (role-based access control) roles that you want
        to assign to the user.
-     - YAML array of alphanumeric strings
+     - XML array of alphanumeric strings
      - | **Example:**
        |
+       |<?xml version="1.0" encoding="UTF-8" ?>
+       |  <root>
+	     |     <roles value="nova:observer lbaas:admin" multiValue="true" />
+       |  </root>
+       |
+     - YAML array of alphanumeric strings
+     - | **Example:**
+       | 
        | ``roles:``
        |     ``- "nova:admin"``
        |     ``- "lbaas:observer"``
@@ -122,7 +130,29 @@ SAML providers, see :ref:`index-configuring-3p-saml-ug`.
 
 |ampref|
 
-   .. code-block:: yaml
+.. code-block:: xml
+
+<?xml version="1.0" encoding="UTF-8"?>
+<mapping xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns:xs="http://www.w3.org/2001/XMLSchema"
+         xmlns="http://docs.rackspace.com/identity/api/ext/MappingRules"
+         version="RAX-1">
+   <rules>
+      <rule>
+         <local>
+            <user>
+               <domain value="636462353"/>
+               <name value="{D}"/>
+               <email value="{At(http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress)}"/>
+               <roles value="nova:observer lbaas:admin" multiValue="true"/>
+               <expire value="{Pt(/saml2p:Response/saml2:Assertion/saml2:Conditions/@NotOnOrAfter[1])}"/>
+            </user>
+         </local>
+      </rule>
+   </rules>
+</mapping>
+
+.. code-block:: yaml
 
     mapping:
      version: "RAX-1"
