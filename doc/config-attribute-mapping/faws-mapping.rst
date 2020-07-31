@@ -14,27 +14,27 @@ of ``observer`` or ``admin`` or omit them from the mapping policy. Users with
  ``admin`` permissions have read and write access to the Control Panel. The 
 following mapping policy assigns the ``admin`` role to all federated users:
 
-.. code:: xml
+.. code:: XML
 
-<?xml version="1.0" encoding="UTF-8"?>
-<mapping xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xmlns:xs="http://www.w3.org/2001/XMLSchema"
-         xmlns="http://docs.rackspace.com/identity/api/ext/MappingRules"
-         version="RAX-1">
-   <rules>
-      <rule>
-         <local>
+  <?xml version="1.0" encoding="UTF-8"?>
+  <mapping xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xmlns:xs="http://www.w3.org/2001/XMLSchema"
+          xmlns="http://docs.rackspace.com/identity/api/ext/MappingRules"
+          version="RAX-1">
+    <rules>
+        <rule>
+        <local>
             <user>
-               <domain value="{D}"/>
-               <name value="{D}"/>
-               <email value="{Pt(/saml2p:Response/saml2:Assertion/saml2:Subject/saml2:NameID)}"/>
-               <roles value="admin" multiValue="true"/>
-               <expire value="PT12H"/>
+              <domain value="{D}"/>
+              <name value="{D}"/>
+              <email value="{Pt(/saml2p:Response/saml2:Assertion/saml2:Subject/saml2:NameID)}"/>
+              <roles value="admin" multiValue="true"/>
+              <expire value="PT12H"/>
             </user>
-         </local>
-      </rule>
-   </rules>
-</mapping>
+        </local>
+        </rule>
+    </rules>
+  </mapping>
 
 .. code:: yaml
 
@@ -56,31 +56,34 @@ The following mapping policy example grants the ``admin`` role to users who
 belong to the ``mycompany.global.admin`` group, and the ``observer``
 role to users who belong to the ``mycompany.global.observer`` group:
 
-.. code:: xml
+.. code:: XML
 
-<?xml version="1.0" encoding="UTF-8"?>
-<mapping xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xmlns:xs="http://www.w3.org/2001/XMLSchema"
-         xmlns="http://docs.rackspace.com/identity/api/ext/MappingRules"
-         version="RAX-1">
-   <rules>
-      <rule>
-         <local>
+  <?xml version="1.0" encoding="UTF-8"?>
+  <mapping xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xmlns:xs="http://www.w3.org/2001/XMLSchema"
+          xmlns="http://docs.rackspace.com/identity/api/ext/MappingRules"
+          version="RAX-1">
+    <rules>
+        <rule>
+        <local>
             <user>
-               <domain value="{D}"/>
-               <name value="{D}"/>
-               <email value="{Pt(/saml2p:Response/saml2:Assertion/saml2:Subject/saml2:NameID)}"/>
-               <roles value="{0}" multiValue="true"/>
-               <expire value="PT12H"/>
+              <domain value="{D}"/>
+              <name value="{D}"/>
+              <email value="{Pt(/saml2p:Response/saml2:Assertion/saml2:Subject/saml2:NameID)}"/>
+              <roles value="{0}" multiValue="true"/>
+              <expire value="PT12H"/>
             </user>
-         </local>
-         <remote>
-            <attribute path="(\n  if (mapping:get-attributes('http://schemas.xmlsoap.org/claims/Group')='mycompany.global.admin') then ('admin') else (),\n  if (mapping:get-attributes('http://schemas.xmlsoap.org/claims/Group')='mycompany.global.observer') then ('observer') else ()\n)\n"
-                       multiValue="true"/>
-         </remote>
-      </rule>
-   </rules>
-</mapping>
+        </local>
+          <remote>
+              <attribute path="(
+                                if (mapping:get-attributes('http://schemas.xmlsoap.org/claims/Group')='mycompany.global.admin') then ('admin') else (),
+                                if (mapping:get-attributes('http://schemas.xmlsoap.org/claims/Group')='mycompany.global.observer') then ('observer') else ()
+                                )"
+                        multiValue="true"/>
+          </remote>
+        </rule>
+    </rules>
+  </mapping>
 
 .. code:: yaml
 
@@ -110,31 +113,37 @@ to members of the ``mycompany.scoped.admin`` group on multiple
  AWS accounts, and the  ``observer`` role to members of ``mycompany.scoped.observer``
  on the single account ``12345678012``:
 
-.. code:: xml
+.. code:: XML
 
-<?xml version="1.0" encoding="UTF-8"?>
-<mapping xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xmlns:xs="http://www.w3.org/2001/XMLSchema"
-         xmlns="http://docs.rackspace.com/identity/api/ext/MappingRules"
-         version="RAX-1">
-   <rules>
-      <rule>
-         <local>
+  <?xml version="1.0" encoding="UTF-8"?>
+  <mapping xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xmlns:xs="http://www.w3.org/2001/XMLSchema"
+          xmlns="http://docs.rackspace.com/identity/api/ext/MappingRules"
+          version="RAX-1">
+    <rules>
+        <rule>
+        <local>
             <user>
-               <domain value="{D}"/>
-               <name value="{D}"/>
-               <email value="{Pt(/saml2p:Response/saml2:Assertion/saml2:Subject/saml2:NameID)}"/>
-               <roles value="{0}" multiValue="true"/>
-               <expire value="PT12H"/>
+              <domain value="{D}"/>
+              <name value="{D}"/>
+              <email value="{Pt(/saml2p:Response/saml2:Assertion/saml2:Subject/saml2:NameID)}"/>
+              <roles value="{0}" multiValue="true"/>
+              <expire value="PT12H"/>
             </user>
-         </local>
-         <remote>
-            <attribute path="(\n  if (mapping:get-attributes('http://schemas.xmlsoap.org/claims/Group')='mycompany.scoped.admin') then (\n    'admin/faws:12345678012',\n    'admin/faws:987654321098',\n    'admin/faws:112233445566'\n  ) else (),\n  if (mapping:get-attributes('http://schemas.xmlsoap.org/claims/Group')='mycompany.scoped.observer') then ('observer/faws:12345678012') else ()\n)\n"
-                       multiValue="true"/>
-         </remote>
-      </rule>
-   </rules>
-</mapping>
+        </local>
+          <remote>
+              <attribute path="(
+                                if (mapping:get-attributes('http://schemas.xmlsoap.org/claims/Group')='mycompany.scoped.admin') then (
+                                'admin/faws:12345678012',    
+                                'admin/faws:987654321098',
+                                'admin/faws:112233445566'  ) else (),
+                                if (mapping:get-attributes('http://schemas.xmlsoap.org/claims/Group')='mycompany.scoped.observer') then ('observer/faws:12345678012') else ()
+                                )"
+                                multiValue="true"/>
+          </remote>
+        </rule>
+    </rules>
+  </mapping>
 
 .. code:: yaml
 
@@ -171,31 +180,38 @@ only the ``observer`` role on that single account to any
 user in both groups. This assignment occurs because the first ``if`` condition
 matches, so the policy doesn't evaluate the second ``if`` condition. 
 
-.. code:: xml
+.. code:: XML
 
-<?xml version="1.0" encoding="UTF-8"?>
-<mapping xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xmlns:xs="http://www.w3.org/2001/XMLSchema"
-         xmlns="http://docs.rackspace.com/identity/api/ext/MappingRules"
-         version="RAX-1">
-   <rules>
-      <rule>
-         <local>
+  <?xml version="1.0" encoding="UTF-8"?>
+  <mapping xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xmlns:xs="http://www.w3.org/2001/XMLSchema"
+          xmlns="http://docs.rackspace.com/identity/api/ext/MappingRules"
+          version="RAX-1">
+    <rules>
+        <rule>
+        <local>
             <user>
-               <domain value="{D}"/>
-               <name value="{D}"/>
-               <email value="{Pt(/saml2p:Response/saml2:Assertion/saml2:Subject/saml2:NameID)}"/>
-               <roles value="{0}" multiValue="true"/>
-               <expire value="PT12H"/>
+              <domain value="{D}"/>
+              <name value="{D}"/>
+              <email value="{Pt(/saml2p:Response/saml2:Assertion/saml2:Subject/saml2:NameID)}"/>
+              <roles value="{0}" multiValue="true"/>
+              <expire value="PT12H"/>
             </user>
-         </local>
-         <remote>
-            <attribute path="(\n  if (mapping:get-attributes('http://schemas.xmlsoap.org/claims/Group')='mycompany.scoped.observer') then ('observer/faws:12345678012') else ()\n  if (mapping:get-attributes('http://schemas.xmlsoap.org/claims/Group')='mycompany.scoped.admin') then (\n    'admin/faws:12345678012',\n    'admin/faws:987654321098',\n    'admin/faws:112233445566'\n  ) else (),\n)\n"
-                       multiValue="true"/>
-         </remote>
-      </rule>
-   </rules>
-</mapping>
+        </local>
+          <remote>
+              <attribute path="(
+                                if (mapping:get-attributes('http://schemas.xmlsoap.org/claims/Group')='mycompany.scoped.observer') then ('observer/faws:12345678012') else ()
+                                if (mapping:get-attributes('http://schemas.xmlsoap.org/claims/Group')='mycompany.scoped.admin') then (
+                                'admin/faws:12345678012',
+                                'admin/faws:987654321098',
+                                'admin/faws:112233445566'
+                                ) else (),
+                                )"
+                        multiValue="true"/>
+          </remote>
+        </rule>
+    </rules>
+  </mapping>
 
 .. code:: yaml
 
@@ -234,34 +250,34 @@ features within the AWS Web Console. The following mapping policy assigns all
 users the "ViewOnlyAccess" IAM policy for all AWS accounts. It also assigns the
 "AdministratorAccess" IAM policy to all users for a single AWS account.
 
-.. code:: xml
+.. code:: XML
 
-<?xml version="1.0" encoding="UTF-8"?>
-<mapping xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xmlns:xs="http://www.w3.org/2001/XMLSchema"
-         xmlns="http://docs.rackspace.com/identity/api/ext/MappingRules"
-         version="RAX-1">
-   <rules>
-      <rule>
-         <local>
+  <?xml version="1.0" encoding="UTF-8"?>
+  <mapping xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xmlns:xs="http://www.w3.org/2001/XMLSchema"
+          xmlns="http://docs.rackspace.com/identity/api/ext/MappingRules"
+          version="RAX-1">
+    <rules>
+        <rule>
+        <local>
             <user>
-               <domain value="{D}"/>
-               <name value="{D}"/>
-               <email value="{Pt(/saml2p:Response/saml2:Assertion/saml2:Subject/saml2:NameID)}"/>
-               <expire value="PT12H"/>
+                <domain value="{D}"/>
+                <name value="{D}"/>
+                <email value="{Pt(/saml2p:Response/saml2:Assertion/saml2:Subject/saml2:NameID)}"/>
+                <expire value="PT12H"/>
             </user>
             <aws xsi:type="LocalAttributeGroup">
-               <attribute name="iamPolicies:123456789012"
-                          value="arn:aws:iam::aws:policy/AdministratorAccess"
-                          multiValue="true"/>
-               <attribute name="iamPolicies:*"
-                          value="arn:aws:iam::aws:policy/job-function/ViewOnlyAccess"
-                          multiValue="true"/>
+                <attribute name="iamPolicies:123456789012"
+                            value="arn:aws:iam::aws:policy/AdministratorAccess"
+                            multiValue="true"/>
+                <attribute name="iamPolicies:*"
+                            value="arn:aws:iam::aws:policy/job-function/ViewOnlyAccess"
+                            multiValue="true"/>
             </aws>
-         </local>
-      </rule>
-   </rules>
-</mapping>
+        </local>
+        </rule>
+    </rules>
+  </mapping>
 
 .. code:: yaml
 
@@ -292,36 +308,43 @@ policy assigns permissions as follows:
 * Users in the ``mycompany.12345678012.admin`` group are only assigned the
   ``AdministratorAccess`` IAM policy for AWS account ``123456789012``.
 
-.. code:: xml
+.. code:: XML
 
-<?xml version="1.0" encoding="UTF-8"?>
-<mapping xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xmlns:xs="http://www.w3.org/2001/XMLSchema"
-         xmlns="http://docs.rackspace.com/identity/api/ext/MappingRules"
-         version="RAX-1">
-   <rules>
-      <rule>
-         <local>
+  <?xml version="1.0" encoding="UTF-8"?>
+  <mapping xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xmlns:xs="http://www.w3.org/2001/XMLSchema"
+          xmlns="http://docs.rackspace.com/identity/api/ext/MappingRules"
+          version="RAX-1">
+    <rules>
+        <rule>
+        <local>
             <user>
-               <domain value="{D}"/>
-               <name value="{D}"/>
-               <email value="{Pt(/saml2p:Response/saml2:Assertion/saml2:Subject/saml2:NameID)}"/>
-               <expire value="PT12H"/>
+              <domain value="{D}"/>
+              <name value="{D}"/>
+              <email value="{Pt(/saml2p:Response/saml2:Assertion/saml2:Subject/saml2:NameID)}"/>
+              <expire value="PT12H"/>
             </user>
             <aws xsi:type="LocalAttributeGroup">
-               <attribute name="iamPolicies:123456789012" value="{1}" multiValue="true"/>
-               <attribute name="iamPolicies:*" value="{0}" multiValue="true"/>
+                <attribute name="iamPolicies:123456789012" value="{1}" multiValue="true"/>
+                <attribute name="iamPolicies:*" value="{0}" multiValue="true"/>
             </aws>
-         </local>
-         <remote>
-            <attribute path="(\n  if (mapping:get-attributes('http://schemas.xmlsoap.org/claims/Group')='mycompany.global.security') then ('arn:aws:iam::aws:policy/SecurityAudit') else (),\n  if (mapping:get-attributes('http://schemas.xmlsoap.org/claims/Group')='mycompany.global.observer') then ('arn:aws:iam::aws:policy/job-function/ViewOnlyAccess') else ()\n)\n"
-                       multiValue="true"/>
-            <attribute path="(\n  if (mapping:get-attributes('http://schemas.xmlsoap.org/claims/Group')='mycompany.123456789012.admin') then ('arn:aws:iam::aws:policy/AdministratorAccess') else ()\n)\n"
-                       multiValue="true"/>
-         </remote>
-      </rule>
-   </rules>
-</mapping>
+        </local>
+          <remote>
+              <attribute 
+                    path="(
+                        if (mapping:get-attributes('http://schemas.xmlsoap.org/claims/Group')='mycompany.global.security') then ('arn:aws:iam::aws:policy/SecurityAudit') else (),
+                        if (mapping:get-attributes('http://schemas.xmlsoap.org/claims/Group')='mycompany.global.observer') then ('arn:aws:iam::aws:policy/job-function/ViewOnlyAccess') else ()
+                        )"
+                        multiValue="true"/>
+              <attribute 
+                    path="(
+                        if (mapping:get-attributes('http://schemas.xmlsoap.org/claims/Group')='mycompany.123456789012.admin') then ('arn:aws:iam::aws:policy/AdministratorAccess') else ()
+                        )"
+                        multiValue="true"/>
+          </remote>
+        </rule>
+    </rules>
+  </mapping>
 
 .. code:: yaml
 
@@ -378,33 +401,36 @@ through the Fanatical Support for AWS Control Panel. The following mapping
 policy grants users in the ``mycompany.global.admin`` group permission to
 create new AWS accounts:
 
-.. code:: xml
+.. code:: XML
 
-<?xml version="1.0" encoding="UTF-8"?>
-<mapping xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xmlns:xs="http://www.w3.org/2001/XMLSchema"
-         xmlns="http://docs.rackspace.com/identity/api/ext/MappingRules"
-         version="RAX-1">
-   <rules>
-      <rule>
-         <local>
+  <?xml version="1.0" encoding="UTF-8"?>
+  <mapping xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xmlns:xs="http://www.w3.org/2001/XMLSchema"
+          xmlns="http://docs.rackspace.com/identity/api/ext/MappingRules"
+          version="RAX-1">
+    <rules>
+        <rule>
+        <local>
             <user>
-               <domain value="{D}"/>
-               <name value="{D}"/>
-               <email value="{Pt(/saml2p:Response/saml2:Assertion/saml2:Subject/saml2:NameID)}"/>
-               <expire value="PT12H"/>
+              <domain value="{D}"/>
+              <name value="{D}"/>
+              <email value="{Pt(/saml2p:Response/saml2:Assertion/saml2:Subject/saml2:NameID)}"/>
+              <expire value="PT12H"/>
             </user>
             <aws xsi:type="LocalAttributeGroup">
-               <creator value="{0}" xsi:type="LocalAttribute"/>
+              <creator value="{0}" xsi:type="LocalAttribute"/>
             </aws>
-         </local>
-         <remote>
-            <attribute path="(\n  if (mapping:get-attributes('http://schemas.xmlsoap.org/claims/Group')='mycompany.global.admin') then ('true') else ('false')\n)\n"
-                       multiValue="false"/>
-         </remote>
-      </rule>
-   </rules>
-</mapping>
+        </local>
+          <remote>
+              <attribute 
+                    path="(
+                        if (mapping:get-attributes('http://schemas.xmlsoap.org/claims/Group')='mycompany.global.admin') then ('true') else ('false')
+                        )"
+                        multiValue="false"/>
+          </remote>
+        </rule>
+    </rules>
+  </mapping>
 
 .. code:: yaml
 
@@ -433,64 +459,78 @@ Complete mapping policy example
 The following example combines both Fanatical Support for AWS permissions and
 AWS Console and API permissions into a single mapping policy:
 
-.. code:: xml
+.. code:: XML
 
-<?xml version="1.0" encoding="UTF-8"?>
-<mapping xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xmlns:xs="http://www.w3.org/2001/XMLSchema"
-         xmlns="http://docs.rackspace.com/identity/api/ext/MappingRules"
-         version="RAX-1">
-   <rules>
-      <rule>
-         <local>
-            <user>
-               <domain value="{D}"/>
-               <name value="{D}"/>
-               <email value="{Pt(/saml2p:Response/saml2:Assertion/saml2:Subject/saml2:NameID)}"/>
-               <roles value="{0}" multiValue="true"/>
-               <expire value="PT12H"/>
-            </user>
-         </local>
-         <remote>
-            <attribute path="(\n  if (mapping:get-attributes('http://schemas.xmlsoap.org/claims/Group')='mycompany.global.admin') then ('admin') else (),\n  if (mapping:get-attributes('http://schemas.xmlsoap.org/claims/Group')='mycompany.global.observer') then ('observer') else ()\n)\n"
-                       multiValue="true"/>
-         </remote>
-      </rule>
-      <rule>
-         <local>
-            <aws xsi:type="LocalAttributeGroup">
-               <creator value="{0}" xsi:type="LocalAttribute"/>
-            </aws>
-         </local>
-         <remote>
-            <attribute path="(\n  if (mapping:get-attributes('http://schemas.xmlsoap.org/claims/Group')='mycompany.global.admin') then ('true') else ('false')\n)\n"
-                       multiValue="false"/>
-         </remote>
-      </rule>
-      <rule>
-         <local>
-            <aws xsi:type="LocalAttributeGroup">
-               <attribute name="iamPolicies:*" value="{0}" multiValue="true"/>
-            </aws>
-         </local>
-         <remote>
-            <attribute path="(\n  if (mapping:get-attributes('http://schemas.xmlsoap.org/claims/Group')='mycompany.global.admin') then ('arn:aws:iam::aws:policy/AdministratorAccess') else (),\n  if (mapping:get-attributes('http://schemas.xmlsoap.org/claims/Group')='mycompany.global.observer') then ('arn:aws:iam::aws:policy/job-function/ViewOnlyAccess') else ()\n)\n"
-                       multiValue="true"/>
-         </remote>
-      </rule>
-      <rule>
-         <local>
-            <aws xsi:type="LocalAttributeGroup">
-               <attribute name="iamPolicies:123456789012" value="{0}" multiValue="true"/>
-            </aws>
-         </local>
-         <remote>
-            <attribute path="(\n  if (mapping:get-attributes('http://schemas.xmlsoap.org/claims/Group')='mycompany.123456789012.admin') then ('arn:aws:iam::aws:policy/AdministratorAccess') else ()\n)\n"
-                       multiValue="true"/>
-         </remote>
-      </rule>
-   </rules>
-</mapping>
+  <?xml version="1.0" encoding="UTF-8"?>
+  <mapping xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xmlns:xs="http://www.w3.org/2001/XMLSchema"
+          xmlns="http://docs.rackspace.com/identity/api/ext/MappingRules"
+          version="RAX-1">
+    <rules>
+        <rule>
+        <local>
+              <user>
+                <domain value="{D}"/>
+                <name value="{D}"/>
+                <email value="{Pt(/saml2p:Response/saml2:Assertion/saml2:Subject/saml2:NameID)}"/>
+                <roles value="{0}" multiValue="true"/>
+                <expire value="PT12H"/>
+              </user>
+        </local>
+          <remote>
+              <attribute 
+                    path="(
+                        if (mapping:get-attributes('http://schemas.xmlsoap.org/claims/Group')='mycompany.global.admin') then ('admin') else (),
+                        if (mapping:get-attributes('http://schemas.xmlsoap.org/claims/Group')='mycompany.global.observer') then ('observer') else ()
+                        )"
+                        multiValue="true"/>
+          </remote>
+        </rule>
+        <rule>
+        <local>
+              <aws xsi:type="LocalAttributeGroup">
+                <creator value="{0}" xsi:type="LocalAttribute"/>
+              </aws>
+        </local>
+          <remote>
+              <attribute 
+                    path="(
+                        if (mapping:get-attributes('http://schemas.xmlsoap.org/claims/Group')='mycompany.global.admin') then ('true') else ('false')
+                        )"
+                        multiValue="false"/>
+          </remote>
+        </rule>
+        <rule>
+        <local>
+              <aws xsi:type="LocalAttributeGroup">
+                <attribute name="iamPolicies:*" value="{0}" multiValue="true"/>
+              </aws>
+        </local>
+          <remote>
+              <attribute 
+                    path="(
+                        if (mapping:get-attributes('http://schemas.xmlsoap.org/claims/Group')='mycompany.global.admin') then ('arn:aws:iam::aws:policy/AdministratorAccess') else (),
+                        if (mapping:get-attributes('http://schemas.xmlsoap.org/claims/Group')='mycompany.global.observer') then ('arn:aws:iam::aws:policy/job-function/ViewOnlyAccess') else ()
+                        )"
+                        multiValue="true"/>
+          </remote>
+        </rule>
+        <rule>
+        <local>
+              <aws xsi:type="LocalAttributeGroup">
+                <attribute name="iamPolicies:123456789012" value="{0}" multiValue="true"/>
+              </aws>
+        </local>
+          <remote>
+              <attribute 
+                    path="(
+                        if (mapping:get-attributes('http://schemas.xmlsoap.org/claims/Group')='mycompany.123456789012.admin') then ('arn:aws:iam::aws:policy/AdministratorAccess') else ()
+                        )"
+                        multiValue="true"/>
+          </remote>
+        </rule>
+    </rules>
+  </mapping>
 
 .. code:: yaml
 

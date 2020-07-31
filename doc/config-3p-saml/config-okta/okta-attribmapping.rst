@@ -97,34 +97,38 @@ Notes:
   attribute in the SAML assertion.
 
 
-.. code-block:: xml
+.. code-block:: XML
 
-<?xml version="1.0" encoding="UTF-8"?>
-<mapping xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xmlns:xs="http://www.w3.org/2001/XMLSchema"
-         xmlns="http://docs.rackspace.com/identity/api/ext/MappingRules"
-         version="RAX-1">
-   <rules>
-      <rule>
-         <local>
-            <user>
-               <domain value="your_domain_id_goes_here"/>
-               <name value="{D}"/>
-               <email value="{Pt(/saml2p:Response/saml2:Assertion/saml2:Subject/saml2:NameID)}"/>
-               <roles value="{0}" multiValue="true"/>
-               <expire value="PT4H"/>
-            </user>
-            <faws xsi:type="LocalAttributeGroup">
-               <groups value="{Ats(groups)}" multiValue="true" xsi:type="LocalAttribute"/>
-            </faws>
-         </local>
-         <remote>
-            <attribute path="(\n  if (mapping:get-attributes('groups')='rackspace-billing')\n  then    'billing:admin' else ()\n)\n"
-                       multiValue="true"/>
-         </remote>
-      </rule>
-   </rules>
-</mapping>
+  <?xml version="1.0" encoding="UTF-8"?>
+  <mapping xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xmlns:xs="http://www.w3.org/2001/XMLSchema"
+          xmlns="http://docs.rackspace.com/identity/api/ext/MappingRules"
+          version="RAX-1">
+    <rules>
+        <rule>
+        <local>
+              <user>
+                <domain value="your_domain_id_goes_here"/>
+                <name value="{D}"/>
+                <email value="{Pt(/saml2p:Response/saml2:Assertion/saml2:Subject/saml2:NameID)}"/>
+                <roles value="{0}" multiValue="true"/>
+                <expire value="PT4H"/>
+              </user>
+              <faws xsi:type="LocalAttributeGroup">
+                <groups value="{Ats(groups)}" multiValue="true" xsi:type="LocalAttribute"/>
+              </faws>
+        </local>
+          <remote>
+              <attribute 
+                  path="(
+                        if (mapping:get-attributes('groups')='rackspace-billing')
+                        then    'billing:admin' else ()
+                        )"
+                        multiValue="true"/>
+          </remote>
+        </rule>
+    </rules>
+  </mapping>
 
 .. code-block:: yaml
 

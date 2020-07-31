@@ -310,29 +310,29 @@ assertion:
 You can turn this table into an attribute mapping policy, as shown in the
 following example:
 
-.. code-block:: xml
+.. code-block:: XML
 
-<?xml version="1.0" encoding="UTF-8"?>
-<mapping xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xmlns:xs="http://www.w3.org/2001/XMLSchema"
-         xmlns="http://docs.rackspace.com/identity/api/ext/MappingRules"
-         version="RAX-1">
-   <description>Simple policy where we select required attributes via an XPath.</description>
-   <rules>
-      <rule>
+   <?xml version="1.0" encoding="UTF-8"?>
+   <mapping xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            xmlns:xs="http://www.w3.org/2001/XMLSchema"
+            xmlns="http://docs.rackspace.com/identity/api/ext/MappingRules"
+            version="RAX-1">
+      <description>Simple policy where we select required attributes via an XPath.</description>
+      <rules>
+         <rule>
          <local>
             <user>
                <domain value="{Pts(/saml2p:Response/saml2:Assertion/saml2:AttributeStatement/saml2:Attribute[@Name='domain']/saml2:AttributeValue[1])}"/>
                <name value="{Pts(/saml2p:Response/saml2:Assertion/saml2:Subject/saml2:NameID)}"/>
                <email value="{Pts(/saml2p:Response/saml2:Assertion/saml2:AttributeStatement/saml2:Attribute[@Name='email']/saml2:AttributeValue[1])}"/>
                <roles value="{Pts(/saml2p:Response/saml2:Assertion/saml2:AttributeStatement/saml2:Attribute[@Name='roles']/saml2:AttributeValue)}"
-                      multiValue="true"/>
+                        multiValue="true"/>
                <expire value="{Pts(/saml2p:Response/saml2:Assertion/saml2:Subject/saml2:SubjectConfirmation/saml2:SubjectConfirmationData/@NotOnOrAfter)}"/>
             </user>
          </local>
-      </rule>
-   </rules>
-</mapping>
+         </rule>
+      </rules>
+   </mapping>
 
 
 .. code-block:: yaml
@@ -434,30 +434,30 @@ simply shorthand for this URI. The following example replaces the
 element is the same as in the preceding example, the two mapping policies
 produce the exact same result.
 
-.. code-block:: xml
+.. code-block:: XML
 
-<?xml version="1.0" encoding="UTF-8"?>
-<mapping xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xmlns:xs="http://www.w3.org/2001/XMLSchema"
-         xmlns="http://docs.rackspace.com/identity/api/ext/MappingRules"
-         xmlns:foo="urn:oasis:names:tc:SAML:2.0:protocol"
-         version="RAX-1">
-   <description>Simple policy where we select required attributes via an XPath.</description>
-   <rules>
-      <rule>
+   <?xml version="1.0" encoding="UTF-8"?>
+   <mapping xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            xmlns:xs="http://www.w3.org/2001/XMLSchema"
+            xmlns="http://docs.rackspace.com/identity/api/ext/MappingRules"
+            xmlns:foo="urn:oasis:names:tc:SAML:2.0:protocol"
+            version="RAX-1">
+      <description>Simple policy where we select required attributes via an XPath.</description>
+      <rules>
+         <rule>
          <local>
             <user>
                <domain value="{Pts(/foo:Response/saml2:Assertion/saml2:AttributeStatement/saml2:Attribute[@Name='domain']/saml2:AttributeValue[1])}"/>
                <name value="{Pts(/foo:Response/saml2:Assertion/saml2:Subject/saml2:NameID)}"/>
                <email value="{Pts(/foo:Response/saml2:Assertion/saml2:AttributeStatement/saml2:Attribute[@Name='email']/saml2:AttributeValue[1])}"/>
                <roles value="{Pts(/foo:Response/saml2:Assertion/saml2:AttributeStatement/saml2:Attribute[@Name='roles']/saml2:AttributeValue)}"
-                      multiValue="true"/>
+                        multiValue="true"/>
                <expire value="{Pts(/foo:Response/saml2:Assertion/saml2:Subject/saml2:SubjectConfirmation/saml2:SubjectConfirmationData/@NotOnOrAfter)}"/>
             </user>
          </local>
-      </rule>
-   </rules>
-</mapping>
+         </rule>
+      </rules>
+   </mapping>
 
 
 .. code-block:: yaml
@@ -497,31 +497,31 @@ off chance that the operation might return multiple values in a SAML assertion.
 Given this new substitution, you can rewrite the mapping policy like 
 the following example:
 
-.. code-block:: xml
+.. code-block:: XML
 
-<?xml version="1.0" encoding="UTF-8"?>
-<mapping xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xmlns:xs="http://www.w3.org/2001/XMLSchema"
-         xmlns="http://docs.rackspace.com/identity/api/ext/MappingRules"
-         version="RAX-1">
-   <description>Simple policy where we select required attributes via an XPath.
-We use {Pt()} instead of {Pts()} in single value attributes to
-avoid having to select the first attribute value in XPath.</description>
-   <rules>
-      <rule>
+   <?xml version="1.0" encoding="UTF-8"?>
+   <mapping xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            xmlns:xs="http://www.w3.org/2001/XMLSchema"
+            xmlns="http://docs.rackspace.com/identity/api/ext/MappingRules"
+            version="RAX-1">
+      <description>Simple policy where we select required attributes via an XPath.
+               We use {Pt()} instead of {Pts()} in single value attributes to
+               avoid having to select the first attribute value in XPath.</description>
+      <rules>
+         <rule>
          <local>
             <user>
                <domain value="{Pt(/saml2p:Response/saml2:Assertion/saml2:AttributeStatement/saml2:Attribute[@Name='domain']/saml2:AttributeValue)}"/>
                <name value="{Pt(/saml2p:Response/saml2:Assertion/saml2:Subject/saml2:NameID)}"/>
                <email value="{Pt(/saml2p:Response/saml2:Assertion/saml2:AttributeStatement/saml2:Attribute[@Name='email']/saml2:AttributeValue)}"/>
                <roles value="{Pts(/saml2p:Response/saml2:Assertion/saml2:AttributeStatement/saml2:Attribute[@Name='roles']/saml2:AttributeValue)}"
-                      multiValue="true"/>
+                     multiValue="true"/>
                <expire value="{Pt(/saml2p:Response/saml2:Assertion/saml2:Subject/saml2:SubjectConfirmation/saml2:SubjectConfirmationData/@NotOnOrAfter)}"/>
             </user>
          </local>
-      </rule>
-   </rules>
-</mapping>
+         </rule>
+      </rules>
+   </mapping>
 
 .. code-block:: yaml
 
@@ -554,18 +554,17 @@ a string and returns the attribute values associated with that name.
 By using the ``mapping:get-attributes`` function, you could rewrite the mapping 
 policy like the following example:
 
-.. code-block:: xml
+.. code-block:: XML
 
-<?xml version="1.0" encoding="UTF-8"?>
-<mapping xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xmlns:xs="http://www.w3.org/2001/XMLSchema"
-         xmlns="http://docs.rackspace.com/identity/api/ext/MappingRules"
-         version="RAX-1">
-   <description>Simple policy where we select required attributes via an
- XPath. Here we use the mapping:get-attributes call to return
- attribute values.</description>
-   <rules>
-      <rule>
+   <?xml version="1.0" encoding="UTF-8"?>
+   <mapping xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            xmlns:xs="http://www.w3.org/2001/XMLSchema"
+            xmlns="http://docs.rackspace.com/identity/api/ext/MappingRules"
+            version="RAX-1">
+      <description>Simple policy where we select required attributes via an
+   XPath. Here we use the mapping:get-attributes call to return attribute values.</description>
+      <rules>
+         <rule>
          <local>
             <user>
                <domain value="{Pt(mapping:get-attributes('domain'))}"/>
@@ -575,9 +574,9 @@ policy like the following example:
                <expire value="{Pt(/saml2p:Response/saml2:Assertion/saml2:Subject/saml2:SubjectConfirmation/saml2:SubjectConfirmationData/@NotOnOrAfter)}"/>
             </user>
          </local>
-      </rule>
-   </rules>
-</mapping>
+         </rule>
+      </rules>
+   </mapping>
 
 .. code-block:: yaml
 
@@ -610,18 +609,17 @@ substitution returns all values for a specific attribute name, and the
 
 Given these substitutions, you can rewrite the policy as follows:
 
-.. code-block:: xml
+.. code-block:: XML
 
-<?xml version="1.0" encoding="UTF-8"?>
-<mapping xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xmlns:xs="http://www.w3.org/2001/XMLSchema"
-         xmlns="http://docs.rackspace.com/identity/api/ext/MappingRules"
-         version="RAX-1">
-   <description>Simple policy where we select required attributes. We use At
-instead of Pts as a simple means of accessing an name SAML
-attribute.</description>
-   <rules>
-      <rule>
+   <?xml version="1.0" encoding="UTF-8"?>
+   <mapping xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            xmlns:xs="http://www.w3.org/2001/XMLSchema"
+            xmlns="http://docs.rackspace.com/identity/api/ext/MappingRules"
+            version="RAX-1">
+      <description>Simple policy where we select required attributes. We use At
+      instead of Pts as a simple means of accessing an name SAML attribute.</description>
+      <rules>
+         <rule>
          <local>
             <user>
                <domain value="{At(domain)}"/>
@@ -631,9 +629,9 @@ attribute.</description>
                <expire value="{Pt(/saml2p:Response/saml2:Assertion/saml2:Subject/saml2:SubjectConfirmation/saml2:SubjectConfirmationData/@NotOnOrAfter)}"/>
             </user>
          </local>
-      </rule>
-   </rules>
-</mapping>
+         </rule>
+      </rules>
+   </mapping>
 
 .. code-block:: yaml
 
@@ -674,17 +672,16 @@ What are the default locations in a SAML assertion for the five
 attributes Rackspace Identity expects? The SAML assertion in the following 
 example has all of the values in the default places:
 
-.. code-block:: xml
+.. code-block:: XML
 
-<?xml version="1.0" encoding="UTF-8"?>
-<mapping xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xmlns:xs="http://www.w3.org/2001/XMLSchema"
-         xmlns="http://docs.rackspace.com/identity/api/ext/MappingRules"
-         version="RAX-1">
-   <description>The default policy.  All attributes are in the expected location
- in the SAML assertion.</description>
-   <rules>
-      <rule>
+   <?xml version="1.0" encoding="UTF-8"?>
+   <mapping xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            xmlns:xs="http://www.w3.org/2001/XMLSchema"
+            xmlns="http://docs.rackspace.com/identity/api/ext/MappingRules"
+            version="RAX-1">
+      <description>The default policy. All attributes are in the expected location in the SAML assertion.</description>
+      <rules>
+         <rule>
          <local>
             <user>
                <domain value="{D}"/>
@@ -694,9 +691,9 @@ example has all of the values in the default places:
                <expire value="{D}"/>
             </user>
          </local>
-      </rule>
-   </rules>
-</mapping>
+         </rule>
+      </rules>
+   </mapping>
 
 .. code-block:: yaml
 
