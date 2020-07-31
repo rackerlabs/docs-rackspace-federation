@@ -15,13 +15,11 @@ shown in the following example.
 
 .. code-block:: XML
 
-    
-<?xml version="1.0" encoding="UTF-8"?>
-<mapping
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:xs="http://www.w3.org/2001/XMLSchema"
-    xmlns="http://docs.rackspace.com/identity/api/ext/MappingRules"
-            version="RAX-1">
+<?xml version="1.0" encoding="UTF-8" ?>
+<mapping xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:xs="http://www.w3.org/2001/XMLSchema"
+        xmlns="http://docs.rackspace.com/identity/api/ext/MappingRules"
+        version="RAX-1">
     <rules>
         <rule>
         <local>

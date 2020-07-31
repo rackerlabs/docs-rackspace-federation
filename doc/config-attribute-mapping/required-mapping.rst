@@ -47,14 +47,6 @@ Your |amp| must contain:
    * - **roles**
      - The product RBAC (role-based access control) roles that you want
        to assign to the user.
-     - XML array of alphanumeric strings
-     - | **Example:**
-       |
-       |<?xml version="1.0" encoding="UTF-8" ?>
-       |  <root>
-	     |     <roles value="nova:observer lbaas:admin" multiValue="true" />
-       |  </root>
-       |
      - YAML array of alphanumeric strings
      - | **Example:**
        | 
