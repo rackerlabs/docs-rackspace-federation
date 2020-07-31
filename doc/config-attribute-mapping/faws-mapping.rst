@@ -14,6 +14,8 @@ of ``observer`` or ``admin`` or omit them from the mapping policy. Users with
  ``admin`` permissions have read and write access to the Control Panel. The 
 following mapping policy assigns the ``admin`` role to all federated users:
 
+XML Example:
+
 .. code:: XML
 
   <?xml version="1.0" encoding="UTF-8"?>
@@ -36,6 +38,8 @@ following mapping policy assigns the ``admin`` role to all federated users:
     </rules>
   </mapping>
 
+YAML Example: 
+
 .. code:: yaml
 
   mapping:
@@ -55,6 +59,8 @@ It's common to assign roles based on a user's group membership.
 The following mapping policy example grants the ``admin`` role to users who
 belong to the ``mycompany.global.admin`` group, and the ``observer``
 role to users who belong to the ``mycompany.global.observer`` group:
+
+XML Example:
 
 .. code:: XML
 
@@ -85,6 +91,8 @@ role to users who belong to the ``mycompany.global.observer`` group:
     </rules>
   </mapping>
 
+YAML Example:
+
 .. code:: yaml
 
   mapping:
@@ -112,6 +120,8 @@ Services® (AWS) accounts. The preceding policy example grants the FAWS ``admin`
 to members of the ``mycompany.scoped.admin`` group on multiple
  AWS accounts, and the  ``observer`` role to members of ``mycompany.scoped.observer``
  on the single account ``12345678012``:
+
+XML Example:
 
 .. code:: XML
 
@@ -144,6 +154,8 @@ to members of the ``mycompany.scoped.admin`` group on multiple
         </rule>
     </rules>
   </mapping>
+
+YAML Example:
 
 .. code:: yaml
 
@@ -180,6 +192,8 @@ only the ``observer`` role on that single account to any
 user in both groups. This assignment occurs because the first ``if`` condition
 matches, so the policy doesn't evaluate the second ``if`` condition. 
 
+XML Example:
+
 .. code:: XML
 
   <?xml version="1.0" encoding="UTF-8"?>
@@ -212,6 +226,8 @@ matches, so the policy doesn't evaluate the second ``if`` condition.
         </rule>
     </rules>
   </mapping>
+
+YAML Example:
 
 .. code:: yaml
 
@@ -250,6 +266,8 @@ features within the AWS Web Console. The following mapping policy assigns all
 users the "ViewOnlyAccess" IAM policy for all AWS accounts. It also assigns the
 "AdministratorAccess" IAM policy to all users for a single AWS account.
 
+XML Example:
+
 .. code:: XML
 
   <?xml version="1.0" encoding="UTF-8"?>
@@ -279,6 +297,8 @@ users the "ViewOnlyAccess" IAM policy for all AWS accounts. It also assigns the
     </rules>
   </mapping>
 
+YAML Example:
+
 .. code:: yaml
 
   mapping:
@@ -307,6 +327,8 @@ policy assigns permissions as follows:
   ``ViewOnlyAccess`` IAM policy on all AWS accounts.
 * Users in the ``mycompany.12345678012.admin`` group are only assigned the
   ``AdministratorAccess`` IAM policy for AWS account ``123456789012``.
+
+XML Example:
 
 .. code:: XML
 
@@ -345,6 +367,8 @@ policy assigns permissions as follows:
         </rule>
     </rules>
   </mapping>
+
+YAML Example:
 
 .. code:: yaml
 
@@ -401,6 +425,8 @@ through the Fanatical Support for AWS Control Panel. The following mapping
 policy grants users in the ``mycompany.global.admin`` group permission to
 create new AWS accounts:
 
+XML Example:
+
 .. code:: XML
 
   <?xml version="1.0" encoding="UTF-8"?>
@@ -432,6 +458,8 @@ create new AWS accounts:
     </rules>
   </mapping>
 
+YAML Example:
+
 .. code:: yaml
 
   mapping:
@@ -458,6 +486,8 @@ Complete mapping policy example
 
 The following example combines both Fanatical Support for AWS permissions and
 AWS Console and API permissions into a single mapping policy:
+
+XML Example:
 
 .. code:: XML
 
@@ -531,6 +561,8 @@ AWS Console and API permissions into a single mapping policy:
         </rule>
     </rules>
   </mapping>
+
+YAML Example:
 
 .. code:: yaml
 

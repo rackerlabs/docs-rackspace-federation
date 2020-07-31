@@ -55,6 +55,7 @@ perform the following tasks:
   *path* (``"{Pt}"``) syntax in the |amp| language to point to the ``NameID``
   attribute in the SAML assertion, as shown in the following example:
 
+XML Example:
 
 .. code-block:: XML
 
@@ -89,6 +90,8 @@ perform the following tasks:
         </rule>
     </rules>
   </mapping>
+
+YAML Example:
 
 .. code-block:: yaml
 

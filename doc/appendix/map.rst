@@ -310,6 +310,8 @@ assertion:
 You can turn this table into an attribute mapping policy, as shown in the
 following example:
 
+XML Example:
+
 .. code-block:: XML
 
    <?xml version="1.0" encoding="UTF-8"?>
@@ -334,6 +336,7 @@ following example:
       </rules>
    </mapping>
 
+YAML Example:
 
 .. code-block:: yaml
 
@@ -434,6 +437,8 @@ simply shorthand for this URI. The following example replaces the
 element is the same as in the preceding example, the two mapping policies
 produce the exact same result.
 
+XML Example:
+
 .. code-block:: XML
 
    <?xml version="1.0" encoding="UTF-8"?>
@@ -459,6 +464,7 @@ produce the exact same result.
       </rules>
    </mapping>
 
+YAML Example:
 
 .. code-block:: yaml
 
@@ -497,6 +503,8 @@ off chance that the operation might return multiple values in a SAML assertion.
 Given this new substitution, you can rewrite the mapping policy like 
 the following example:
 
+XML Example:
+
 .. code-block:: XML
 
    <?xml version="1.0" encoding="UTF-8"?>
@@ -522,6 +530,8 @@ the following example:
          </rule>
       </rules>
    </mapping>
+
+YAML Example:
 
 .. code-block:: yaml
 
@@ -554,6 +564,8 @@ a string and returns the attribute values associated with that name.
 By using the ``mapping:get-attributes`` function, you could rewrite the mapping 
 policy like the following example:
 
+XML Example:
+
 .. code-block:: XML
 
    <?xml version="1.0" encoding="UTF-8"?>
@@ -577,6 +589,8 @@ policy like the following example:
          </rule>
       </rules>
    </mapping>
+
+YAML Example:
 
 .. code-block:: yaml
 
@@ -609,6 +623,8 @@ substitution returns all values for a specific attribute name, and the
 
 Given these substitutions, you can rewrite the policy as follows:
 
+XML Example:
+
 .. code-block:: XML
 
    <?xml version="1.0" encoding="UTF-8"?>
@@ -632,6 +648,8 @@ Given these substitutions, you can rewrite the policy as follows:
          </rule>
       </rules>
    </mapping>
+
+YAML Example:
 
 .. code-block:: yaml
 
@@ -672,6 +690,8 @@ What are the default locations in a SAML assertion for the five
 attributes Rackspace Identity expects? The SAML assertion in the following 
 example has all of the values in the default places:
 
+XML Example:
+
 .. code-block:: XML
 
    <?xml version="1.0" encoding="UTF-8"?>
@@ -694,6 +714,8 @@ example has all of the values in the default places:
          </rule>
       </rules>
    </mapping>
+
+YAML Example:
 
 .. code-block:: yaml
 

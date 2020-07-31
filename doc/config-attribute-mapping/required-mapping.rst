@@ -122,6 +122,8 @@ SAML providers, see :ref:`index-configuring-3p-saml-ug`.
 
 |ampref|
 
+XML Example:
+
 .. code-block:: XML
 
   <?xml version="1.0" encoding="UTF-8"?>
@@ -143,6 +145,8 @@ SAML providers, see :ref:`index-configuring-3p-saml-ug`.
         </rule>
     </rules>
   </mapping>
+
+YAML Example:
 
 .. code-block:: yaml
 

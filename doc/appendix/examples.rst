@@ -64,6 +64,8 @@ Working with defaults
 
 Default mapping:
 
+XML Example:
+
 .. code-block:: XML
 
   <?xml version="1.0" encoding="UTF-8" ?>
@@ -85,6 +87,8 @@ Default mapping:
       </rule>
     </rules>
   </mapping>
+
+YAML Example:
 
 .. code-block:: yaml
 
@@ -117,6 +121,8 @@ Resulting attributes:
 Accessing default from a different field:
 -----------------------------------------
 
+XML Example:
+
 .. code-block:: XML
 
   <?xml version="1.0" encoding="UTF-8" ?>
@@ -138,6 +144,8 @@ Accessing default from a different field:
       </rule>
     </rules>
   </mapping>
+
+YAML Example:
 
 .. code-block:: yaml
 
@@ -170,6 +178,8 @@ Resulting attributes:
 More complex example with multiple substitutions
 ------------------------------------------------
 
+XML Example:
+
 .. code-block:: XML
 
   <?xml version="1.0" encoding="UTF-8" ?>
@@ -193,6 +203,8 @@ More complex example with multiple substitutions
       </rules>
     </mapping>
   </root>
+
+YAML Example:
 
 .. code-block:: yaml
 
@@ -225,6 +237,8 @@ Resulting Attributes:
 Mixing in non-default attributes
 --------------------------------
 
+XML Example:
+
 .. code-block:: XML
 
   <?xml version="1.0" encoding="UTF-8" ?>
@@ -248,6 +262,8 @@ Mixing in non-default attributes
       </rules>
     </mapping>
   </root>
+
+YAML Example:
 
 .. code-block:: yaml
 

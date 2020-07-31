@@ -131,6 +131,8 @@ The following attribute mapping policy implements the rules described
 in the previous section. The rest of this document provides a guide
 for writing such polices.
 
+XML Example:
+
 .. code-block:: XML
 
   <?xml version="1.0" encoding="UTF-8" ?>
@@ -183,6 +185,8 @@ for writing such polices.
       ()</path>
     </remote>
   </mapping>
+
+YAML Example:
 
 .. code-block:: yaml
 
