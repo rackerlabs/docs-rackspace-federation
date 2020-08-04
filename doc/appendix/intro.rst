@@ -23,6 +23,16 @@ a basic understanding of the following technologies:
   information from structured data and is designed to be embedded in a host
   language.
 
+- **YAML 1.1**: YAML is a simple data serialization language that is designed
+  to be human friendly. YAML is very similar to JSON but allows for useful
+  features such as comments and the ability to easily input multi-line data.
+  Attribute mapping policies are written in YAML.
+  
+- **XML 1.0**: Extensible Markup Language (XML) is a universal format,
+  maintained by the W3C, used for representation and transfer of structured
+  data on the web or between different applications. XML is a markup language
+  that defines set of rules for encoding documents in a format that is both
+  human-readable and machine-readable.
 
 What is Attribute Mapping?
 ==========================
@@ -147,42 +157,43 @@ XML Example:
         <domain value="{D}"/>
         <name value="{D}"/>
         <email value="{At(email)}"/>
-        <roles value="{D}"/>
+        <roles value="{0}"/>
         <expire value="{D}"/>
       </user>
     </rules>
     <remote>
       <attribute multiValue="true" />
-      <path>(:
+      <path>
+          (:
             The following describes the rules for assigning roles to
             users.
-            :)
+          :)
             for $group in mapping:get-attributes('groups') return
-              (:
-                If a user is a manager they get ticketing:admin,
-                If they are not a contractor then they also get billing:observer
-                Managers become admin based on the project that they are working
-                on
+                (:
+                  If a user is a manager they get ticketing:admin,
+                  If they are not a contractor then they also get billing:observer
+                  Managers become admin based on the project that they are working on
                 :)
               if ($group = 'managers') then
-              (
-              'ticketing:admin',
-              if (not(mapping:get-attributes('groups')='contractors')) then 'billing:observer' else
-              (),
-              for $project in mapping:get-attributes('manager_projects') return
-              (
-              if ($project = 'widgets_ui')       then 'admin/777654' else
-              if ($project = 'widgets_mobile')   then 'admin/887655' else
-              if ($project = 'widgets_platform') then 'admin/779956' else
-              ()
-              )
-              ) else
+                (
+                  'ticketing:admin',
+                  if (not(mapping:get-attributes('groups')='contractors')) then 'billing:observer' else
+                  (),
+                  for $project in mapping:get-attributes('manager_projects') return
+                  (
+                    if ($project = 'widgets_ui')       then 'admin/777654' else
+                    if ($project = 'widgets_mobile')   then 'admin/887655' else
+                    if ($project = 'widgets_platform') then 'admin/779956' else
+                    ()
+                  )
+                ) else
               (:
                   If a user is a member of the linux_user group they get the
                   nova:observer role.
               :)
               if ($group = 'linux_user') then 'nova:observer' else
-      ()</path>
+              ()
+      </path>
     </remote>
   </mapping>
 

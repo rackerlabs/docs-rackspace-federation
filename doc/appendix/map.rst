@@ -359,7 +359,7 @@ examines how the code uses XPath to extract the attribute values.
 Parts of the mapping policy
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The mapping policy is a **XML** document that contains instructions to
+The mapping policy is an **XML** or a **YAML** document that contains instructions to
 retrieve identity attributes from a SAML assertion.
 It is a simple script that executes every time a SAML assertion is presented to 
 Rackspace Identity.
@@ -707,7 +707,7 @@ XML Example:
                <domain value="{D}"/>
                <name value="{D}"/>
                <email value="{D}"/>
-               <roles value="{D}" multiValue="true"/>
+               <roles value="{D}"/>
                <expire value="{D}"/>
             </user>
          </local>
