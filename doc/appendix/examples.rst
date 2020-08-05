@@ -189,17 +189,17 @@ XML Example:
             xmlns="http://docs.rackspace.com/identity/api/ext/MappingRules"
             version="RAX-1">
       <rules>
-      <rule>
-        <local>
-          <user>
-            <domain value="{D}"/>
-            <name value="{D}"/>
-            <email value="{D(name)} &lt;{D(name)}@{D(domain)}.rackspace.com&gt;"/>
-            <roles value="{D}"/>
-            <expire value="{D}"/>
-          </user>
-        </local>
-      </rule>
+        <rule>
+          <local>
+            <user>
+              <domain value="{D}"/>
+              <name value="{D}"/>
+              <email value="{D(name)} &lt;{D(name)}@{D(domain)}.rackspace.com&gt;"/>
+              <roles value="{D}"/>
+              <expire value="{D}"/>
+            </user>
+          </local>
+        </rule>
       </rules>
     </mapping>
   </root>
@@ -249,15 +249,15 @@ XML Example:
             version="RAX-1">
       <rules>
         <rule>
-        <local>
-          <user>
-            <domain value="{D}"/>
-            <name value="{D}"/>
-            <email value="{At(FirstName)} {At(LastName)} &lt;{D(name)}@{D(domain)}.rackspace.com&gt;"/>
-            <roles value="{D}"/>
-            <expire value="{D}"/>
-          </user>
-        </local>
+          <local>
+            <user>
+              <domain value="{D}"/>
+              <name value="{D}"/>
+              <email value="{At(FirstName)} {At(LastName)} &lt;{D(name)}@{D(domain)}.rackspace.com&gt;"/>
+              <roles value="{D}"/>
+              <expire value="{D}"/>
+            </user>
+          </local>
         </rule>
       </rules>
     </mapping>

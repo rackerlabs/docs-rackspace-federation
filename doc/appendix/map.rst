@@ -694,23 +694,24 @@ XML Example:
 
 .. code-block:: XML
 
-   <?xml version="1.0" encoding="UTF-8"?>
+   <?xml version="1.0" encoding="UTF-8" ?>
    <mapping xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
             xmlns:xs="http://www.w3.org/2001/XMLSchema"
             xmlns="http://docs.rackspace.com/identity/api/ext/MappingRules"
             version="RAX-1">
-      <description>The default policy. All attributes are in the expected location in the SAML assertion.</description>
+      <description>The default policy. All attributes are in the expected location in 
+      the SAML assertion. </description>
       <rules>
          <rule>
-         <local>
-            <user>
-               <domain value="{D}"/>
-               <name value="{D}"/>
-               <email value="{D}"/>
-               <roles value="{D}"/>
-               <expire value="{D}"/>
-            </user>
-         </local>
+            <local>
+               <user>
+                  <domain value="{D}"/>
+                  <name value="{D}"/>
+                  <email value="{D}"/>
+                  <roles value="{D}"/>
+                  <expire value="{D}"/>
+               </user>
+            </local>
          </rule>
       </rules>
    </mapping>
