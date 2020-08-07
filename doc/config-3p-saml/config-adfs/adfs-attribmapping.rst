@@ -33,7 +33,7 @@ membership in your SAML attributes, see
 `https://msdn.microsoft.com/en-us/library/ff359101.aspx
 <https://msdn.microsoft.com/en-us/library/ff359101.aspx>`_
 
-The following example shows a Rackspace YAML (``.yml``) Attribute Mapping
+The following example shows both Rackspace XML (``.xml``) as well as YAML (``.yml``) Attribute Mapping
 Policy that you can use when you configure your Identity Provider with
 Rackspace. This example assumes that you have a group named
 ``rackspace-billing`` with users who you want to access Rackspace billing
@@ -55,6 +55,43 @@ perform the following tasks:
   *path* (``"{Pt}"``) syntax in the |amp| language to point to the ``NameID``
   attribute in the SAML assertion, as shown in the following example:
 
+XML Example:
+
+.. code-block:: XML
+
+  <?xml version="1.0" encoding="UTF-8"?>
+  <mapping xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xmlns:xs="http://www.w3.org/2001/XMLSchema"
+          xmlns="http://docs.rackspace.com/identity/api/ext/MappingRules"
+          version="RAX-1">
+    <rules>
+        <rule>
+          <local>
+                <user>
+                  <domain value="your_domain_id_goes_here"/>
+                  <name value="{D}"/>
+                  <email value="{Pt(/saml2p:Response/saml2:Assertion/saml2:Subject/saml2:NameID)}"/>
+                  <roles value="{0}" multiValue="true"/>
+                  <expire value="PT4H"/>
+                </user>
+                <faws xsi:type="LocalAttributeGroup">
+                  <groups value="{Ats(http://schemas.xmlsoap.org/claims/Group)}"
+                          multiValue="true"
+                          xsi:type="LocalAttribute"/>
+                </faws>
+          </local>
+          <remote>
+              <attribute 
+                    path="(
+                        if (mapping:get-attributes('http://schemas.xmlsoap.org/claims/Group')='rackspace-billing')then    'billing:admin' else ()
+                        )"
+                        multiValue="true"/>
+          </remote>
+        </rule>
+    </rules>
+  </mapping>
+
+YAML Example:
 
 .. code-block:: yaml
 
@@ -84,8 +121,6 @@ perform the following tasks:
                   )
               # The groups specified here are examples. You should substitute your own groups.
       version: RAX-1
-
-
 - Ensure that you validate and modify the following items in your own |amp|:
 
   - The ADFS groups that users belong to and to which you want to

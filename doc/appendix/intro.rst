@@ -27,6 +27,12 @@ a basic understanding of the following technologies:
   to be human friendly. YAML is very similar to JSON but allows for useful
   features such as comments and the ability to easily input multi-line data.
   Attribute mapping policies are written in YAML.
+  
+- **XML 1.0**: Extensible Markup Language (XML) is a universal format,
+  maintained by the W3C, used for representation and transfer of structured
+  data on the web or between different applications. XML is a markup language
+  that defines set of rules for encoding documents in a format that is both
+  human-readable and machine-readable.
 
 What is Attribute Mapping?
 ==========================
@@ -135,6 +141,67 @@ The following attribute mapping policy implements the rules described
 in the previous section. The rest of this document provides a guide
 for writing such polices.
 
+XML Example:
+
+.. code-block:: XML
+
+  <?xml version="1.0" encoding="UTF-8" ?>
+  <mapping xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xmlns:xs="http://www.w3.org/2001/XMLSchema"
+          xmlns="http://docs.rackspace.com/identity/api/ext/MappingRules"
+          version="RAX-1">
+    <description>The following is an attribute mapping for Widgets.com.</description>
+    <rules>
+      <rule>
+        <local>
+          <user>
+            <domain value="{D}"/>
+            <name value="{D}"/>
+            <email value="{At(email)}"/>
+            <roles value="{0}"/>
+            <expire value="{D}"/>
+          </user>
+        </local>
+      </rule>
+    </rules>
+    <remote>
+      <attribute multiValue="true" />
+      <path>
+          (:
+            The following describes the rules for assigning roles to
+            users.
+          :)
+            for $group in mapping:get-attributes('groups') return
+                (:
+                  If a user is a manager they get ticketing:admin,
+                  If they are not a contractor then they also get billing:observer
+                  Managers become admin based on the project that they are working on
+                :)
+              if ($group = 'managers') then
+                (
+                  'ticketing:admin',
+                  if (not(mapping:get-attributes('groups')='contractors')) then 'billing:observer' else
+                  (),
+                  for $project in mapping:get-attributes('manager_projects') return
+                  (
+                    if ($project = 'widgets_ui')       then 'admin/777654' else
+                    if ($project = 'widgets_mobile')   then 'admin/887655' else
+                    if ($project = 'widgets_platform') then 'admin/779956' else
+                    ()
+                  )
+                ) else
+              (:
+                  If a user is a member of the linux_user group they get the
+                  nova:observer role.
+              :)
+              if ($group = 'linux_user') then 'nova:observer' else
+              ()
+      </path>
+    </remote>
+  </mapping>
+
+YAML Example:
+
 .. code-block:: yaml
 
     1  mapping:
@@ -182,5 +249,3 @@ for writing such polices.
    43               :)
    44               if ($group = 'linux_user') then 'nova:observer' else
    45               ()
-
-

@@ -51,7 +51,7 @@ This section details how to map Okta groups to specific Rackspace attribute
 mapping policies. Attribute mapping policies determine the Rackspace roles and
 permissions assigned to Okta groups.
 
-Update your Rackspace YAML (``.yml``) attribute mapping policy by using the
+Update your Rackspace XML (``.xml``) attribute mapping policy by using the
 following steps:
 
 1. Log in to the `Rackspace Customer Portal <https://login.rackspace.com>`_.
@@ -75,7 +75,7 @@ section for an attribute policy mapping example ``.yml`` configuration.
 Attribute policy mapping example
 --------------------------------
 
-The following example shows a Rackspace YAML (``.yml``) attribute mapping
+The following example shows both Rackspace XML (``.xml``) and YAML (``.yml``) attribute mapping
 policy that you can use when you configure your identity provider with
 Rackspace. This example assumes that you have a group named
 ``rackspace-billing`` with users that you want to access Rackspace billing
@@ -87,7 +87,7 @@ Notes:
 
 - Change the ``groups`` specified in the example to match your
   configured Okta groups.
-- Any YAML group name must match your Okta group name exactly.
+- Any XML or YAML group name must match your Okta group name exactly.
 - At a minimum, remember to update the example's ``domain`` value to your
   Identity domain on the |idp| details page.
 - Validate that any values mapped to ``email`` and ``expire`` are
@@ -96,6 +96,42 @@ Notes:
   *path* (``"{Pt}"``) syntax in the |amp| language to point to the ``NameID``
   attribute in the SAML assertion.
 
+XML Example:
+
+.. code-block:: XML
+
+  <?xml version="1.0" encoding="UTF-8"?>
+  <mapping xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xmlns:xs="http://www.w3.org/2001/XMLSchema"
+          xmlns="http://docs.rackspace.com/identity/api/ext/MappingRules"
+          version="RAX-1">
+    <rules>
+        <rule>
+          <local>
+                <user>
+                  <domain value="your_domain_id_goes_here"/>
+                  <name value="{D}"/>
+                  <email value="{Pt(/saml2p:Response/saml2:Assertion/saml2:Subject/saml2:NameID)}"/>
+                  <roles value="{0}" multiValue="true"/>
+                  <expire value="PT4H"/>
+                </user>
+                <faws xsi:type="LocalAttributeGroup">
+                  <groups value="{Ats(groups)}" multiValue="true" xsi:type="LocalAttribute"/>
+                </faws>
+          </local>
+          <remote>
+              <attribute 
+                  path="(
+                        if (mapping:get-attributes('groups')='rackspace-billing')
+                        then    'billing:admin' else ()
+                        )"
+                        multiValue="true"/>
+          </remote>
+        </rule>
+    </rules>
+  </mapping>
+
+YAML Example:
 
 .. code-block:: yaml
 
@@ -129,7 +165,7 @@ Notes:
               # Substitute these example groups with your own groups.
 
 See :ref:`Required SAML attributes<required-mapping-ug>` for a detailed
-breakdown of each section of the YAML configuration.
+breakdown of each section of the XML configuration.
 
 Be sure to validate and modify the following items in your policy |amp|:
 

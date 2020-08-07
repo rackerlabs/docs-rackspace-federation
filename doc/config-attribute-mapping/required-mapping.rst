@@ -49,7 +49,7 @@ Your |amp| must contain:
        to assign to the user.
      - YAML array of alphanumeric strings
      - | **Example:**
-       |
+       | 
        | ``roles:``
        |     ``- "nova:admin"``
        |     ``- "lbaas:observer"``
@@ -122,7 +122,33 @@ SAML providers, see :ref:`index-configuring-3p-saml-ug`.
 
 |ampref|
 
-   .. code-block:: yaml
+XML Example:
+
+.. code-block:: XML
+
+  <?xml version="1.0" encoding="UTF-8"?>
+  <mapping xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xmlns:xs="http://www.w3.org/2001/XMLSchema"
+          xmlns="http://docs.rackspace.com/identity/api/ext/MappingRules"
+          version="RAX-1">
+    <rules>
+        <rule>
+          <local>
+                <user>
+                  <domain value="636462353"/>
+                  <name value="{D}"/>
+                  <email value="{At(http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress)}"/>
+                  <roles value="nova:observer lbaas:admin" multiValue="true"/>
+                  <expire value="{Pt(/saml2p:Response/saml2:Assertion/saml2:Conditions/@NotOnOrAfter[1])}"/>
+                </user>
+        </local>
+        </rule>
+    </rules>
+  </mapping>
+
+YAML Example:
+
+.. code-block:: yaml
 
     mapping:
      version: "RAX-1"
