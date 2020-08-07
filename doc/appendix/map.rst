@@ -322,16 +322,16 @@ XML Example:
       <description>Simple policy where we select required attributes via an XPath.</description>
       <rules>
          <rule>
-         <local>
-            <user>
-               <domain value="{Pts(/saml2p:Response/saml2:Assertion/saml2:AttributeStatement/saml2:Attribute[@Name='domain']/saml2:AttributeValue[1])}"/>
-               <name value="{Pts(/saml2p:Response/saml2:Assertion/saml2:Subject/saml2:NameID)}"/>
-               <email value="{Pts(/saml2p:Response/saml2:Assertion/saml2:AttributeStatement/saml2:Attribute[@Name='email']/saml2:AttributeValue[1])}"/>
-               <roles value="{Pts(/saml2p:Response/saml2:Assertion/saml2:AttributeStatement/saml2:Attribute[@Name='roles']/saml2:AttributeValue)}"
-                        multiValue="true"/>
-               <expire value="{Pts(/saml2p:Response/saml2:Assertion/saml2:Subject/saml2:SubjectConfirmation/saml2:SubjectConfirmationData/@NotOnOrAfter)}"/>
-            </user>
-         </local>
+            <local>
+               <user>
+                  <domain value="{Pts(/saml2p:Response/saml2:Assertion/saml2:AttributeStatement/saml2:Attribute[@Name='domain']/saml2:AttributeValue[1])}"/>
+                  <name value="{Pts(/saml2p:Response/saml2:Assertion/saml2:Subject/saml2:NameID)}"/>
+                  <email value="{Pts(/saml2p:Response/saml2:Assertion/saml2:AttributeStatement/saml2:Attribute[@Name='email']/saml2:AttributeValue[1])}"/>
+                  <roles value="{Pts(/saml2p:Response/saml2:Assertion/saml2:AttributeStatement/saml2:Attribute[@Name='roles']/saml2:AttributeValue)}"
+                           multiValue="true"/>
+                  <expire value="{Pts(/saml2p:Response/saml2:Assertion/saml2:Subject/saml2:SubjectConfirmation/saml2:SubjectConfirmationData/@NotOnOrAfter)}"/>
+               </user>
+            </local>
          </rule>
       </rules>
    </mapping>
@@ -450,16 +450,16 @@ XML Example:
       <description>Simple policy where we select required attributes via an XPath.</description>
       <rules>
          <rule>
-         <local>
-            <user>
-               <domain value="{Pts(/foo:Response/saml2:Assertion/saml2:AttributeStatement/saml2:Attribute[@Name='domain']/saml2:AttributeValue[1])}"/>
-               <name value="{Pts(/foo:Response/saml2:Assertion/saml2:Subject/saml2:NameID)}"/>
-               <email value="{Pts(/foo:Response/saml2:Assertion/saml2:AttributeStatement/saml2:Attribute[@Name='email']/saml2:AttributeValue[1])}"/>
-               <roles value="{Pts(/foo:Response/saml2:Assertion/saml2:AttributeStatement/saml2:Attribute[@Name='roles']/saml2:AttributeValue)}"
-                        multiValue="true"/>
-               <expire value="{Pts(/foo:Response/saml2:Assertion/saml2:Subject/saml2:SubjectConfirmation/saml2:SubjectConfirmationData/@NotOnOrAfter)}"/>
-            </user>
-         </local>
+            <local>
+               <user>
+                  <domain value="{Pts(/foo:Response/saml2:Assertion/saml2:AttributeStatement/saml2:Attribute[@Name='domain']/saml2:AttributeValue[1])}"/>
+                  <name value="{Pts(/foo:Response/saml2:Assertion/saml2:Subject/saml2:NameID)}"/>
+                  <email value="{Pts(/foo:Response/saml2:Assertion/saml2:AttributeStatement/saml2:Attribute[@Name='email']/saml2:AttributeValue[1])}"/>
+                  <roles value="{Pts(/foo:Response/saml2:Assertion/saml2:AttributeStatement/saml2:Attribute[@Name='roles']/saml2:AttributeValue)}"
+                           multiValue="true"/>
+                  <expire value="{Pts(/foo:Response/saml2:Assertion/saml2:Subject/saml2:SubjectConfirmation/saml2:SubjectConfirmationData/@NotOnOrAfter)}"/>
+               </user>
+            </local>
          </rule>
       </rules>
    </mapping>
@@ -517,16 +517,16 @@ XML Example:
                avoid having to select the first attribute value in XPath.</description>
       <rules>
          <rule>
-         <local>
-            <user>
-               <domain value="{Pt(/saml2p:Response/saml2:Assertion/saml2:AttributeStatement/saml2:Attribute[@Name='domain']/saml2:AttributeValue)}"/>
-               <name value="{Pt(/saml2p:Response/saml2:Assertion/saml2:Subject/saml2:NameID)}"/>
-               <email value="{Pt(/saml2p:Response/saml2:Assertion/saml2:AttributeStatement/saml2:Attribute[@Name='email']/saml2:AttributeValue)}"/>
-               <roles value="{Pts(/saml2p:Response/saml2:Assertion/saml2:AttributeStatement/saml2:Attribute[@Name='roles']/saml2:AttributeValue)}"
-                     multiValue="true"/>
-               <expire value="{Pt(/saml2p:Response/saml2:Assertion/saml2:Subject/saml2:SubjectConfirmation/saml2:SubjectConfirmationData/@NotOnOrAfter)}"/>
-            </user>
-         </local>
+            <local>
+               <user>
+                  <domain value="{Pt(/saml2p:Response/saml2:Assertion/saml2:AttributeStatement/saml2:Attribute[@Name='domain']/saml2:AttributeValue)}"/>
+                  <name value="{Pt(/saml2p:Response/saml2:Assertion/saml2:Subject/saml2:NameID)}"/>
+                  <email value="{Pt(/saml2p:Response/saml2:Assertion/saml2:AttributeStatement/saml2:Attribute[@Name='email']/saml2:AttributeValue)}"/>
+                  <roles value="{Pts(/saml2p:Response/saml2:Assertion/saml2:AttributeStatement/saml2:Attribute[@Name='roles']/saml2:AttributeValue)}"
+                        multiValue="true"/>
+                  <expire value="{Pt(/saml2p:Response/saml2:Assertion/saml2:Subject/saml2:SubjectConfirmation/saml2:SubjectConfirmationData/@NotOnOrAfter)}"/>
+               </user>
+            </local>
          </rule>
       </rules>
    </mapping>
@@ -574,18 +574,18 @@ XML Example:
             xmlns="http://docs.rackspace.com/identity/api/ext/MappingRules"
             version="RAX-1">
       <description>Simple policy where we select required attributes via an
-   XPath. Here we use the mapping:get-attributes call to return attribute values.</description>
+      XPath. Here we use the mapping:get-attributes call to return attribute values.</description>
       <rules>
          <rule>
-         <local>
-            <user>
-               <domain value="{Pt(mapping:get-attributes('domain'))}"/>
-               <name value="{Pt(/saml2p:Response/saml2:Assertion/saml2:Subject/saml2:NameID)}"/>
-               <email value="{Pt(mapping:get-attributes('email'))}"/>
-               <roles value="{Pts(mapping:get-attributes('roles'))}" multiValue="true"/>
-               <expire value="{Pt(/saml2p:Response/saml2:Assertion/saml2:Subject/saml2:SubjectConfirmation/saml2:SubjectConfirmationData/@NotOnOrAfter)}"/>
-            </user>
-         </local>
+            <local>
+               <user>
+                  <domain value="{Pt(mapping:get-attributes('domain'))}"/>
+                  <name value="{Pt(/saml2p:Response/saml2:Assertion/saml2:Subject/saml2:NameID)}"/>
+                  <email value="{Pt(mapping:get-attributes('email'))}"/>
+                  <roles value="{Pts(mapping:get-attributes('roles'))}" multiValue="true"/>
+                  <expire value="{Pt(/saml2p:Response/saml2:Assertion/saml2:Subject/saml2:SubjectConfirmation/saml2:SubjectConfirmationData/@NotOnOrAfter)}"/>
+               </user>
+            </local>
          </rule>
       </rules>
    </mapping>
@@ -636,15 +636,15 @@ XML Example:
       instead of Pts as a simple means of accessing an name SAML attribute.</description>
       <rules>
          <rule>
-         <local>
-            <user>
-               <domain value="{At(domain)}"/>
-               <name value="{Pt(/saml2p:Response/saml2:Assertion/saml2:Subject/saml2:NameID)}"/>
-               <email value="{At(email)}"/>
-               <roles value="{Ats(roles)}" multiValue="true"/>
-               <expire value="{Pt(/saml2p:Response/saml2:Assertion/saml2:Subject/saml2:SubjectConfirmation/saml2:SubjectConfirmationData/@NotOnOrAfter)}"/>
-            </user>
-         </local>
+            <local>
+               <user>
+                  <domain value="{At(domain)}"/>
+                  <name value="{Pt(/saml2p:Response/saml2:Assertion/saml2:Subject/saml2:NameID)}"/>
+                  <email value="{At(email)}"/>
+                  <roles value="{Ats(roles)}" multiValue="true"/>
+                  <expire value="{Pt(/saml2p:Response/saml2:Assertion/saml2:Subject/saml2:SubjectConfirmation/saml2:SubjectConfirmationData/@NotOnOrAfter)}"/>
+               </user>
+            </local>
          </rule>
       </rules>
    </mapping>

@@ -75,15 +75,15 @@ XML Example:
           version="RAX-1">
     <rules>
       <rule>
-      <local>
-        <user>
-          <domain value="{D}"/>
-          <name value="{D}"/>
-          <email value="{D}"/>
-          <roles value="{D}"/>
-          <expire value="{D}"/>
-        </user>
-      </local>
+        <local>
+          <user>
+            <domain value="{D}"/>
+            <name value="{D}"/>
+            <email value="{D}"/>
+            <roles value="{D}"/>
+            <expire value="{D}"/>
+          </user>
+        </local>
       </rule>
     </rules>
   </mapping>
@@ -132,15 +132,15 @@ XML Example:
             version="RAX-1">
     <rules>
       <rule>
-      <local>
-        <user>
-          <domain value="{D}"/>
-          <name value="{D}"/>
-          <email value="{D(name)}@rackspace.com"/>
-          <roles value="{D}"/>
-          <expire value="{D}"/>
-        </user>
-      </local>
+        <local>
+          <user>
+            <domain value="{D}"/>
+            <name value="{D}"/>
+            <email value="{D(name)}@rackspace.com"/>
+            <roles value="{D}"/>
+            <expire value="{D}"/>
+          </user>
+        </local>
       </rule>
     </rules>
   </mapping>

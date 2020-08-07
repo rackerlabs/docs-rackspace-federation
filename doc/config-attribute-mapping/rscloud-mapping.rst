@@ -25,15 +25,15 @@ XML Example:
             version="RAX-1">
       <rules>
          <rule>
-         <local>
-            <user>
-               <domain value="999994919999"/>
-               <name value="{D}"/>
-               <email value="{At(http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress)}"/>
-               <roles value="admin ticketing:admin" multiValue="true"/>
-               <expire value="PT12H"/>
-            </user>
-         </local>
+            <local>
+               <user>
+                  <domain value="999994919999"/>
+                  <name value="{D}"/>
+                  <email value="{At(http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress)}"/>
+                  <roles value="admin ticketing:admin" multiValue="true"/>
+                  <expire value="PT12H"/>
+               </user>
+            </local>
          </rule>
       </rules>
    </mapping>
@@ -94,15 +94,15 @@ XML Example:
             version="RAX-1">
       <rules>
          <rule>
-         <local>
-            <user>
-               <domain value="9999953939"/>
-               <name value="{D}"/>
-               <email value="{At(urn:oid:1.2.840.113549.1.9.1.1)}"/>
-               <roles value="{0}" multiValue="true"/>
-               <expire value="{Pt(/saml2p:Response/saml2:Assertion/saml2:Conditions/@NotOnOrAfter[1])}"/>
-            </user>
-         </local>
+            <local>
+               <user>
+                  <domain value="9999953939"/>
+                  <name value="{D}"/>
+                  <email value="{At(urn:oid:1.2.840.113549.1.9.1.1)}"/>
+                  <roles value="{0}" multiValue="true"/>
+                  <expire value="{Pt(/saml2p:Response/saml2:Assertion/saml2:Conditions/@NotOnOrAfter[1])}"/>
+               </user>
+            </local>
             <remote>
                <attribute 
                      path="(
@@ -168,15 +168,15 @@ XML Example:
             version="RAX-1">
       <rules>
          <rule>
-         <local>
-            <user>
+            <local>
+               <user>
                   <domain value="{D}"/>
                   <name value="{D}"/>
                   <groups value="{0}" multiValue="true"/>
                   <email value="{Pt(/saml2p:Response/saml2:Assertion/saml2:Subject/saml2:NameID)}"/>
                   <expire value="PT12H"/>
-            </user>
-         </local>
+               </user>
+            </local>
             <remote>
                <attribute 
                      path="(

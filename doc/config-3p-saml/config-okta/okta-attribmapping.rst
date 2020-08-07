@@ -107,18 +107,18 @@ XML Example:
           version="RAX-1">
     <rules>
         <rule>
-        <local>
-              <user>
-                <domain value="your_domain_id_goes_here"/>
-                <name value="{D}"/>
-                <email value="{Pt(/saml2p:Response/saml2:Assertion/saml2:Subject/saml2:NameID)}"/>
-                <roles value="{0}" multiValue="true"/>
-                <expire value="PT4H"/>
-              </user>
-              <faws xsi:type="LocalAttributeGroup">
-                <groups value="{Ats(groups)}" multiValue="true" xsi:type="LocalAttribute"/>
-              </faws>
-        </local>
+          <local>
+                <user>
+                  <domain value="your_domain_id_goes_here"/>
+                  <name value="{D}"/>
+                  <email value="{Pt(/saml2p:Response/saml2:Assertion/saml2:Subject/saml2:NameID)}"/>
+                  <roles value="{0}" multiValue="true"/>
+                  <expire value="PT4H"/>
+                </user>
+                <faws xsi:type="LocalAttributeGroup">
+                  <groups value="{Ats(groups)}" multiValue="true" xsi:type="LocalAttribute"/>
+                </faws>
+          </local>
           <remote>
               <attribute 
                   path="(

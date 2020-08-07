@@ -152,15 +152,17 @@ XML Example:
           version="RAX-1">
     <description>The following is an attribute mapping for Widgets.com.</description>
     <rules>
-      <local>
-        <user>
-          <domain value="{D}"/>
-          <name value="{D}"/>
-          <email value="{At(email)}"/>
-          <roles value="{0}"/>
-          <expire value="{D}"/>
-        </user>
-      </local>
+      <rule>
+        <local>
+          <user>
+            <domain value="{D}"/>
+            <name value="{D}"/>
+            <email value="{At(email)}"/>
+            <roles value="{0}"/>
+            <expire value="{D}"/>
+          </user>
+        </local>
+      </rule>
     </rules>
     <remote>
       <attribute multiValue="true" />

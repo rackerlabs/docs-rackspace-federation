@@ -133,14 +133,14 @@ XML Example:
           version="RAX-1">
     <rules>
         <rule>
-        <local>
-              <user>
-                <domain value="636462353"/>
-                <name value="{D}"/>
-                <email value="{At(http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress)}"/>
-                <roles value="nova:observer lbaas:admin" multiValue="true"/>
-                <expire value="{Pt(/saml2p:Response/saml2:Assertion/saml2:Conditions/@NotOnOrAfter[1])}"/>
-              </user>
+          <local>
+                <user>
+                  <domain value="636462353"/>
+                  <name value="{D}"/>
+                  <email value="{At(http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress)}"/>
+                  <roles value="nova:observer lbaas:admin" multiValue="true"/>
+                  <expire value="{Pt(/saml2p:Response/saml2:Assertion/saml2:Conditions/@NotOnOrAfter[1])}"/>
+                </user>
         </local>
         </rule>
     </rules>

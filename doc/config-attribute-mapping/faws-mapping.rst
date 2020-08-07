@@ -25,15 +25,15 @@ XML Example:
           version="RAX-1">
     <rules>
         <rule>
-        <local>
-            <user>
-              <domain value="{D}"/>
-              <name value="{D}"/>
-              <email value="{Pt(/saml2p:Response/saml2:Assertion/saml2:Subject/saml2:NameID)}"/>
-              <roles value="admin" multiValue="true"/>
-              <expire value="PT12H"/>
-            </user>
-        </local>
+          <local>
+              <user>
+                <domain value="{D}"/>
+                <name value="{D}"/>
+                <email value="{Pt(/saml2p:Response/saml2:Assertion/saml2:Subject/saml2:NameID)}"/>
+                <roles value="admin" multiValue="true"/>
+                <expire value="PT12H"/>
+              </user>
+          </local>
         </rule>
     </rules>
   </mapping>
@@ -71,15 +71,15 @@ XML Example:
           version="RAX-1">
     <rules>
         <rule>
-        <local>
-            <user>
-              <domain value="{D}"/>
-              <name value="{D}"/>
-              <email value="{Pt(/saml2p:Response/saml2:Assertion/saml2:Subject/saml2:NameID)}"/>
-              <roles value="{0}" multiValue="true"/>
-              <expire value="PT12H"/>
-            </user>
-        </local>
+          <local>
+              <user>
+                <domain value="{D}"/>
+                <name value="{D}"/>
+                <email value="{Pt(/saml2p:Response/saml2:Assertion/saml2:Subject/saml2:NameID)}"/>
+                <roles value="{0}" multiValue="true"/>
+                <expire value="PT12H"/>
+              </user>
+          </local>
           <remote>
               <attribute path="(
                                 if (mapping:get-attributes('http://schemas.xmlsoap.org/claims/Group')='mycompany.global.admin') then ('admin') else (),
@@ -132,15 +132,15 @@ XML Example:
           version="RAX-1">
     <rules>
         <rule>
-        <local>
-            <user>
-              <domain value="{D}"/>
-              <name value="{D}"/>
-              <email value="{Pt(/saml2p:Response/saml2:Assertion/saml2:Subject/saml2:NameID)}"/>
-              <roles value="{0}" multiValue="true"/>
-              <expire value="PT12H"/>
-            </user>
-        </local>
+          <local>
+              <user>
+                <domain value="{D}"/>
+                <name value="{D}"/>
+                <email value="{Pt(/saml2p:Response/saml2:Assertion/saml2:Subject/saml2:NameID)}"/>
+                <roles value="{0}" multiValue="true"/>
+                <expire value="PT12H"/>
+              </user>
+          </local>
           <remote>
               <attribute path="(
                                 if (mapping:get-attributes('http://schemas.xmlsoap.org/claims/Group')='mycompany.scoped.admin') then (
@@ -203,15 +203,15 @@ XML Example:
           version="RAX-1">
     <rules>
         <rule>
-        <local>
-            <user>
-              <domain value="{D}"/>
-              <name value="{D}"/>
-              <email value="{Pt(/saml2p:Response/saml2:Assertion/saml2:Subject/saml2:NameID)}"/>
-              <roles value="{0}" multiValue="true"/>
-              <expire value="PT12H"/>
-            </user>
-        </local>
+          <local>
+              <user>
+                <domain value="{D}"/>
+                <name value="{D}"/>
+                <email value="{Pt(/saml2p:Response/saml2:Assertion/saml2:Subject/saml2:NameID)}"/>
+                <roles value="{0}" multiValue="true"/>
+                <expire value="PT12H"/>
+              </user>
+          </local>
           <remote>
               <attribute path="(
                                 if (mapping:get-attributes('http://schemas.xmlsoap.org/claims/Group')='mycompany.scoped.observer') then ('observer/faws:12345678012') else ()
@@ -277,22 +277,22 @@ XML Example:
           version="RAX-1">
     <rules>
         <rule>
-        <local>
-            <user>
-                <domain value="{D}"/>
-                <name value="{D}"/>
-                <email value="{Pt(/saml2p:Response/saml2:Assertion/saml2:Subject/saml2:NameID)}"/>
-                <expire value="PT12H"/>
-            </user>
-            <aws xsi:type="LocalAttributeGroup">
-                <attribute name="iamPolicies:123456789012"
-                            value="arn:aws:iam::aws:policy/AdministratorAccess"
-                            multiValue="true"/>
-                <attribute name="iamPolicies:*"
-                            value="arn:aws:iam::aws:policy/job-function/ViewOnlyAccess"
-                            multiValue="true"/>
-            </aws>
-        </local>
+          <local>
+              <user>
+                  <domain value="{D}"/>
+                  <name value="{D}"/>
+                  <email value="{Pt(/saml2p:Response/saml2:Assertion/saml2:Subject/saml2:NameID)}"/>
+                  <expire value="PT12H"/>
+              </user>
+              <aws xsi:type="LocalAttributeGroup">
+                  <attribute name="iamPolicies:123456789012"
+                              value="arn:aws:iam::aws:policy/AdministratorAccess"
+                              multiValue="true"/>
+                  <attribute name="iamPolicies:*"
+                              value="arn:aws:iam::aws:policy/job-function/ViewOnlyAccess"
+                              multiValue="true"/>
+              </aws>
+          </local>
         </rule>
     </rules>
   </mapping>
@@ -339,18 +339,18 @@ XML Example:
           version="RAX-1">
     <rules>
         <rule>
-        <local>
-            <user>
-              <domain value="{D}"/>
-              <name value="{D}"/>
-              <email value="{Pt(/saml2p:Response/saml2:Assertion/saml2:Subject/saml2:NameID)}"/>
-              <expire value="PT12H"/>
-            </user>
-            <aws xsi:type="LocalAttributeGroup">
-                <attribute name="iamPolicies:123456789012" value="{1}" multiValue="true"/>
-                <attribute name="iamPolicies:*" value="{0}" multiValue="true"/>
-            </aws>
-        </local>
+          <local>
+              <user>
+                <domain value="{D}"/>
+                <name value="{D}"/>
+                <email value="{Pt(/saml2p:Response/saml2:Assertion/saml2:Subject/saml2:NameID)}"/>
+                <expire value="PT12H"/>
+              </user>
+              <aws xsi:type="LocalAttributeGroup">
+                  <attribute name="iamPolicies:123456789012" value="{1}" multiValue="true"/>
+                  <attribute name="iamPolicies:*" value="{0}" multiValue="true"/>
+              </aws>
+          </local>
           <remote>
               <attribute 
                     path="(
@@ -436,17 +436,17 @@ XML Example:
           version="RAX-1">
     <rules>
         <rule>
-        <local>
-            <user>
-              <domain value="{D}"/>
-              <name value="{D}"/>
-              <email value="{Pt(/saml2p:Response/saml2:Assertion/saml2:Subject/saml2:NameID)}"/>
-              <expire value="PT12H"/>
-            </user>
-            <aws xsi:type="LocalAttributeGroup">
-              <creator value="{0}" xsi:type="LocalAttribute"/>
-            </aws>
-        </local>
+          <local>
+              <user>
+                <domain value="{D}"/>
+                <name value="{D}"/>
+                <email value="{Pt(/saml2p:Response/saml2:Assertion/saml2:Subject/saml2:NameID)}"/>
+                <expire value="PT12H"/>
+              </user>
+              <aws xsi:type="LocalAttributeGroup">
+                <creator value="{0}" xsi:type="LocalAttribute"/>
+              </aws>
+          </local>
           <remote>
               <attribute 
                     path="(
@@ -498,7 +498,7 @@ XML Example:
           version="RAX-1">
     <rules>
         <rule>
-        <local>
+          <local>
               <user>
                 <domain value="{D}"/>
                 <name value="{D}"/>
@@ -506,7 +506,7 @@ XML Example:
                 <roles value="{0}" multiValue="true"/>
                 <expire value="PT12H"/>
               </user>
-        </local>
+          </local>
           <remote>
               <attribute 
                     path="(
@@ -517,11 +517,11 @@ XML Example:
           </remote>
         </rule>
         <rule>
-        <local>
-              <aws xsi:type="LocalAttributeGroup">
-                <creator value="{0}" xsi:type="LocalAttribute"/>
-              </aws>
-        </local>
+          <local>
+                <aws xsi:type="LocalAttributeGroup">
+                  <creator value="{0}" xsi:type="LocalAttribute"/>
+                </aws>
+          </local>
           <remote>
               <attribute 
                     path="(
@@ -531,11 +531,11 @@ XML Example:
           </remote>
         </rule>
         <rule>
-        <local>
-              <aws xsi:type="LocalAttributeGroup">
-                <attribute name="iamPolicies:*" value="{0}" multiValue="true"/>
-              </aws>
-        </local>
+          <local>
+                <aws xsi:type="LocalAttributeGroup">
+                  <attribute name="iamPolicies:*" value="{0}" multiValue="true"/>
+                </aws>
+          </local>
           <remote>
               <attribute 
                     path="(
@@ -546,11 +546,11 @@ XML Example:
           </remote>
         </rule>
         <rule>
-        <local>
-              <aws xsi:type="LocalAttributeGroup">
-                <attribute name="iamPolicies:123456789012" value="{0}" multiValue="true"/>
-              </aws>
-        </local>
+          <local>
+                <aws xsi:type="LocalAttributeGroup">
+                  <attribute name="iamPolicies:123456789012" value="{0}" multiValue="true"/>
+                </aws>
+          </local>
           <remote>
               <attribute 
                     path="(
