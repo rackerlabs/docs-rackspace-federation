@@ -28,6 +28,12 @@ a basic understanding of the following technologies:
   features such as comments and the ability to easily input multi-line data.
   Attribute mapping policies are written in YAML.
 
+- **XML 1.0**: Extensible Markup Language (XML) is a universal format,
+  maintained by the W3C, used for representation and transfer of structured
+  data on the web or between different applications. XML is a markup language
+  that defines set of rules for encoding documents in a format that is both
+  human-readable and machine-readable.
+
 What is Attribute Mapping?
 ==========================
 
@@ -135,6 +141,34 @@ The following attribute mapping policy implements the rules described
 in the previous section. The rest of this document provides a guide
 for writing such polices.
 
+XML Example:
+
+.. code-block:: xml
+
+     1 <mapping xmlns="http://docs.rackspace.com/identity/api/ext/MappingRules" version="RAX-1" xmlns:saml2="urn:oasis:names:tc:SAML:2.0:assertion" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+     2 <description>The following is an attribute mapping for Widgets.com.</description>
+     3 <rules>
+     4 <rule>
+     5 <local>
+     6 <user>
+     7 <domain value="{D}"/>
+     8 <name value="{D}"/>
+     9 <email value="{At(email)}"/>
+     10 <roles value="{0}"/>
+     11 <expire value="{D}"/>
+     12 </user>
+     13 </local>
+     14 <remote>
+     15 <attribute path="for $group in mapping:get-attributes('groups') return if ($group = 'managers') then ('ticketing:admin',if (not(mapping:get-attributes('groups')='contractors')) then
+     'billing:observer' else(),for $project in mapping:get-attributes('manager_projects') return(if ($project = 'widgets_ui') then 'admin/777654' else if ($project = 'widgets_mobile')   then 'admin/887655'
+     else if ($project = 'widgets_platform') then 'admin/779956' else())) else if ($group = 'linux_user') then 'nova:observer' else()"
+     multiValue="true"/>
+     16 </remote>
+     17 </rule>
+     18 </rules>
+     19 </mapping>
+
+
 .. code-block:: yaml
 
     1  mapping:
@@ -182,5 +216,3 @@ for writing such polices.
    43               :)
    44               if ($group = 'linux_user') then 'nova:observer' else
    45               ()
-
-

@@ -122,6 +122,27 @@ SAML providers, see :ref:`index-configuring-3p-saml-ug`.
 
 |ampref|
 
+XML Example:
+
+.. code-block:: xml
+
+
+      1 <mapping xmlns="http://docs.rackspace.com/identity/api/ext/MappingRules" version="RAX-1" xmlns:saml2="urn:oasis:names:tc:SAML:2.0:assertion" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      2 <rules>
+      3 <rule>
+      4 <local>
+      5 <user>
+      6 <domain value="{D}"/>
+      7 <name value="{D}"/>
+      8 <email value="{Pt(/saml2p:Response/saml2:Assertion/saml2:Subject/saml2:NameID)}"/>
+      9 <roles value="nova:observer admin" multiValue="true"/>
+      10 <expire value="{D}"/>
+      11 </user>
+      12 </local>
+      13 </rule>
+      14 </rules>
+      15 </mapping>
+
    .. code-block:: yaml
 
     mapping:
@@ -130,7 +151,7 @@ SAML providers, see :ref:`index-configuring-3p-saml-ug`.
      rules:
      - local:
         user:
-           domain: "636462353"
+           domain: "{D}"
            # Domain must be set to your Identity Domain
            name: "{D}"
            #  Username is set from the element named "name" value in your SAML
@@ -138,7 +159,7 @@ SAML providers, see :ref:`index-configuring-3p-saml-ug`.
            #  Locates the attribute with the above URL as the claim type or name
            roles:
            - "nova:observer"
-           - "lbaas:admin"
+           - "admin"
            #  Assigns the roles explicitly listed above
            expire: "{Pt(/saml2p:Response/saml2:Assertion/saml2:Conditions/@NotOnOrAfter[1])}"
            #  Retrieves the NotOnOrAfter value by using the SAML path and XPath
