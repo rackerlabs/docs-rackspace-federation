@@ -64,6 +64,28 @@ Working with defaults
 
 Default mapping:
 
+XML Example:
+
+.. code-block:: xml
+
+  1 <mapping xmlns="http://docs.rackspace.com/identity/api/ext/MappingRules" version="RAX-1" xmlns:saml2="urn:oasis:names:tc:SAML:2.0:assertion" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  2 <rules>
+  3 <rule>
+  4 <local>
+  5 <user>
+  6 <domain value="{D}"/>
+  7 <name value="{D}"/>
+  8 <email value="{D}"/>
+  9 <roles value="{D}"/>
+  10 <expire value="{D}"/>
+  11 </user>
+  12 </local>
+  13 </rule>
+  14 </rules>
+  15 </mapping>
+
+YAML Example:
+
 .. code-block:: yaml
 
    1 mapping:
@@ -95,6 +117,28 @@ Resulting attributes:
 Accessing default from a different field:
 -----------------------------------------
 
+XML Example:
+
+.. code-block:: xml
+
+  1 <mapping xmlns="http://docs.rackspace.com/identity/api/ext/MappingRules" version="RAX-1" xmlns:saml2="urn:oasis:names:tc:SAML:2.0:assertion" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  2 <rules>
+  3 <rule>
+  4 <local>
+  5 <user>
+  6 <domain value="{D}"/>
+  7 <name value="{D}"/>
+  8 <email value="{D(name)}@rackspace.com"/>
+  9 <roles value="{D}"/>
+  10 <expire value="{D}"/>
+  11 </user>
+  12 </local>
+  13 </rule>
+  14 </rules>
+  15</mapping>
+
+YAML Example:
+
 .. code-block:: yaml
 
    1 mapping:
@@ -124,6 +168,28 @@ Resulting attributes:
 
 More complex example with multiple substitutions
 ------------------------------------------------
+
+XML Example :
+
+.. code-block:: xml
+
+  1 <mapping xmlns="http://docs.rackspace.com/identity/api/ext/MappingRules" version="RAX-1" xmlns:saml2="urn:oasis:names:tc:SAML:2.0:assertion" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  2 <rules>
+  3 <rule>
+  4 <local>
+  5 <user>
+  6 <domain value="{D}"/>
+  7 <name value="{D}"/>
+  8 <email value="{D(name)} <{D(name)}@{D(domain)}.rackspace.com>"/>
+  9 <roles value="{D}"/>
+  10 <expire value="{D}"/>
+  11 </user>
+  12 </local>
+  13 </rule>
+  14 </rules>
+  15 </mapping>
+
+YAML Example :
 
 .. code-block:: yaml
 
@@ -155,6 +221,28 @@ Resulting Attributes:
 Mixing in non-default attributes
 --------------------------------
 
+XML Example:
+
+.. code-block:: xml
+
+  1 <mapping xmlns="http://docs.rackspace.com/identity/api/ext/MappingRules" version="RAX-1" xmlns:saml2="urn:oasis:names:tc:SAML:2.0:assertion" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  2 <rules>
+  3 <rule>
+  4 <local>
+  5 <user>
+  6 <domain value="{D}"/>
+  7 <name value="{D}"/>
+  8 <email value="{At(FirstName)} {At(LastName)}<{D(name)}@{D(domain)}.rackspace.com>"/>
+  9 <roles value="{D}"/>
+  10 <expire value="{D}"/>
+  11 </user>
+  12 </local>
+  13 </rule>
+  14 </rules>
+  15 </mapping>
+
+YAML Example:
+
 .. code-block:: yaml
 
    1 mapping:
@@ -182,5 +270,3 @@ Resulting Attributes:
 +--------+------------------------------------------+
 | expire | 2017-11-17T16:19:06.298Z                 |
 +--------+------------------------------------------+
-
-

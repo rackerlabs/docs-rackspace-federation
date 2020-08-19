@@ -4,7 +4,7 @@
 Configure Attribute Mapping
 ===========================
 
-Attribute Mapping Policies are YAML-formatted files that are used
+Attribute Mapping Policies are YAML or XML-formatted files that are used
 to map SAML attributes to Rackspace-required fields, such as
 roles and account permissions.
 

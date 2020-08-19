@@ -122,6 +122,34 @@ SAML providers, see :ref:`index-configuring-3p-saml-ug`.
 
 |ampref|
 
+XML Example:
+
+.. code-block:: xml
+
+
+  1 <mapping xmlns="http://docs.rackspace.com/identity/api/ext/MappingRules" version="RAX-1" xmlns:saml2="urn:oasis:names:tc:SAML:2.0:assertion" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  2 <rules>
+  3 <rule>
+  4 <local>
+  5 <user>
+  6 <name value="{0}"/>
+  7 <email value="{1}"/>
+  8 <expire value="{2}"/>
+  9 <domain value="{3}"/>
+  10 <roles value="{4}"/>
+  11 </user>
+  12 </local>
+  13 <remote>
+  14 <attribute path="/saml2p:Response/saml2:Assertion/saml2:Subject/saml2:NameID"/>
+  15 <attribute name="email"/>
+  16 <attribute path="/saml2p:Response/saml2:Assertion/saml2:Subject/saml2:SubjectConfirmation/saml2:SubjectConfirmationData/@NotOnOrAfter"/>
+  17 <attribute name="domain"/>
+  18 <attribute multiValue="true" name="roles" whitelist="nova:admin lbaas:observer"/>
+  19 </remote>
+  20 </rule>
+  21 </rules>
+  22 </mapping>
+
    .. code-block:: yaml
 
     mapping:
@@ -130,15 +158,15 @@ SAML providers, see :ref:`index-configuring-3p-saml-ug`.
      rules:
      - local:
         user:
-           domain: "636462353"
+           domain: "{D}"
            # Domain must be set to your Identity Domain
            name: "{D}"
            #  Username is set from the element named "name" value in your SAML
            email: "{At(http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress)}"
            #  Locates the attribute with the above URL as the claim type or name
            roles:
-           - "nova:observer"
-           - "lbaas:admin"
+           - "nova:admin"
+           - "lbaas:observer"
            #  Assigns the roles explicitly listed above
            expire: "{Pt(/saml2p:Response/saml2:Assertion/saml2:Conditions/@NotOnOrAfter[1])}"
            #  Retrieves the NotOnOrAfter value by using the SAML path and XPath

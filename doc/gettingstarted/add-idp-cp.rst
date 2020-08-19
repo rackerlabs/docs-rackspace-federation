@@ -18,9 +18,9 @@ following table provides descriptions of these parameters:
        lists and other areas in the Control Panel.
    * - Email Domains
      - Provides a valid email domain, such as **mycompany.com**. Users provide
-       their email address during the federated login process, and the process uses
-       their email domain to identify and redirect them to the correct |idp| to
-       complete the login process.
+       their email address during the federated login process, and the process
+       uses their email domain to identify and redirect them to the correct
+       |idp| to complete the login process.
 
 Add an |idp|
 ------------
@@ -38,13 +38,13 @@ Cloud customers use the following steps to add an |idp|:
 
 4. Click **Add Identity Provider**.
 
-5. Provide a short description of the |idp| for organizational purposes. When users
-   log in by using federation, they see the name provided here.
+5. Provide a short description of the |idp| for organizational purposes. When
+   users log in by using federation, they see the name provided here.
 
-6. Click **Add Domain**, enter the email domain with which users should authenticate,
-   and click **Add**.
+6. Click **Add Domain**, enter the email domain with which users should
+   authenticate and click **Add**.
 
-7. Within the **SAML Metadata** section, locate and click the **No file chosen**
+7. Within the **SAML Metadata** section,locate and click the **No file chosen**
    button. Choose the metadata file you downloaded from your |idp|. The
    :ref:`Okta metadata file<okta-metadata>` shows an example of this file.
 

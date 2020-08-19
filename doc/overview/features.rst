@@ -20,5 +20,6 @@ The following table describes the main features of |service|:
      - Enables customers to connect to Rackspace with their own company
        credentials instead of requiring new credentials.
    * - Provides attribute mapping policy capability
-     - Uses a rich, YAML-based, policy language that enables you to dynamically
-       configure the roles and permissions that users receive when they log in.
+     - Uses a rich, YAML-based or XML-based, policy language that enables you
+       to dynamically configure the roles and permissions that users receive
+       when they log in.

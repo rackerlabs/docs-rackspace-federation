@@ -24,4 +24,4 @@ should have at least one of the following Rackspace accounts:
 You should also be familiar with the following technologies:
 
 - SAML 2.0
-- YAML
+- XML or YAML

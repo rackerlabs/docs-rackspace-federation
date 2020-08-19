@@ -33,11 +33,12 @@ membership in your SAML attributes, see
 `https://msdn.microsoft.com/en-us/library/ff359101.aspx
 <https://msdn.microsoft.com/en-us/library/ff359101.aspx>`_
 
-The following example shows a Rackspace YAML (``.yml``) Attribute Mapping
-Policy that you can use when you configure your Identity Provider with
-Rackspace. This example assumes that you have a group named
-``rackspace-billing`` with users who you want to access Rackspace billing
-services by using the ``billing:admin`` Rackspace role.
+The following example shows both Rackspace XML (``.xml``) as well as
+YAML (``.yml``) Attribute Mapping Policy that you can use when you
+configure your Identity Provider with Rackspace. This example assumes
+that you have a group named ``rackspace-billing`` with users who you
+want to access Rackspace billing services by using the ``billing:admin``
+Rackspace role.
 
 More information
 ~~~~~~~~~~~~~~~~
@@ -55,6 +56,33 @@ perform the following tasks:
   *path* (``"{Pt}"``) syntax in the |amp| language to point to the ``NameID``
   attribute in the SAML assertion, as shown in the following example:
 
+XML Example:
+
+.. code-block:: xml
+
+      1 <mapping xmlns="http://docs.rackspace.com/identity/api/ext/MappingRules" version="RAX-1" xmlns:saml2="urn:oasis:names:tc:SAML:2.0:assertion" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      2 <rules>
+      3 <rule>
+      4 <local>
+      5 <user>
+      6 <domain value="your_domain_id_goes_here"/>
+      7 <name value="{D}"/>
+      8 <email value="{Pt(/saml2p:Response/saml2:Assertion/saml2:Subject/saml2:NameID)}"/>
+      9 <roles value="{0}"/>
+      10 <expire value=""/>
+      11 </user>
+      12 <faws xsi:type="LocalAttributeGroup"> <groups value="{Ats(groups)}" multiValue="true" xsi:type="LocalAttribute"/>
+      13 </faws>
+      14 </local>
+      15 <remote>
+      16 <attribute path="(if (mapping:get-attributes('groups')='rackspace-billing') then 'billing:admin' else ())" multiValue="true"/>
+      17 </remote>
+      18 </local>
+      19 </rule>
+      20 </rules>
+      21 </mapping>
+
+YAML Example:
 
 .. code-block:: yaml
 
