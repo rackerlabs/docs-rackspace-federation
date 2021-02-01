@@ -45,3 +45,7 @@ Gemfile.lock
 Pipfile.lock
 docs/_build/
 docs/build/
+doc/_build/
+doc/build/
+api-docs/_build/
+api-docs/build/

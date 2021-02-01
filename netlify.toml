@@ -5,24 +5,12 @@
 
 [build]
   publish = "doc/_build/html"
-  command = "npm run build"
+  command = "cd doc && make clean html && cd .."
 
 [context.production]
   publish = "doc/_build/html"
-  command = "npm run build"
+  command = "cd doc && make clean html && cd .."
 
 [context.deploy-preview]
   publish = "doc/_build/html"
-  command = "npm run build"
-
-[[redirects]]
-  from = "/"
-  to = "/docs/rackspace-federation/"
-  status = 301
-  force = false
-
-[[redirects]]
-  from = "/*"
-  to = "/docs/rackspace-federation/:splat"
-  status = 301
-  force = false
+  command = "cd doc && make clean html && cd .."
