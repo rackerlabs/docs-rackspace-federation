@@ -189,3 +189,6 @@ and role for the capabilities that you want to provide.
    * -
      - Observer (read-only)
      - ticketing:observer
+   * - Fanatical Support for AWS
+     - Create AWS accounts ()
+     - aws:account-creator

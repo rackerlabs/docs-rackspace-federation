@@ -8,10 +8,10 @@ Fanatical support for AWS permissions
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 These permissions control access to features within Rackspace's Fanatical
-Support for the Amazon Web Services (FAWS) Control Panel. You can assign the roles 
-of ``observer`` or ``admin`` or omit them from the mapping policy. Users with 
+Support for the Amazon Web Services (FAWS) Control Panel. You can assign the roles
+of ``observer`` or ``admin`` or omit them from the mapping policy. Users with
 ``observer`` permissions have read-only access to the Control Panel. Users with
- ``admin`` permissions have read and write access to the Control Panel. The 
+ ``admin`` permissions have read and write access to the Control Panel. The
 following mapping policy assigns the ``admin`` role to all federated users:
 
 .. code:: yaml
@@ -28,7 +28,7 @@ following mapping policy assigns the ``admin`` role to all federated users:
             roles:
               - "admin"
 
-It's common to assign roles based on a user's group membership. 
+It's common to assign roles based on a user's group membership.
 The following mapping policy example grants the ``admin`` role to users who
 belong to the ``mycompany.global.admin`` group, and the ``observer``
 role to users who belong to the ``mycompany.global.observer`` group:
@@ -54,7 +54,7 @@ role to users who belong to the ``mycompany.global.observer`` group:
               )
             multiValue: true
 
-You can limit the roles of ``admin`` and ``observer`` to specific Amazon Web 
+You can limit the roles of ``admin`` and ``observer`` to specific Amazon Web
 Services® (AWS) accounts. The preceding policy example grants the FAWS ``admin`` role
 to members of the ``mycompany.scoped.admin`` group on multiple
  AWS accounts, and the  ``observer`` role to members of ``mycompany.scoped.observer``
@@ -85,14 +85,14 @@ to members of the ``mycompany.scoped.admin`` group on multiple
               )
             multiValue: true
 
-In the preceding example, members of both the ``mycompany.scoped.admin`` group 
-and the ``mycompany.scoped.observer`` group have the ``admin`` role on the 
-single FAWS account ``12345678012``. 
+In the preceding example, members of both the ``mycompany.scoped.admin`` group
+and the ``mycompany.scoped.observer`` group have the ``admin`` role on the
+single FAWS account ``12345678012``.
 
-Swapping the ``admin`` and ``observer`` groups in the next example grants 
+Swapping the ``admin`` and ``observer`` groups in the next example grants
 only the ``observer`` role on that single account to any
 user in both groups. This assignment occurs because the first ``if`` condition
-matches, so the policy doesn't evaluate the second ``if`` condition. 
+matches, so the policy doesn't evaluate the second ``if`` condition.
 
 .. code:: yaml
 
@@ -189,9 +189,9 @@ policy assigns permissions as follows:
 
 In the preceding example, members of the
 ``mycompany.global.security`` and the ``mycompany.123456789012.admin``
-groups, have the``AdministratorAccess`` IAM policy. In this case, the 
-``SecurityAudit`` IAM policy attaches to the user's temporary session for the 
-AWS account ``123456789012``. 
+groups, have the``AdministratorAccess`` IAM policy. In this case, the
+``SecurityAudit`` IAM policy attaches to the user's temporary session for the
+AWS account ``123456789012``.
 
 Customer-managed AWS IAM policies that are the same across AWS accounts
 -----------------------------------------------------------------------
@@ -206,6 +206,13 @@ policy.
 
 AWS account creator permissions
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. note::
+
+    A previous version of Rackspace Identity Federation used the :code:`aws:creator` metadata key to
+    grant a user permission to create new AWS accounts. This method is still supported to preserve
+    backwards compatibility. However, Rackspace recommends using the approach documented below
+    moving forward.
 
 This permission controls whether a user can create new AWS accounts
 through the Fanatical Support for AWS Control Panel. The following mapping
@@ -223,14 +230,14 @@ create new AWS accounts:
             email: "{Pt(/saml2p:Response/saml2:Assertion/saml2:Subject/saml2:NameID)}"
             expire: "PT12H"
             name: "{D}"
-          aws:
-            creator: "{0}"
+            roles:
+              - "{0}
         remote:
           - path: |
               (
-                if (mapping:get-attributes('http://schemas.xmlsoap.org/claims/Group')='mycompany.global.admin') then ('true') else ('false')
+                if (mapping:get-attributes('http://schemas.xmlsoap.org/claims/Group')='mycompany.global.admin') then ('aws:account-creator') else ()
               )
-            multiValue: false
+            multiValue: true
 
 Complete mapping policy example
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -256,20 +263,10 @@ AWS Console and API permissions into a single mapping policy:
         remote:
           - path: |
               (
-                if (mapping:get-attributes('http://schemas.xmlsoap.org/claims/Group')='mycompany.global.admin') then ('admin') else (),
+                if (mapping:get-attributes('http://schemas.xmlsoap.org/claims/Group')='mycompany.global.admin') then ('admin', 'aws:account-creator') else (),
                 if (mapping:get-attributes('http://schemas.xmlsoap.org/claims/Group')='mycompany.global.observer') then ('observer') else ()
               )
             multiValue: true
-      # Map groups to AWS account creator permissions
-      - local:
-          aws:
-            creator: "{0}"
-        remote:
-          - path: |
-              (
-                if (mapping:get-attributes('http://schemas.xmlsoap.org/claims/Group')='mycompany.global.admin') then ('true') else ('false')
-              )
-            multiValue: false
       # Map groups to IAM policies for all AWS accounts
       - local:
           aws:
