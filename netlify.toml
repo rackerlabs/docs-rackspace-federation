@@ -4,13 +4,13 @@
   NODE_VERSION = "12.16.3"
 
 [build]
-  publish = "doc/_build/html"
-  command = "cd doc && make clean html && cd .."
+  publish = "docs/_build/dirhtml"
+  command = "cd docs && make clean dirhtml && cd .."
 
 [context.production]
-  publish = "doc/_build/html"
-  command = "cd doc && make clean html && cd .."
+  publish = "docs/_build/dirhtml"
+  command = "cd docs && make clean dirhtml && cd .."
 
 [context.deploy-preview]
-  publish = "doc/_build/html"
-  command = "cd doc && make clean html && cd .."
+  publish = "docs/_build/dirhtml"
+  command = "cd docs && make clean dirhtml && cd .."
