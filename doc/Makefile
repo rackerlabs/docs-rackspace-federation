@@ -53,9 +53,9 @@ clean:
 	rm -rf $(BUILDDIR)/*
 
 html:
-	$(SPHINXBUILD) -b html $(ALLSPHINXOPTS) $(BUILDDIR)/htmldocs/rackspace-federation
+	$(SPHINXBUILD) -b html $(ALLSPHINXOPTS) $(BUILDDIR)/html/docs/rackspace-federation
 	@echo
-	@echo "Build finished. The HTML pages are in $(BUILDDIR)/htmldocs/rackspace-federation."
+	@echo "Build finished. The HTML pages are in $(BUILDDIR)/html/docs/rackspace-federation."
 
 dirhtml:
 	$(SPHINXBUILD) -b dirhtml $(ALLSPHINXOPTS) $(BUILDDIR)/dirhtml
