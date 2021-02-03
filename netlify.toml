@@ -4,13 +4,19 @@
   NODE_VERSION = "12.16.3"
 
 [build]
-  publish = "doc/_build/dirhtml"
-  command = "cd doc && make clean dirhtml && cd .."
+  publish = "doc/_build/html"
+  command = "cd doc && make clean html && cd .."
 
 [context.production]
-  publish = "doc/_build/dirhtml"
-  command = "cd doc && make clean dirhtml && cd .."
+  publish = "doc/_build/html"
+  command = "cd doc && make clean html && cd .."
 
 [context.deploy-preview]
-  publish = "doc/_build/dirhtml"
-  command = "cd doc && make clean dirhtml && cd .."
+  publish = "doc/_build/html"
+  command = "cd doc && make clean html && cd .."
+
+[[redirects]]
+  from = "/*"
+  to = "/docs/rackspace-federation/:splat"
+  status = 301
+  force = false
