@@ -77,7 +77,7 @@ The following code shows a complex example of an |amp| for Rackspace Cloud:
                     if (mapping:get-attributes('http://schemas.xmlsoap.org/claims/Group')='mycompany.rackspace.ticketing') then 'ticketing:admin' else ()
                   )
               multiValue: true
-     version: RAX-1
+       version: RAX-1
 
 This example uses the substitution and piping features of the |amp|, in
 conjunction with XPath, to observe the SAML ``groups`` value and to assign
