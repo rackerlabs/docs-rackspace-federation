@@ -20,7 +20,7 @@ Basic tasks
 ~~~~~~~~~~~
 
 Manage your Identity Providers by using the Rackspace Control Panel at
-`https://account.rackspace.com/users <https://account.rackspace.com/users>`_.
+`https://manage.rackspace.com/users <https://manage.rackspace.com/users>`_.
 You can take actions to manage your |idp| through either the list of
 Identity Providers on the **Identity Federation** page, or through
 the **Actions** menu on the details page for any |idp|.
