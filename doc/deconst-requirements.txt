@@ -1,6 +1,6 @@
 chios==0.1.3
 doc8==0.7.0
-Pygments==2.7.4
+Pygments==2.15.0
 restructuredtext-lint==0.17.2
 Sphinx>=1.5.1,<1.6
 sphinx-rtd-theme>=0.1.9
