@@ -31,7 +31,7 @@ Cloud customers use the following steps to add an |idp|:
 
 2. In the upper-right area of the navigation bar, select
    **Account > User Management** from the drop-down menu. Alternately, browse
-   directly to the `User Management <https://account.rackspace.com/users>`_
+   directly to the `User Management <https://manage.rackspace.com/users>`_
    page in the Rackspace Account Management Control Panel.
 
 3. In the sub-navigation bar, select **Identity Federation**.
